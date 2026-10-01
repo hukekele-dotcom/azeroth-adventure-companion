@@ -235,7 +235,10 @@ function J.PlanningQuests(p)
     end
     return out
 end
-function J.NavigationRoute(p) return p and (p.regions or p.route) or {} end
+function J.NavigationRoute(p)
+    if not p then return {} end
+    return p.regions and #p.regions>0 and p.regions or p.route or {}
+end
 function J.BuildRegions()
     local p=char.plan;p.regions={};p.turnedIn={}
     local byID={};for _,q in ipairs(p.quests) do byID[q.id]=q end
@@ -259,6 +262,11 @@ function J.UpdateRegions()
         end
         if q.waypoint and q.waypoint.m~=p.scopeMap then q.waypoint=nil;for _,w in ipairs(q.locations) do if w.m==p.scopeMap then q.waypoint=w;break end end end
         byID[q.id]=q
+    end
+    -- Repair saved plans whose coordinates were lost during a numeric round trip.
+    -- Rebuild only an empty region list; never reset completed area progress.
+    if #p.regions==0 then
+        p.quests=qs;J.ReorderRoute();J.BuildRegions()
     end
     local turnins={};for _,r in ipairs(p.regions) do for _,member in ipairs(r.members) do if member.phase=='turnin' then turnins[member.questID]=true end end end
     local additions={};local planned={}
@@ -405,7 +413,7 @@ function J.Plan(startNavigation,reset)
     if old and old.fingerprint==fingerprint then
         char.plan.id=old.id;char.plan.ai=old.ai;char.plan.summary=old.summary;char.plan.order=old.order or order
         for _,q in ipairs(qs) do for _,prev in ipairs(old.quests) do if prev.id==q.id then
-            q.reason=prev.reason;q.action=prev.action;q.sourceURL=prev.sourceURL
+            q.reason=prev.reason;q.action=prev.action;q.region=prev.region;q.sourceURL=prev.sourceURL
             if old.ai and prev.waypoint then for _,w in ipairs(q.locations) do if w.key==prev.waypoint.key then q.waypoint=w end end end
         end end end
         J.ReorderRoute()
@@ -576,7 +584,13 @@ function J.PlanReply(reply)
         local q=byID[step.questID];q.reason=step.reason;q.action=step.action;q.region=Text(step.region);q.sourceURL=step.sourceURL;q.waypoint=nil
         local w=step.waypoint
         if type(w)=='table' then for _,candidate in ipairs(q.locations or {}) do
-            if candidate.m==w.m and candidate.x==w.x and candidate.y==w.y and (not p.scopeMap or w.m==p.scopeMap) then q.waypoint=candidate;break end
+            -- WoW Lua's tostring rounds doubles in outgoing JSON. Compare the
+            -- observed candidate key/map and tiny numeric tolerance, then use
+            -- the original local coordinates rather than values from the AI.
+            if (not w.key or candidate.key==w.key) and candidate.m==w.m
+                and type(w.x)=='number' and type(w.y)=='number'
+                and math.abs(candidate.x-w.x)<=0.000001 and math.abs(candidate.y-w.y)<=0.000001
+                and (not p.scopeMap or w.m==p.scopeMap) then q.waypoint=candidate;break end
         end end
         p.order[#p.order+1]=q.id
     end

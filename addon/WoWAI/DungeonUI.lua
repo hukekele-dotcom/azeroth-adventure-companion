@@ -17,7 +17,9 @@ local function Button(p,text,w,fn)
     local b=CreateFrame('Button',nil,p,'UIPanelButtonTemplate');b:SetSize(w,26);b:SetText(text);b:SetScript('OnClick',fn);return b
 end
 local function Source(item)
-    local r=item.ref or {};return r.basis=='classic' and L('经典版参考，无限实际掉落待核实') or r.basis=='site' and L('无限社区记录 · 2026-09-30') or L('来源未确认，勿作为确定掉落')
+    local r=item.ref or {};local text=r.basis=='classic' and L('经典版参考，无限实际掉落待核实') or r.basis=='site' and (L('无限社区记录 · ')..(r.sourceDate or '2026-09-30')) or L('来源未确认，勿作为确定掉落')
+    if r.dropUnverified then text=text..'\n'..L('首领归属为参考记录，尚未核实无限版实际掉落。')end
+    return text
 end
 local function Objective(row)
     local a={};for _,o in ipairs(row.live and row.live.objectives or {})do a[#a+1]=(o.done and '✓ ' or '· ')..(o.text or '')end
@@ -130,7 +132,7 @@ function U.RenderHUD()
             local r=loot[i];row:SetShown(r~=nil);row.item=r and r.item
             if r then
                 PaintIcon(row.icon,r.item)
-                local prefix=r.item.ref.basis=='classic' and L('[经典版参考] ') or r.item.ref.basis~='site' and L('[来源待核] ') or ''
+                local prefix=r.item.ref.basis=='classic' and L('[经典版参考] ') or (r.item.ref.dropUnverified or r.item.ref.basis~='site') and L('[来源待核] ') or ''
                 row.text:SetText((COLOR[r.status]or'')..prefix..r.item.name..'|r\n'..r.text)
             end
         end
@@ -144,6 +146,9 @@ function U.Render(force)
     local d=DisplayedDungeon();if not d then return end
     if U.lastDungeon~=d.id then U.boss=nil;U.allLoot=false;U.lastDungeon=d.id;U.scroll:SetVerticalScroll(0);U.bossScroll:SetVerticalScroll(0)end
     U.sideTitle:SetText(WoWAILocale.Field(d));U.prev:SetEnabled(not D.instanceKey);U.next:SetEnabled(not D.instanceKey)
+    if d.counts then
+        U.footer:SetText(string.format(L('本地资料 · %s · %d 项任务 / %d 件掉落；含经典参考，尚未全部核实。'),d.sourceDate or '',d.counts.quests,d.counts.items))
+    end
     U.taskButton:SetText(D.instanceKey and L('任务检查') or L('进本前检查'))
     U.alerts:SetText(D.Settings().alerts==false and L('浮窗：关') or L('浮窗：开'))
     for i,b in ipairs(d.bosses)do
@@ -159,7 +164,9 @@ function U.Render(force)
         local loot=D.Loot(U.boss,d,U.allLoot)
         for _,r in ipairs(loot)do
             local a={r.text};if r.compare then a[#a+1]=L('对比：')..r.compare end;if r.detail then a[#a+1]=r.detail end
-            for _,s in ipairs(r.item.ref.stats or {})do a[#a+1]='+'..tostring(s.value)..' '..L(s.label) end
+            local reference=WoWAILocale.Get()=='enUS' and r.item.ref.referenceLinesEn or r.item.ref.referenceLines
+            if reference then for _,line in ipairs(reference)do a[#a+1]=WoWAILocale.Reference(line)end
+            else for _,s in ipairs(r.item.ref.stats or {})do a[#a+1]='+'..tostring(s.value)..' '..L(s.label) end end
             for _,e in ipairs((WoWAILocale.Get()=='enUS' and r.item.ref.effectsEn or r.item.ref.effects) or {})do a[#a+1]=WoWAILocale.Reference(e.text or '') end
             if WoWAILocale.Get()=='enUS' and (not r.item.ref.nameEn or (#(r.item.ref.effects or {})>0 and not r.item.ref.effectsEn)) then a[#a+1]=L('英文资料待补充，请以游戏任务日志和物品提示为准。') end
             a[#a+1]=Source(r.item)..L(' · 装备需求 ')..r.item.level..L(' 级')
@@ -181,6 +188,7 @@ function U.Render(force)
             local rank={missing=1,active=2,inside=3,unknown=4,ready=5,unavailable=6,done=7};local rows={};for _,r in ipairs(checked)do rows[#rows+1]=r end;table.sort(rows,function(a,b)if rank[a.status]~=rank[b.status]then return rank[a.status]<rank[b.status]end;return a.quest.id<b.quest.id end)
             for _,r in ipairs(rows)do
                 local q=r.quest;local a={L(FACTION[r.faction] or '阵营待核实')..' · '..r.reason,D.LevelText(q),L('接取：')..WoWAILocale.Field(q,'from'),WoWAILocale.Field(q,'instructions')};if q.prerequisites and q.prerequisites~='' then a[#a+1]=L('前置链：')..WoWAILocale.Field(q,'prerequisites') end
+                if q.basis=='classic' then table.insert(a,1,L('经典版任务流程参考；无限版目标和奖励请以游戏任务日志为准。'))end
                 if r.status=='active' then a[#a+1]=Objective(r)end
                 for i,s in ipairs(q.steps or {})do
                     a[#a+1]=L('前置步骤 ')..i..'：'..WoWAILocale.Field(s)..(s.optional and L('（可选）') or '')..'\n'..WoWAILocale.Field(s,'from')..'\n'..WoWAILocale.Field(s,'instructions')

@@ -137,6 +137,13 @@ end
 -- the bridge lists the ones it has, and its default, in every slot file. A chat
 -- with no agent of its own runs on the bridge's default.
 local AGENT_NAMES = { workbuddy = "WorkBuddy", claude = "Claude", codex = "Codex", grok = "Grok", agy = "Antigravity", hermes = "Hermes" }
+local WORKBUDDY_MODELS = {'auto', 'glm-5.3', 'deepseek-v4.1-flash'}
+local WORKBUDDY_MODEL_NAMES = {auto='自动', ['glm-5.3']='GLM-5.3', ['deepseek-v4.1-flash']='DeepSeek-V4.1-Flash'}
+local function WorkBuddyModel()
+    local model = db and db.settings and db.settings.workbuddyModel
+    return WORKBUDDY_MODEL_NAMES[model] and model or 'auto'
+end
+local function WorkBuddyModelLabel(model) return L(WORKBUDDY_MODEL_NAMES[model] or '自动') end
 
 local function AgentName(id)
 	id = tostring(id or "")
@@ -1327,6 +1334,11 @@ function WoWAI.Send(text, allow, targetChat)
 	if c.resetNext then table.insert(tokens, "n") end
 	local selectedAgent = db.settings.preferredAgent or c.agent or ""
 	if selectedAgent ~= "" then table.insert(tokens, "agent=" .. selectedAgent) end
+	local selectedModel
+	if ChatAgent(c) == 'workbuddy' then
+		selectedModel = WorkBuddyModel()
+		table.insert(tokens, 'model=' .. selectedModel)
+	end
 	local allowHex
 	if type(allow) == "table" and #allow > 0 then
 		table.insert(tokens, "allow=" .. table.concat(allow, ","))
@@ -1343,6 +1355,7 @@ function WoWAI.Send(text, allow, targetChat)
 		cwd = ToHex(c.cwd),
 		ctx = ctx and ToHex(ctx) or nil,
 		agent = selectedAgent ~= "" and selectedAgent or nil,
+		model = selectedModel,
 		allow = allowHex,
 		newSession = newSession,
 		t = time(),
@@ -1592,6 +1605,14 @@ function WoWAI.SelectProvider(id)
 	if id ~= 'codex' and id ~= 'workbuddy' then return false end
 	if AnyPending() then return false end
 	db.settings.preferredAgent = id
+	WoWAI.Render()
+	return true
+end
+
+function WoWAI.SelectWorkBuddyModel(model)
+	if not WORKBUDDY_MODEL_NAMES[model] or AnyPending() then return false end
+	db.settings.workbuddyModel = model
+	if ui.modelMenu then ui.modelMenu:Hide() end
 	WoWAI.Render()
 	return true
 end
@@ -1976,6 +1997,7 @@ function WoWAI.UpdateStatus()
 		agentText = L("(bridge default)")
 	end
 	local model = run.bridgeModels and run.bridgeModels[ChatAgent(c)]
+	if ChatAgent(c) == 'workbuddy' then model = WorkBuddyModelLabel(WorkBuddyModel()) end
 	if type(model) == 'string' and model ~= '' then
 		model = model:gsub('^custom%-local:', '')
 		ui.cwd:SetText("AI：" .. agentText .. L(" · 配置模型：") .. Display(model))
@@ -2028,6 +2050,17 @@ end
 
 function WoWAI.Render()
 	local c = ActiveChat()
+	if ui.modelSelector then
+		local visible = ChatAgent(c) == 'workbuddy'
+		ui.modelSelector:SetShown(visible)
+		ui.modelSelector:SetText(L('模型：') .. WorkBuddyModelLabel(WorkBuddyModel()) .. ' ▾')
+		ui.modelSelector:SetEnabled(not AnyPending())
+		if not visible or AnyPending() then ui.modelMenu:Hide() end
+		for i, button in ipairs(ui.modelOptions) do
+			local model = WORKBUDDY_MODELS[i]
+			button:SetText((WorkBuddyModel() == model and '|cff88ff88' or '') .. WorkBuddyModelLabel(model) .. (WorkBuddyModel() == model and '|r' or ''))
+		end
+	end
 	if ui.providers then
 		for id, button in pairs(ui.providers) do
 			button:SetText((ChatAgent(c) == id and "|cff88ff88" or "") .. id:gsub("^%l", string.upper) .. (ChatAgent(c) == id and "|r" or ""))
@@ -2544,7 +2577,7 @@ local function BuildUI()
 
 	local status = f:CreateFontString(nil, "OVERLAY", "GameFontHighlightSmall")
 	status:SetPoint("TOPLEFT", f, "TOPLEFT", 14, -34)
-	status:SetPoint("TOPRIGHT", f, "TOPRIGHT", -60, -34)
+	status:SetPoint("TOPRIGHT", f, "TOPRIGHT", -266, -34)
 	status:SetHeight(16)
 	status:SetWordWrap(false)
 	status:SetJustifyH("LEFT")
@@ -2584,6 +2617,7 @@ local function BuildUI()
 	-- Esc (via UISpecialFrames) just calls Hide(); treat that as a minimize unless
 	-- we're hiding on purpose. Ignore hides caused by the whole UI going away.
 	f:SetScript("OnHide", function()
+		if ui.modelMenu then ui.modelMenu:Hide() end
 		if ui.quitting then
 			ui.quitting = nil
 			return
@@ -2635,6 +2669,39 @@ local function BuildUI()
 		b:SetScript('OnLeave', function() GameTooltip:Hide() end)
 		ui.providers[id] = b
 	end
+
+	-- A small native menu avoids client-specific Blizzard dropdown APIs.
+	local modelButton = MakeButton(f, '', 238, function()
+		if not AnyPending() then ui.modelMenu:SetShown(not ui.modelMenu:IsShown()) end
+	end)
+	_G.WoWAIModelSelector = modelButton
+	modelButton:SetHeight(20)
+	modelButton:SetPoint('TOPRIGHT', f, 'TOPRIGHT', -14, -32)
+	modelButton:SetScript('OnEnter', function(self)
+		GameTooltip:SetOwner(self, 'ANCHOR_LEFT')
+		GameTooltip:SetText(L('选择 WorkBuddy 系统模型'), 1, 1, 1)
+		GameTooltip:AddLine(L('用于聊天、任务规划和游记。切换后开启新的 AI 会话，聊天记录保留。处理请求时不能切换。'), 0.8, 0.8, 0.8, true)
+		GameTooltip:Show()
+	end)
+	modelButton:SetScript('OnLeave', function() GameTooltip:Hide() end)
+	ui.modelSelector = modelButton
+	local modelMenu = CreateFrame('Frame', 'WoWAIModelMenu', f, 'BackdropTemplate')
+	modelMenu:SetSize(238, 88)
+	modelMenu:SetPoint('TOPRIGHT', modelButton, 'BOTTOMRIGHT', 0, -3)
+	modelMenu:SetFrameStrata('DIALOG')
+	modelMenu:SetBackdrop(BACKDROP)
+	modelMenu:SetBackdropColor(0.045, 0.038, 0.024, 1)
+	modelMenu:EnableMouse(true)
+	ui.modelMenu = modelMenu
+	ui.modelOptions = {}
+	for i, id in ipairs(WORKBUDDY_MODELS) do
+		local model = id
+		local button = MakeButton(modelMenu, WorkBuddyModelLabel(model), 222, function() WoWAI.SelectWorkBuddyModel(model) end)
+		button:SetPoint('TOPLEFT', modelMenu, 'TOPLEFT', 8, -8 - (i-1)*24)
+		ui.modelOptions[i] = button
+		_G['WoWAIModelOption' .. i] = button
+	end
+	modelMenu:Hide()
 
 	-- The whole chat page hides together; status refreshes cannot leak buttons.
 	local panel = CreateFrame("Frame", nil, chatPage, "BackdropTemplate")

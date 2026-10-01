@@ -2,10 +2,19 @@ QuestLocations.lua contains a reduced coordinate dataset derived from Everything
 https://github.com/wheelbarrel00/EverythingQuests
 Revision: 9c1ce1e44238d8c6c8ca36d8f49836fde70b564f (2026-09-29).
 Sources: Data/QuestSpawns_Forever.lua, Data/QuestTurnIn_Forever.lua, Data/QuestCategory_Forever.lua.
-DungeonData.lua additionally uses literal eligibility fields from Data/QuestAvailable_Forever.lua at the same revision and license. Dungeon tasks and item facts are imported from the user's dated wowf.io research archive and curated loot records; provenance, incompleteness and Classic-reference labels are documented in docs/DUNGEON_ASSISTANT.md. No executable code is imported from those guide records.
+DungeonData.lua additionally uses literal eligibility fields from Data/QuestAvailable_Forever.lua at the same revision and license. Dungeon tasks and item facts are imported from the user's dated wowf.io research archive and curated loot records; provenance, incompleteness and Classic-reference labels are documented in docs/DUNGEON_ASSISTANT.md and docs/dungeon-data-receipt.json. No executable code is imported from those guide records.
 Build: node tools/build-quest-locations.js reference/EverythingQuests
 
 The source combines Classic quest data adjusted to Forever maps and observed Forever quests. It is incomplete. Map changes and custom quest changes can invalidate older locations. Dungeon entrance coordinates indicate entrances, not interior objectives. Each objective mask retains at most three representative points per map/type.
+
+Dungeon knowledge expansion (2026-10-01): public factual records from
+https://foreverchanges.pro/dungeons and the existing WOWF research archive.
+Classic item/boss references are explicitly labelled; observed item stats do not
+prove the same boss drops that item in Forever. Chinese game quest/NPC names and
+separately labelled Classic quest descriptions use Questie v11.22.0 reference
+lookups: https://github.com/Questie/Questie/tree/v11.22.0/Localization/lookups/Classic
+Only literal reference strings and facts are imported, not third-party runtime code.
+See docs/DUNGEON_KNOWLEDGE.md and docs/dungeon-data-receipt.json for provenance.
 
 MIT License
 
