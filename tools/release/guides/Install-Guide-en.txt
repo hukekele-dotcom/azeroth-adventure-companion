@@ -1,5 +1,5 @@
 Azeroth Adventure Companion — Installation and User Guide
-Version: 0.6.0-beta.2 (Windows x64 Beta)
+Version: 0.6.0-beta.3 (Windows x64 Beta)
 
 First use: Extract everything → Install → Sign in to AI → Start bridge → Restart game → /wow-ai
 Daily use: Open the “WoW AI 无限” desktop shortcut → Start bridge → Enter the game.
@@ -13,7 +13,7 @@ This package targets the WoW: Forever 1.60 client with WowB.exe. Other WoW clien
 You need:
 • An installed game client. Log into it at least once and exit normally to create its account folder.
 • Internet access and your own AI account. You can start with either Codex or WorkBuddy and configure the other later.
-• The complete WoWAI-Forever-0.6.0-beta.2-win-x64.zip package.
+• The complete WoWAI-Forever-0.6.0-beta.3-win-x64.zip package.
 
 Node.js is included; you do not need to install it separately. The official AI tools are downloaded when you first sign in. Each player uses their own account and allowance. The package does not include an AI account or credits.
 The “bridge” is the background program that connects the game addon to AI. Both the addon and the bridge must be running for AI communication.
@@ -100,6 +100,8 @@ Click “查看冒险档案” (Open adventure archive) in the desktop manager t
 
 Dungeon Assistant
 Check quest availability before entering a dungeon. Quests are filtered by faction and requirements. View boss drop icons and comparison hints based on the character's talents and equipment. Coverage and scoring are still incomplete; not all quests or drops are guaranteed to be included.
+
+Quest details show minimum acceptance levels and any level shortfall. A preparation note uses the current character's faction, class and remaining documented quests to suggest a level for collecting dungeon quests together. Prerequisite chains, in-dungeon starts and missing data are identified separately. This is not a combat-level recommendation or a guarantee of completing everything in one run.
 
 5. Troubleshooting
 
