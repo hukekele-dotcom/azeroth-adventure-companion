@@ -1,0 +1,505 @@
+{
+  "documents": [
+    {
+      "document": "哀嚎洞穴专题_2026-09-22/资料核对.md",
+      "sha256": "2c373cf98ecde6f8d2122c304895c81884339c46d1c171ededc9c5be454c89d1"
+    },
+    {
+      "document": "影牙城堡专题_2026-09-22/资料核对.md",
+      "sha256": "f9cfdfe76929baacc3c8e51561a5b1f85ab03e56dd6f3c51472edb65dd95af7b"
+    },
+    {
+      "document": "影牙城堡专题_2026-09-22/研究/正文物品清单.json",
+      "sha256": "3fa9aa1aedf3d6d0691de18b776d4872935c407f949594131810478ee8cdaeec"
+    },
+    {
+      "document": "影牙城堡专题_2026-09-22/研究/FC物品数据.json",
+      "sha256": "0833f9584ff2ad37413744737ae47bea9ecf6600d35a0ff0356a7e61f27d50b7"
+    },
+    {
+      "document": "怒焰裂谷专题_2026-09-22/资料核对.md",
+      "sha256": "9d1c93e52dd0cfd40a8f59a0363c9fcaf1848294160a000e5d08e7da5d085f32"
+    },
+    {
+      "document": "暴风城监狱专题_2026-09-23/资料核对.md",
+      "sha256": "436cb00eac0aeb48cff18ae7f5900db7551d329da4fae66b00bb9035ef68eb12"
+    },
+    {
+      "document": "暴风城监狱专题_2026-09-23/研究/成稿物品数据.json",
+      "sha256": "3f0cc83e5d3d48005c4eb08752ad570facb0393614e25d7b360daac4609a6c12"
+    },
+    {
+      "document": "死亡矿井专题_2026-09-22/资料核对.md",
+      "sha256": "7d29e2a570fc105362d8c809c40680d6443b0420b9917bdf3e3b75cf712d0f78"
+    },
+    {
+      "document": "死亡矿井专题_2026-09-22/研究/正文物品清单.json",
+      "sha256": "dcb08ee89a16bc15c36f76b45447794c8a3322802a1071f14cc6306a8d7be5dd"
+    },
+    {
+      "document": "死亡矿井专题_2026-09-22/研究/FC物品数据.json",
+      "sha256": "82f51822e355b7dce5cf2a0434c41fbdaaa99bbf0bddf9a068373c534a7feb2e"
+    },
+    {
+      "document": "洛丹伦废墟专题_2026-09-22/资料核对.md",
+      "sha256": "54a4ae1a5da2c7738ecdb459b02ec7bb08fdbfbbe830454210e1696925e99d92"
+    },
+    {
+      "document": "营地专题_2026-09-21/资料核对.md",
+      "sha256": "9148124e46fb42df744dfc4a9cc2b8affdf44182978c12ff80bc96d345f4f398"
+    },
+    {
+      "document": "领主大厅专题_2026-09-23/资料核对.md",
+      "sha256": "408a520b6825d3769341de692b95ef9eef4d5606201c0042632f7265b9f64806"
+    },
+    {
+      "document": "领主大厅专题_2026-09-23/研究/成稿物品数据.json",
+      "sha256": "f9278c4b9eaa2514b523c475ca03d5a9789d18c590bbc456b37d6e597fab212f"
+    },
+    {
+      "document": "领主大厅专题_2026-09-23/研究/首领与掉落_20260922.json",
+      "sha256": "db4a555fc99d756d08df6559a490155e8f109fca8ec5b4df4e21c379e77b01bf"
+    },
+    {
+      "document": "黑暗深渊专题_2026-09-22/资料核对.md",
+      "sha256": "5b4af38d01e0997c1f9c8c14e4b307b30a5b89e5f31bb2ec91bb150296378915"
+    },
+    {
+      "document": "黑暗深渊专题_2026-09-22/研究/FC物品数据.json",
+      "sha256": "ea6dd640f4ce1d88df49af40df26bce9eb0685aa05b09a204d623d34e03ab69e"
+    }
+  ],
+  "itemNames": {
+    "932": {
+      "name": "魔化战马的鞍囊",
+      "document": "影牙城堡专题_2026-09-22/研究/正文物品清单.json"
+    },
+    "1076": {
+      "name": "迪菲亚叛徒之戒",
+      "nameEn": "Defias Renegade Ring",
+      "document": "暴风城监狱专题_2026-09-23/研究/成稿物品数据.json"
+    },
+    "1264": {
+      "name": "碎头者",
+      "nameEn": "Headbasher",
+      "document": "暴风城监狱专题_2026-09-23/研究/成稿物品数据.json"
+    },
+    "1292": {
+      "name": "屠夫的斩斧",
+      "document": "影牙城堡专题_2026-09-22/研究/正文物品清单.json"
+    },
+    "1317": {
+      "name": "硬根法杖",
+      "nameEn": "Hardened Root Staff",
+      "document": "暴风城监狱专题_2026-09-23/研究/成稿物品数据.json"
+    },
+    "1318": {
+      "name": "黑夜之斧",
+      "document": "影牙城堡专题_2026-09-22/研究/正文物品清单.json"
+    },
+    "1482": {
+      "name": "影牙",
+      "document": "影牙城堡专题_2026-09-22/研究/正文物品清单.json"
+    },
+    "1483": {
+      "name": "碎脸者",
+      "document": "影牙城堡专题_2026-09-22/研究/正文物品清单.json"
+    },
+    "1484": {
+      "name": "巫术手杖",
+      "document": "影牙城堡专题_2026-09-22/研究/正文物品清单.json"
+    },
+    "1489": {
+      "name": "阴暗护甲",
+      "document": "影牙城堡专题_2026-09-22/研究/正文物品清单.json"
+    },
+    "1935": {
+      "name": "刺客之刃",
+      "document": "影牙城堡专题_2026-09-22/研究/正文物品清单.json"
+    },
+    "1974": {
+      "name": "心灵之刺",
+      "document": "影牙城堡专题_2026-09-22/研究/正文物品清单.json"
+    },
+    "2033": {
+      "name": "大使之靴",
+      "nameEn": "Ambassador's Boots",
+      "document": "暴风城监狱专题_2026-09-23/研究/成稿物品数据.json"
+    },
+    "2205": {
+      "name": "暮色之剑",
+      "document": "影牙城堡专题_2026-09-22/研究/正文物品清单.json"
+    },
+    "2280": {
+      "name": "黑铁手杖",
+      "nameEn": "Kam's Walking Stick",
+      "document": "暴风城监狱专题_2026-09-23/研究/成稿物品数据.json"
+    },
+    "2292": {
+      "name": "死者之袍",
+      "document": "影牙城堡专题_2026-09-22/研究/正文物品清单.json"
+    },
+    "2807": {
+      "name": "断头斧",
+      "document": "影牙城堡专题_2026-09-22/研究/正文物品清单.json"
+    },
+    "2906": {
+      "name": "夜色郡锁甲护腿",
+      "nameEn": "Darkshire Mail Leggings",
+      "document": "暴风城监狱专题_2026-09-23/研究/成稿物品数据.json"
+    },
+    "2933": {
+      "name": "乌瑞恩的图章",
+      "nameEn": "Seal of Wrynn",
+      "document": "暴风城监狱专题_2026-09-23/研究/成稿物品数据.json"
+    },
+    "2941": {
+      "name": "监狱骨片",
+      "nameEn": "Prison Shank",
+      "document": "暴风城监狱专题_2026-09-23/研究/成稿物品数据.json"
+    },
+    "2942": {
+      "name": "铁指虎",
+      "nameEn": "Iron Knuckles",
+      "document": "暴风城监狱专题_2026-09-23/研究/成稿物品数据.json"
+    },
+    "3191": {
+      "name": "弧形战斧",
+      "document": "影牙城堡专题_2026-09-22/研究/正文物品清单.json"
+    },
+    "3194": {
+      "name": "黑暗怨念",
+      "document": "影牙城堡专题_2026-09-22/研究/正文物品清单.json"
+    },
+    "3228": {
+      "name": "镣铐护腕",
+      "nameEn": "Jimmied Handcuffs",
+      "document": "暴风城监狱专题_2026-09-23/研究/成稿物品数据.json"
+    },
+    "3230": {
+      "name": "黑狼护腕",
+      "document": "影牙城堡专题_2026-09-22/研究/正文物品清单.json"
+    },
+    "3324": {
+      "name": "鬼魂衬肩",
+      "document": "影牙城堡专题_2026-09-22/研究/正文物品清单.json"
+    },
+    "3400": {
+      "name": "磷铝长剑",
+      "nameEn": "Lucine Longsword",
+      "document": "暴风城监狱专题_2026-09-23/研究/成稿物品数据.json"
+    },
+    "3562": {
+      "name": "辩护腰带",
+      "nameEn": "Belt of Vindication",
+      "document": "暴风城监狱专题_2026-09-23/研究/成稿物品数据.json"
+    },
+    "3748": {
+      "name": "猎豹衬肩",
+      "document": "影牙城堡专题_2026-09-22/研究/正文物品清单.json"
+    },
+    "4534": {
+      "name": "钢钳护腕",
+      "document": "影牙城堡专题_2026-09-22/研究/正文物品清单.json"
+    },
+    "5254": {
+      "name": "皱褶肩甲",
+      "document": "影牙城堡专题_2026-09-22/研究/正文物品清单.json"
+    },
+    "5943": {
+      "name": "裂隙护腕",
+      "document": "影牙城堡专题_2026-09-22/研究/正文物品清单.json"
+    },
+    "6220": {
+      "name": "流星碎片",
+      "document": "影牙城堡专题_2026-09-22/研究/正文物品清单.json"
+    },
+    "6226": {
+      "name": "血染围裙",
+      "document": "影牙城堡专题_2026-09-22/研究/正文物品清单.json"
+    },
+    "6314": {
+      "name": "狼王斗篷",
+      "document": "影牙城堡专题_2026-09-22/研究/正文物品清单.json"
+    },
+    "6318": {
+      "name": "奥杜之杖",
+      "document": "影牙城堡专题_2026-09-22/研究/正文物品清单.json"
+    },
+    "6319": {
+      "name": "盲眼束带",
+      "document": "影牙城堡专题_2026-09-22/研究/正文物品清单.json"
+    },
+    "6320": {
+      "name": "指挥官纹章盾",
+      "document": "影牙城堡专题_2026-09-22/研究/正文物品清单.json"
+    },
+    "6321": {
+      "name": "席瓦莱恩家族徽记",
+      "document": "影牙城堡专题_2026-09-22/研究/正文物品清单.json"
+    },
+    "6323": {
+      "name": "男爵的节杖",
+      "document": "影牙城堡专题_2026-09-22/研究/正文物品清单.json"
+    },
+    "6324": {
+      "name": "阿鲁高法袍",
+      "document": "影牙城堡专题_2026-09-22/研究/正文物品清单.json"
+    },
+    "6335": {
+      "name": "灰色长靴",
+      "document": "影牙城堡专题_2026-09-22/研究/正文物品清单.json"
+    },
+    "6340": {
+      "name": "芬鲁斯的外皮",
+      "document": "影牙城堡专题_2026-09-22/研究/正文物品清单.json"
+    },
+    "6341": {
+      "name": "阴森马灯",
+      "document": "影牙城堡专题_2026-09-22/研究/正文物品清单.json"
+    },
+    "6392": {
+      "name": "阿鲁高的腰带",
+      "document": "影牙城堡专题_2026-09-22/研究/正文物品清单.json"
+    },
+    "6414": {
+      "name": "希尔瓦娜斯的图章",
+      "document": "影牙城堡专题_2026-09-22/研究/正文物品清单.json"
+    },
+    "6633": {
+      "name": "屠夫的剔骨刀",
+      "document": "影牙城堡专题_2026-09-22/研究/正文物品清单.json"
+    },
+    "6641": {
+      "name": "鬼魂之刃",
+      "document": "影牙城堡专题_2026-09-22/研究/正文物品清单.json"
+    },
+    "6642": {
+      "name": "幻影之甲",
+      "document": "影牙城堡专题_2026-09-22/研究/正文物品清单.json"
+    },
+    "6898": {
+      "name": "索兰鲁克宝珠",
+      "document": "影牙城堡专题_2026-09-22/研究/正文物品清单.json"
+    },
+    "15109": {
+      "name": "索拉鲁克法杖",
+      "document": "影牙城堡专题_2026-09-22/研究/正文物品清单.json"
+    },
+    "270023": {
+      "name": "鞣制护肩",
+      "document": "影牙城堡专题_2026-09-22/研究/正文物品清单.json"
+    },
+    "270024": {
+      "name": "青铜护肩",
+      "document": "影牙城堡专题_2026-09-22/研究/正文物品清单.json"
+    },
+    "270030": {
+      "name": "破旧连指手套",
+      "document": "影牙城堡专题_2026-09-22/研究/正文物品清单.json"
+    },
+    "270227": {
+      "name": "幻影项圈",
+      "nameEn": "Ephemeral Choker",
+      "document": "领主大厅专题_2026-09-23/研究/成稿物品数据.json"
+    },
+    "270228": {
+      "name": "魔像之心法杖",
+      "nameEn": "Golemheart Stave",
+      "document": "领主大厅专题_2026-09-23/研究/成稿物品数据.json"
+    },
+    "270229": {
+      "name": "守护魔像之靴",
+      "nameEn": "Treads of the Protector Golem",
+      "document": "领主大厅专题_2026-09-23/研究/成稿物品数据.json"
+    },
+    "270230": {
+      "name": "燃石腰带",
+      "nameEn": "Kindlegem Girdle",
+      "document": "领主大厅专题_2026-09-23/研究/成稿物品数据.json"
+    },
+    "270231": {
+      "name": "烈焰拳套",
+      "nameEn": "Flamefist Grips",
+      "document": "领主大厅专题_2026-09-23/研究/成稿物品数据.json"
+    },
+    "270256": {
+      "name": "杜尔根的新月斧",
+      "nameEn": "Durgen's Crescent Axe",
+      "document": "领主大厅专题_2026-09-23/研究/成稿物品数据.json"
+    },
+    "270260": {
+      "name": "凶锤护腿",
+      "nameEn": "Direhammer Leggings",
+      "document": "领主大厅专题_2026-09-23/研究/成稿物品数据.json"
+    },
+    "270261": {
+      "name": "失势领主长袍",
+      "nameEn": "Robes of the Disgraced Thane",
+      "document": "领主大厅专题_2026-09-23/研究/成稿物品数据.json"
+    },
+    "271095": {
+      "name": "玛格玛图斯之牙",
+      "nameEn": "Fang of Magmatus",
+      "document": "领主大厅专题_2026-09-23/研究/成稿物品数据.json"
+    },
+    "271096": {
+      "name": "以太灵光护腕",
+      "nameEn": "Aetherwisp Bracers",
+      "document": "领主大厅专题_2026-09-23/研究/成稿物品数据.json"
+    },
+    "271097": {
+      "name": "幽魂披风",
+      "nameEn": "Spiritwraith Drape",
+      "document": "领主大厅专题_2026-09-23/研究/成稿物品数据.json"
+    },
+    "271098": {
+      "name": "魔像守卫胸甲",
+      "nameEn": "Golemguard Chest",
+      "document": "领主大厅专题_2026-09-23/研究/成稿物品数据.json"
+    },
+    "273456": {
+      "name": "狱卒之爪",
+      "document": "影牙城堡专题_2026-09-22/研究/正文物品清单.json"
+    },
+    "273457": {
+      "name": "巫师项圈",
+      "document": "影牙城堡专题_2026-09-22/研究/正文物品清单.json"
+    },
+    "273637": {
+      "name": "席瓦莱恩之刃",
+      "document": "影牙城堡专题_2026-09-22/研究/正文物品清单.json"
+    },
+    "273643": {
+      "name": "狼人克星护符",
+      "document": "影牙城堡专题_2026-09-22/研究/正文物品清单.json"
+    },
+    "273645": {
+      "name": "盲眼守卫之视",
+      "document": "影牙城堡专题_2026-09-22/研究/正文物品清单.json"
+    },
+    "273646": {
+      "name": "啃噬残靴",
+      "document": "影牙城堡专题_2026-09-22/研究/正文物品清单.json"
+    },
+    "273647": {
+      "name": "座狼皮护腿",
+      "document": "影牙城堡专题_2026-09-22/研究/正文物品清单.json"
+    },
+    "273804": {
+      "name": "刽子手披肩",
+      "nameEn": "Executioner Mantle",
+      "document": "暴风城监狱专题_2026-09-23/研究/成稿物品数据.json"
+    },
+    "273805": {
+      "name": "黑石背心",
+      "nameEn": "Blackrock Harness",
+      "document": "暴风城监狱专题_2026-09-23/研究/成稿物品数据.json"
+    },
+    "273806": {
+      "name": "黑暗部落指环",
+      "nameEn": "Dark Horde Band",
+      "document": "暴风城监狱专题_2026-09-23/研究/成稿物品数据.json"
+    },
+    "273807": {
+      "name": "破坏束带",
+      "nameEn": "Demolition Girdle",
+      "document": "暴风城监狱专题_2026-09-23/研究/成稿物品数据.json"
+    },
+    "273808": {
+      "name": "断桥者护腕",
+      "nameEn": "Bridgebreaker Bindings",
+      "document": "暴风城监狱专题_2026-09-23/研究/成稿物品数据.json"
+    },
+    "273809": {
+      "name": "哈姆霍克的切肉斧",
+      "nameEn": "Hamhock's Cleaver",
+      "document": "暴风城监狱专题_2026-09-23/研究/成稿物品数据.json"
+    },
+    "273810": {
+      "name": "食人魔之握",
+      "nameEn": "Ogre Grips",
+      "document": "暴风城监狱专题_2026-09-23/研究/成稿物品数据.json"
+    },
+    "273811": {
+      "name": "改装刑架",
+      "nameEn": "Repurposed Rack",
+      "document": "暴风城监狱专题_2026-09-23/研究/成稿物品数据.json"
+    },
+    "273817": {
+      "name": "盗墓者的铲子",
+      "nameEn": "Graverobber's Shovel",
+      "document": "暴风城监狱专题_2026-09-23/研究/成稿物品数据.json"
+    },
+    "273824": {
+      "name": "迪菲亚越狱手套",
+      "nameEn": "Defias Jailbreakers",
+      "document": "暴风城监狱专题_2026-09-23/研究/成稿物品数据.json"
+    },
+    "273825": {
+      "name": "红色毛纺斗篷",
+      "nameEn": "Red Wool Cloak",
+      "document": "暴风城监狱专题_2026-09-23/研究/成稿物品数据.json"
+    },
+    "273827": {
+      "name": "讨债者",
+      "nameEn": "Debt Collector",
+      "document": "暴风城监狱专题_2026-09-23/研究/成稿物品数据.json"
+    },
+    "273829": {
+      "name": "隐蔽手弩",
+      "nameEn": "Concealed Hand Crossbow",
+      "document": "暴风城监狱专题_2026-09-23/研究/成稿物品数据.json"
+    },
+    "274092": {
+      "name": "磨利的餐具",
+      "nameEn": "Sharpened Cutlery",
+      "document": "暴风城监狱专题_2026-09-23/研究/成稿物品数据.json"
+    },
+    "279894": {
+      "name": "校准火枪",
+      "nameEn": "Calibrated Blunderbuss",
+      "document": "领主大厅专题_2026-09-23/研究/成稿物品数据.json"
+    },
+    "279895": {
+      "name": "铁炉堡巨锤",
+      "nameEn": "Ironforge Greathammer",
+      "document": "领主大厅专题_2026-09-23/研究/成稿物品数据.json"
+    },
+    "279896": {
+      "name": "深焰",
+      "nameEn": "Deepblaze",
+      "document": "领主大厅专题_2026-09-23/研究/成稿物品数据.json"
+    },
+    "279897": {
+      "name": "尘封腰带",
+      "nameEn": "Dusty Belt",
+      "document": "领主大厅专题_2026-09-23/研究/成稿物品数据.json"
+    },
+    "279898": {
+      "name": "矮人典籍",
+      "nameEn": "Dwarven Tome",
+      "document": "领主大厅专题_2026-09-23/研究/成稿物品数据.json"
+    },
+    "279899": {
+      "name": "墓穴斗篷",
+      "nameEn": "Catacomb Cloak",
+      "document": "领主大厅专题_2026-09-23/研究/成稿物品数据.json"
+    },
+    "279900": {
+      "name": "深墓长裤",
+      "nameEn": "Deepgrave Trousers",
+      "document": "领主大厅专题_2026-09-23/研究/成稿物品数据.json"
+    },
+    "280095": {
+      "name": "墓穴行者护腕",
+      "nameEn": "Cryptwalker Bracers",
+      "document": "领主大厅专题_2026-09-23/研究/成稿物品数据.json"
+    },
+    "280096": {
+      "name": "盗墓者手套",
+      "nameEn": "Tomb Robber's Gloves",
+      "document": "领主大厅专题_2026-09-23/研究/成稿物品数据.json"
+    }
+  }
+}

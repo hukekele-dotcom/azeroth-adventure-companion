@@ -1,0 +1,140 @@
+{
+  "policy": "Editorial corrections from verified dungeon guides. Never overwrite these with an unreviewed scrape.",
+  "quests": [
+    {
+      "dungeon": "hall-of-thanes",
+      "id": 98423,
+      "set": {
+        "name": "谅解条约",
+        "nameEn": "The Treaty of Understanding",
+        "faction": "alliance",
+        "minLevel": 9,
+        "itemStart": true,
+        "inside": true,
+        "gatesKnown": false,
+        "from": "领主大厅尾王房间 · 宝库门后的石板",
+        "instructions": "在杜尔根·挽歌之锤所在的最终房间，拾取宝库门后石板上的谅解条约，触发任务后交给铁炉堡的麦格尼·铜须国王。",
+        "instructionsEn": "Pick up the treaty on the stone tablet behind the vault door in Durgen's final room. Start the quest and deliver it to King Magni Bronzebeard in Ironforge."
+      },
+      "sources": [
+        "https://foreverchanges.pro/dungeons/hall-of-thanes",
+        "https://www.wowhead.com/forever/quest=98423/the-treaty-of-understanding"
+      ]
+    },
+    {
+      "dungeon": "hall-of-thanes",
+      "id": 96393,
+      "set": {
+        "minLevel": 9,
+        "faction": "alliance",
+        "prerequisites": "黑铁地图 → 地下地图 → 旧铁炉堡入侵",
+        "gatesKnown": false
+      },
+      "sources": [
+        "https://wowforevertalents.com/quests/old-ironforge-incursion-96393/"
+      ]
+    },
+    {
+      "dungeon": "shadowfang-keep",
+      "id": 1098,
+      "set": {
+        "instructions": "在影牙城堡寻找亡灵哨兵。任务在副本庭院内向亡灵哨兵文森特交付，不需要返回瑟伯切尔交付。",
+        "instructionsEn": "Find the deathstalkers in Shadowfang Keep. Turn the quest in to Deathstalker Vincent in the dungeon courtyard, not back at the Sepulcher."
+      },
+      "sources": [
+        "https://wowforevertalents.com/quests/deathstalkers-in-shadowfang-1098/"
+      ]
+    },
+    {
+      "dungeon": "ruins-of-lordaeron",
+      "id": 97288,
+      "set": {
+        "minLevel": 16
+      },
+      "sources": [
+        "https://www.wowhead.com/forever/quest=97288/unending-torment"
+      ]
+    },
+    {
+      "dungeon": "ruins-of-lordaeron",
+      "id": 95216,
+      "set": {
+        "minLevel": 16,
+        "prerequisites": "",
+        "steps": []
+      },
+      "sources": [
+        "https://foreverchanges.pro/dungeons/ruins-of-lordaeron"
+      ]
+    }
+  ],
+  "blockMappings": [
+    {
+      "dungeon": "blackfathom-deeps",
+      "item": 273840,
+      "reason": "本地专题尚未核实首领归属；社区现有记录待复核",
+      "reasonEn": "Boss assignment pending review against local research",
+      "source": "Local dungeon editorial verification, 2026-09-22"
+    },
+    {
+      "dungeon": "blackfathom-deeps",
+      "item": 273841,
+      "reason": "本地专题尚未核实首领归属；社区现有记录待复核",
+      "reasonEn": "Boss assignment pending review against local research",
+      "source": "Local dungeon editorial verification, 2026-09-22"
+    },
+    {
+      "dungeon": "blackfathom-deeps",
+      "item": 273842,
+      "reason": "本地专题尚未核实首领归属；社区现有记录待复核",
+      "reasonEn": "Boss assignment pending review against local research",
+      "source": "Local dungeon editorial verification, 2026-09-22"
+    },
+    {
+      "dungeon": "ruins-of-lordaeron",
+      "item": 6642,
+      "reason": "本地专题尚未核实首领归属；社区现有记录待复核",
+      "reasonEn": "Boss assignment pending review against local research",
+      "source": "Local dungeon editorial verification, 2026-09-22"
+    },
+    {
+      "dungeon": "shadowfang-keep",
+      "item": 273647,
+      "reason": "本地专题尚未核实首领归属；社区现有记录待复核",
+      "reasonEn": "Boss assignment pending review against local research",
+      "source": "Local dungeon editorial verification, 2026-09-22"
+    }
+  ],
+  "sharedQuests": [
+    {
+      "from": "shadowfang-keep",
+      "to": "blackfathom-deeps",
+      "id": 1740,
+      "set": {
+        "instructions": "术士职业任务：在黑暗深渊收集 3 块索兰鲁克碎片；大块碎片需在影牙城堡取得。两处材料收齐后交给贫瘠之地的杜安·卡汉。",
+        "instructionsEn": "Warlock quest: collect 3 Soran'ruk Fragments in Blackfathom Deeps and the Large Fragment in Shadowfang Keep. Return to Doan Karhan in the Barrens."
+      },
+      "source": "https://wowforevertalents.com/quests/the-orb-of-soran-ruk-1740/"
+    },
+    {
+      "from": "shadowfang-keep",
+      "to": "blackfathom-deeps",
+      "id": 1654,
+      "set": {
+        "instructions": "联盟圣骑士职业任务材料：在黑暗深渊取得科尔宝石相关材料，到奥伯丁找桑迪斯·织风完成净化。其余材料涉及死亡矿井、影牙城堡和洛克莫丹。",
+        "instructionsEn": "Alliance paladin quest material: recover the Kor Gem material from Blackfathom Deeps and have Thundris Windweaver purify it in Auberdine. Other materials come from the Deadmines, Shadowfang Keep and Loch Modan."
+      },
+      "source": "https://www.wowhead.com/forever/quest=1654/the-test-of-righteousness"
+    },
+    {
+      "from": "shadowfang-keep",
+      "to": "deadmines",
+      "id": 1654,
+      "set": {
+        "instructions": "联盟圣骑士职业任务材料：在死亡矿井取得白石橡木。其余材料涉及影牙城堡、黑暗深渊和洛克莫丹，收齐后交给乔丹·斯迪威尔。",
+        "instructionsEn": "Alliance paladin quest material: obtain Whitestone Oak Lumber in the Deadmines. Other materials come from Shadowfang Keep, Blackfathom Deeps and Loch Modan; return them to Jordan Stilwell."
+      },
+      "source": "https://www.wowhead.com/forever/quest=1654/the-test-of-righteousness"
+    }
+  ]
+}

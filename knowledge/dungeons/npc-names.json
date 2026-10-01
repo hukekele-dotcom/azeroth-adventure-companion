@@ -1,0 +1,1594 @@
+{
+  "Gryan Stoutmantle": {
+    "id": 234,
+    "name": "格里安·斯托曼"
+  },
+  "Councilman Millstipe": {
+    "id": 270,
+    "name": "议员米尔斯迪普"
+  },
+  "Edwin VanCleef": {
+    "id": 639,
+    "name": "艾德温·范克里夫"
+  },
+  "Sneed's Shredder": {
+    "id": 642,
+    "name": "斯尼德的伐木机"
+  },
+  "Sneed": {
+    "id": 643,
+    "name": "斯尼德"
+  },
+  "Rhahk'Zor": {
+    "id": 644,
+    "name": "拉克佐"
+  },
+  "Cookie": {
+    "id": 645,
+    "name": "曲奇"
+  },
+  "Mr. Smite": {
+    "id": 646,
+    "name": "重拳先生"
+  },
+  "Captain Greenskin": {
+    "id": 647,
+    "name": "绿皮队长"
+  },
+  "Wilder Thistlenettle": {
+    "id": 656,
+    "name": "维尔德·蓟草"
+  },
+  "Scout Riell": {
+    "id": 820,
+    "name": "哨兵瑞尔"
+  },
+  "Guard Berton": {
+    "id": 859,
+    "name": "卫兵伯尔顿"
+  },
+  "Motley Garmason": {
+    "id": 1074,
+    "name": "莫特雷·加玛森"
+  },
+  "Ragnar Thunderbrew": {
+    "id": 1267,
+    "name": "拉格纳·雷酒"
+  },
+  "Ozzie Togglevolt": {
+    "id": 1268,
+    "name": "奥齐·电环"
+  },
+  "Archbishop Benedictus": {
+    "id": 1284,
+    "name": "大主教本尼迪塔斯"
+  },
+  "Prospector Ironband": {
+    "id": 1344,
+    "name": "勘察员基恩萨·铁环"
+  },
+  "Fel'zerul": {
+    "id": 1443,
+    "name": "费泽鲁尔"
+  },
+  "Ghak Healtouch": {
+    "id": 1470,
+    "name": "加克"
+  },
+  "Kam Deepfury": {
+    "id": 1666,
+    "name": "卡姆·深怒"
+  },
+  "Targorr the Dread": {
+    "id": 1696,
+    "name": "可怕的塔格尔"
+  },
+  "Defias Prisoner": {
+    "id": 1706,
+    "name": "迪菲亚囚徒"
+  },
+  "Defias Convict": {
+    "id": 1711,
+    "name": "迪菲亚罪犯"
+  },
+  "Defias Insurgent": {
+    "id": 1715,
+    "name": "迪菲亚叛军"
+  },
+  "Bazil Thredd": {
+    "id": 1716,
+    "name": "巴基尔·斯瑞德"
+  },
+  "Hamhock": {
+    "id": 1717,
+    "name": "哈姆霍克"
+  },
+  "Warden Thelwater": {
+    "id": 1719,
+    "name": "典狱官塞尔沃特"
+  },
+  "Bruegal Ironknuckle": {
+    "id": 1720,
+    "name": "布鲁高·铁拳"
+  },
+  "Nikova Raskol": {
+    "id": 1721,
+    "name": "尼科瓦·拉斯克"
+  },
+  "Gilnid": {
+    "id": 1763,
+    "name": "基尔尼格"
+  },
+  "Darkmaster Gandling": {
+    "id": 1853,
+    "name": "黑暗院长加丁"
+  },
+  "Dalar Dawnweaver": {
+    "id": 1938,
+    "name": "达拉尔·道恩维沃尔"
+  },
+  "High Executor Hadrec": {
+    "id": 1952,
+    "name": "高级执行官哈德瑞克"
+  },
+  "Master Apothecary Faranell": {
+    "id": 2055,
+    "name": "大药剂师法拉尼尔"
+  },
+  "Andrew Brownell": {
+    "id": 2308,
+    "name": "安德鲁·布隆奈尔"
+  },
+  "Varimathras": {
+    "id": 2425,
+    "name": "瓦里玛萨斯"
+  },
+  "Archaedas": {
+    "id": 2748,
+    "name": "阿扎达斯"
+  },
+  "King Magni Bronzebeard": {
+    "id": 2784,
+    "name": "国王麦格尼·铜须"
+  },
+  "Theldurin the Lost": {
+    "id": 2785,
+    "name": "迷失者塞尔杜林"
+  },
+  "Gerrig Bonegrip": {
+    "id": 2786,
+    "name": "葛利·硬骨"
+  },
+  "Rigglefuzz": {
+    "id": 2817,
+    "name": "里格弗兹"
+  },
+  "Hammertoe Grez": {
+    "id": 2909,
+    "name": "铁趾格雷兹"
+  },
+  "Advisor Belgrum": {
+    "id": 2918,
+    "name": "顾问贝尔格拉姆"
+  },
+  "Lotwil Veriatus": {
+    "id": 2921,
+    "name": "鲁特维尔·沃拉图斯"
+  },
+  "Keeper Bel'dugur": {
+    "id": 2934,
+    "name": "看守者贝尔杜加"
+  },
+  "Neeru Fireblade": {
+    "id": 3216,
+    "name": "尼尔鲁·火刃"
+  },
+  "Nogg": {
+    "id": 3412,
+    "name": "诺格"
+  },
+  "Apothecary Zamah": {
+    "id": 3419,
+    "name": "药剂师扎玛"
+  },
+  "Mebok Mizzyrix": {
+    "id": 3446,
+    "name": "麦伯克·米希瑞克斯"
+  },
+  "Miner Johnson": {
+    "id": 3586,
+    "name": "矿工约翰森"
+  },
+  "Deviate Ravager": {
+    "id": 3636,
+    "name": "变异破坏者"
+  },
+  "Kresh": {
+    "id": 3653,
+    "name": "克雷什"
+  },
+  "Mutanus the Devourer": {
+    "id": 3654,
+    "name": "吞噬者穆坦努斯"
+  },
+  "Crane Operator Bigglefuzz": {
+    "id": 3665,
+    "name": "起重机操作员比戈弗兹"
+  },
+  "Lord Cobrahn": {
+    "id": 3669,
+    "name": "考布莱恩"
+  },
+  "Lord Pythas": {
+    "id": 3670,
+    "name": "皮萨斯"
+  },
+  "Lady Anacondra": {
+    "id": 3671,
+    "name": "安娜科德拉"
+  },
+  "Lord Serpentis": {
+    "id": 3673,
+    "name": "瑟芬迪斯"
+  },
+  "Skum": {
+    "id": 3674,
+    "name": "斯卡姆"
+  },
+  "Fel Steed": {
+    "id": 3864,
+    "name": "地狱战马"
+  },
+  "Shadow Charger": {
+    "id": 3865,
+    "name": "暗影军马"
+  },
+  "Deathsworn Captain": {
+    "id": 3872,
+    "name": "死亡之誓"
+  },
+  "Razorclaw the Butcher": {
+    "id": 3886,
+    "name": "屠夫拉佐克劳"
+  },
+  "Baron Silverlaine": {
+    "id": 3887,
+    "name": "席瓦莱恩男爵"
+  },
+  "Rethilgore": {
+    "id": 3914,
+    "name": "雷希戈尔"
+  },
+  "Wolf Master Nandos": {
+    "id": 3927,
+    "name": "狼王南杜斯"
+  },
+  "Houndmaster Loksey": {
+    "id": 3974,
+    "name": "驯犬者洛克希"
+  },
+  "Herod": {
+    "id": 3975,
+    "name": "赫洛德"
+  },
+  "Scarlet Commander Mograine": {
+    "id": 3976,
+    "name": "血色十字军指挥官莫格莱尼"
+  },
+  "High Inquisitor Whitemane": {
+    "id": 3977,
+    "name": "大检察官怀特迈恩"
+  },
+  "Sage Truthseeker": {
+    "id": 3978,
+    "name": "圣者图希克"
+  },
+  "Librarian Mae Paledust": {
+    "id": 3979,
+    "name": "图书馆员麦伊·苍尘"
+  },
+  "Raleigh the Devout": {
+    "id": 3980,
+    "name": "虔诚的莱雷恩"
+  },
+  "Vorrel Sengutz": {
+    "id": 3981,
+    "name": "沃瑞尔·森加斯"
+  },
+  "Interrogator Vishas": {
+    "id": 3983,
+    "name": "审讯员韦沙斯"
+  },
+  "Falfindel Waywarder": {
+    "id": 4048,
+    "name": "法芬德尔"
+  },
+  "Fenrus the Devourer": {
+    "id": 4274,
+    "name": "吞噬者芬鲁斯"
+  },
+  "Archmage Arugal": {
+    "id": 4275,
+    "name": "大法师阿鲁高"
+  },
+  "Commander Springvale": {
+    "id": 4278,
+    "name": "指挥官斯普林瓦尔"
+  },
+  "Odo the Blindwatcher": {
+    "id": 4279,
+    "name": "盲眼守卫奥杜"
+  },
+  "Overlord Ramtusk": {
+    "id": 4420,
+    "name": "主宰拉姆塔斯"
+  },
+  "Charlga Razorflank": {
+    "id": 4421,
+    "name": "卡尔加·刺肋"
+  },
+  "Agathelos the Raging": {
+    "id": 4422,
+    "name": "暴怒的阿迦赛罗斯"
+  },
+  "Aggem Thorncurse": {
+    "id": 4424,
+    "name": "阿格姆"
+  },
+  "Blind Hunter": {
+    "id": 4425,
+    "name": "盲眼猎手"
+  },
+  "Death Speaker Jargba": {
+    "id": 4428,
+    "name": "亡语者贾格巴"
+  },
+  "Razorfen Spearhide": {
+    "id": 4438,
+    "name": "剃刀沼泽刺鬃守卫"
+  },
+  "Auld Stonespire": {
+    "id": 4451,
+    "name": "奥尔德·石塔"
+  },
+  "Wizzle Brassbolts": {
+    "id": 4453,
+    "name": "维兹尔·铜栓"
+  },
+  "Parqual Fintallas": {
+    "id": 4488,
+    "name": "帕科瓦·芬塔拉斯"
+  },
+  "Willix the Importer": {
+    "id": 4508,
+    "name": "进口商威利克斯"
+  },
+  "Heralath Fallowbrook": {
+    "id": 4510,
+    "name": "赫尔拉斯·静水"
+  },
+  "High Inquisitor Fairbanks": {
+    "id": 4542,
+    "name": "大检察官法尔班克斯"
+  },
+  "Bloodmage Thalnos": {
+    "id": 4543,
+    "name": "血法师萨尔诺斯"
+  },
+  "Arugal's Voidwalker": {
+    "id": 4627,
+    "name": "阿鲁高的虚空行者"
+  },
+  "Argent Guard Manados": {
+    "id": 4784,
+    "name": "银月守卫玛纳杜斯"
+  },
+  "Argent Guard Thaelrid": {
+    "id": 4787,
+    "name": "银月守卫塞尔瑞德"
+  },
+  "Aku'mai": {
+    "id": 4829,
+    "name": "阿库麦尔"
+  },
+  "Old Serra'kis": {
+    "id": 4830,
+    "name": "瑟拉吉斯"
+  },
+  "Lady Sarevess": {
+    "id": 4831,
+    "name": "萨利维丝"
+  },
+  "Twilight Lord Kelris": {
+    "id": 4832,
+    "name": "梦游者克尔里斯"
+  },
+  "Earthcaller Halmgar": {
+    "id": 4842,
+    "name": "唤地者哈穆加"
+  },
+  "Grimlok": {
+    "id": 4854,
+    "name": "格瑞姆洛克"
+  },
+  "Ghamoo-ra": {
+    "id": 4887,
+    "name": "加摩拉"
+  },
+  "Thrall": {
+    "id": 4949,
+    "name": "萨尔"
+  },
+  "Archmage Tervosh": {
+    "id": 4967,
+    "name": "大法师特沃什"
+  },
+  "Deviate Dreadfang": {
+    "id": 5056,
+    "name": "变异尖牙风蛇"
+  },
+  "Brohann Caskbelly": {
+    "id": 5384,
+    "name": "布罗哈恩·铁桶"
+  },
+  "Atal'ai Exile": {
+    "id": 5598,
+    "name": "阿塔莱流放者"
+  },
+  "Patrick Garrett": {
+    "id": 5651,
+    "name": "帕特里克·加瑞特"
+  },
+  "Spawn of Hakkar": {
+    "id": 5708,
+    "name": "哈卡的后代"
+  },
+  "Shade of Eranikus": {
+    "id": 5709,
+    "name": "伊兰尼库斯的阴影"
+  },
+  "Jammal'an the Prophet": {
+    "id": 5710,
+    "name": "预言者迦玛兰"
+  },
+  "Ogom the Wretched": {
+    "id": 5711,
+    "name": "可悲的奥戈姆"
+  },
+  "Morphaz": {
+    "id": 5719,
+    "name": "摩弗拉斯"
+  },
+  "Weaver": {
+    "id": 5720,
+    "name": "德拉维沃尔"
+  },
+  "Dreamscythe": {
+    "id": 5721,
+    "name": "德姆塞卡尔"
+  },
+  "Hazzas": {
+    "id": 5722,
+    "name": "哈扎斯"
+  },
+  "Deviate Viper": {
+    "id": 5755,
+    "name": "剧毒飞蛇"
+  },
+  "Deviate Shambler": {
+    "id": 5761,
+    "name": "变异蹒跚者"
+  },
+  "Nalpak": {
+    "id": 5767,
+    "name": "纳尔帕克"
+  },
+  "Ebru": {
+    "id": 5768,
+    "name": "厄布鲁"
+  },
+  "Nara Wildmane": {
+    "id": 5770,
+    "name": "纳拉·蛮鬃"
+  },
+  "Verdan the Everliving": {
+    "id": 5775,
+    "name": "永生者沃尔丹"
+  },
+  "Deviate Faerie Dragon": {
+    "id": 5912,
+    "name": "变异精灵龙"
+  },
+  "Roogug": {
+    "id": 6168,
+    "name": "鲁古格"
+  },
+  "Klockmort Spannerspan": {
+    "id": 6169,
+    "name": "科罗莫特·钢尺"
+  },
+  "Dark Iron Ambassador": {
+    "id": 6228,
+    "name": "黑铁大师"
+  },
+  "Crowd Pummeler 9-60": {
+    "id": 6229,
+    "name": "群体打击者9-60"
+  },
+  "Techbot": {
+    "id": 6231,
+    "name": "尖端机器人"
+  },
+  "Electrocutioner 6000": {
+    "id": 6235,
+    "name": "电刑器6000型"
+  },
+  "Gelihast": {
+    "id": 6243,
+    "name": "格里哈斯特"
+  },
+  "Krom Stoutarm": {
+    "id": 6294,
+    "name": "克罗姆·粗臂"
+  },
+  "Arcanist Doan": {
+    "id": 6487,
+    "name": "奥法师杜安"
+  },
+  "Fallen Champion": {
+    "id": 6488,
+    "name": "死灵勇士"
+  },
+  "Ironspine": {
+    "id": 6489,
+    "name": "铁脊死灵"
+  },
+  "Azshir the Sleepless": {
+    "id": 6490,
+    "name": "永醒的艾希尔"
+  },
+  "Tabetha": {
+    "id": 6546,
+    "name": "塔贝萨"
+  },
+  "Shoni the Shilent": {
+    "id": 6579,
+    "name": "沉默的舒尼"
+  },
+  "Talvash del Kissel": {
+    "id": 6826,
+    "name": "塔瓦斯德·基瑟尔"
+  },
+  "Jarkal Mossmeld": {
+    "id": 6868,
+    "name": "加卡尔"
+  },
+  "Baelog": {
+    "id": 6906,
+    "name": "巴尔洛戈"
+  },
+  "Eric \"The Swift\"": {
+    "id": 6907,
+    "name": "埃瑞克"
+  },
+  "Olaf": {
+    "id": 6908,
+    "name": "奥拉夫"
+  },
+  "Revelosh": {
+    "id": 6910,
+    "name": "鲁维罗什"
+  },
+  "Remains of a Paladin": {
+    "id": 6912,
+    "name": "圣骑士的遗体"
+  },
+  "Dran Droffers": {
+    "id": 6986,
+    "name": "德兰·杜佛斯"
+  },
+  "Obsidian Sentinel": {
+    "id": 7023,
+    "name": "黑曜石哨兵"
+  },
+  "Viscous Fallout": {
+    "id": 7079,
+    "name": "粘性辐射尘"
+  },
+  "Ancient Stone Keeper": {
+    "id": 7206,
+    "name": "古代的石头看守者"
+  },
+  "Ironaya": {
+    "id": 7228,
+    "name": "艾隆纳亚"
+  },
+  "Chief Ukorz Sandscalp": {
+    "id": 7267,
+    "name": "乌克兹·沙顶"
+  },
+  "Witch Doctor Zum'rah": {
+    "id": 7271,
+    "name": "巫医祖穆拉恩"
+  },
+  "Theka the Martyr": {
+    "id": 7272,
+    "name": "殉教者塞卡"
+  },
+  "Gahz'rilla": {
+    "id": 7273,
+    "name": "加兹瑞拉"
+  },
+  "Sandfury Executioner": {
+    "id": 7274,
+    "name": "沙怒刽子手"
+  },
+  "Shadowpriest Sezz'ziz": {
+    "id": 7275,
+    "name": "暗影祭司塞瑟斯"
+  },
+  "Galgann Firehammer": {
+    "id": 7291,
+    "name": "加加恩·火锤"
+  },
+  "Uthel'nay": {
+    "id": 7311,
+    "name": "尤塞尔奈"
+  },
+  "Ragglesnout": {
+    "id": 7354,
+    "name": "拉戈斯诺特"
+  },
+  "Tuten'kash": {
+    "id": 7355,
+    "name": "图特卡什"
+  },
+  "Plaguemaw the Rotting": {
+    "id": 7356,
+    "name": "腐烂的普雷莫尔"
+  },
+  "Mordresh Fire Eye": {
+    "id": 7357,
+    "name": "火眼莫德雷斯"
+  },
+  "Amnennar the Coldbringer": {
+    "id": 7358,
+    "name": "寒冰之王亚门纳尔"
+  },
+  "Grubbis": {
+    "id": 7361,
+    "name": "格鲁比斯"
+  },
+  "Chief Engineer Bilgewhizzle": {
+    "id": 7407,
+    "name": "首席工程师沙克斯·比格维兹"
+  },
+  "Sergeant Bly": {
+    "id": 7604,
+    "name": "布莱中士"
+  },
+  "Marvon Rivetseeker": {
+    "id": 7771,
+    "name": "玛尔冯·瑞文斯克"
+  },
+  "Talo Thornhoof": {
+    "id": 7776,
+    "name": "塔罗·刺蹄"
+  },
+  "Hydromancer Velratha": {
+    "id": 7795,
+    "name": "水占师维蕾萨"
+  },
+  "Nekrum Gutchewer": {
+    "id": 7796,
+    "name": "耐克鲁姆"
+  },
+  "Mekgineer Thermaplugg": {
+    "id": 7800,
+    "name": "麦克尼尔·瑟玛普拉格"
+  },
+  "Trenton Lighthammer": {
+    "id": 7804,
+    "name": "特伦顿·轻锤"
+  },
+  "Kernobee": {
+    "id": 7850,
+    "name": "克努比"
+  },
+  "Scooty": {
+    "id": 7853,
+    "name": "斯库提"
+  },
+  "Death's Head Cultist": {
+    "id": 7872,
+    "name": "亡首教徒"
+  },
+  "Razorfen Battleguard": {
+    "id": 7873,
+    "name": "剃刀沼泽护卫者"
+  },
+  "Razorfen Thornweaver": {
+    "id": 7874,
+    "name": "剃刀沼泽织棘者"
+  },
+  "Tran'rek": {
+    "id": 7876,
+    "name": "特兰雷克"
+  },
+  "Latronicus Moonspear": {
+    "id": 7877,
+    "name": "拉托尼库斯·月矛"
+  },
+  "High Tinker Mekkatorque": {
+    "id": 7937,
+    "name": "大工匠梅卡托克"
+  },
+  "Tinkmaster Overspark": {
+    "id": 7944,
+    "name": "工匠大师欧沃斯巴克"
+  },
+  "Master Mechanic Castpipe": {
+    "id": 7950,
+    "name": "大机械师卡斯派普"
+  },
+  "Thadius Grimshade": {
+    "id": 8022,
+    "name": "萨迪斯·格希德"
+  },
+  "Antu'sul": {
+    "id": 8127,
+    "name": "安图苏尔"
+  },
+  "Avatar of Hakkar": {
+    "id": 8443,
+    "name": "哈卡的化身"
+  },
+  "Liv Rizzlefix": {
+    "id": 8496,
+    "name": "莉芙·雷兹菲克斯"
+  },
+  "Belnistrasz": {
+    "id": 8516,
+    "name": "奔尼斯特拉兹"
+  },
+  "Glutton": {
+    "id": 8567,
+    "name": "暴食者"
+  },
+  "Yeh'kinya": {
+    "id": 8579,
+    "name": "叶基亚"
+  },
+  "Atal'alarion": {
+    "id": 8580,
+    "name": "阿塔拉利恩"
+  },
+  "Henry Stern": {
+    "id": 8696,
+    "name": "亨利·斯特恩"
+  },
+  "Franclorn Forgewright": {
+    "id": 8888,
+    "name": "弗兰克罗恩·铸铁"
+  },
+  "Anvilrage Warden": {
+    "id": 8890,
+    "name": "铁怒狱卒"
+  },
+  "Anvilrage Guardsman": {
+    "id": 8891,
+    "name": "铁怒卫士"
+  },
+  "Anvilrage Footman": {
+    "id": 8892,
+    "name": "铁怒步兵"
+  },
+  "Anvilrage Soldier": {
+    "id": 8893,
+    "name": "铁怒士兵"
+  },
+  "Anvilrage Medic": {
+    "id": 8894,
+    "name": "铁怒医师"
+  },
+  "Anvilrage Officer": {
+    "id": 8895,
+    "name": "铁怒军官"
+  },
+  "Panzor the Invincible": {
+    "id": 8923,
+    "name": "无敌的潘佐尔"
+  },
+  "Princess Moira Bronzebeard": {
+    "id": 8929,
+    "name": "铁炉堡公主茉艾拉·铜须"
+  },
+  "Golem Lord Argelmach": {
+    "id": 8983,
+    "name": "傀儡统帅阿格曼奇"
+  },
+  "Gershala Nightwhisper": {
+    "id": 8997,
+    "name": "戈沙拉·夜语"
+  },
+  "Bael'Gar": {
+    "id": 9016,
+    "name": "贝尔加"
+  },
+  "Lord Incendius": {
+    "id": 9017,
+    "name": "伊森迪奥斯"
+  },
+  "High Interrogator Gerstahn": {
+    "id": 9018,
+    "name": "审讯官格斯塔恩"
+  },
+  "Emperor Dagran Thaurissan": {
+    "id": 9019,
+    "name": "达格兰·索瑞森大帝"
+  },
+  "Marshal Windsor": {
+    "id": 9023,
+    "name": "温德索尔元帅"
+  },
+  "Pyromancer Loregrain": {
+    "id": 9024,
+    "name": "控火师罗格雷恩"
+  },
+  "Lord Roccor": {
+    "id": 9025,
+    "name": "洛考尔"
+  },
+  "Gorosh the Dervish": {
+    "id": 9027,
+    "name": "修行者高罗什"
+  },
+  "Grizzle": {
+    "id": 9028,
+    "name": "格里兹尔"
+  },
+  "Eviscerator": {
+    "id": 9029,
+    "name": "剜眼者"
+  },
+  "Ok'thor the Breaker": {
+    "id": 9030,
+    "name": "破坏者奥科索尔"
+  },
+  "Anub'shiah": {
+    "id": 9031,
+    "name": "阿努希尔"
+  },
+  "Hedrum the Creeper": {
+    "id": 9032,
+    "name": "爬行者赫杜姆"
+  },
+  "General Angerforge": {
+    "id": 9033,
+    "name": "安格弗将军"
+  },
+  "Warder Stilgiss": {
+    "id": 9041,
+    "name": "典狱官斯迪尔基斯"
+  },
+  "Verek": {
+    "id": 9042,
+    "name": "维雷克"
+  },
+  "Fineous Darkvire": {
+    "id": 9056,
+    "name": "弗诺斯·达克维尔"
+  },
+  "Warlord Goretooth": {
+    "id": 9077,
+    "name": "军官高图斯"
+  },
+  "Shadowmage Vivian Lagrave": {
+    "id": 9078,
+    "name": "暗法师薇薇安·拉格雷"
+  },
+  "Galamav the Marksman": {
+    "id": 9081,
+    "name": "神射手贾拉玛弗"
+  },
+  "Thunderheart": {
+    "id": 9084,
+    "name": "桑德哈特"
+  },
+  "Ambassador Flamelash": {
+    "id": 9156,
+    "name": "弗莱拉斯大使"
+  },
+  "Oralius": {
+    "id": 9177,
+    "name": "奥拉留斯"
+  },
+  "Highlord Omokk": {
+    "id": 9196,
+    "name": "欧莫克大王"
+  },
+  "Spirestone Lord Magus": {
+    "id": 9217,
+    "name": "尖石首席法师"
+  },
+  "Spirestone Battle Lord": {
+    "id": 9218,
+    "name": "尖石统帅"
+  },
+  "Spirestone Butcher": {
+    "id": 9219,
+    "name": "尖石屠夫"
+  },
+  "Shadow Hunter Vosh'gajin": {
+    "id": 9236,
+    "name": "暗影猎手沃什加斯"
+  },
+  "War Master Voone": {
+    "id": 9237,
+    "name": "指挥官沃恩"
+  },
+  "Houndmaster Grebmar": {
+    "id": 9319,
+    "name": "驯犬者格雷布玛尔"
+  },
+  "Cyrus Therepentous": {
+    "id": 9459,
+    "name": "塞勒斯·萨雷芬图斯"
+  },
+  "Watchman Doomgrip": {
+    "id": 9476,
+    "name": "卫兵杜格瑞普"
+  },
+  "Mistress Nagmara": {
+    "id": 9500,
+    "name": "娜玛拉小姐"
+  },
+  "Phalanx": {
+    "id": 9502,
+    "name": "法拉克斯"
+  },
+  "Grark Lorkrub": {
+    "id": 9520,
+    "name": "格拉克·洛克鲁布"
+  },
+  "Maxwort Uberglint": {
+    "id": 9536,
+    "name": "麦克斯沃特·尤博格林"
+  },
+  "Yuka Screwspigot": {
+    "id": 9544,
+    "name": "尤卡·斯库比格特"
+  },
+  "Marshal Maxwell": {
+    "id": 9560,
+    "name": "麦克斯韦尔元帅"
+  },
+  "Jalinda Sprig": {
+    "id": 9561,
+    "name": "加琳达"
+  },
+  "Helendis Riverhorn": {
+    "id": 9562,
+    "name": "赫林迪斯·河角"
+  },
+  "Ragged John": {
+    "id": 9563,
+    "name": "狼狈不堪的约翰"
+  },
+  "Mayara Brightwing": {
+    "id": 9565,
+    "name": "玛亚拉·布莱特文"
+  },
+  "Overlord Wyrmthalak": {
+    "id": 9568,
+    "name": "维姆萨拉克"
+  },
+  "Bannok Grimaxe": {
+    "id": 9596,
+    "name": "班诺克·巨斧"
+  },
+  "Ghok Bashguud": {
+    "id": 9718,
+    "name": "霍克·巴什古德"
+  },
+  "Quartermaster Zigris": {
+    "id": 9736,
+    "name": "军需官兹格雷斯"
+  },
+  "Pyroguard Emberseer": {
+    "id": 9816,
+    "name": "烈焰卫士艾博希尔"
+  },
+  "Magmus": {
+    "id": 9938,
+    "name": "玛格姆斯"
+  },
+  "Sandarr Dunereaver": {
+    "id": 10080,
+    "name": "杉达尔·沙掠者"
+  },
+  "Dustwraith": {
+    "id": 10081,
+    "name": "灰尘怨灵"
+  },
+  "Zerillis": {
+    "id": 10082,
+    "name": "泽雷利斯"
+  },
+  "Rexxar": {
+    "id": 10182,
+    "name": "雷克萨"
+  },
+  "Halycon": {
+    "id": 10220,
+    "name": "哈雷肯"
+  },
+  "Bijou": {
+    "id": 10257,
+    "name": "比修"
+  },
+  "Kibler": {
+    "id": 10260,
+    "name": "基布雷尔"
+  },
+  "Burning Felguard": {
+    "id": 10263,
+    "name": "燃烧地狱卫士"
+  },
+  "Solakar Flamewreath": {
+    "id": 10264,
+    "name": "索拉卡·火冠"
+  },
+  "Tinkee Steamboil": {
+    "id": 10267,
+    "name": "丁奇·斯迪波尔"
+  },
+  "Gizrul the Slavener": {
+    "id": 10268,
+    "name": "奴役者基兹鲁尔"
+  },
+  "Vaelan": {
+    "id": 10296,
+    "name": "维埃兰"
+  },
+  "Gyth": {
+    "id": 10339,
+    "name": "盖斯"
+  },
+  "General Drakkisath": {
+    "id": 10363,
+    "name": "达基萨斯将军"
+  },
+  "Crystal Fang": {
+    "id": 10376,
+    "name": "水晶之牙"
+  },
+  "Skul": {
+    "id": 10393,
+    "name": "斯库尔"
+  },
+  "Warchief Rend Blackhand": {
+    "id": 10429,
+    "name": "大酋长雷德·黑手"
+  },
+  "The Beast": {
+    "id": 10430,
+    "name": "比斯巨兽"
+  },
+  "Vectus": {
+    "id": 10432,
+    "name": "维克图斯"
+  },
+  "Marduk Blackpool": {
+    "id": 10433,
+    "name": "马杜克·布莱克波尔"
+  },
+  "Magistrate Barthilas": {
+    "id": 10435,
+    "name": "巴瑟拉斯镇长"
+  },
+  "Baroness Anastari": {
+    "id": 10436,
+    "name": "安娜丝塔丽男爵夫人"
+  },
+  "Nerub'enkan": {
+    "id": 10437,
+    "name": "奈鲁布恩坎"
+  },
+  "Maleki the Pallid": {
+    "id": 10438,
+    "name": "苍白的玛勒基"
+  },
+  "Ramstein the Gorger": {
+    "id": 10439,
+    "name": "吞咽者拉姆斯登"
+  },
+  "Baron Rivendare": {
+    "id": 10440,
+    "name": "瑞文戴尔男爵"
+  },
+  "Prospector Ironboot": {
+    "id": 10460,
+    "name": "勘查员詹斯·铁靴"
+  },
+  "Lady Illucia Barov": {
+    "id": 10502,
+    "name": "伊露希亚·巴罗夫"
+  },
+  "Jandice Barov": {
+    "id": 10503,
+    "name": "詹迪斯·巴罗夫"
+  },
+  "Lord Alexei Barov": {
+    "id": 10504,
+    "name": "阿雷克斯·巴罗夫"
+  },
+  "Instructor Malicia": {
+    "id": 10505,
+    "name": "讲师玛丽希亚"
+  },
+  "Kirtonos the Herald": {
+    "id": 10506,
+    "name": "传令官基尔图诺斯"
+  },
+  "The Ravenian": {
+    "id": 10507,
+    "name": "拉文尼亚"
+  },
+  "Ras Frostwhisper": {
+    "id": 10508,
+    "name": "莱斯·霜语"
+  },
+  "Jed Runewatcher": {
+    "id": 10509,
+    "name": "杰德"
+  },
+  "The Unforgiven": {
+    "id": 10516,
+    "name": "不可宽恕者"
+  },
+  "Hearthsinger Forresten": {
+    "id": 10558,
+    "name": "弗雷斯特恩"
+  },
+  "Urok Doomhowl": {
+    "id": 10584,
+    "name": "乌洛克"
+  },
+  "Mother Smolderweb": {
+    "id": 10596,
+    "name": "烟网蛛后"
+  },
+  "Plagued Hatchling": {
+    "id": 10678,
+    "name": "瘟疫龙崽"
+  },
+  "Awbee": {
+    "id": 10740,
+    "name": "奥比"
+  },
+  "Finkle Einhorn": {
+    "id": 10776,
+    "name": "皮普·急智"
+  },
+  "Warosh": {
+    "id": 10799,
+    "name": "瓦罗什"
+  },
+  "Timmy the Cruel": {
+    "id": 10808,
+    "name": "悲惨的提米"
+  },
+  "Stonespine": {
+    "id": 10809,
+    "name": "石脊"
+  },
+  "Archivist Galford": {
+    "id": 10811,
+    "name": "档案管理员加尔福特"
+  },
+  "Balnazzar": {
+    "id": 10813,
+    "name": "巴纳扎尔"
+  },
+  "Goraluk Anvilcrack": {
+    "id": 10899,
+    "name": "古拉鲁克"
+  },
+  "Lorekeeper Polkelt": {
+    "id": 10901,
+    "name": "博学者普克尔特"
+  },
+  "Aurius": {
+    "id": 10917,
+    "name": "奥里克斯"
+  },
+  "Lorax": {
+    "id": 10918,
+    "name": "罗拉克斯"
+  },
+  "Haleh": {
+    "id": 10929,
+    "name": "哈尔琳"
+  },
+  "Cannon Master Willey": {
+    "id": 10997,
+    "name": "炮手威利"
+  },
+  "Alexi Barov": {
+    "id": 11022,
+    "name": "阿莱克斯·巴罗夫"
+  },
+  "Weldon Barov": {
+    "id": 11023,
+    "name": "维尔顿·巴罗夫"
+  },
+  "Malor the Zealous": {
+    "id": 11032,
+    "name": "狂热的玛洛尔"
+  },
+  "Smokey LaRue": {
+    "id": 11033,
+    "name": "烟鬼拉鲁恩"
+  },
+  "Betina Bigglezink": {
+    "id": 11035,
+    "name": "贝蒂娜·比格辛克"
+  },
+  "Leonid Barthalomew the Revered": {
+    "id": 11036,
+    "name": "莱尼德·巴萨罗梅"
+  },
+  "Duke Nicholas Zverenhoff": {
+    "id": 11039,
+    "name": "尼古拉斯·瑟伦霍夫公爵"
+  },
+  "Stratholme Courier": {
+    "id": 11082,
+    "name": "斯坦索姆信使"
+  },
+  "Crimson Hammersmith": {
+    "id": 11120,
+    "name": "红衣铸锤师"
+  },
+  "Black Guard Swordsmith": {
+    "id": 11121,
+    "name": "黑衣守卫铸剑师"
+  },
+  "Restless Soul": {
+    "id": 11122,
+    "name": "永不安息的灵魂"
+  },
+  "Egan": {
+    "id": 11140,
+    "name": "埃根"
+  },
+  "Postmaster Malown": {
+    "id": 11143,
+    "name": "邮差马龙"
+  },
+  "Eva Sarkhoff": {
+    "id": 11216,
+    "name": "艾瓦·萨克霍夫"
+  },
+  "Doctor Theolen Krastinov": {
+    "id": 11261,
+    "name": "瑟尔林·卡斯迪诺夫教授"
+  },
+  "Magistrate Marduke": {
+    "id": 11286,
+    "name": "马杜克镇长"
+  },
+  "Ragefire Trogg": {
+    "id": 11318,
+    "name": "怒焰穴居人"
+  },
+  "Ragefire Shaman": {
+    "id": 11319,
+    "name": "怒焰萨满祭司"
+  },
+  "Tsu'zee": {
+    "id": 11467,
+    "name": "苏斯"
+  },
+  "Prince Tortheldrin": {
+    "id": 11486,
+    "name": "托塞德林王子"
+  },
+  "Magister Kalendris": {
+    "id": 11487,
+    "name": "卡雷迪斯镇长"
+  },
+  "Illyanna Ravenoak": {
+    "id": 11488,
+    "name": "伊琳娜·暗木"
+  },
+  "Tendris Warpwood": {
+    "id": 11489,
+    "name": "特迪斯·扭木"
+  },
+  "Zevrim Thornhoof": {
+    "id": 11490,
+    "name": "瑟雷姆·刺蹄"
+  },
+  "Alzzin the Wildshaper": {
+    "id": 11492,
+    "name": "奥兹恩"
+  },
+  "Immol'thar": {
+    "id": 11496,
+    "name": "伊莫塔尔"
+  },
+  "King Gordok": {
+    "id": 11501,
+    "name": "戈多克大王"
+  },
+  "Oggleflint": {
+    "id": 11517,
+    "name": "奥格弗林特"
+  },
+  "Jergosh the Invoker": {
+    "id": 11518,
+    "name": "祈求者耶戈什"
+  },
+  "Bazzalan": {
+    "id": 11519,
+    "name": "巴扎兰"
+  },
+  "Taragaman the Hungerer": {
+    "id": 11520,
+    "name": "饥饿者塔拉加曼"
+  },
+  "Rattlegore": {
+    "id": 11622,
+    "name": "血骨傀儡"
+  },
+  "Talendria": {
+    "id": 11715,
+    "name": "塔琳德莉亚"
+  },
+  "Vark Battlescar": {
+    "id": 11823,
+    "name": "瓦克·战痕"
+  },
+  "Rahauro": {
+    "id": 11833,
+    "name": "拉哈罗"
+  },
+  "Maur Grimtotem": {
+    "id": 11834,
+    "name": "玛尔·恐怖图腾"
+  },
+  "Theodore Griffs": {
+    "id": 11835,
+    "name": "萨多雷·格雷夫"
+  },
+  "Myranda the Hag": {
+    "id": 11872,
+    "name": "巫女麦兰达"
+  },
+  "Nathanos Blightcaller": {
+    "id": 11878,
+    "name": "纳萨诺斯·凋零者"
+  },
+  "Artist Renfray": {
+    "id": 11936,
+    "name": "画家瑞弗蕾"
+  },
+  "Princess Theradras": {
+    "id": 12201,
+    "name": "瑟莱德丝公主"
+  },
+  "Landslide": {
+    "id": 12203,
+    "name": "兰斯利德"
+  },
+  "Celebras the Cursed": {
+    "id": 12225,
+    "name": "被诅咒的塞雷布拉斯"
+  },
+  "Lord Vyletongue": {
+    "id": 12236,
+    "name": "维利塔恩"
+  },
+  "Meshlok the Harvester": {
+    "id": 12237,
+    "name": "收割者麦什洛克"
+  },
+  "Zaetar's Spirit": {
+    "id": 12238,
+    "name": "扎尔塔的灵魂"
+  },
+  "Razorlash": {
+    "id": 12258,
+    "name": "锐刺鞭笞者"
+  },
+  "Je'neu Sancrea": {
+    "id": 12736,
+    "name": "耶努萨克雷"
+  },
+  "Myriam Moonsinger": {
+    "id": 12866,
+    "name": "麦雷姆·月歌"
+  },
+  "Baron Aquanis": {
+    "id": 12876,
+    "name": "阿奎尼斯男爵"
+  },
+  "Lorgus Jett": {
+    "id": 12902,
+    "name": "洛古斯·杰特"
+  },
+  "Hydrospawn": {
+    "id": 13280,
+    "name": "海多斯博恩"
+  },
+  "Noxxion": {
+    "id": 13282,
+    "name": "诺克赛恩"
+  },
+  "Rotgrip": {
+    "id": 13596,
+    "name": "洛特格里普"
+  },
+  "Tinkerer Gizlock": {
+    "id": 13601,
+    "name": "工匠吉兹洛克"
+  },
+  "Willow": {
+    "id": 13656,
+    "name": "维洛"
+  },
+  "Noxxious Scion": {
+    "id": 13696,
+    "name": "诺克赛恩幼体"
+  },
+  "Cavindra": {
+    "id": 13697,
+    "name": "凯雯德拉"
+  },
+  "Keeper Marandis": {
+    "id": 13698,
+    "name": "守护者玛兰迪斯"
+  },
+  "Selendra": {
+    "id": 13699,
+    "name": "瑟琳德拉"
+  },
+  "Celebras the Redeemed": {
+    "id": 13716,
+    "name": "赎罪的塞雷布拉斯"
+  },
+  "Centaur Pariah": {
+    "id": 13717,
+    "name": "半人马贱民"
+  },
+  "The Nameless Prophet": {
+    "id": 13718,
+    "name": "无名预言者"
+  },
+  "Veng": {
+    "id": 13738,
+    "name": "温格"
+  },
+  "Maraudos": {
+    "id": 13739,
+    "name": "玛拉多斯"
+  },
+  "Magra": {
+    "id": 13740,
+    "name": "玛格拉"
+  },
+  "Gelk": {
+    "id": 13741,
+    "name": "吉尔克"
+  },
+  "Kolk": {
+    "id": 13742,
+    "name": "考尔克"
+  },
+  "Guard Fengus": {
+    "id": 14321,
+    "name": "卫兵芬古斯"
+  },
+  "Stomper Kreeg": {
+    "id": 14322,
+    "name": "践踏者克雷格"
+  },
+  "Guard Slip'kik": {
+    "id": 14323,
+    "name": "卫兵斯里基克"
+  },
+  "Cho'Rush the Observer": {
+    "id": 14324,
+    "name": "观察者克鲁什"
+  },
+  "Captain Kromcrush": {
+    "id": 14325,
+    "name": "克罗卡斯"
+  },
+  "Guard Mol'dar": {
+    "id": 14326,
+    "name": "卫兵摩尔达"
+  },
+  "Lethtendris": {
+    "id": 14327,
+    "name": "蕾瑟塔蒂丝"
+  },
+  "Knot Thimblejack": {
+    "id": 14338,
+    "name": "诺特·希姆加克"
+  },
+  "Pusillin": {
+    "id": 14354,
+    "name": "普希林"
+  },
+  "Azj'Tordin": {
+    "id": 14355,
+    "name": "埃斯托尔迪"
+  },
+  "Shen'dralar Ancient": {
+    "id": 14358,
+    "name": "辛德拉古灵"
+  },
+  "Lorekeeper Lydros": {
+    "id": 14368,
+    "name": "博学者莱德罗斯"
+  },
+  "Shen'dralar Provisioner": {
+    "id": 14371,
+    "name": "辛德拉圣职者"
+  },
+  "Lord Hel'nurath": {
+    "id": 14506,
+    "name": "赫尔努拉斯"
+  },
+  "Death Knight Darkreaver": {
+    "id": 14516,
+    "name": "死亡骑士达克雷尔"
+  },
+  "Blood Steward of Kirtonos": {
+    "id": 14861,
+    "name": "基尔图诺斯的卫士"
+  },
+  "Anthion Harmon": {
+    "id": 16016,
+    "name": "安泰恩·哈尔蒙"
+  },
+  "Ysida Harmon": {
+    "id": 16031,
+    "name": "伊思达·哈尔蒙"
+  },
+  "Falrin Treeshaper": {
+    "id": 16032,
+    "name": "法尔林·树影"
+  },
+  "Bodley": {
+    "id": 16033,
+    "name": "伯德雷"
+  },
+  "Lord Valthalak": {
+    "id": 16042,
+    "name": "瓦塔拉克公爵"
+  },
+  "Mor Grayhoof": {
+    "id": 16080,
+    "name": "莫尔·灰蹄"
+  },
+  "Isalien": {
+    "id": 16097,
+    "name": "伊萨莉恩"
+  },
+  "Jarien": {
+    "id": 16101,
+    "name": "亚雷恩"
+  },
+  "Sothos": {
+    "id": 16102,
+    "name": "索托斯"
+  },
+  "Kormok": {
+    "id": 16118,
+    "name": "库尔莫克"
+  }
+}
