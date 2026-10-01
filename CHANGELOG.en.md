@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.6.0-beta.3
+
+Quest details show minimum acceptance levels and any level shortfall. A preparation note uses the current character's faction, class and remaining documented quests to suggest a level for collecting dungeon quests together. Prerequisite chains, in-dungeon starts and missing data are identified separately. This is not a combat-level recommendation or a guarantee of completing everything in one run.
+
 ## 0.6.0-beta.2 — Three-language documentation
 
 - Complete installation, AI sign-in, daily use, troubleshooting, backup and removal guides in Simplified Chinese, Traditional Chinese and English.

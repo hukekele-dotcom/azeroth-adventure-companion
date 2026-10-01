@@ -1,12 +1,10 @@
 # Azeroth Adventure Companion
 
-> 目前原始碼已更新至 0.6.0-beta.2。三語說明可直接閱讀；新版 Windows 安裝包上傳中，尚未公開。發布頁面仍可下載上一版 0.6.0-beta.1。
-
 [簡體中文](README.md) · [繁體中文](README.zh-TW.md) · [English](README.en.md)
 
 **艾澤拉斯冒險夥伴** — 為《魔獸世界：無限》準備的 AI 任務助手、冒險日誌和副本助手。
 
-基於 [chelinho139/wow-ai](https://github.com/chelinho139/wow-ai) 的社群增強版。當前版本 **0.6.0-beta.2**，面向 Windows x64 / Forever 1.60 內測。
+基於 [chelinho139/wow-ai](https://github.com/chelinho139/wow-ai) 的社群增強版。當前版本 **0.6.0-beta.3**，面向 Windows x64 / Forever 1.60 內測。
 
 **[下載 Windows 內測安裝包](https://github.com/hukekele-dotcom/azeroth-adventure-companion/releases)** · **[簡體說明](tools/release/guides/Install-Guide-zhCN.txt)** · **[繁體說明](tools/release/guides/Install-Guide-zhTW.txt)** · **[English guide](tools/release/guides/Install-Guide-en.txt)** · **[反饋問題](https://github.com/hukekele-dotcom/azeroth-adventure-companion/issues)**
 
@@ -25,7 +23,7 @@
 
 ## 玩家安裝
 
-1. 從上方內測發布頁下載 `WoWAI-Forever-0.6.0-beta.2-win-x64.zip`，**完整解壓縮**。GitHub 自動生成的 “Source code” 是開發原始碼，不是玩家安裝包。
+1. 從上方內測發布頁下載 `WoWAI-Forever-0.6.0-beta.3-win-x64.zip`，**完整解壓縮**。GitHub 自動生成的 “Source code” 是開發原始碼，不是玩家安裝包。
 2. 退出遊戲和舊橋接，執行 `Install.cmd`。
 3. 選擇包含 `WowB.exe` 和 `Interface` 的客戶端目錄（通常為 `_classic_beta_`），選擇遊戲帳號及預設 AI。
 4. 按“安裝 / 升級 → 登入所選 AI → 啟動橋接”操作。
