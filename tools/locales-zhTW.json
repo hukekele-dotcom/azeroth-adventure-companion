@@ -1,0 +1,14 @@
+{
+  "AI 聊天": "AI 聊天",
+  "任务助手": "任務助手",
+  "冒险日志": "冒險日誌",
+  "副本助手": "副本助手",
+  "Rename this chat": "重新命名聊天",
+  "Rename...": "重新命名…",
+  "语言：自动": "語言：自動",
+  "语言：中文": "語言：簡體中文",
+  "语言：繁體中文": "語言：繁體中文",
+  "语言：English": "語言：English",
+  "语言已保存；输入 /reload 后生效。": "語言已儲存；輸入 /reload 後生效。",
+  "用法：/wow-ai language auto|zhCN|zhTW|enUS；切换后 /reload 生效。": "用法：/wow-ai language auto|zhCN|zhTW|enUS；切換後 /reload 生效。"
+}

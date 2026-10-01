@@ -1,0 +1,23 @@
+## Interface: 16001
+## Title: WoW AI
+## Notes: Talk to Claude Code, Codex, Grok, Antigravity or Hermes from inside the game, one session per chat; ready-made macros and map routes from the agent. Needs the companion bridge (see README).
+## Author: chelinho139
+## Notes-zhCN: 游戏内 AI 聊天、任务规划、冒险日志与副本助手。需要本机桥接程序。
+## Notes-zhTW: 遊戲內 AI 聊天、任務規劃、冒險日誌與副本助手。需要本機橋接程式。
+## Version: 0.6.0-beta.1
+## SavedVariables: WoWAIDB, WoWAIMapDB, WoWAIAdventureDB, WoWAIDungeonDB
+## OptionalDeps: WoWAI_Nodes
+
+Locale.lua
+Codec.lua
+Inbox.lua
+WoWAI.lua
+Map.lua
+QuestLocations.lua
+Adventure.lua
+Kills.lua
+AdventureUI.lua
+DungeonData.lua
+Gear.lua
+Dungeon.lua
+DungeonUI.lua

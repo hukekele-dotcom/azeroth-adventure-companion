@@ -1,0 +1,104 @@
+{
+  "addonDir": "C:\\Program Files (x86)\\World of Warcraft\\_classic_beta_\\Interface\\AddOns",
+  "savedVariablesFile": "C:\\Program Files (x86)\\World of Warcraft\\_classic_beta_\\WTF\\Account\\YOUR_ACCOUNT\\SavedVariables\\WoWAI.lua",
+  "inboxFile": "C:\\Program Files (x86)\\World of Warcraft\\_classic_beta_\\Interface\\AddOns\\WoWAI\\Inbox.lua",
+  "defaultCwd": "C:\\path\\to\\your\\project",
+  "tocInterface": "16001",
+  "slots": 200,
+  "actMax": 60,
+  "presenceMax": 2000,
+  "presenceIntervalMs": 30000,
+  "maxParallel": 3,
+  "capture": {
+    "enabled": true,
+    "processName": "WowB",
+    "cellPx": 4,
+    "cellsPerRow": 200,
+    "maxRows": 48,
+    "intervalMs": 250,
+    "python": "python3",
+    "windowName": "",
+    "keepComposited": false
+  },
+  "agent": "claude",
+  "agents": {
+    "claude": {
+      "path": "",
+      "model": "",
+      "permissionMode": "acceptEdits",
+      "allowedTools": [
+        "WebSearch",
+        "WebFetch",
+        "Bash(git:*)",
+        "Bash(npm:*)",
+        "Bash(npx:*)",
+        "Bash(node:*)",
+        "Bash(python:*)",
+        "Bash(pip:*)",
+        "Bash(pytest:*)",
+        "Bash(ls:*)",
+        "Bash(dir:*)"
+      ],
+      "deniedTools": [],
+      "extraArgs": []
+    },
+    "codex": {
+      "path": "",
+      "model": "",
+      "permissionMode": "acceptEdits",
+      "networkAccess": false,
+      "extraArgs": []
+    },
+    "agy": {
+      "path": "",
+      "model": "",
+      "permissionMode": "acceptEdits",
+      "extraArgs": []
+    },
+    "hermes": {
+      "path": "",
+      "model": "",
+      "permissionMode": "acceptEdits",
+      "extraArgs": []
+    },
+    "grok": {
+      "path": "",
+      "model": "",
+      "permissionMode": "acceptEdits",
+      "allowedTools": [
+        "WebSearch",
+        "WebFetch",
+        "Bash(git:*)",
+        "Bash(npm:*)",
+        "Bash(npx:*)",
+        "Bash(node:*)",
+        "Bash(python:*)",
+        "Bash(pip:*)",
+        "Bash(pytest:*)",
+        "Bash(ls:*)",
+        "Bash(dir:*)"
+      ],
+      "deniedTools": [],
+      "extraArgs": []
+    },
+    "workbuddy": {
+      "path": "",
+      "model": "",
+      "permissionMode": "dontAsk",
+      "allowedTools": [
+        "Read",
+        "Glob",
+        "Grep",
+        "WebSearch",
+        "WebFetch"
+      ],
+      "deniedTools": [],
+      "extraArgs": []
+    }
+  },
+  "gameContext": true,
+  "primerFile": "docs/WOW-ADDON-PRIMER.md",
+  "pollMs": 750,
+  "progressWriteMs": 3000,
+  "timeoutMs": 1800000
+}

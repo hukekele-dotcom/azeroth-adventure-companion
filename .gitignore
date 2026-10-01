@@ -1,0 +1,17 @@
+node_modules/
+reference/
+*.zip
+*.log
+*.pid
+.env*
+bridge/config.json
+bridge/state.json
+bridge/transcripts.json
+bridge/tmp/
+bridge/mapjobs/
+tests/tmp/
+data/
+backups/
+ai-runtime/
+release-output/
+__pycache__/

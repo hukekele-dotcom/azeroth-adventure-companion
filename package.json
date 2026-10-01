@@ -1,0 +1,46 @@
+{
+  "name": "azeroth-adventure-companion",
+  "version": "0.6.0-beta.1",
+  "private": true,
+  "description": "艾泽拉斯冒险伙伴：WoW Forever AI task routes, daily journals and dungeon assistance.",
+  "license": "MIT",
+  "author": "chelinho139",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hukekele-dotcom/azeroth-adventure-companion.git"
+  },
+  "keywords": [
+    "world-of-warcraft",
+    "wow-addon",
+    "claude-code",
+    "claude",
+    "codex",
+    "grok",
+    "coding-agent",
+    "bridge"
+  ],
+  "engines": {
+    "node": ">=22.2"
+  },
+  "bin": {
+    "wow-ai": "bridge/supervisor.js"
+  },
+  "scripts": {
+    "setup": "node setup.js",
+    "start": "node bridge/supervisor.js",
+    "slots": "node bridge/install-slots.js",
+    "test": "node tests/order_check.js && node --test tests/bridge_test.js tests/agents_test.js tests/restore_test.js tests/addon_test.js tests/map_test.js tests/map_addon_test.js tests/macro_test.js tests/adventure_test.js tests/narrative_test.js tests/draft_batch_test.js tests/adventure_addon_test.js tests/workspace_addon_test.js tests/planner_test.js tests/dungeon_addon_test.js tests/locale_test.js && node tests/codec_test.js",
+    "test:travelogue": "node --test tests/draft_batch_test.js",
+    "test:live": "node tests/inject_test.js",
+    "probe": "python3 bridge/capture_x11.py --probe bridge/probe.png",
+    "probe:mac": "python3 bridge/capture_mac.py --probe bridge/probe.png"
+  },
+  "devDependencies": {
+    "fengari": "^0.1.4",
+    "luaparse": "^0.3.1",
+    "opencc-js": "1.4.2"
+  },
+  "contributors": [
+    "hukekele-dotcom"
+  ]
+}
