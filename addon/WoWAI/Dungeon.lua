@@ -69,6 +69,64 @@ function D.Match(name,mapID)
     end
 end
 function D.Notify() if WoWAIDungeonUI then WoWAIDungeonUI.Render() end end
+-- minLevel is the requiredLevel from Forever quest gates, never the quest's difficulty level.
+function D.AcceptLevel(q)
+    local n=q.minLevel
+    if type(n)=='number' and n>=1 and n==math.floor(n) then return n end
+end
+function D.LevelText(q)
+    local n=D.AcceptLevel(q)
+    if not n then return L('最低接取等级：待核实') end
+    local text=string.format(L('最低接取等级：%d 级'),n)
+    local level=WoWAIGear.Profile().level
+    if type(level)=='number' and level>0 and level<n then text=text..string.format(L('（还差 %d 级）'),n-level)end
+    return text
+end
+-- Reuse the faction-filtered checklist, but do not discard higher-level quests.
+-- Completed quests and incompatible/selected branches must not raise this character's target.
+function D.Preparation(dungeon,rows,counts)
+    local p=WoWAIGear.Profile();local _,_,raceID=Read(UnitRace,'player')
+    local active={};for _,r in ipairs(rows)do if r.live then active[r.quest.id]=true end end
+    local a={level=0,known=0,unknown=(counts and counts.factionUnknown)or 0,remaining=0,inside=0,prerequisites=0,conditions=0,limiters={}}
+    for _,r in ipairs(rows)do
+        local q=r.quest;local include=r.status~='done' and r.status~='ready' and not q.outside
+        if p.classID and not Has(q.classes or 0,p.classID)then include=false end
+        if raceID and not Has(q.races or 0,raceID)then include=false end
+        for _,id in ipairs(q.excl or {})do if active[id] or D.Completed(id)==true then include=false end end
+        if q.chain and (active[q.chain] or D.Completed(q.chain)==true)then include=false end
+        if include then
+            a.remaining=a.remaining+1
+            local n=D.AcceptLevel(q)
+            local identityKnown=p.classID and ((q.races or 0)==0 or raceID) and r.faction~='unknown'
+            if n and identityKnown then
+                a.known=a.known+1
+                if n>a.level then a.level=n;a.limiters={}end
+                if n==a.level then a.limiters[#a.limiters+1]=r.live and r.live.title or WoWAILocale.Field(q)end
+            else a.unknown=a.unknown+1 end
+            if q.inside or q.itemStart then a.inside=a.inside+1 end
+            if q.pre or q.preAll or q.parent or (q.prerequisites and q.prerequisites~='') or #(q.steps or {})>0 then a.prerequisites=a.prerequisites+1 end
+            if not q.gatesKnown or q.skill or q.minRep or q.maxRep then a.conditions=a.conditions+1 end
+        end
+    end
+    local lines={}
+    if a.level>0 then
+        lines[#lines+1]=string.format(L('建议至少 %d 级，再集中处理本角色剩余的已知副本任务。'),a.level)
+        if type(p.level)=='number' and p.level>0 then
+            lines[#lines+1]=p.level<a.level and string.format(L('当前 %d 级，还差 %d 级；现在进本可能漏掉高等级任务。'),p.level,a.level-p.level) or L('已达到上述等级门槛；进本前仍请检查漏接和前置任务。')
+        end
+        lines[#lines+1]=L('最高接取等级任务：')..table.concat(a.limiters,L('、'))
+    elseif dungeon and #(dungeon.quests or {})>0 and a.remaining==0 and a.unknown==0 then
+        lines[#lines+1]=L('当前没有需要补接的已收录适用任务。')
+    else
+        lines[#lines+1]=L('接取等级资料不足，暂不能给出集中清任务的建议等级。')
+    end
+    if a.unknown>0 then lines[#lines+1]=string.format(L('另有 %d 项等级或适用条件待核实，不能确认接齐所需等级。'),a.unknown)end
+    if a.prerequisites>0 then lines[#lines+1]=L('先完成下方前置链；前置可能另有等级要求，或需要先下一次副本。')end
+    if a.inside>0 then lines[#lines+1]=string.format(L('%d 项在副本内或由物品触发，不能要求进本前全部接好。'),a.inside)end
+    if a.conditions>0 then lines[#lines+1]=L('部分任务还需核对职业、专业、声望等接取条件。')end
+    lines[#lines+1]=L('仅按已收录任务的接取等级推算，不是战斗等级建议，也不保证一趟完成全部任务。')
+    a.text=table.concat(lines,'\n');return a
+end
 -- The same character check powers preparation outside and reminders inside.
 -- It does not change the actual instance, boss detection or floating notices.
 function D.Check(dungeon,name)

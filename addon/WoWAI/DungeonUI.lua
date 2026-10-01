@@ -25,6 +25,7 @@ local function Objective(row)
 end
 local function ResetRows()
     U.offset=0;U.rowIndex=0
+    if U.preparation then U.preparation:Hide()end
 end
 local function ItemIcon(parent,size)
     local frame=Box(parent);frame:SetSize(size,size)
@@ -80,6 +81,7 @@ local function Build(parent)
     U.summary=Label(right,'',13);U.summary:SetPoint('TOPLEFT',14,-46);U.summary:SetPoint('TOPRIGHT',-14,-46);U.summary:SetHeight(42)
     U.scroll=CreateFrame('ScrollFrame',nil,right,'UIPanelScrollFrameTemplate');U.scroll:SetPoint('TOPLEFT',14,-96);U.scroll:SetPoint('BOTTOMRIGHT',-32,58)
     U.content=CreateFrame('Frame',nil,U.scroll);U.content:SetSize(500,1);U.scroll:SetScrollChild(U.content);U.rows={}
+    U.preparation=Label(U.content,'',13);U.preparation:SetPoint('TOPLEFT',4,-4);U.preparation:SetTextColor(.95,.83,.52)
     U.scroll:HookScript('OnSizeChanged',function()if U.frame:IsVisible()then U.Render()end end)
     U.footer=Label(right,L('按当前天赋自动比较；预计升级是基础属性估算。资料未完整覆盖所有副本。'),12);U.footer:SetPoint('BOTTOMLEFT',14,12);U.footer:SetPoint('BOTTOMRIGHT',-14,12);U.footer:SetHeight(32);U.footer:SetTextColor(.68,.64,.54)
 end
@@ -171,10 +173,14 @@ function U.Render(force)
         if D.instanceKey then checked,counts=D.rows,D.counts else checked,counts=D.Check(d)end
         local side=D.PlayerFaction();local scope=side=='horde' and L('部落 / 双方任务') or side=='alliance' and L('联盟 / 双方任务') or L('角色阵营待读取')
         U.title:SetText(WoWAILocale.Field(d)..L(' · 任务'));U.summary:SetText(scope..' · '..(D.instanceKey and '' or L('进本前检查 · '))..D.Summary(d,counts))
+        local prep=D.Preparation(d,checked,counts)
+        U.preparation:SetWidth(math.max(220,U.scroll:GetWidth()-16))
+        U.preparation:SetText(L('集中清任务建议')..'\n'..prep.text);U.preparation:Show()
+        U.offset=math.max(24,U.preparation:GetStringHeight())+24
         do
             local rank={missing=1,active=2,inside=3,unknown=4,ready=5,unavailable=6,done=7};local rows={};for _,r in ipairs(checked)do rows[#rows+1]=r end;table.sort(rows,function(a,b)if rank[a.status]~=rank[b.status]then return rank[a.status]<rank[b.status]end;return a.quest.id<b.quest.id end)
             for _,r in ipairs(rows)do
-                local q=r.quest;local a={L(FACTION[r.faction] or '阵营待核实')..' · '..r.reason,L('接取：')..WoWAILocale.Field(q,'from'),WoWAILocale.Field(q,'instructions')};if q.prerequisites and q.prerequisites~='' then a[#a+1]=L('前置链：')..WoWAILocale.Field(q,'prerequisites') end
+                local q=r.quest;local a={L(FACTION[r.faction] or '阵营待核实')..' · '..r.reason,D.LevelText(q),L('接取：')..WoWAILocale.Field(q,'from'),WoWAILocale.Field(q,'instructions')};if q.prerequisites and q.prerequisites~='' then a[#a+1]=L('前置链：')..WoWAILocale.Field(q,'prerequisites') end
                 if r.status=='active' then a[#a+1]=Objective(r)end
                 for i,s in ipairs(q.steps or {})do
                     a[#a+1]=L('前置步骤 ')..i..'：'..WoWAILocale.Field(s)..(s.optional and L('（可选）') or '')..'\n'..WoWAILocale.Field(s,'from')..'\n'..WoWAILocale.Field(s,'instructions')
