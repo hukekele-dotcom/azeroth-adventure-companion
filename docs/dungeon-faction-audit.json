@@ -1,0 +1,2920 @@
+{
+  "version": "2026-10-01.1",
+  "quests": [
+    {
+      "dungeon": "ragefire-chasm",
+      "id": 5723,
+      "name": "试探敌人",
+      "faction": "horde",
+      "gatesKnown": true,
+      "minLevel": 9,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/ragefire-chasm"
+      ]
+    },
+    {
+      "dungeon": "ragefire-chasm",
+      "id": 5722,
+      "name": "寻找背包",
+      "faction": "horde",
+      "gatesKnown": true,
+      "minLevel": 9,
+      "sources": []
+    },
+    {
+      "dungeon": "ragefire-chasm",
+      "id": 5725,
+      "name": "毁灭之力",
+      "faction": "horde",
+      "gatesKnown": true,
+      "minLevel": 9,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/ragefire-chasm"
+      ]
+    },
+    {
+      "dungeon": "ragefire-chasm",
+      "id": 5728,
+      "name": "隐藏的敌人",
+      "faction": "horde",
+      "gatesKnown": true,
+      "minLevel": 9,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/ragefire-chasm"
+      ]
+    },
+    {
+      "dungeon": "ragefire-chasm",
+      "id": 5761,
+      "name": "饥饿者塔拉加曼",
+      "faction": "horde",
+      "gatesKnown": true,
+      "minLevel": 9,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/ragefire-chasm"
+      ]
+    },
+    {
+      "dungeon": "ragefire-chasm",
+      "id": 5724,
+      "name": "归还背包",
+      "faction": "horde",
+      "gatesKnown": false,
+      "minLevel": 9,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/ragefire-chasm"
+      ]
+    },
+    {
+      "dungeon": "hall-of-thanes",
+      "id": 96394,
+      "name": "永不安息的亡者",
+      "faction": "alliance",
+      "gatesKnown": false,
+      "minLevel": 10,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/hall-of-thanes"
+      ]
+    },
+    {
+      "dungeon": "hall-of-thanes",
+      "id": 96395,
+      "name": "远古的宿怨",
+      "faction": "both",
+      "gatesKnown": false,
+      "minLevel": 10,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/hall-of-thanes"
+      ]
+    },
+    {
+      "dungeon": "hall-of-thanes",
+      "id": 96403,
+      "name": "重要的传家宝",
+      "faction": "both",
+      "gatesKnown": false,
+      "minLevel": 10,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/hall-of-thanes"
+      ]
+    },
+    {
+      "dungeon": "hall-of-thanes",
+      "id": 96393,
+      "name": "旧铁炉堡入侵",
+      "faction": "alliance",
+      "gatesKnown": false,
+      "minLevel": 9,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/hall-of-thanes",
+        "https://wowforevertalents.com/quests/old-ironforge-incursion-96393/"
+      ]
+    },
+    {
+      "dungeon": "hall-of-thanes",
+      "id": 98423,
+      "name": "谅解条约",
+      "faction": "alliance",
+      "gatesKnown": false,
+      "minLevel": 9,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/hall-of-thanes",
+        "https://www.wowhead.com/forever/quest=98423/the-treaty-of-understanding"
+      ]
+    },
+    {
+      "dungeon": "ruins-of-lordaeron",
+      "id": 95250,
+      "name": "Abominable Creatures",
+      "faction": "alliance",
+      "gatesKnown": false,
+      "minLevel": 16,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/ruins-of-lordaeron"
+      ]
+    },
+    {
+      "dungeon": "ruins-of-lordaeron",
+      "id": 92415,
+      "name": "Remember That I Love You",
+      "faction": "alliance",
+      "gatesKnown": false,
+      "minLevel": 15,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/ruins-of-lordaeron"
+      ]
+    },
+    {
+      "dungeon": "ruins-of-lordaeron",
+      "id": 95189,
+      "name": "Crest of Lordaeron",
+      "faction": "alliance",
+      "gatesKnown": false,
+      "minLevel": 16,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/ruins-of-lordaeron"
+      ]
+    },
+    {
+      "dungeon": "ruins-of-lordaeron",
+      "id": 95195,
+      "name": "Bloodied Insignia",
+      "faction": "alliance",
+      "gatesKnown": false,
+      "minLevel": 16,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/ruins-of-lordaeron"
+      ]
+    },
+    {
+      "dungeon": "ruins-of-lordaeron",
+      "id": 97288,
+      "name": "无尽的折磨",
+      "faction": "horde",
+      "gatesKnown": false,
+      "minLevel": 16,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/ruins-of-lordaeron",
+        "https://www.wowhead.com/forever/quest=97288/unending-torment"
+      ]
+    },
+    {
+      "dungeon": "ruins-of-lordaeron",
+      "id": 92401,
+      "name": "惊恐的求援",
+      "faction": "horde",
+      "gatesKnown": false,
+      "minLevel": 15,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/ruins-of-lordaeron"
+      ]
+    },
+    {
+      "dungeon": "ruins-of-lordaeron",
+      "id": 92421,
+      "name": "圣光的正义",
+      "faction": "horde",
+      "gatesKnown": false,
+      "minLevel": 15,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/ruins-of-lordaeron"
+      ]
+    },
+    {
+      "dungeon": "ruins-of-lordaeron",
+      "id": 95204,
+      "name": "Crest of Lordaeron",
+      "faction": "horde",
+      "gatesKnown": false,
+      "minLevel": 16,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/ruins-of-lordaeron"
+      ]
+    },
+    {
+      "dungeon": "ruins-of-lordaeron",
+      "id": 95216,
+      "name": "新的瘟疫",
+      "faction": "horde",
+      "gatesKnown": false,
+      "minLevel": 16,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/ruins-of-lordaeron"
+      ]
+    },
+    {
+      "dungeon": "ruins-of-lordaeron",
+      "id": 92422,
+      "name": "拉斯玛尔之怒",
+      "faction": "horde",
+      "gatesKnown": false,
+      "minLevel": 15,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/ruins-of-lordaeron"
+      ]
+    },
+    {
+      "dungeon": "deadmines",
+      "id": 214,
+      "name": "红色丝质面罩",
+      "faction": "alliance",
+      "gatesKnown": true,
+      "minLevel": 14,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/the-deadmines"
+      ]
+    },
+    {
+      "dungeon": "deadmines",
+      "id": 168,
+      "name": "收集记忆",
+      "faction": "alliance",
+      "gatesKnown": true,
+      "minLevel": 14,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/the-deadmines"
+      ]
+    },
+    {
+      "dungeon": "deadmines",
+      "id": 92753,
+      "name": "Destruction in Deadmines",
+      "faction": "alliance",
+      "gatesKnown": false,
+      "sources": []
+    },
+    {
+      "dungeon": "deadmines",
+      "id": 167,
+      "name": "啊，兄弟……",
+      "faction": "alliance",
+      "gatesKnown": true,
+      "minLevel": 15,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/the-deadmines"
+      ]
+    },
+    {
+      "dungeon": "deadmines",
+      "id": 2040,
+      "name": "地底突袭",
+      "faction": "alliance",
+      "gatesKnown": true,
+      "minLevel": 15,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/the-deadmines"
+      ]
+    },
+    {
+      "dungeon": "deadmines",
+      "id": 166,
+      "name": "迪菲亚兄弟会",
+      "faction": "alliance",
+      "gatesKnown": true,
+      "minLevel": 14,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/the-deadmines"
+      ]
+    },
+    {
+      "dungeon": "deadmines",
+      "id": 373,
+      "name": "未寄出的信",
+      "faction": "alliance",
+      "gatesKnown": false,
+      "sources": []
+    },
+    {
+      "dungeon": "deadmines",
+      "id": 1654,
+      "name": "正义试炼",
+      "faction": "alliance",
+      "gatesKnown": true,
+      "minLevel": 20,
+      "sources": [
+        "https://www.wowhead.com/forever/quest=1654/the-test-of-righteousness"
+      ]
+    },
+    {
+      "dungeon": "wailing-caverns",
+      "id": 1486,
+      "name": "变异皮革",
+      "faction": "both",
+      "gatesKnown": true,
+      "minLevel": 13,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/wailing-caverns"
+      ]
+    },
+    {
+      "dungeon": "wailing-caverns",
+      "id": 959,
+      "name": "港口的麻烦",
+      "faction": "both",
+      "gatesKnown": true,
+      "minLevel": 14,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/wailing-caverns"
+      ]
+    },
+    {
+      "dungeon": "wailing-caverns",
+      "id": 962,
+      "name": "毒蛇花",
+      "faction": "horde",
+      "gatesKnown": true,
+      "minLevel": 14,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/wailing-caverns"
+      ]
+    },
+    {
+      "dungeon": "wailing-caverns",
+      "id": 1491,
+      "name": "智慧饮料",
+      "faction": "both",
+      "gatesKnown": true,
+      "minLevel": 13,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/wailing-caverns"
+      ]
+    },
+    {
+      "dungeon": "wailing-caverns",
+      "id": 1487,
+      "name": "清除变异者",
+      "faction": "both",
+      "gatesKnown": true,
+      "minLevel": 15,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/wailing-caverns"
+      ]
+    },
+    {
+      "dungeon": "wailing-caverns",
+      "id": 914,
+      "name": "尖牙德鲁伊",
+      "faction": "horde",
+      "gatesKnown": true,
+      "minLevel": 11,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/wailing-caverns"
+      ]
+    },
+    {
+      "dungeon": "wailing-caverns",
+      "id": 6981,
+      "name": "发光的碎片",
+      "faction": "both",
+      "gatesKnown": false,
+      "minLevel": 15,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/wailing-caverns"
+      ]
+    },
+    {
+      "dungeon": "shadowfang-keep",
+      "id": 1654,
+      "name": "正义试炼",
+      "faction": "alliance",
+      "gatesKnown": true,
+      "minLevel": 20,
+      "sources": []
+    },
+    {
+      "dungeon": "shadowfang-keep",
+      "id": 1098,
+      "name": "影牙城堡里的亡灵哨兵",
+      "faction": "horde",
+      "gatesKnown": true,
+      "minLevel": 18,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/shadowfang-keep",
+        "https://wowforevertalents.com/quests/deathstalkers-in-shadowfang-1098/"
+      ]
+    },
+    {
+      "dungeon": "shadowfang-keep",
+      "id": 1740,
+      "name": "索兰鲁克宝珠",
+      "faction": "both",
+      "gatesKnown": true,
+      "minLevel": 20,
+      "sources": []
+    },
+    {
+      "dungeon": "shadowfang-keep",
+      "id": 1013,
+      "name": "乌尔之书",
+      "faction": "horde",
+      "gatesKnown": true,
+      "minLevel": 16,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/shadowfang-keep"
+      ]
+    },
+    {
+      "dungeon": "shadowfang-keep",
+      "id": 1014,
+      "name": "除掉阿鲁高",
+      "faction": "horde",
+      "gatesKnown": true,
+      "minLevel": 18,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/shadowfang-keep"
+      ]
+    },
+    {
+      "dungeon": "blackfathom-deeps",
+      "id": 6563,
+      "name": "阿库麦尔水晶",
+      "faction": "horde",
+      "gatesKnown": true,
+      "minLevel": 17,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/blackfathom-deeps"
+      ]
+    },
+    {
+      "dungeon": "blackfathom-deeps",
+      "id": 6564,
+      "name": "上古之神的仆从",
+      "faction": "horde",
+      "gatesKnown": true,
+      "minLevel": 17,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/blackfathom-deeps"
+      ]
+    },
+    {
+      "dungeon": "blackfathom-deeps",
+      "id": 971,
+      "name": "深渊中的知识",
+      "faction": "alliance",
+      "gatesKnown": true,
+      "minLevel": 10,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/blackfathom-deeps"
+      ]
+    },
+    {
+      "dungeon": "blackfathom-deeps",
+      "id": 1198,
+      "name": "寻找塞尔瑞德",
+      "faction": "alliance",
+      "gatesKnown": true,
+      "minLevel": 18,
+      "sources": []
+    },
+    {
+      "dungeon": "blackfathom-deeps",
+      "id": 1275,
+      "name": "研究堕落",
+      "faction": "alliance",
+      "gatesKnown": true,
+      "minLevel": 18,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/blackfathom-deeps"
+      ]
+    },
+    {
+      "dungeon": "blackfathom-deeps",
+      "id": 1199,
+      "name": "暮光之锤的末日",
+      "faction": "alliance",
+      "gatesKnown": true,
+      "minLevel": 20,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/blackfathom-deeps"
+      ]
+    },
+    {
+      "dungeon": "blackfathom-deeps",
+      "id": 6565,
+      "name": "上古之神的仆从",
+      "faction": "horde",
+      "gatesKnown": true,
+      "minLevel": 17,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/blackfathom-deeps"
+      ]
+    },
+    {
+      "dungeon": "blackfathom-deeps",
+      "id": 1200,
+      "name": "黑暗深渊中的恶魔",
+      "faction": "alliance",
+      "gatesKnown": false,
+      "minLevel": 18,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/blackfathom-deeps"
+      ]
+    },
+    {
+      "dungeon": "blackfathom-deeps",
+      "id": 6561,
+      "name": "黑暗深渊中的邪恶",
+      "faction": "horde",
+      "gatesKnown": false,
+      "minLevel": 18,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/blackfathom-deeps"
+      ]
+    },
+    {
+      "dungeon": "blackfathom-deeps",
+      "id": 6921,
+      "name": "废墟之间",
+      "faction": "horde",
+      "gatesKnown": true,
+      "minLevel": 21,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/blackfathom-deeps"
+      ]
+    },
+    {
+      "dungeon": "blackfathom-deeps",
+      "id": 6922,
+      "name": "阿奎尼斯男爵",
+      "faction": "horde",
+      "gatesKnown": false,
+      "sources": []
+    },
+    {
+      "dungeon": "blackfathom-deeps",
+      "id": 1740,
+      "name": "索兰鲁克宝珠",
+      "faction": "both",
+      "gatesKnown": true,
+      "minLevel": 20,
+      "sources": [
+        "https://wowforevertalents.com/quests/the-orb-of-soran-ruk-1740/"
+      ]
+    },
+    {
+      "dungeon": "blackfathom-deeps",
+      "id": 1654,
+      "name": "正义试炼",
+      "faction": "alliance",
+      "gatesKnown": true,
+      "minLevel": 20,
+      "sources": [
+        "https://www.wowhead.com/forever/quest=1654/the-test-of-righteousness"
+      ]
+    },
+    {
+      "dungeon": "stockade",
+      "id": 386,
+      "name": "伸张正义",
+      "faction": "alliance",
+      "gatesKnown": true,
+      "minLevel": 22,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/the-stockade"
+      ]
+    },
+    {
+      "dungeon": "stockade",
+      "id": 377,
+      "name": "罪与罚",
+      "faction": "alliance",
+      "gatesKnown": true,
+      "minLevel": 22,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/the-stockade"
+      ]
+    },
+    {
+      "dungeon": "stockade",
+      "id": 387,
+      "name": "镇压暴动",
+      "faction": "alliance",
+      "gatesKnown": true,
+      "minLevel": 22,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/the-stockade"
+      ]
+    },
+    {
+      "dungeon": "stockade",
+      "id": 388,
+      "name": "鲜血的颜色",
+      "faction": "alliance",
+      "gatesKnown": true,
+      "minLevel": 22,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/the-stockade"
+      ]
+    },
+    {
+      "dungeon": "stockade",
+      "id": 378,
+      "name": "卡姆·深怒",
+      "faction": "alliance",
+      "gatesKnown": true,
+      "minLevel": 22,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/the-stockade"
+      ]
+    },
+    {
+      "dungeon": "stockade",
+      "id": 391,
+      "name": "监狱暴动",
+      "faction": "alliance",
+      "gatesKnown": true,
+      "minLevel": 16,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/the-stockade"
+      ]
+    },
+    {
+      "dungeon": "razorfen-kraul",
+      "id": 1221,
+      "name": "蓝叶薯",
+      "faction": "both",
+      "gatesKnown": true,
+      "minLevel": 20,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/razorfen-kraul"
+      ]
+    },
+    {
+      "dungeon": "razorfen-kraul",
+      "id": 1144,
+      "name": "进口商威利克斯",
+      "faction": "both",
+      "gatesKnown": false,
+      "minLevel": 23,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/razorfen-kraul"
+      ]
+    },
+    {
+      "dungeon": "razorfen-kraul",
+      "id": 1142,
+      "name": "临终遗言",
+      "faction": "alliance",
+      "gatesKnown": false,
+      "minLevel": 25,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/razorfen-kraul"
+      ]
+    },
+    {
+      "dungeon": "razorfen-kraul",
+      "id": 1109,
+      "name": "蝙蝠的粪便",
+      "faction": "horde",
+      "gatesKnown": true,
+      "minLevel": 30,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/razorfen-kraul"
+      ]
+    },
+    {
+      "dungeon": "razorfen-kraul",
+      "id": 1101,
+      "name": "卡尔加·刺肋",
+      "faction": "alliance",
+      "gatesKnown": true,
+      "minLevel": 29,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/razorfen-kraul"
+      ]
+    },
+    {
+      "dungeon": "razorfen-kraul",
+      "id": 1102,
+      "name": "奥尔德的报复",
+      "faction": "horde",
+      "gatesKnown": true,
+      "minLevel": 29,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/razorfen-kraul"
+      ]
+    },
+    {
+      "dungeon": "razorfen-kraul",
+      "id": 1701,
+      "name": "弗伦的铠甲",
+      "faction": "alliance",
+      "gatesKnown": true,
+      "minLevel": 20,
+      "sources": []
+    },
+    {
+      "dungeon": "razorfen-kraul",
+      "id": 1838,
+      "name": "野蛮护甲",
+      "faction": "horde",
+      "gatesKnown": true,
+      "minLevel": 20,
+      "sources": []
+    },
+    {
+      "dungeon": "gnomeregan",
+      "id": 2904,
+      "name": "一团混乱",
+      "faction": "both",
+      "gatesKnown": false,
+      "minLevel": 24,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/gnomeregan"
+      ]
+    },
+    {
+      "dungeon": "gnomeregan",
+      "id": 2945,
+      "name": "脏兮兮的戒指",
+      "faction": "both",
+      "gatesKnown": false,
+      "minLevel": 28,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/gnomeregan"
+      ]
+    },
+    {
+      "dungeon": "gnomeregan",
+      "id": 2924,
+      "name": "基础模组",
+      "faction": "alliance",
+      "gatesKnown": true,
+      "minLevel": 24,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/gnomeregan"
+      ]
+    },
+    {
+      "dungeon": "gnomeregan",
+      "id": 2928,
+      "name": "陀螺式挖掘机",
+      "faction": "alliance",
+      "gatesKnown": true,
+      "minLevel": 20,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/gnomeregan"
+      ]
+    },
+    {
+      "dungeon": "gnomeregan",
+      "id": 2930,
+      "name": "抢救数据",
+      "faction": "alliance",
+      "gatesKnown": true,
+      "minLevel": 25,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/gnomeregan"
+      ]
+    },
+    {
+      "dungeon": "gnomeregan",
+      "id": 2962,
+      "name": "更多的辐射尘！",
+      "faction": "alliance",
+      "gatesKnown": true,
+      "minLevel": 20,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/gnomeregan"
+      ]
+    },
+    {
+      "dungeon": "gnomeregan",
+      "id": 2929,
+      "name": "大叛徒",
+      "faction": "alliance",
+      "gatesKnown": true,
+      "minLevel": 25,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/gnomeregan"
+      ]
+    },
+    {
+      "dungeon": "gnomeregan",
+      "id": 2841,
+      "name": "设备之战",
+      "faction": "horde",
+      "gatesKnown": true,
+      "minLevel": 25,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/gnomeregan"
+      ]
+    },
+    {
+      "dungeon": "gnomeregan",
+      "id": 95041,
+      "name": "数据囤积者",
+      "faction": "alliance",
+      "gatesKnown": false,
+      "sources": []
+    },
+    {
+      "dungeon": "gnomeregan",
+      "id": 2922,
+      "name": "拯救尖端机器人！",
+      "faction": "alliance",
+      "gatesKnown": true,
+      "minLevel": 20,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/gnomeregan"
+      ]
+    },
+    {
+      "dungeon": "gnomeregan",
+      "id": 2926,
+      "name": "诺恩",
+      "faction": "alliance",
+      "gatesKnown": true,
+      "minLevel": 20,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/gnomeregan"
+      ]
+    },
+    {
+      "dungeon": "gnomeregan",
+      "id": 2843,
+      "name": "出发！诺莫瑞根！",
+      "faction": "horde",
+      "gatesKnown": true,
+      "minLevel": 20,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/gnomeregan"
+      ]
+    },
+    {
+      "dungeon": "gnomeregan",
+      "id": 2951,
+      "name": "超级清洁器5200型！",
+      "faction": "both",
+      "gatesKnown": false,
+      "minLevel": 25,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/gnomeregan"
+      ]
+    },
+    {
+      "dungeon": "gnomeregan",
+      "id": 2952,
+      "name": "超级清洁器5200型！",
+      "faction": "both",
+      "gatesKnown": false,
+      "minLevel": 25,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/gnomeregan"
+      ]
+    },
+    {
+      "dungeon": "gnomeregan",
+      "id": 2947,
+      "name": "戒指归来",
+      "faction": "alliance",
+      "gatesKnown": false,
+      "minLevel": 28,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/gnomeregan"
+      ]
+    },
+    {
+      "dungeon": "gnomeregan",
+      "id": 2949,
+      "name": "戒指归来",
+      "faction": "horde",
+      "gatesKnown": false,
+      "minLevel": 28,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/gnomeregan"
+      ]
+    },
+    {
+      "dungeon": "scarlet-monastery",
+      "id": 1051,
+      "name": "沃瑞尔的复仇",
+      "faction": "horde",
+      "gatesKnown": false,
+      "minLevel": 25,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/scarlet-monastery-armory",
+        "https://foreverchanges.pro/dungeons/scarlet-monastery-cathedral",
+        "https://foreverchanges.pro/dungeons/scarlet-monastery-graveyard",
+        "https://foreverchanges.pro/dungeons/scarlet-monastery-library"
+      ]
+    },
+    {
+      "dungeon": "scarlet-monastery",
+      "id": 1113,
+      "name": "狂热之心",
+      "faction": "horde",
+      "gatesKnown": true,
+      "minLevel": 30,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/scarlet-monastery-armory",
+        "https://foreverchanges.pro/dungeons/scarlet-monastery-cathedral",
+        "https://foreverchanges.pro/dungeons/scarlet-monastery-graveyard",
+        "https://foreverchanges.pro/dungeons/scarlet-monastery-library"
+      ]
+    },
+    {
+      "dungeon": "scarlet-monastery",
+      "id": 1050,
+      "name": "泰坦神话",
+      "faction": "alliance",
+      "gatesKnown": true,
+      "minLevel": 28,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/scarlet-monastery-armory",
+        "https://foreverchanges.pro/dungeons/scarlet-monastery-cathedral",
+        "https://foreverchanges.pro/dungeons/scarlet-monastery-graveyard",
+        "https://foreverchanges.pro/dungeons/scarlet-monastery-library"
+      ]
+    },
+    {
+      "dungeon": "scarlet-monastery",
+      "id": 1049,
+      "name": "堕落者纲要",
+      "faction": "horde",
+      "gatesKnown": true,
+      "minLevel": 28,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/scarlet-monastery-armory",
+        "https://foreverchanges.pro/dungeons/scarlet-monastery-cathedral",
+        "https://foreverchanges.pro/dungeons/scarlet-monastery-graveyard",
+        "https://foreverchanges.pro/dungeons/scarlet-monastery-library"
+      ]
+    },
+    {
+      "dungeon": "scarlet-monastery",
+      "id": 1160,
+      "name": "知识试炼",
+      "faction": "horde",
+      "gatesKnown": true,
+      "minLevel": 25,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/scarlet-monastery-armory",
+        "https://foreverchanges.pro/dungeons/scarlet-monastery-cathedral",
+        "https://foreverchanges.pro/dungeons/scarlet-monastery-graveyard",
+        "https://foreverchanges.pro/dungeons/scarlet-monastery-library"
+      ]
+    },
+    {
+      "dungeon": "scarlet-monastery",
+      "id": 1951,
+      "name": "能量仪祭",
+      "faction": "both",
+      "gatesKnown": true,
+      "minLevel": 30,
+      "sources": []
+    },
+    {
+      "dungeon": "scarlet-monastery",
+      "id": 1048,
+      "name": "深入血色修道院",
+      "faction": "horde",
+      "gatesKnown": true,
+      "minLevel": 33,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/scarlet-monastery-armory",
+        "https://foreverchanges.pro/dungeons/scarlet-monastery-cathedral",
+        "https://foreverchanges.pro/dungeons/scarlet-monastery-library"
+      ]
+    },
+    {
+      "dungeon": "scarlet-monastery",
+      "id": 1053,
+      "name": "以圣光之名",
+      "faction": "alliance",
+      "gatesKnown": true,
+      "minLevel": 34,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/scarlet-monastery-armory",
+        "https://foreverchanges.pro/dungeons/scarlet-monastery-cathedral",
+        "https://foreverchanges.pro/dungeons/scarlet-monastery-library"
+      ]
+    },
+    {
+      "dungeon": "blackrock-depths",
+      "id": 4083,
+      "name": "鬼魂之杯",
+      "faction": "both",
+      "gatesKnown": false,
+      "minLevel": 40,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/blackrock-depths"
+      ]
+    },
+    {
+      "dungeon": "blackrock-depths",
+      "id": 3802,
+      "name": "黑铁的遗产",
+      "faction": "both",
+      "gatesKnown": false,
+      "minLevel": 48,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/blackrock-depths"
+      ]
+    },
+    {
+      "dungeon": "blackrock-depths",
+      "id": 4081,
+      "name": "格杀勿论：黑铁矮人",
+      "faction": "horde",
+      "gatesKnown": true,
+      "minLevel": 48,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/blackrock-depths"
+      ]
+    },
+    {
+      "dungeon": "blackrock-depths",
+      "id": 4136,
+      "name": "雷布里·斯库比格特",
+      "faction": "both",
+      "gatesKnown": true,
+      "minLevel": 48,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/blackrock-depths"
+      ]
+    },
+    {
+      "dungeon": "blackrock-depths",
+      "id": 4242,
+      "name": "被遗弃的希望",
+      "faction": "alliance",
+      "gatesKnown": false,
+      "minLevel": 48,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/blackrock-depths"
+      ]
+    },
+    {
+      "dungeon": "blackrock-depths",
+      "id": 7201,
+      "name": "最后的元素",
+      "faction": "horde",
+      "gatesKnown": true,
+      "minLevel": 48,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/blackrock-depths"
+      ]
+    },
+    {
+      "dungeon": "blackrock-depths",
+      "id": 3907,
+      "name": "不和谐的火焰",
+      "faction": "horde",
+      "gatesKnown": true,
+      "minLevel": 48,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/blackrock-depths"
+      ]
+    },
+    {
+      "dungeon": "blackrock-depths",
+      "id": 4263,
+      "name": "伊森迪奥斯！",
+      "faction": "alliance",
+      "gatesKnown": true,
+      "minLevel": 48,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/blackrock-depths"
+      ]
+    },
+    {
+      "dungeon": "blackrock-depths",
+      "id": 4003,
+      "name": "拯救公主",
+      "faction": "horde",
+      "gatesKnown": true,
+      "minLevel": 48,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/blackrock-depths"
+      ]
+    },
+    {
+      "dungeon": "blackrock-depths",
+      "id": 4004,
+      "name": "拯救公主？",
+      "faction": "horde",
+      "gatesKnown": false,
+      "minLevel": 48,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/blackrock-depths"
+      ]
+    },
+    {
+      "dungeon": "blackrock-depths",
+      "id": 4082,
+      "name": "格杀勿论：高阶黑铁军官",
+      "faction": "horde",
+      "gatesKnown": true,
+      "minLevel": 50,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/blackrock-depths"
+      ]
+    },
+    {
+      "dungeon": "blackrock-depths",
+      "id": 4201,
+      "name": "爱情药水",
+      "faction": "both",
+      "gatesKnown": false,
+      "minLevel": 50,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/blackrock-depths"
+      ]
+    },
+    {
+      "dungeon": "blackrock-depths",
+      "id": 4126,
+      "name": "霍尔雷·黑须",
+      "faction": "alliance",
+      "gatesKnown": true,
+      "minLevel": 50,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/blackrock-depths"
+      ]
+    },
+    {
+      "dungeon": "blackrock-depths",
+      "id": 4134,
+      "name": "遗失的雷酒秘方",
+      "faction": "horde",
+      "gatesKnown": true,
+      "minLevel": 50,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/blackrock-depths"
+      ]
+    },
+    {
+      "dungeon": "blackrock-depths",
+      "id": 4123,
+      "name": "山脉之心",
+      "faction": "both",
+      "gatesKnown": true,
+      "minLevel": 50,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/blackrock-depths"
+      ]
+    },
+    {
+      "dungeon": "blackrock-depths",
+      "id": 4286,
+      "name": "好东西",
+      "faction": "alliance",
+      "gatesKnown": true,
+      "minLevel": 50,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/blackrock-depths"
+      ]
+    },
+    {
+      "dungeon": "blackrock-depths",
+      "id": 4264,
+      "name": "弄皱的便笺",
+      "faction": "alliance",
+      "gatesKnown": false,
+      "minLevel": 50,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/blackrock-depths"
+      ]
+    },
+    {
+      "dungeon": "blackrock-depths",
+      "id": 4282,
+      "name": "一丝希望",
+      "faction": "alliance",
+      "gatesKnown": false,
+      "minLevel": 50,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/blackrock-depths"
+      ]
+    },
+    {
+      "dungeon": "blackrock-depths",
+      "id": 4322,
+      "name": "冲破牢笼！",
+      "faction": "alliance",
+      "gatesKnown": false,
+      "minLevel": 50,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/blackrock-depths"
+      ]
+    },
+    {
+      "dungeon": "blackrock-depths",
+      "id": 4362,
+      "name": "王国的命运",
+      "faction": "alliance",
+      "gatesKnown": true,
+      "minLevel": 50,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/blackrock-depths"
+      ]
+    },
+    {
+      "dungeon": "blackrock-depths",
+      "id": 4363,
+      "name": "语出惊人的公主",
+      "faction": "alliance",
+      "gatesKnown": false,
+      "minLevel": 50,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/blackrock-depths"
+      ]
+    },
+    {
+      "dungeon": "blackrock-depths",
+      "id": 4024,
+      "name": "烈焰精华",
+      "faction": "both",
+      "gatesKnown": true,
+      "minLevel": 52,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/blackrock-depths"
+      ]
+    },
+    {
+      "dungeon": "blackrock-depths",
+      "id": 4132,
+      "name": "行动：杀死安格弗将军",
+      "faction": "horde",
+      "gatesKnown": true,
+      "minLevel": 52,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/blackrock-depths"
+      ]
+    },
+    {
+      "dungeon": "blackrock-depths",
+      "id": 4121,
+      "name": "押送囚徒",
+      "faction": "horde",
+      "gatesKnown": true,
+      "minLevel": 52,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/blackrock-depths"
+      ]
+    },
+    {
+      "dungeon": "blackrock-depths",
+      "id": 4063,
+      "name": "机器的崛起",
+      "faction": "horde",
+      "gatesKnown": true,
+      "minLevel": 52,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/blackrock-depths"
+      ]
+    },
+    {
+      "dungeon": "blackrock-depths",
+      "id": 9015,
+      "name": "挑战",
+      "faction": "both",
+      "gatesKnown": false,
+      "minLevel": 58,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/blackrock-depths"
+      ]
+    },
+    {
+      "dungeon": "blackrock-depths",
+      "id": 7604,
+      "name": "瑟银兄弟会契约",
+      "faction": "both",
+      "gatesKnown": false,
+      "minLevel": 60,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/blackrock-depths"
+      ]
+    },
+    {
+      "dungeon": "dire-maul",
+      "id": 7488,
+      "name": "蕾瑟塔蒂丝的网",
+      "faction": "alliance",
+      "gatesKnown": true,
+      "minLevel": 54,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/dire-maul-east"
+      ]
+    },
+    {
+      "dungeon": "dire-maul",
+      "id": 7489,
+      "name": "蕾瑟塔蒂丝的网",
+      "faction": "horde",
+      "gatesKnown": true,
+      "minLevel": 54,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/dire-maul-east"
+      ]
+    },
+    {
+      "dungeon": "dire-maul",
+      "id": 7441,
+      "name": "普希林和埃斯托尔迪",
+      "faction": "both",
+      "gatesKnown": true,
+      "minLevel": 54,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/dire-maul-east"
+      ]
+    },
+    {
+      "dungeon": "dire-maul",
+      "id": 7499,
+      "name": "防御宝典",
+      "faction": "both",
+      "gatesKnown": false,
+      "minLevel": 54,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/dire-maul-east",
+        "https://foreverchanges.pro/dungeons/dire-maul-north",
+        "https://foreverchanges.pro/dungeons/dire-maul-west"
+      ]
+    },
+    {
+      "dungeon": "dire-maul",
+      "id": 7505,
+      "name": "你与冰霜震击",
+      "faction": "both",
+      "gatesKnown": false,
+      "minLevel": 54,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/dire-maul-east",
+        "https://foreverchanges.pro/dungeons/dire-maul-north",
+        "https://foreverchanges.pro/dungeons/dire-maul-west"
+      ]
+    },
+    {
+      "dungeon": "dire-maul",
+      "id": 7498,
+      "name": "迦罗娜：潜行与诡计研究",
+      "faction": "both",
+      "gatesKnown": false,
+      "minLevel": 54,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/dire-maul-east",
+        "https://foreverchanges.pro/dungeons/dire-maul-north",
+        "https://foreverchanges.pro/dungeons/dire-maul-west"
+      ]
+    },
+    {
+      "dungeon": "dire-maul",
+      "id": 7502,
+      "name": "束缚之影",
+      "faction": "both",
+      "gatesKnown": false,
+      "minLevel": 54,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/dire-maul-east",
+        "https://foreverchanges.pro/dungeons/dire-maul-north",
+        "https://foreverchanges.pro/dungeons/dire-maul-west"
+      ]
+    },
+    {
+      "dungeon": "dire-maul",
+      "id": 7504,
+      "name": "光明不会告诉你的事情",
+      "faction": "both",
+      "gatesKnown": false,
+      "minLevel": 54,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/dire-maul-east",
+        "https://foreverchanges.pro/dungeons/dire-maul-north",
+        "https://foreverchanges.pro/dungeons/dire-maul-west"
+      ]
+    },
+    {
+      "dungeon": "dire-maul",
+      "id": 7500,
+      "name": "奥法师的食谱",
+      "faction": "both",
+      "gatesKnown": false,
+      "minLevel": 54,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/dire-maul-east",
+        "https://foreverchanges.pro/dungeons/dire-maul-north",
+        "https://foreverchanges.pro/dungeons/dire-maul-west"
+      ]
+    },
+    {
+      "dungeon": "dire-maul",
+      "id": 7506,
+      "name": "翡翠梦境……",
+      "faction": "both",
+      "gatesKnown": false,
+      "minLevel": 54,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/dire-maul-east",
+        "https://foreverchanges.pro/dungeons/dire-maul-north",
+        "https://foreverchanges.pro/dungeons/dire-maul-west"
+      ]
+    },
+    {
+      "dungeon": "dire-maul",
+      "id": 7503,
+      "name": "最伟大的猎手",
+      "faction": "both",
+      "gatesKnown": false,
+      "minLevel": 54,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/dire-maul-east",
+        "https://foreverchanges.pro/dungeons/dire-maul-north",
+        "https://foreverchanges.pro/dungeons/dire-maul-west"
+      ]
+    },
+    {
+      "dungeon": "dire-maul",
+      "id": 7501,
+      "name": "圣光之力",
+      "faction": "both",
+      "gatesKnown": false,
+      "minLevel": 54,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/dire-maul-east",
+        "https://foreverchanges.pro/dungeons/dire-maul-north",
+        "https://foreverchanges.pro/dungeons/dire-maul-west"
+      ]
+    },
+    {
+      "dungeon": "dire-maul",
+      "id": 7462,
+      "name": "辛德拉的宝藏",
+      "faction": "alliance",
+      "gatesKnown": false,
+      "minLevel": 56,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/dire-maul-east",
+        "https://foreverchanges.pro/dungeons/dire-maul-north",
+        "https://foreverchanges.pro/dungeons/dire-maul-west"
+      ]
+    },
+    {
+      "dungeon": "dire-maul",
+      "id": 7877,
+      "name": "辛德拉的宝藏",
+      "faction": "horde",
+      "gatesKnown": false,
+      "minLevel": 56,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/dire-maul-east",
+        "https://foreverchanges.pro/dungeons/dire-maul-north",
+        "https://foreverchanges.pro/dungeons/dire-maul-west"
+      ]
+    },
+    {
+      "dungeon": "dire-maul",
+      "id": 1318,
+      "name": "戈多克食人魔的事务",
+      "faction": "both",
+      "gatesKnown": false,
+      "minLevel": 56,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/dire-maul-east",
+        "https://foreverchanges.pro/dungeons/dire-maul-north",
+        "https://foreverchanges.pro/dungeons/dire-maul-west"
+      ]
+    },
+    {
+      "dungeon": "dire-maul",
+      "id": 5528,
+      "name": "戈多克好酒",
+      "faction": "both",
+      "gatesKnown": false,
+      "minLevel": 57,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/dire-maul-east",
+        "https://foreverchanges.pro/dungeons/dire-maul-north",
+        "https://foreverchanges.pro/dungeons/dire-maul-west"
+      ]
+    },
+    {
+      "dungeon": "dire-maul",
+      "id": 8948,
+      "name": "安泰恩的老朋友",
+      "faction": "both",
+      "gatesKnown": true,
+      "minLevel": 58,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/dire-maul-east",
+        "https://foreverchanges.pro/dungeons/dire-maul-north",
+        "https://foreverchanges.pro/dungeons/dire-maul-west"
+      ]
+    },
+    {
+      "dungeon": "dire-maul",
+      "id": 8949,
+      "name": "法尔林的复仇",
+      "faction": "both",
+      "gatesKnown": false,
+      "minLevel": 58,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/dire-maul-east",
+        "https://foreverchanges.pro/dungeons/dire-maul-north",
+        "https://foreverchanges.pro/dungeons/dire-maul-west"
+      ]
+    },
+    {
+      "dungeon": "dire-maul",
+      "id": 8950,
+      "name": "旗帜上的附魔",
+      "faction": "both",
+      "gatesKnown": false,
+      "minLevel": 58,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/dire-maul-east",
+        "https://foreverchanges.pro/dungeons/dire-maul-north",
+        "https://foreverchanges.pro/dungeons/dire-maul-west"
+      ]
+    },
+    {
+      "dungeon": "dire-maul",
+      "id": 8967,
+      "name": "瓦塔拉克饰品的左瓣",
+      "faction": "both",
+      "gatesKnown": false,
+      "minLevel": 58,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/dire-maul-east",
+        "https://foreverchanges.pro/dungeons/dire-maul-north",
+        "https://foreverchanges.pro/dungeons/dire-maul-west"
+      ]
+    },
+    {
+      "dungeon": "dire-maul",
+      "id": 8990,
+      "name": "瓦塔拉克饰品的右瓣",
+      "faction": "both",
+      "gatesKnown": false,
+      "minLevel": 58,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/dire-maul-east",
+        "https://foreverchanges.pro/dungeons/dire-maul-north",
+        "https://foreverchanges.pro/dungeons/dire-maul-west"
+      ]
+    },
+    {
+      "dungeon": "dire-maul",
+      "id": 7463,
+      "name": "久违的法师",
+      "faction": "both",
+      "gatesKnown": false,
+      "minLevel": 60,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/dire-maul-east"
+      ]
+    },
+    {
+      "dungeon": "dire-maul",
+      "id": 7507,
+      "name": "诺斯特罗的屠龙技术纲要",
+      "faction": "both",
+      "gatesKnown": false,
+      "minLevel": 60,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/dire-maul-east",
+        "https://foreverchanges.pro/dungeons/dire-maul-north",
+        "https://foreverchanges.pro/dungeons/dire-maul-west"
+      ]
+    },
+    {
+      "dungeon": "dire-maul",
+      "id": 7508,
+      "name": "铸造奎尔塞拉",
+      "faction": "both",
+      "gatesKnown": false,
+      "minLevel": 60,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/dire-maul-east",
+        "https://foreverchanges.pro/dungeons/dire-maul-north",
+        "https://foreverchanges.pro/dungeons/dire-maul-west"
+      ]
+    },
+    {
+      "dungeon": "dire-maul",
+      "id": 5518,
+      "name": "戈多克食人魔装",
+      "faction": "both",
+      "gatesKnown": false,
+      "minLevel": 56,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/dire-maul-north"
+      ]
+    },
+    {
+      "dungeon": "dire-maul",
+      "id": 5525,
+      "name": "逃出生天！",
+      "faction": "both",
+      "gatesKnown": false,
+      "minLevel": 57,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/dire-maul-north"
+      ]
+    },
+    {
+      "dungeon": "dire-maul",
+      "id": 7461,
+      "name": "伊莫塔尔的疯狂",
+      "faction": "both",
+      "gatesKnown": false,
+      "minLevel": 56,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/dire-maul-west"
+      ]
+    },
+    {
+      "dungeon": "blackrock-spire",
+      "id": 4788,
+      "name": "最后的石板",
+      "faction": "both",
+      "gatesKnown": true,
+      "minLevel": 40,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/lower-blackrock-spire",
+        "https://foreverchanges.pro/dungeons/upper-blackrock-spire"
+      ]
+    },
+    {
+      "dungeon": "blackrock-spire",
+      "id": 4982,
+      "name": "比修的装置",
+      "faction": "horde",
+      "gatesKnown": false,
+      "minLevel": 55,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/lower-blackrock-spire",
+        "https://foreverchanges.pro/dungeons/upper-blackrock-spire"
+      ]
+    },
+    {
+      "dungeon": "blackrock-spire",
+      "id": 5001,
+      "name": "比修的装置",
+      "faction": "alliance",
+      "gatesKnown": false,
+      "minLevel": 55,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/lower-blackrock-spire",
+        "https://foreverchanges.pro/dungeons/upper-blackrock-spire"
+      ]
+    },
+    {
+      "dungeon": "blackrock-spire",
+      "id": 4983,
+      "name": "比修的侦察报告",
+      "faction": "horde",
+      "gatesKnown": false,
+      "minLevel": 55,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/lower-blackrock-spire",
+        "https://foreverchanges.pro/dungeons/upper-blackrock-spire"
+      ]
+    },
+    {
+      "dungeon": "blackrock-spire",
+      "id": 4862,
+      "name": "蜘蛛卵",
+      "faction": "both",
+      "gatesKnown": true,
+      "minLevel": 55,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/lower-blackrock-spire",
+        "https://foreverchanges.pro/dungeons/upper-blackrock-spire"
+      ]
+    },
+    {
+      "dungeon": "blackrock-spire",
+      "id": 4729,
+      "name": "基布雷尔的特殊宠物",
+      "faction": "both",
+      "gatesKnown": true,
+      "minLevel": 55,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/lower-blackrock-spire",
+        "https://foreverchanges.pro/dungeons/upper-blackrock-spire"
+      ]
+    },
+    {
+      "dungeon": "blackrock-spire",
+      "id": 5002,
+      "name": "给麦克斯韦尔的消息",
+      "faction": "alliance",
+      "gatesKnown": false,
+      "minLevel": 55,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/lower-blackrock-spire",
+        "https://foreverchanges.pro/dungeons/upper-blackrock-spire"
+      ]
+    },
+    {
+      "dungeon": "blackrock-spire",
+      "id": 4701,
+      "name": "座狼之源",
+      "faction": "alliance",
+      "gatesKnown": true,
+      "minLevel": 55,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/lower-blackrock-spire"
+      ]
+    },
+    {
+      "dungeon": "blackrock-spire",
+      "id": 4724,
+      "name": "座狼的首领",
+      "faction": "horde",
+      "gatesKnown": true,
+      "minLevel": 55,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/lower-blackrock-spire"
+      ]
+    },
+    {
+      "dungeon": "blackrock-spire",
+      "id": 5047,
+      "name": "皮普·急智，为您效劳！",
+      "faction": "both",
+      "gatesKnown": false,
+      "minLevel": 55,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/lower-blackrock-spire",
+        "https://foreverchanges.pro/dungeons/upper-blackrock-spire"
+      ]
+    },
+    {
+      "dungeon": "blackrock-spire",
+      "id": 5089,
+      "name": "达基萨斯将军的命令",
+      "faction": "alliance",
+      "gatesKnown": false,
+      "minLevel": 55,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/lower-blackrock-spire"
+      ]
+    },
+    {
+      "dungeon": "blackrock-spire",
+      "id": 5081,
+      "name": "麦克斯韦尔的任务",
+      "faction": "alliance",
+      "gatesKnown": true,
+      "minLevel": 55,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/lower-blackrock-spire"
+      ]
+    },
+    {
+      "dungeon": "blackrock-spire",
+      "id": 4866,
+      "name": "蛛后的乳汁",
+      "faction": "both",
+      "gatesKnown": true,
+      "minLevel": 55,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/lower-blackrock-spire",
+        "https://foreverchanges.pro/dungeons/upper-blackrock-spire"
+      ]
+    },
+    {
+      "dungeon": "blackrock-spire",
+      "id": 6569,
+      "name": "黑龙幻象",
+      "faction": "horde",
+      "gatesKnown": true,
+      "minLevel": 55,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/lower-blackrock-spire"
+      ]
+    },
+    {
+      "dungeon": "blackrock-spire",
+      "id": 5127,
+      "name": "恶魔熔炉",
+      "faction": "both",
+      "gatesKnown": true,
+      "minLevel": 55,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/lower-blackrock-spire",
+        "https://foreverchanges.pro/dungeons/upper-blackrock-spire"
+      ]
+    },
+    {
+      "dungeon": "blackrock-spire",
+      "id": 4867,
+      "name": "乌洛克",
+      "faction": "both",
+      "gatesKnown": false,
+      "minLevel": 55,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/lower-blackrock-spire"
+      ]
+    },
+    {
+      "dungeon": "blackrock-spire",
+      "id": 4903,
+      "name": "高图斯的命令",
+      "faction": "horde",
+      "gatesKnown": true,
+      "minLevel": 55,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/lower-blackrock-spire"
+      ]
+    },
+    {
+      "dungeon": "blackrock-spire",
+      "id": 4765,
+      "name": "瑞治维尔的箱子",
+      "faction": "alliance",
+      "gatesKnown": true,
+      "minLevel": 57,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/lower-blackrock-spire",
+        "https://foreverchanges.pro/dungeons/upper-blackrock-spire"
+      ]
+    },
+    {
+      "dungeon": "blackrock-spire",
+      "id": 4764,
+      "name": "末日扣环",
+      "faction": "alliance",
+      "gatesKnown": true,
+      "minLevel": 57,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/lower-blackrock-spire",
+        "https://foreverchanges.pro/dungeons/upper-blackrock-spire"
+      ]
+    },
+    {
+      "dungeon": "blackrock-spire",
+      "id": 4735,
+      "name": "收集龙蛋",
+      "faction": "both",
+      "gatesKnown": true,
+      "minLevel": 57,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/lower-blackrock-spire",
+        "https://foreverchanges.pro/dungeons/upper-blackrock-spire"
+      ]
+    },
+    {
+      "dungeon": "blackrock-spire",
+      "id": 4734,
+      "name": "冷冻龙蛋",
+      "faction": "both",
+      "gatesKnown": true,
+      "minLevel": 57,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/lower-blackrock-spire",
+        "https://foreverchanges.pro/dungeons/upper-blackrock-spire"
+      ]
+    },
+    {
+      "dungeon": "blackrock-spire",
+      "id": 4742,
+      "name": "晋升印章",
+      "faction": "both",
+      "gatesKnown": false,
+      "minLevel": 57,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/lower-blackrock-spire"
+      ]
+    },
+    {
+      "dungeon": "blackrock-spire",
+      "id": 4743,
+      "name": "晋升印章",
+      "faction": "both",
+      "gatesKnown": false,
+      "minLevel": 57,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/lower-blackrock-spire",
+        "https://foreverchanges.pro/dungeons/upper-blackrock-spire"
+      ]
+    },
+    {
+      "dungeon": "blackrock-spire",
+      "id": 5160,
+      "name": "监护者",
+      "faction": "both",
+      "gatesKnown": false,
+      "minLevel": 57,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/lower-blackrock-spire",
+        "https://foreverchanges.pro/dungeons/upper-blackrock-spire"
+      ]
+    },
+    {
+      "dungeon": "blackrock-spire",
+      "id": 8995,
+      "name": "瓦塔拉克公爵",
+      "faction": "both",
+      "gatesKnown": false,
+      "minLevel": 58,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/lower-blackrock-spire",
+        "https://foreverchanges.pro/dungeons/upper-blackrock-spire"
+      ]
+    },
+    {
+      "dungeon": "blackrock-spire",
+      "id": 8966,
+      "name": "瓦塔拉克饰品的左瓣",
+      "faction": "both",
+      "gatesKnown": false,
+      "minLevel": 58,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/lower-blackrock-spire",
+        "https://foreverchanges.pro/dungeons/upper-blackrock-spire"
+      ]
+    },
+    {
+      "dungeon": "blackrock-spire",
+      "id": 8989,
+      "name": "瓦塔拉克饰品的右瓣",
+      "faction": "both",
+      "gatesKnown": false,
+      "minLevel": 58,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/lower-blackrock-spire",
+        "https://foreverchanges.pro/dungeons/upper-blackrock-spire"
+      ]
+    },
+    {
+      "dungeon": "blackrock-spire",
+      "id": 6502,
+      "name": "龙火护符",
+      "faction": "alliance",
+      "gatesKnown": true,
+      "minLevel": 50,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/upper-blackrock-spire"
+      ]
+    },
+    {
+      "dungeon": "blackrock-spire",
+      "id": 6602,
+      "name": "黑龙勇士之血",
+      "faction": "horde",
+      "gatesKnown": true,
+      "minLevel": 55,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/upper-blackrock-spire"
+      ]
+    },
+    {
+      "dungeon": "blackrock-spire",
+      "id": 4974,
+      "name": "为部落而战！",
+      "faction": "horde",
+      "gatesKnown": true,
+      "minLevel": 55,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/upper-blackrock-spire"
+      ]
+    },
+    {
+      "dungeon": "blackrock-spire",
+      "id": 5102,
+      "name": "达基萨斯将军之死",
+      "faction": "alliance",
+      "gatesKnown": true,
+      "minLevel": 55,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/upper-blackrock-spire"
+      ]
+    },
+    {
+      "dungeon": "blackrock-spire",
+      "id": 4768,
+      "name": "黑暗石板",
+      "faction": "horde",
+      "gatesKnown": true,
+      "minLevel": 57,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/upper-blackrock-spire"
+      ]
+    },
+    {
+      "dungeon": "maraudon",
+      "id": 7068,
+      "name": "暗影残片",
+      "faction": "horde",
+      "gatesKnown": true,
+      "minLevel": 38,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/maraudon"
+      ]
+    },
+    {
+      "dungeon": "maraudon",
+      "id": 7070,
+      "name": "暗影残片",
+      "faction": "alliance",
+      "gatesKnown": true,
+      "minLevel": 38,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/maraudon"
+      ]
+    },
+    {
+      "dungeon": "maraudon",
+      "id": 7067,
+      "name": "贱民的指引",
+      "faction": "both",
+      "gatesKnown": true,
+      "minLevel": 39,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/maraudon"
+      ]
+    },
+    {
+      "dungeon": "maraudon",
+      "id": 7028,
+      "name": "扭曲的邪恶",
+      "faction": "both",
+      "gatesKnown": true,
+      "minLevel": 41,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/maraudon"
+      ]
+    },
+    {
+      "dungeon": "maraudon",
+      "id": 7029,
+      "name": "维利塔恩的污染",
+      "faction": "horde",
+      "gatesKnown": true,
+      "minLevel": 41,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/maraudon"
+      ]
+    },
+    {
+      "dungeon": "maraudon",
+      "id": 7041,
+      "name": "维利塔恩的污染",
+      "faction": "alliance",
+      "gatesKnown": true,
+      "minLevel": 41,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/maraudon"
+      ]
+    },
+    {
+      "dungeon": "maraudon",
+      "id": 7044,
+      "name": "玛拉顿的传说",
+      "faction": "both",
+      "gatesKnown": true,
+      "minLevel": 41,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/maraudon"
+      ]
+    },
+    {
+      "dungeon": "maraudon",
+      "id": 7046,
+      "name": "塞雷布拉斯节杖",
+      "faction": "both",
+      "gatesKnown": false,
+      "minLevel": 41,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/maraudon"
+      ]
+    },
+    {
+      "dungeon": "maraudon",
+      "id": 7064,
+      "name": "大地的污染",
+      "faction": "horde",
+      "gatesKnown": true,
+      "minLevel": 45,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/maraudon"
+      ]
+    },
+    {
+      "dungeon": "maraudon",
+      "id": 7065,
+      "name": "大地的污染",
+      "faction": "alliance",
+      "gatesKnown": true,
+      "minLevel": 45,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/maraudon"
+      ]
+    },
+    {
+      "dungeon": "maraudon",
+      "id": 7066,
+      "name": "生命之种",
+      "faction": "both",
+      "gatesKnown": false,
+      "minLevel": 45,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/maraudon"
+      ]
+    },
+    {
+      "dungeon": "razorfen-downs",
+      "id": 6626,
+      "name": "邪恶之地",
+      "faction": "both",
+      "gatesKnown": true,
+      "minLevel": 28,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/razorfen-downs"
+      ]
+    },
+    {
+      "dungeon": "razorfen-downs",
+      "id": 6521,
+      "name": "邪恶的盟友",
+      "faction": "horde",
+      "gatesKnown": true,
+      "minLevel": 28,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/razorfen-downs"
+      ]
+    },
+    {
+      "dungeon": "razorfen-downs",
+      "id": 6522,
+      "name": "邪恶的盟友",
+      "faction": "horde",
+      "gatesKnown": false,
+      "minLevel": 28,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/razorfen-downs"
+      ]
+    },
+    {
+      "dungeon": "razorfen-downs",
+      "id": 3525,
+      "name": "封印神像",
+      "faction": "both",
+      "gatesKnown": false,
+      "minLevel": 32,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/razorfen-downs"
+      ]
+    },
+    {
+      "dungeon": "razorfen-downs",
+      "id": 3523,
+      "name": "剃刀高地的亡灵天灾",
+      "faction": "both",
+      "gatesKnown": false,
+      "minLevel": 32,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/razorfen-downs"
+      ]
+    },
+    {
+      "dungeon": "razorfen-downs",
+      "id": 3341,
+      "name": "寒冰之王",
+      "faction": "horde",
+      "gatesKnown": true,
+      "minLevel": 37,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/razorfen-downs"
+      ]
+    },
+    {
+      "dungeon": "razorfen-downs",
+      "id": 3636,
+      "name": "与圣光同在",
+      "faction": "alliance",
+      "gatesKnown": true,
+      "minLevel": 39,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/razorfen-downs"
+      ]
+    },
+    {
+      "dungeon": "scholomance",
+      "id": 5341,
+      "name": "巴罗夫家族的宝藏",
+      "faction": "horde",
+      "gatesKnown": true,
+      "minLevel": 52,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/scholomance"
+      ]
+    },
+    {
+      "dungeon": "scholomance",
+      "id": 5343,
+      "name": "巴罗夫家族的宝藏",
+      "faction": "alliance",
+      "gatesKnown": true,
+      "minLevel": 52,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/scholomance"
+      ]
+    },
+    {
+      "dungeon": "scholomance",
+      "id": 5529,
+      "name": "瘟疫之龙",
+      "faction": "both",
+      "gatesKnown": true,
+      "minLevel": 55,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/scholomance"
+      ]
+    },
+    {
+      "dungeon": "scholomance",
+      "id": 5382,
+      "name": "瑟尔林·卡斯迪诺夫教授",
+      "faction": "both",
+      "gatesKnown": true,
+      "minLevel": 55,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/scholomance"
+      ]
+    },
+    {
+      "dungeon": "scholomance",
+      "id": 5384,
+      "name": "传令官基尔图诺斯",
+      "faction": "both",
+      "gatesKnown": true,
+      "minLevel": 55,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/scholomance"
+      ]
+    },
+    {
+      "dungeon": "scholomance",
+      "id": 5515,
+      "name": "卡斯迪诺夫的恐惧之袋",
+      "faction": "both",
+      "gatesKnown": true,
+      "minLevel": 55,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/scholomance"
+      ]
+    },
+    {
+      "dungeon": "scholomance",
+      "id": 5531,
+      "name": "贝蒂娜·比格辛克",
+      "faction": "both",
+      "gatesKnown": true,
+      "minLevel": 57,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/scholomance"
+      ]
+    },
+    {
+      "dungeon": "scholomance",
+      "id": 4771,
+      "name": "黎明先锋",
+      "faction": "both",
+      "gatesKnown": true,
+      "minLevel": 57,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/scholomance"
+      ]
+    },
+    {
+      "dungeon": "scholomance",
+      "id": 5466,
+      "name": "巫妖莱斯·霜语",
+      "faction": "both",
+      "gatesKnown": true,
+      "minLevel": 57,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/scholomance"
+      ]
+    },
+    {
+      "dungeon": "scholomance",
+      "id": 8969,
+      "name": "瓦塔拉克饰品的左瓣",
+      "faction": "both",
+      "gatesKnown": false,
+      "minLevel": 58,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/scholomance"
+      ]
+    },
+    {
+      "dungeon": "scholomance",
+      "id": 8992,
+      "name": "瓦塔拉克饰品的右瓣",
+      "faction": "both",
+      "gatesKnown": false,
+      "minLevel": 58,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/scholomance"
+      ]
+    },
+    {
+      "dungeon": "stratholme",
+      "id": 5848,
+      "name": "爱与家庭",
+      "faction": "both",
+      "gatesKnown": true,
+      "minLevel": 52,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/stratholme-main-gate",
+        "https://foreverchanges.pro/dungeons/stratholme-service-gate"
+      ]
+    },
+    {
+      "dungeon": "stratholme",
+      "id": 5125,
+      "name": "奥里克斯的清算",
+      "faction": "both",
+      "gatesKnown": false,
+      "minLevel": 55,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/stratholme-main-gate",
+        "https://foreverchanges.pro/dungeons/stratholme-service-gate"
+      ]
+    },
+    {
+      "dungeon": "stratholme",
+      "id": 5243,
+      "name": "神圣之屋",
+      "faction": "both",
+      "gatesKnown": true,
+      "minLevel": 55,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/stratholme-main-gate",
+        "https://foreverchanges.pro/dungeons/stratholme-service-gate"
+      ]
+    },
+    {
+      "dungeon": "stratholme",
+      "id": 5213,
+      "name": "活跃的探子",
+      "faction": "both",
+      "gatesKnown": true,
+      "minLevel": 55,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/stratholme-main-gate",
+        "https://foreverchanges.pro/dungeons/stratholme-service-gate"
+      ]
+    },
+    {
+      "dungeon": "stratholme",
+      "id": 5251,
+      "name": "档案管理员",
+      "faction": "both",
+      "gatesKnown": true,
+      "minLevel": 55,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/stratholme-main-gate"
+      ]
+    },
+    {
+      "dungeon": "stratholme",
+      "id": 5214,
+      "name": "了不起的艾兹拉·格里姆",
+      "faction": "both",
+      "gatesKnown": true,
+      "minLevel": 55,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/stratholme-main-gate",
+        "https://foreverchanges.pro/dungeons/stratholme-service-gate"
+      ]
+    },
+    {
+      "dungeon": "stratholme",
+      "id": 5282,
+      "name": "永不安息的灵魂",
+      "faction": "both",
+      "gatesKnown": true,
+      "minLevel": 55,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/stratholme-main-gate",
+        "https://foreverchanges.pro/dungeons/stratholme-service-gate"
+      ]
+    },
+    {
+      "dungeon": "stratholme",
+      "id": 5262,
+      "name": "可怕的真相",
+      "faction": "both",
+      "gatesKnown": false,
+      "minLevel": 55,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/stratholme-main-gate"
+      ]
+    },
+    {
+      "dungeon": "stratholme",
+      "id": 5463,
+      "name": "米奈希尔的礼物",
+      "faction": "both",
+      "gatesKnown": true,
+      "minLevel": 57,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/stratholme-main-gate",
+        "https://foreverchanges.pro/dungeons/stratholme-service-gate"
+      ]
+    },
+    {
+      "dungeon": "stratholme",
+      "id": 8945,
+      "name": "死人的请求",
+      "faction": "both",
+      "gatesKnown": true,
+      "minLevel": 58,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/stratholme-main-gate",
+        "https://foreverchanges.pro/dungeons/stratholme-service-gate"
+      ]
+    },
+    {
+      "dungeon": "stratholme",
+      "id": 8968,
+      "name": "瓦塔拉克饰品的左瓣",
+      "faction": "both",
+      "gatesKnown": false,
+      "minLevel": 58,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/stratholme-main-gate",
+        "https://foreverchanges.pro/dungeons/stratholme-service-gate"
+      ]
+    },
+    {
+      "dungeon": "stratholme",
+      "id": 8991,
+      "name": "瓦塔拉克饰品的右瓣",
+      "faction": "both",
+      "gatesKnown": false,
+      "minLevel": 58,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/stratholme-main-gate",
+        "https://foreverchanges.pro/dungeons/stratholme-service-gate"
+      ]
+    },
+    {
+      "dungeon": "stratholme",
+      "id": 5263,
+      "name": "超越",
+      "faction": "both",
+      "gatesKnown": true,
+      "minLevel": 55,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/stratholme-service-gate"
+      ]
+    },
+    {
+      "dungeon": "stratholme",
+      "id": 5212,
+      "name": "血肉不会撒谎",
+      "faction": "both",
+      "gatesKnown": true,
+      "minLevel": 55,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/stratholme-service-gate"
+      ]
+    },
+    {
+      "dungeon": "stratholme",
+      "id": 6163,
+      "name": "吞咽者拉姆斯登",
+      "faction": "horde",
+      "gatesKnown": true,
+      "minLevel": 56,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/stratholme-service-gate"
+      ]
+    },
+    {
+      "dungeon": "sunken-temple",
+      "id": 1445,
+      "name": "阿塔哈卡神庙",
+      "faction": "horde",
+      "gatesKnown": true,
+      "minLevel": 38,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/sunken-temple"
+      ]
+    },
+    {
+      "dungeon": "sunken-temple",
+      "id": 1446,
+      "name": "预言者迦玛兰",
+      "faction": "both",
+      "gatesKnown": true,
+      "minLevel": 38,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/sunken-temple"
+      ]
+    },
+    {
+      "dungeon": "sunken-temple",
+      "id": 3528,
+      "name": "神灵哈卡",
+      "faction": "both",
+      "gatesKnown": true,
+      "minLevel": 40,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/sunken-temple"
+      ]
+    },
+    {
+      "dungeon": "sunken-temple",
+      "id": 1475,
+      "name": "进入阿塔哈卡神庙",
+      "faction": "alliance",
+      "gatesKnown": true,
+      "minLevel": 41,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/sunken-temple"
+      ]
+    },
+    {
+      "dungeon": "sunken-temple",
+      "id": 3446,
+      "name": "深入神庙",
+      "faction": "both",
+      "gatesKnown": true,
+      "minLevel": 46,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/sunken-temple"
+      ]
+    },
+    {
+      "dungeon": "sunken-temple",
+      "id": 3447,
+      "name": "雕像群的秘密",
+      "faction": "both",
+      "gatesKnown": true,
+      "minLevel": 46,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/sunken-temple"
+      ]
+    },
+    {
+      "dungeon": "sunken-temple",
+      "id": 4146,
+      "name": "除草器的燃料",
+      "faction": "horde",
+      "gatesKnown": true,
+      "minLevel": 47,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/sunken-temple"
+      ]
+    },
+    {
+      "dungeon": "sunken-temple",
+      "id": 3373,
+      "name": "伊兰尼库斯精华",
+      "faction": "both",
+      "gatesKnown": false,
+      "minLevel": 48,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/sunken-temple"
+      ]
+    },
+    {
+      "dungeon": "uldaman",
+      "id": 2418,
+      "name": "能量石",
+      "faction": "both",
+      "gatesKnown": true,
+      "minLevel": 30,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/uldaman"
+      ]
+    },
+    {
+      "dungeon": "uldaman",
+      "id": 704,
+      "name": "阿戈莫德的命运",
+      "faction": "alliance",
+      "gatesKnown": true,
+      "minLevel": 30,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/uldaman"
+      ]
+    },
+    {
+      "dungeon": "uldaman",
+      "id": 709,
+      "name": "化解灾难",
+      "faction": "both",
+      "gatesKnown": true,
+      "minLevel": 30,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/uldaman"
+      ]
+    },
+    {
+      "dungeon": "uldaman",
+      "id": 1360,
+      "name": "失而复得",
+      "faction": "alliance",
+      "gatesKnown": true,
+      "minLevel": 33,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/uldaman"
+      ]
+    },
+    {
+      "dungeon": "uldaman",
+      "id": 2342,
+      "name": "寻找宝物",
+      "faction": "horde",
+      "gatesKnown": true,
+      "minLevel": 33,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/uldaman"
+      ]
+    },
+    {
+      "dungeon": "uldaman",
+      "id": 722,
+      "name": "铁趾的护符",
+      "faction": "alliance",
+      "gatesKnown": true,
+      "minLevel": 35,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/uldaman"
+      ]
+    },
+    {
+      "dungeon": "uldaman",
+      "id": 2240,
+      "name": "密室",
+      "faction": "alliance",
+      "gatesKnown": false,
+      "minLevel": 35,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/uldaman"
+      ]
+    },
+    {
+      "dungeon": "uldaman",
+      "id": 1139,
+      "name": "意志石板",
+      "faction": "alliance",
+      "gatesKnown": true,
+      "minLevel": 35,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/uldaman"
+      ]
+    },
+    {
+      "dungeon": "uldaman",
+      "id": 17,
+      "name": "奥达曼的蘑菇",
+      "faction": "alliance",
+      "gatesKnown": true,
+      "minLevel": 36,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/uldaman"
+      ]
+    },
+    {
+      "dungeon": "uldaman",
+      "id": 2202,
+      "name": "奥达曼的蘑菇",
+      "faction": "horde",
+      "gatesKnown": true,
+      "minLevel": 36,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/uldaman"
+      ]
+    },
+    {
+      "dungeon": "uldaman",
+      "id": 2199,
+      "name": "昂贵的知识",
+      "faction": "alliance",
+      "gatesKnown": true,
+      "minLevel": 37,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/uldaman"
+      ]
+    },
+    {
+      "dungeon": "uldaman",
+      "id": 2283,
+      "name": "搜寻项链",
+      "faction": "horde",
+      "gatesKnown": true,
+      "minLevel": 37,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/uldaman"
+      ]
+    },
+    {
+      "dungeon": "uldaman",
+      "id": 2198,
+      "name": "破碎的项链",
+      "faction": "alliance",
+      "gatesKnown": true,
+      "minLevel": 37,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/uldaman"
+      ]
+    },
+    {
+      "dungeon": "uldaman",
+      "id": 2338,
+      "name": "翻译日记",
+      "faction": "horde",
+      "gatesKnown": true,
+      "minLevel": 37,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/uldaman"
+      ]
+    },
+    {
+      "dungeon": "uldaman",
+      "id": 2340,
+      "name": "交付宝石",
+      "faction": "horde",
+      "gatesKnown": true,
+      "minLevel": 37,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/uldaman"
+      ]
+    },
+    {
+      "dungeon": "uldaman",
+      "id": 2339,
+      "name": "寻找宝贝",
+      "faction": "horde",
+      "gatesKnown": true,
+      "minLevel": 37,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/uldaman"
+      ]
+    },
+    {
+      "dungeon": "uldaman",
+      "id": 2204,
+      "name": "修复项链",
+      "faction": "alliance",
+      "gatesKnown": false,
+      "minLevel": 37,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/uldaman"
+      ]
+    },
+    {
+      "dungeon": "uldaman",
+      "id": 2361,
+      "name": "修复项链",
+      "faction": "alliance",
+      "gatesKnown": true,
+      "minLevel": 37,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/uldaman"
+      ]
+    },
+    {
+      "dungeon": "uldaman",
+      "id": 2201,
+      "name": "寻找宝石",
+      "faction": "alliance",
+      "gatesKnown": false,
+      "minLevel": 40,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/uldaman"
+      ]
+    },
+    {
+      "dungeon": "uldaman",
+      "id": 2341,
+      "name": "项链任务的终结",
+      "faction": "horde",
+      "gatesKnown": true,
+      "minLevel": 40,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/uldaman"
+      ]
+    },
+    {
+      "dungeon": "uldaman",
+      "id": 2279,
+      "name": "白金圆盘",
+      "faction": "alliance",
+      "gatesKnown": false,
+      "minLevel": 40,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/uldaman"
+      ]
+    },
+    {
+      "dungeon": "uldaman",
+      "id": 2280,
+      "name": "白金圆盘",
+      "faction": "horde",
+      "gatesKnown": false,
+      "minLevel": 40,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/uldaman"
+      ]
+    },
+    {
+      "dungeon": "zulfarrak",
+      "id": 2865,
+      "name": "圣甲虫的壳",
+      "faction": "both",
+      "gatesKnown": true,
+      "minLevel": 40,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/zulfarrak"
+      ]
+    },
+    {
+      "dungeon": "zulfarrak",
+      "id": 3042,
+      "name": "巨魔调和剂",
+      "faction": "both",
+      "gatesKnown": true,
+      "minLevel": 40,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/zulfarrak"
+      ]
+    },
+    {
+      "dungeon": "zulfarrak",
+      "id": 2846,
+      "name": "深渊皇冠",
+      "faction": "both",
+      "gatesKnown": true,
+      "minLevel": 40,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/zulfarrak"
+      ]
+    },
+    {
+      "dungeon": "zulfarrak",
+      "id": 2768,
+      "name": "探水棒",
+      "faction": "both",
+      "gatesKnown": true,
+      "minLevel": 40,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/zulfarrak"
+      ]
+    },
+    {
+      "dungeon": "zulfarrak",
+      "id": 2991,
+      "name": "耐克鲁姆的徽章",
+      "faction": "alliance",
+      "gatesKnown": true,
+      "minLevel": 40,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/zulfarrak"
+      ]
+    },
+    {
+      "dungeon": "zulfarrak",
+      "id": 3527,
+      "name": "摩沙鲁的预言",
+      "faction": "both",
+      "gatesKnown": true,
+      "minLevel": 40,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/zulfarrak"
+      ]
+    },
+    {
+      "dungeon": "zulfarrak",
+      "id": 2770,
+      "name": "加兹瑞拉",
+      "faction": "both",
+      "gatesKnown": true,
+      "minLevel": 40,
+      "sources": [
+        "https://foreverchanges.pro/dungeons/zulfarrak"
+      ]
+    }
+  ]
+}

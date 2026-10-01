@@ -1,0 +1,682 @@
+{
+  "version": "2026-10-01.1",
+  "policy": "Partial reference only. Observed item stats do not prove boss drops. Classic references are labelled. Unknown eligibility stays unknown.",
+  "coverage": [
+    {
+      "id": "ragefire-chasm",
+      "name": "怒焰裂谷",
+      "coverage": "partial",
+      "quests": 6,
+      "classicQuests": 0,
+      "bosses": 4,
+      "items": 12,
+      "knownLevels": 6,
+      "knownGates": 5,
+      "observedItems": 6,
+      "classicItems": 6,
+      "unassignedItems": 0
+    },
+    {
+      "id": "hall-of-thanes",
+      "name": "领主大厅",
+      "coverage": "partial",
+      "quests": 5,
+      "classicQuests": 0,
+      "bosses": 4,
+      "items": 12,
+      "knownLevels": 5,
+      "knownGates": 0,
+      "observedItems": 12,
+      "classicItems": 0,
+      "unassignedItems": 0
+    },
+    {
+      "id": "ruins-of-lordaeron",
+      "name": "洛丹伦废墟",
+      "coverage": "partial",
+      "quests": 10,
+      "classicQuests": 0,
+      "bosses": 7,
+      "items": 20,
+      "knownLevels": 10,
+      "knownGates": 0,
+      "observedItems": 20,
+      "classicItems": 0,
+      "unassignedItems": 1
+    },
+    {
+      "id": "deadmines",
+      "name": "死亡矿井",
+      "coverage": "partial",
+      "quests": 8,
+      "classicQuests": 0,
+      "bosses": 9,
+      "items": 45,
+      "knownLevels": 6,
+      "knownGates": 6,
+      "observedItems": 6,
+      "classicItems": 39,
+      "unassignedItems": 13
+    },
+    {
+      "id": "wailing-caverns",
+      "name": "哀嚎洞穴",
+      "coverage": "partial",
+      "quests": 7,
+      "classicQuests": 0,
+      "bosses": 9,
+      "items": 30,
+      "knownLevels": 7,
+      "knownGates": 6,
+      "observedItems": 4,
+      "classicItems": 26,
+      "unassignedItems": 1
+    },
+    {
+      "id": "shadowfang-keep",
+      "name": "影牙城堡",
+      "coverage": "partial",
+      "quests": 5,
+      "classicQuests": 0,
+      "bosses": 11,
+      "items": 40,
+      "knownLevels": 5,
+      "knownGates": 5,
+      "observedItems": 7,
+      "classicItems": 33,
+      "unassignedItems": 12
+    },
+    {
+      "id": "blackfathom-deeps",
+      "name": "黑暗深渊",
+      "coverage": "partial",
+      "quests": 13,
+      "classicQuests": 0,
+      "bosses": 8,
+      "items": 35,
+      "knownLevels": 12,
+      "knownGates": 10,
+      "observedItems": 7,
+      "classicItems": 28,
+      "unassignedItems": 16
+    },
+    {
+      "id": "stockade",
+      "name": "暴风城监狱",
+      "coverage": "partial",
+      "quests": 6,
+      "classicQuests": 0,
+      "bosses": 6,
+      "items": 20,
+      "knownLevels": 6,
+      "knownGates": 6,
+      "observedItems": 12,
+      "classicItems": 6,
+      "unassignedItems": 4
+    },
+    {
+      "id": "razorfen-kraul",
+      "name": "剃刀沼泽",
+      "coverage": "partial",
+      "quests": 8,
+      "classicQuests": 0,
+      "bosses": 9,
+      "items": 36,
+      "knownLevels": 8,
+      "knownGates": 6,
+      "observedItems": 5,
+      "classicItems": 29,
+      "unassignedItems": 12
+    },
+    {
+      "id": "excavation-site",
+      "name": "挖掘场：湿地",
+      "coverage": "unavailable",
+      "quests": 0,
+      "classicQuests": 0,
+      "bosses": 4,
+      "items": 0,
+      "knownLevels": 0,
+      "knownGates": 0,
+      "observedItems": 0,
+      "classicItems": 0,
+      "unassignedItems": 0
+    },
+    {
+      "id": "gnomeregan",
+      "name": "诺莫瑞根",
+      "coverage": "partial",
+      "quests": 16,
+      "classicQuests": 7,
+      "bosses": 7,
+      "items": 52,
+      "knownLevels": 15,
+      "knownGates": 9,
+      "observedItems": 0,
+      "classicItems": 49,
+      "unassignedItems": 23
+    },
+    {
+      "id": "dalaran",
+      "name": "达拉然城",
+      "coverage": "unavailable",
+      "quests": 0,
+      "classicQuests": 0,
+      "bosses": 1,
+      "items": 0,
+      "knownLevels": 0,
+      "knownGates": 0,
+      "observedItems": 0,
+      "classicItems": 0,
+      "unassignedItems": 0
+    },
+    {
+      "id": "scarlet-monastery",
+      "name": "血色修道院",
+      "coverage": "partial",
+      "quests": 8,
+      "classicQuests": 0,
+      "bosses": 11,
+      "items": 61,
+      "knownLevels": 8,
+      "knownGates": 7,
+      "observedItems": 0,
+      "classicItems": 61,
+      "unassignedItems": 28
+    },
+    {
+      "id": "alcaz-prison",
+      "name": "奥卡兹监狱",
+      "coverage": "unavailable",
+      "quests": 0,
+      "classicQuests": 0,
+      "bosses": 0,
+      "items": 0,
+      "knownLevels": 0,
+      "knownGates": 0,
+      "observedItems": 0,
+      "classicItems": 0,
+      "unassignedItems": 0
+    },
+    {
+      "id": "blackmaw-hold",
+      "name": "黑喉要塞",
+      "coverage": "unavailable",
+      "quests": 0,
+      "classicQuests": 0,
+      "bosses": 0,
+      "items": 0,
+      "knownLevels": 0,
+      "knownGates": 0,
+      "observedItems": 0,
+      "classicItems": 0,
+      "unassignedItems": 0
+    },
+    {
+      "id": "blackrock-depths",
+      "name": "黑石深渊",
+      "coverage": "partial",
+      "quests": 27,
+      "classicQuests": 27,
+      "bosses": 27,
+      "items": 161,
+      "knownLevels": 27,
+      "knownGates": 16,
+      "observedItems": 0,
+      "classicItems": 161,
+      "unassignedItems": 24
+    },
+    {
+      "id": "dire-maul",
+      "name": "厄运之槌",
+      "coverage": "partial",
+      "quests": 27,
+      "classicQuests": 27,
+      "bosses": 18,
+      "items": 153,
+      "knownLevels": 27,
+      "knownGates": 4,
+      "observedItems": 0,
+      "classicItems": 153,
+      "unassignedItems": 55
+    },
+    {
+      "id": "kroldok-stronghold",
+      "name": "克罗多克要塞",
+      "coverage": "unavailable",
+      "quests": 0,
+      "classicQuests": 0,
+      "bosses": 0,
+      "items": 0,
+      "knownLevels": 0,
+      "knownGates": 0,
+      "observedItems": 0,
+      "classicItems": 0,
+      "unassignedItems": 0
+    },
+    {
+      "id": "blackrock-spire",
+      "name": "黑石塔",
+      "coverage": "partial",
+      "quests": 32,
+      "classicQuests": 32,
+      "bosses": 24,
+      "items": 163,
+      "knownLevels": 32,
+      "knownGates": 19,
+      "observedItems": 27,
+      "classicItems": 136,
+      "unassignedItems": 22
+    },
+    {
+      "id": "maraudon",
+      "name": "玛拉顿",
+      "coverage": "partial",
+      "quests": 11,
+      "classicQuests": 11,
+      "bosses": 9,
+      "items": 34,
+      "knownLevels": 11,
+      "knownGates": 9,
+      "observedItems": 0,
+      "classicItems": 34,
+      "unassignedItems": 0
+    },
+    {
+      "id": "razorfen-downs",
+      "name": "剃刀高地",
+      "coverage": "partial",
+      "quests": 7,
+      "classicQuests": 7,
+      "bosses": 6,
+      "items": 31,
+      "knownLevels": 7,
+      "knownGates": 4,
+      "observedItems": 0,
+      "classicItems": 31,
+      "unassignedItems": 13
+    },
+    {
+      "id": "scholomance",
+      "name": "通灵学院",
+      "coverage": "partial",
+      "quests": 11,
+      "classicQuests": 11,
+      "bosses": 15,
+      "items": 115,
+      "knownLevels": 11,
+      "knownGates": 9,
+      "observedItems": 16,
+      "classicItems": 99,
+      "unassignedItems": 16
+    },
+    {
+      "id": "shapers-terrace",
+      "name": "塑形者露台",
+      "coverage": "unavailable",
+      "quests": 0,
+      "classicQuests": 0,
+      "bosses": 0,
+      "items": 0,
+      "knownLevels": 0,
+      "knownGates": 0,
+      "observedItems": 0,
+      "classicItems": 0,
+      "unassignedItems": 0
+    },
+    {
+      "id": "stratholme",
+      "name": "斯坦索姆",
+      "coverage": "partial",
+      "quests": 15,
+      "classicQuests": 15,
+      "bosses": 19,
+      "items": 152,
+      "knownLevels": 15,
+      "knownGates": 11,
+      "observedItems": 19,
+      "classicItems": 133,
+      "unassignedItems": 25
+    },
+    {
+      "id": "sunken-temple",
+      "name": "阿塔哈卡神庙",
+      "coverage": "partial",
+      "quests": 8,
+      "classicQuests": 8,
+      "bosses": 11,
+      "items": 59,
+      "knownLevels": 8,
+      "knownGates": 7,
+      "observedItems": 0,
+      "classicItems": 59,
+      "unassignedItems": 17
+    },
+    {
+      "id": "the-drowned-city",
+      "name": "沉没之城",
+      "coverage": "unavailable",
+      "quests": 0,
+      "classicQuests": 0,
+      "bosses": 0,
+      "items": 0,
+      "knownLevels": 0,
+      "knownGates": 0,
+      "observedItems": 0,
+      "classicItems": 0,
+      "unassignedItems": 0
+    },
+    {
+      "id": "uldaman",
+      "name": "奥达曼",
+      "coverage": "partial",
+      "quests": 22,
+      "classicQuests": 22,
+      "bosses": 10,
+      "items": 51,
+      "knownLevels": 22,
+      "knownGates": 17,
+      "observedItems": 0,
+      "classicItems": 51,
+      "unassignedItems": 23
+    },
+    {
+      "id": "zulfarrak",
+      "name": "祖尔法拉克",
+      "coverage": "partial",
+      "quests": 7,
+      "classicQuests": 7,
+      "bosses": 9,
+      "items": 33,
+      "knownLevels": 7,
+      "knownGates": 7,
+      "observedItems": 0,
+      "classicItems": 33,
+      "unassignedItems": 13
+    }
+  ],
+  "conflicts": [],
+  "sources": [
+    {
+      "dungeon": "alcaz-prison",
+      "page": "https://foreverchanges.pro/dungeons/alcaz-prison",
+      "sha256": "f44a470335ad99e0d26eec45be8c5d63336a5334cb21f4a7b4cb3bd611107bda",
+      "lang": "en"
+    },
+    {
+      "dungeon": "blackfathom-deeps",
+      "page": "https://foreverchanges.pro/dungeons/blackfathom-deeps",
+      "sha256": "0c8741f03db64a78060fcbd6a1bf867b98810290338934663d9b50863cd97ed3",
+      "lang": "en"
+    },
+    {
+      "dungeon": "blackmaw-hold",
+      "page": "https://foreverchanges.pro/dungeons/blackmaw-hold",
+      "sha256": "3fd2dc7f461a47cb054f11ec3aece2d60dff4a4672b9501a11f735d558b3d660",
+      "lang": "en"
+    },
+    {
+      "dungeon": "blackrock-depths",
+      "page": "https://foreverchanges.pro/dungeons/blackrock-depths",
+      "sha256": "b8ba793fea16043c5fba6da5cd3bfd3a02acd4163ebcaa40c37808f1e9442c56",
+      "lang": "en"
+    },
+    {
+      "dungeon": "dalaran",
+      "page": "https://foreverchanges.pro/dungeons/city-of-dalaran",
+      "sha256": "2e7a9d82a2c557e14e3389e29af7f497f2a44a835f2415546150b62311154713",
+      "lang": "en"
+    },
+    {
+      "dungeon": "dire-maul",
+      "page": "https://foreverchanges.pro/dungeons/dire-maul-east",
+      "sha256": "51b68dde3e2c94f78965b5376ebe6604af9025e2440ea3fe5ebe70c7a326a34e",
+      "lang": "en"
+    },
+    {
+      "dungeon": "dire-maul",
+      "page": "https://foreverchanges.pro/dungeons/dire-maul-north",
+      "sha256": "eba836d963807cd25ae70552d866fa737be15a0e3e29e39776dfd44d248945ee",
+      "lang": "en"
+    },
+    {
+      "dungeon": "dire-maul",
+      "page": "https://foreverchanges.pro/dungeons/dire-maul-west",
+      "sha256": "e78b4ad8e8fbe68d55be2d3e7b4b41b474158d489973d26e9739d8e5fff0ad7d",
+      "lang": "en"
+    },
+    {
+      "dungeon": "excavation-site",
+      "page": "https://foreverchanges.pro/dungeons/excavation-site",
+      "sha256": "a3eee5707603a5b4fc1f29d43ca5aee082eb7eaf2c89001a6ab06c2d81aeb27b",
+      "lang": "en"
+    },
+    {
+      "dungeon": "gnomeregan",
+      "page": "https://foreverchanges.pro/dungeons/gnomeregan",
+      "sha256": "43d13759ee756847276ede8b7cb333a1d5a0de698c3f6548cc2b0cf7b6880bc6",
+      "lang": "en"
+    },
+    {
+      "dungeon": "hall-of-thanes",
+      "page": "https://foreverchanges.pro/dungeons/hall-of-thanes",
+      "sha256": "6a3fe60b85d233583edcd01cd03f59e73a574714fb685086e49a9699df1a9147",
+      "lang": "en"
+    },
+    {
+      "dungeon": "kroldok-stronghold",
+      "page": "https://foreverchanges.pro/dungeons/kroldok-stronghold",
+      "sha256": "f572522797955727dca681b32bb7cb52b4337dd1bfee6cd27c15d257958cbce8",
+      "lang": "en"
+    },
+    {
+      "dungeon": "blackrock-spire",
+      "page": "https://foreverchanges.pro/dungeons/lower-blackrock-spire",
+      "sha256": "f67fa13bf81ee781117192fb7384854f9cf265e65fe8019a82ac8f6d469b104b",
+      "lang": "en"
+    },
+    {
+      "dungeon": "maraudon",
+      "page": "https://foreverchanges.pro/dungeons/maraudon",
+      "sha256": "35a17193c69184572347b9a456d5f750075377f4dfa503766bdff603d999237a",
+      "lang": "en"
+    },
+    {
+      "dungeon": "ragefire-chasm",
+      "page": "https://foreverchanges.pro/dungeons/ragefire-chasm",
+      "sha256": "ea8dc0f694184a37102de2237efdd2f2cd051097cbda4da09bd837e609fb9bf1",
+      "lang": "en"
+    },
+    {
+      "dungeon": "razorfen-downs",
+      "page": "https://foreverchanges.pro/dungeons/razorfen-downs",
+      "sha256": "9c6c7f0e284ae437ce3e8d9cabb5e30ad958929ca262f243826248ba7912e1d1",
+      "lang": "en"
+    },
+    {
+      "dungeon": "razorfen-kraul",
+      "page": "https://foreverchanges.pro/dungeons/razorfen-kraul",
+      "sha256": "3915ae224ac552abe0c11091ac625c447fa4af884c0298dec163fb79d2419951",
+      "lang": "en"
+    },
+    {
+      "dungeon": "ruins-of-lordaeron",
+      "page": "https://foreverchanges.pro/dungeons/ruins-of-lordaeron",
+      "sha256": "71e4fcfc5d6b5f1f84a25cecd358d8e44c4f60c44a12854ba20e08855efb4139",
+      "lang": "en"
+    },
+    {
+      "dungeon": "scarlet-monastery",
+      "page": "https://foreverchanges.pro/dungeons/scarlet-monastery-armory",
+      "sha256": "cb6a13ca532b4e6efdfee2b10b5e5a853a078c8889145466a08f77a10cf0abcb",
+      "lang": "en"
+    },
+    {
+      "dungeon": "scarlet-monastery",
+      "page": "https://foreverchanges.pro/dungeons/scarlet-monastery-cathedral",
+      "sha256": "8a59d6b09b1e1cf3c71cdd5368b757808857576afd39c7a30514e618e5aec342",
+      "lang": "en"
+    },
+    {
+      "dungeon": "scarlet-monastery",
+      "page": "https://foreverchanges.pro/dungeons/scarlet-monastery-graveyard",
+      "sha256": "620bcd40a4c477cf678a0b0287b42d19ae851c2b91f4387cfae790e50eefe6bc",
+      "lang": "en"
+    },
+    {
+      "dungeon": "scarlet-monastery",
+      "page": "https://foreverchanges.pro/dungeons/scarlet-monastery-library",
+      "sha256": "0576acaa44c6a34a5292c9c5f8630a25454acf6d4d403ffa53bcd13057d2ca0f",
+      "lang": "en"
+    },
+    {
+      "dungeon": "scholomance",
+      "page": "https://foreverchanges.pro/dungeons/scholomance",
+      "sha256": "55fdd74facc9a41009fe0f2ef6a98a3666da63566c1aa4956a0a2c269fe6ca3d",
+      "lang": "en"
+    },
+    {
+      "dungeon": "shadowfang-keep",
+      "page": "https://foreverchanges.pro/dungeons/shadowfang-keep",
+      "sha256": "05ee12b0444c28c5389d514848c37e2f26da62a73f7a2eb7ab8024f360dbb01b",
+      "lang": "en"
+    },
+    {
+      "dungeon": "shapers-terrace",
+      "page": "https://foreverchanges.pro/dungeons/shapers-terrace",
+      "sha256": "44d935451207fd5f75621f4d294d1408db29a47781522e4a9d7eb00dfb0e12f0",
+      "lang": "en"
+    },
+    {
+      "dungeon": "stratholme",
+      "page": "https://foreverchanges.pro/dungeons/stratholme-main-gate",
+      "sha256": "b3478ad9bd18a26d44aa5aae1b44da00d749985558635a6ff98c42f208b7cba0",
+      "lang": "en"
+    },
+    {
+      "dungeon": "stratholme",
+      "page": "https://foreverchanges.pro/dungeons/stratholme-service-gate",
+      "sha256": "7f0c69fb51722cc602f5d60cd15ed363bfa4a9a52d4017f62af73e7d7a74fc22",
+      "lang": "en"
+    },
+    {
+      "dungeon": "sunken-temple",
+      "page": "https://foreverchanges.pro/dungeons/sunken-temple",
+      "sha256": "90378c5227310d5bce59c9d2a9174ad3e1605c323fb135a1c592615ef0f1bc90",
+      "lang": "en"
+    },
+    {
+      "dungeon": "deadmines",
+      "page": "https://foreverchanges.pro/dungeons/the-deadmines",
+      "sha256": "07c2b9ec422853328f7557e3b61980eb2cd56614648960c3d16f60a14cb7f927",
+      "lang": "en"
+    },
+    {
+      "dungeon": "the-drowned-city",
+      "page": "https://foreverchanges.pro/dungeons/the-drowned-city",
+      "sha256": "ec6a2fa99296fd3c3f966c9436e8ff07736ebdd5de873589c128123018f172ac",
+      "lang": "en"
+    },
+    {
+      "dungeon": "stockade",
+      "page": "https://foreverchanges.pro/dungeons/the-stockade",
+      "sha256": "465a9ff7d62c78a251f6f992c5b888df92629178b07231d0fa9b77c41cdd0c3d",
+      "lang": "en"
+    },
+    {
+      "dungeon": "uldaman",
+      "page": "https://foreverchanges.pro/dungeons/uldaman",
+      "sha256": "b992b7abe1a32732d420ad8695e95a01f268b30d0cb5378278d7f170f904ebbd",
+      "lang": "en"
+    },
+    {
+      "dungeon": "blackrock-spire",
+      "page": "https://foreverchanges.pro/dungeons/upper-blackrock-spire",
+      "sha256": "0e1e4b0c069c23aeba398a4c165647136534a6f57e5c6693b01e5f80f1425e78",
+      "lang": "en"
+    },
+    {
+      "dungeon": "wailing-caverns",
+      "page": "https://foreverchanges.pro/dungeons/wailing-caverns",
+      "sha256": "e024db847f5022e1de3ed5e1796ad95d4fd71cea97f7a6c61eeb9b937c44ecc2",
+      "lang": "en"
+    },
+    {
+      "dungeon": "zulfarrak",
+      "page": "https://foreverchanges.pro/dungeons/zulfarrak",
+      "sha256": "7e48d8aab8e8acc7c1489685719080348794318fa1c8f77323fea1038f38eb42",
+      "lang": "en"
+    }
+  ],
+  "localResearch": [
+    {
+      "document": "哀嚎洞穴专题_2026-09-22/资料核对.md",
+      "sha256": "2c373cf98ecde6f8d2122c304895c81884339c46d1c171ededc9c5be454c89d1"
+    },
+    {
+      "document": "影牙城堡专题_2026-09-22/资料核对.md",
+      "sha256": "f9cfdfe76929baacc3c8e51561a5b1f85ab03e56dd6f3c51472edb65dd95af7b"
+    },
+    {
+      "document": "影牙城堡专题_2026-09-22/研究/正文物品清单.json",
+      "sha256": "3fa9aa1aedf3d6d0691de18b776d4872935c407f949594131810478ee8cdaeec"
+    },
+    {
+      "document": "影牙城堡专题_2026-09-22/研究/FC物品数据.json",
+      "sha256": "0833f9584ff2ad37413744737ae47bea9ecf6600d35a0ff0356a7e61f27d50b7"
+    },
+    {
+      "document": "怒焰裂谷专题_2026-09-22/资料核对.md",
+      "sha256": "9d1c93e52dd0cfd40a8f59a0363c9fcaf1848294160a000e5d08e7da5d085f32"
+    },
+    {
+      "document": "暴风城监狱专题_2026-09-23/资料核对.md",
+      "sha256": "436cb00eac0aeb48cff18ae7f5900db7551d329da4fae66b00bb9035ef68eb12"
+    },
+    {
+      "document": "暴风城监狱专题_2026-09-23/研究/成稿物品数据.json",
+      "sha256": "3f0cc83e5d3d48005c4eb08752ad570facb0393614e25d7b360daac4609a6c12"
+    },
+    {
+      "document": "死亡矿井专题_2026-09-22/资料核对.md",
+      "sha256": "7d29e2a570fc105362d8c809c40680d6443b0420b9917bdf3e3b75cf712d0f78"
+    },
+    {
+      "document": "死亡矿井专题_2026-09-22/研究/正文物品清单.json",
+      "sha256": "dcb08ee89a16bc15c36f76b45447794c8a3322802a1071f14cc6306a8d7be5dd"
+    },
+    {
+      "document": "死亡矿井专题_2026-09-22/研究/FC物品数据.json",
+      "sha256": "82f51822e355b7dce5cf2a0434c41fbdaaa99bbf0bddf9a068373c534a7feb2e"
+    },
+    {
+      "document": "洛丹伦废墟专题_2026-09-22/资料核对.md",
+      "sha256": "54a4ae1a5da2c7738ecdb459b02ec7bb08fdbfbbe830454210e1696925e99d92"
+    },
+    {
+      "document": "营地专题_2026-09-21/资料核对.md",
+      "sha256": "9148124e46fb42df744dfc4a9cc2b8affdf44182978c12ff80bc96d345f4f398"
+    },
+    {
+      "document": "领主大厅专题_2026-09-23/资料核对.md",
+      "sha256": "408a520b6825d3769341de692b95ef9eef4d5606201c0042632f7265b9f64806"
+    },
+    {
+      "document": "领主大厅专题_2026-09-23/研究/成稿物品数据.json",
+      "sha256": "f9278c4b9eaa2514b523c475ca03d5a9789d18c590bbc456b37d6e597fab212f"
+    },
+    {
+      "document": "领主大厅专题_2026-09-23/研究/首领与掉落_20260922.json",
+      "sha256": "db4a555fc99d756d08df6559a490155e8f109fca8ec5b4df4e21c379e77b01bf"
+    },
+    {
+      "document": "黑暗深渊专题_2026-09-22/资料核对.md",
+      "sha256": "5b4af38d01e0997c1f9c8c14e4b307b30a5b89e5f31bb2ec91bb150296378915"
+    },
+    {
+      "document": "黑暗深渊专题_2026-09-22/研究/FC物品数据.json",
+      "sha256": "ea6dd640f4ce1d88df49af40df26bce9eb0685aa05b09a204d623d34e03ab69e"
+    }
+  ],
+  "outputSha256": "2122588ac545d6ad666583a4494b50ce74cc4c39db49754d1932c6d6f819112c"
+}
