@@ -21,7 +21,12 @@ function Button($text,$x,$y,$w) {
   $c.Text=$text; $c.Location=New-Object System.Drawing.Point($x,$y); $c.Size=New-Object System.Drawing.Size($w,36)
   $form.Controls.Add($c); return $c
 }
-$null=Label '先安装，再登录 AI，最后启动桥接和游戏。' 24 20 610 32
+$null=Label '先安装，再登录 AI，最后启动桥接和游戏。' 24 20 430 32
+$help=Button '说明 / 說明 / Help' 462 16 174
+$help.Add_Click({
+  try { Start-Process -FilePath (Join-Path $bundle 'README.html') }
+  catch { Start-Process notepad.exe -ArgumentList ('"'+(Join-Path $bundle 'README.txt')+'"') }
+})
 $null=Label '游戏目录（包含 WowB.exe，通常是 _classic_beta_）' 24 62 600 26
 $game=New-Object System.Windows.Forms.TextBox
 $game.Location=New-Object System.Drawing.Point(24,92); $game.Size=New-Object System.Drawing.Size(488,28)

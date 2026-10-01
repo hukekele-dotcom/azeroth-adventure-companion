@@ -71,7 +71,10 @@ try {
     if (Test-Path -LiteralPath $cfg.adventureDir) { Start-Process explorer.exe -ArgumentList ('"'+$cfg.adventureDir+'"') } else {$status.Text='尚未产生电脑端档案，请在游戏中同步日志。'}
   }
   Btn '安装状态检查' 270 208 { try {[void][System.Windows.Forms.MessageBox]::Show((Diagnose),'本机状态')} catch {$status.Text=$_.Exception.Message} }
-  Btn '查看使用说明' 22 261 { Start-Process notepad.exe -ArgumentList ('"'+(Join-Path $root 'README.txt')+'"') }
+  Btn '说明 / 說明 / Help' 22 261 {
+    try { Start-Process -FilePath (Join-Path $root 'README.html') }
+    catch { Start-Process notepad.exe -ArgumentList ('"'+(Join-Path $root 'README.txt')+'"') }
+  }
   Btn '打开桥接日志目录' 270 261 { Start-Process explorer.exe -ArgumentList ('"'+(Join-Path $root 'app/bridge')+'"') }
   [void]$form.ShowDialog()
 } catch { [void][System.Windows.Forms.MessageBox]::Show($_.Exception.Message,'WoW AI'); exit 1 }

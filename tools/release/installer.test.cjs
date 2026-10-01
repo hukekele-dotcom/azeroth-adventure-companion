@@ -42,6 +42,14 @@ test('fresh install in Chinese paths creates slots, own config and private-data-
   assert.equal(fs.existsSync(path.join(client,'Interface/AddOns/WoWAI_S003/Inbox.lua')),true);
   assert.equal(fs.existsSync(path.join(target,'app/bridge/state.json')),false);
   assert.equal(fs.existsSync(path.join(client,'WTF/Account/SECOND/SavedVariables/WoWAI.lua')),false);
+  for (const language of ['zhCN','zhTW','en']) {
+    for (const ext of ['html','txt']) {
+      const guide=`Install-Guide-${language}.${ext}`;
+      assert.equal(hash(path.join(target,guide)),hash(path.join(bundle,guide)),'Installed guide must match the bundle');
+    }
+  }
+  const chooser=fs.readFileSync(path.join(target,'README.html'),'utf8');
+  for (const language of ['zhCN','zhTW','en']) assert.ok(chooser.includes(`Install-Guide-${language}.html`));
 });
 test('upgrade preserves chat, archived journal, auth, WTF and live inbox; backup exists',()=>{
   const files=[path.join(target,'app/bridge/transcripts.json'),path.join(target,'app/bridge/state.json'),

@@ -1,7 +1,7 @@
 'use strict';
 const fs=require('fs'), path=require('path'), os=require('os'), crypto=require('crypto');
 const repo=path.resolve(__dirname,'../..');
-const version='0.6.0-beta.1';
+const version=require('../../package.json').version;
 const nodeVersion='v22.23.3';
 const nodeHash='2b0ff57b049cda1bbcea2240eec20467018713c1efe1f7360c2681859b90ed71';
 const addon=['Adventure.lua','AdventureUI.lua','Codec.lua','Dungeon.lua','DungeonData.lua','DungeonUI.lua','Gear.lua','Kills.lua','Locale.lua','Map.lua','QuestLocations.lua','WoWAI.lua','WoWAI.toc','THIRD_PARTY.md'];
@@ -33,11 +33,10 @@ function build(output) {
     // Windows PowerShell 5.1 requires BOM to read Chinese scripts correctly.
     if(/\.(ps1|txt)$/.test(file)) {const dest=path.join(stage,file);fs.writeFileSync(dest,'\uFEFF'+fs.readFileSync(dest,'utf8').replace(/^\uFEFF/,''));}
   }
-  const guide='\uFEFF'+fs.readFileSync(path.join(__dirname,'安装说明.txt'),'utf8').replace(/^\uFEFF/,'');
-  fs.writeFileSync(path.join(stage,'安装说明.txt'),guide);
-  fs.writeFileSync(path.join(stage,'README.txt'),guide);
+  require('./build-guides.cjs').render(stage,version);
   fs.cpSync(runtime,path.join(stage,'runtime'),{recursive:true});
-  fs.writeFileSync(path.join(stage,'release.json'),JSON.stringify({name:'WoW AI Forever Community Edition',version,
+  fs.writeFileSync(path.join(stage,'release.json'),JSON.stringify({name:'Azeroth Adventure Companion',version,
+    documentation:{languages:['zhCN','zhTW','en'],entry:'README.html'},
     platform:'win32-x64',client:'Forever 1.60 / 16001',upstream:'https://github.com/chelinho139/wow-ai',
     node:{version:nodeVersion,archiveSha256:nodeHash,source:`https://nodejs.org/dist/${nodeVersion}/`},
     ai:{codex:'@openai/codex@0.159.3',workbuddy:'@tencent-ai/codebuddy-code@2.160.0'}},null,2));

@@ -57,7 +57,8 @@ function install({bundle, target, client, account, provider, checkProcesses = ch
   if (fs.existsSync(liveAddon)) fs.cpSync(liveAddon, path.join(backup,'WoWAI'), {recursive:true});
   if (old) fs.copyFileSync(configFile, path.join(backup,'config.json'));
   for (const relative of Object.keys(manifest.files)) {
-    if (!(relative.startsWith('app/') || relative.startsWith('runtime/') || ['Manage.ps1','installer.cjs','ai.cjs','README.txt','LICENSE','release.json'].includes(relative))) continue;
+    const guide = /^(?:README\.html|安装说明\.txt|Install-Guide-(?:zhCN|zhTW|en)\.(?:html|txt))$/.test(relative);
+    if (!(relative.startsWith('app/') || relative.startsWith('runtime/') || guide || ['Manage.ps1','installer.cjs','ai.cjs','README.txt','LICENSE','release.json'].includes(relative))) continue;
     const dest = inside(target, relative);
     // Manifest is an explicit source allow-list; private runtime files never enter it.
     fs.mkdirSync(path.dirname(dest), {recursive:true});

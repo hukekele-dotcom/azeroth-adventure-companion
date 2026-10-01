@@ -13,7 +13,7 @@ This directory builds a separate player distribution without reading the live `b
 
 ```powershell
 node tools/release/build.cjs C:\path\to\fresh-output-directory
-$env:WOWAI_TEST_BUNDLE='C:\path\to\fresh-output-directory\WoWAI-Forever-0.6.0-beta.1-win-x64'
+$env:WOWAI_TEST_BUNDLE='C:\path\to\fresh-output-directory\WoWAI-Forever-0.6.0-beta.2-win-x64'
 node --test tools/release/installer.test.cjs
 powershell.exe -NoProfile -ExecutionPolicy Bypass -File tools/release/ui-smoke.ps1 -Bundle $env:WOWAI_TEST_BUNDLE
 npm.cmd test
@@ -26,6 +26,10 @@ Tests install only into generated temporary fixtures. Their process guard is inj
 ZIP only the generated `WoWAI-Forever-...` directory, including its root folder. Keep the UTF-8 BOM on PowerShell scripts for Windows PowerShell 5.1 Chinese text. Verify every ZIP entry against `manifest.json`; retain an external ZIP SHA-256. The manifest provides corruption detection, not publisher authentication or a code signature.
 
 Source code and MIT / third-party notices are included in the player distribution. The official Node runtime includes its own LICENSE. Never package this whole development repository, the game WTF directory, or an already-used player installation.
+
+## Documentation
+
+The complete player guides are maintained in `guides/Install-Guide-{zhCN,zhTW,en}.txt`. Update all three for each release. `build-guides.cjs` renders the offline language chooser, accessible HTML guides and UTF-8 BOM text files. `README.txt` is the three-language entry point; `安装说明.txt` remains a Simplified Chinese compatibility alias. The installer copies all guides to the installed application, and both Windows help buttons open `README.html`. Original license and third-party notice files remain verbatim.
 
 ## Before a public release
 
