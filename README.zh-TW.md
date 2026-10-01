@@ -4,7 +4,7 @@
 
 **艾澤拉斯冒險夥伴** — 為《魔獸世界：無限》準備的 AI 任務助手、冒險日誌和副本助手。
 
-基於 [chelinho139/wow-ai](https://github.com/chelinho139/wow-ai) 的社群增強版。當前版本 **0.6.0-beta.3**，面向 Windows x64 / Forever 1.60 內測。
+基於 [chelinho139/wow-ai](https://github.com/chelinho139/wow-ai) 的社群增強版。當前版本 **0.6.0-beta.4**，面向 Windows x64 / Forever 1.60 內測。
 
 **[下載 Windows 內測安裝包](https://github.com/hukekele-dotcom/azeroth-adventure-companion/releases)** · **[簡體說明](tools/release/guides/Install-Guide-zhCN.txt)** · **[繁體說明](tools/release/guides/Install-Guide-zhTW.txt)** · **[English guide](tools/release/guides/Install-Guide-en.txt)** · **[反饋問題](https://github.com/hukekele-dotcom/azeroth-adventure-companion/issues)**
 
@@ -23,7 +23,7 @@
 
 ## 玩家安裝
 
-1. 從上方內測發布頁下載 `WoWAI-Forever-0.6.0-beta.3-win-x64.zip`，**完整解壓縮**。GitHub 自動生成的 “Source code” 是開發原始碼，不是玩家安裝包。
+1. 從上方內測發布頁下載 `WoWAI-Forever-0.6.0-beta.4-win-x64.zip`，**完整解壓縮**。GitHub 自動生成的 “Source code” 是開發原始碼，不是玩家安裝包。
 2. 退出遊戲和舊橋接，執行 `Install.cmd`。
 3. 選擇包含 `WowB.exe` 和 `Interface` 的客戶端目錄（通常為 `_classic_beta_`），選擇遊戲帳號及預設 AI。
 4. 按“安裝 / 升級 → 登入所選 AI → 啟動橋接”操作。
@@ -36,6 +36,8 @@
 當前安裝路徑、插件檔名、遊戲命令和介面仍保留 **WoW AI / WoWAI**，以相容已有存檔。Azeroth Adventure Companion 是本社群增強版的專案名稱。
 
 ## Codex 與 WorkBuddy
+
+AI 前置要求：至少安裝並登入一種 AI 執行元件。點選“登录所选 AI”會自動下載 Codex CLI 或 WorkBuddy 使用的 CodeBuddy Code；無需預裝桌面應用程式。兩種都要用就分別登入。日常保持橋接執行。
 
 - Codex 使用官方 Codex CLI；WorkBuddy 接入使用官方 CodeBuddy Code 執行引擎，需要單獨完成中國站登入。
 - WorkBuddy 預設選擇系統模型 `auto`，不直接操作桌面 WorkBuddy 會話，也不自動沿用其自訂 API 模型。

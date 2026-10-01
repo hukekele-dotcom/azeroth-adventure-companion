@@ -4,7 +4,7 @@
 
 AI quest assistance, daily adventure journals and dungeon assistance for **WoW: Forever**. A community enhancement of [chelinho139/wow-ai](https://github.com/chelinho139/wow-ai).
 
-**0.6.0-beta.3** · Windows x64 · Forever 1.60 Beta
+**0.6.0-beta.4** · Windows x64 · Forever 1.60 Beta
 
 **[Download the Windows package](https://github.com/hukekele-dotcom/azeroth-adventure-companion/releases)** · **[English installation guide](tools/release/guides/Install-Guide-en.txt)** · **[Report an issue](https://github.com/hukekele-dotcom/azeroth-adventure-companion/issues)**
 
@@ -23,7 +23,7 @@ Dungeon coverage and equipment scoring remain incomplete. Not every hidden quest
 
 ## Player installation
 
-1. Download **WoWAI-Forever-0.6.0-beta.3-win-x64.zip** from the release page and extract everything. GitHub's generated “Source code” archives are not player installers.
+1. Download **WoWAI-Forever-0.6.0-beta.4-win-x64.zip** from the release page and extract everything. GitHub's generated “Source code” archives are not player installers.
 2. Open **README.html** and choose English, or open **Install-Guide-en.txt**. The complete guides work offline.
 3. Exit the game and stop the old bridge. Run **Install.cmd**.
 4. Select the client folder containing **WowB.exe** and **Interface** (usually **_classic_beta_**), then your game account and default AI.
@@ -37,6 +37,8 @@ Node.js is bundled. Official AI tools download on first sign-in. Each player use
 Installed names, paths, interface branding and commands remain **WoW AI / WoWAI** for save compatibility. Azeroth Adventure Companion is the community project's name.
 
 ## Codex and WorkBuddy
+
+AI prerequisite: Install and sign in to at least one AI runtime. “登录所选 AI” downloads Codex CLI or the CodeBuddy Code runtime used for WorkBuddy. Neither desktop app needs to be installed beforehand. Configure both separately to use both; keep the bridge running.
 
 - Codex uses the official Codex CLI. WorkBuddy integration uses the official CodeBuddy Code execution engine and requires its own China-region sign-in.
 - WorkBuddy defaults to the system model selection **auto**. It does not control a WorkBuddy desktop session or automatically reuse its custom API configuration.

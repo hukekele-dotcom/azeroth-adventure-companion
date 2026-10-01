@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.6.0-beta.4
+
+Fixes misleading bridge errors after prolonged route research: research has a time limit, followed by at most one tools-disabled AI attempt using the same snapshot and model. Unknown locations remain unresolved. WorkBuddy supports Auto, GLM-5.3 and DeepSeek-V4.1-Flash. The local dungeon catalogue now contains 28 entries, 21 with quest and loot data, covering 259 quest entries and 1,315 item entries. Some data remains Classic reference material, not fully verified Forever data. All three guides clarify runtime installation and separate sign-in.
+
 ## 0.6.0-beta.3
 
 Quest details show minimum acceptance levels and any level shortfall. A preparation note uses the current character's faction, class and remaining documented quests to suggest a level for collecting dungeon quests together. Prerequisite chains, in-dungeon starts and missing data are identified separately. This is not a combat-level recommendation or a guarantee of completing everything in one run.

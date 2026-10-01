@@ -15,3 +15,7 @@ backups/
 ai-runtime/
 release-output/
 __pycache__/
+
+# Private knowledge archives and keys
+*.vault.json
+*.dpapi
