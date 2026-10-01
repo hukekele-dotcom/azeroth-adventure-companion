@@ -1,5 +1,5 @@
 Azeroth Adventure Companion — Installation and User Guide
-Version: 0.6.0-beta.4 (Windows x64 Beta)
+Version: 0.6.0-beta.5 (Windows x64 Beta)
 
 First use: Extract everything → Install → Sign in to AI → Start bridge → Restart game → /wow-ai
 Daily use: Open the “WoW AI 无限” desktop shortcut → Start bridge → Enter the game.
@@ -11,9 +11,9 @@ This guide covers installation, AI sign-in, everyday use, troubleshooting, backu
 This package targets the WoW: Forever 1.60 client with WowB.exe. Other WoW clients have not been verified. This Windows x64 package does not run on macOS.
 
 You need:
-• An installed game client. Log into it at least once and exit normally to create its account folder.
+• An installed Forever client. No prior game login or game-account selection is required.
 • Internet access and your own AI account. You can start with either Codex or WorkBuddy and configure the other later.
-• The complete WoWAI-Forever-0.6.0-beta.4-win-x64.zip package.
+• The complete WoWAI-Forever-0.6.0-beta.5-win-x64.zip package.
 
 Node.js is included; you do not need to install it separately. The official AI tools are downloaded when you first sign in. Each player uses their own account and allowance. The package does not include an AI account or credits.
 The “bridge” is the background program that connects the game addon to AI. Both the addon and the bridge must be running for AI communication.
@@ -39,16 +39,16 @@ Step 2: Exit the game and stop the old bridge
 Completely exit the game. If the tool is already installed, open the “WoW AI 无限” desktop shortcut and click “停止桥接” (Stop bridge). Also stop any bridge from a previous manual installation.
 Do not run old and new bridges against the same WoWAI addon at the same time.
 
-Step 3: Select the client, account and AI
+Step 3: Select the client and AI
 
 Double-click Install.cmd. In the installer:
 ① Click “选择目录” (Choose folder). Select the folder directly containing WowB.exe and Interface, usually _classic_beta_.
    For a game installed in D:\Games\World of Warcraft, select D:\Games\World of Warcraft\_classic_beta_.
    Do not select the outer launcher folder or Interface\AddOns.
-② Under “游戏账号” (Game account), select the account you want to use. These entries are account folders created by the game, not character names. Explicitly choose an account if there are several.
+② No game-account selection is needed. The bridge automatically discovers this addon's WoWAI save files across accounts in this client, including new saves after logout or /reload.
 ③ Under “默认 AI” (Default AI), choose Codex or WorkBuddy. You can switch in game later, but each provider requires its own sign-in.
 
-If the account list is empty, log into this specific client once, exit normally, then select the client folder again.
+You can install before the game creates any account folders. Game accounts and AI sign-in accounts are separate.
 The “说明 / 說明 / Help” button opens the offline language selection page.
 
 Step 4: Install the files
