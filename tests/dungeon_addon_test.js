@@ -2,6 +2,60 @@
 const test=require('node:test'),assert=require('node:assert/strict'),fs=require('fs'),path=require('path');
 const {lua,lauxlib,lualib,to_luastring,to_jsstring}=require('fengari');
 
+test('acceptance levels remain visible for active quests, missing levels never use quest difficulty',()=>{
+ const v=vm(`STUB.inside=false;local q=WoWAIDungeonData.dungeons[1].quests[1];q.minLevel=40;q.level=60;STUB.quests={{questID=1,title='副本任务'}}`);
+ v.run(`WoWAI.SelectTab('dungeon')`);
+ assert.match(v.get('WoWAIDungeonUI.rows[1].body:GetText()'),/最低接取等级：40 级/);
+ assert.match(v.get('WoWAIDungeonUI.rows[1].body:GetText()'),/还差/);
+ v.run(`WoWAIDungeonData.dungeons[1].quests[1].minLevel=nil;WoWAIDungeonUI.Render()`);
+ assert.match(v.get('WoWAIDungeonUI.rows[1].body:GetText()'),/最低接取等级：待核实/);
+ assert.doesNotMatch(v.get('WoWAIDungeonUI.preparation:GetText()'),/至少 60/);
+});
+
+test('preparation includes future quests but excludes other factions, classes, races, completed quests and chosen branches',()=>{
+ const v=vm(`STUB.inside=false;local qs=WoWAIDungeonData.dungeons[1].quests
+ qs[2]={id=2,name='高等级任务',faction='horde',gatesKnown=true,minLevel=24,races=16,classes=128,pre={88}}
+ qs[3]={id=3,name='联盟任务',faction='alliance',gatesKnown=true,minLevel=60}
+ qs[4]={id=4,name='战士任务',faction='horde',gatesKnown=true,minLevel=50,classes=1}
+ qs[5]={id=5,name='兽人任务',faction='horde',gatesKnown=true,minLevel=45,races=2}
+ qs[6]={id=6,name='交过的任务',faction='horde',gatesKnown=true,minLevel=40};STUB.completed[6]=true
+ qs[7]={id=7,name='已选另一分支',faction='horde',gatesKnown=true,minLevel=35,excl={99}};STUB.completed[99]=true
+ qs[8]={id=8,name='副本外周边任务',faction='horde',gatesKnown=true,minLevel=55,outside=true}
+ function PREP()local d=WoWAIDungeonData.dungeons[1];local r,c=WoWAIDungeon.Check(d);return WoWAIDungeon.Preparation(d,r,c)end`);
+ assert.equal(v.get('PREP().level'),'24');assert.equal(v.get('PREP().remaining'),'2');
+ assert.match(v.get('PREP().text'),/高等级任务/);assert.match(v.get('PREP().text'),/前置/);
+ assert.doesNotMatch(v.get('PREP().text'),/联盟任务|战士任务|兽人任务|交过的任务/);
+ v.run(`STUB.completed[2]=true`);assert.equal(v.get('PREP().level'),'10');
+});
+
+test('unknown records block all-quests level certainty; inside/item tasks raise threshold without becoming outside missing',()=>{
+ const v=vm(`STUB.inside=false;local qs=WoWAIDungeonData.dungeons[1].quests
+ qs[2]={id=2,name='本内任务',faction='horde',gatesKnown=true,minLevel=25,itemStart=true}
+ qs[3]={id=3,name='未查等级',faction='both',gatesKnown=false}
+ qs[4]={id=4,name='未查阵营',minLevel=60}
+ function PREP()local d=WoWAIDungeonData.dungeons[1];local r,c=WoWAIDungeon.Check(d);return WoWAIDungeon.Preparation(d,r,c)end`);
+ assert.equal(v.get('PREP().level'),'25');assert.equal(v.get('PREP().unknown'),'2');
+ assert.equal(v.get('PREP().inside'),'1');assert.match(v.get('PREP().text'),/不能确认接齐所需等级/);
+ assert.match(v.get('PREP().text'),/不能要求进本前全部接好/);
+ v.run(`WoWAIDungeonData.dungeons[1].quests={}`);assert.match(v.get('PREP().text'),/资料不足/);
+});
+
+test('preparation is localized, refreshed on level up, scrolls above tasks and hides on loot',()=>{
+ const v=vm(`STUB.inside=false;WoWAIDungeonData.dungeons[1].quests[1].minLevel=24;function UnitLevel()return 20 end`);
+ v.run(`WoWAI.SelectTab('dungeon')`);
+ assert.match(v.get('WoWAIDungeonUI.preparation:GetText()'),/当前 20 级，还差 4 级/);
+ v.run(`function UnitLevel()return 24 end;STUB.FireEvent('PLAYER_LEVEL_UP',24);for _,f in ipairs(STUB.frames)do if f.events.PLAYER_TALENT_UPDATE and f.scripts.OnUpdate then f.scripts.OnUpdate(f,1)end end`);
+ assert.match(v.get('WoWAIDungeonUI.preparation:GetText()'),/已达到/);
+ v.run(`WoWAIDB.settings.language='enUS';WoWAIDungeonUI.Render()`);
+ assert.match(v.get('WoWAIDungeonUI.preparation:GetText()'),/Aim for level 24/);
+ assert.match(v.get('WoWAIDungeonUI.rows[1].body:GetText()'),/Minimum acceptance level: 24/);
+ v.run(`WoWAIDB.settings.language='zhTW';WoWAIDungeonUI.Render()`);
+ assert.match(v.get('WoWAIDungeonUI.preparation:GetText()'),/集中清任務建議/);
+ assert.match(v.get('WoWAIDungeonUI.rows[1].body:GetText()'),/最低接取等級：24 級/);
+ v.run(`WoWAIDungeonUI.allLootButton.scripts.OnClick()`);assert.equal(v.get('WoWAIDungeonUI.preparation:IsShown()'),'false');
+ assert.equal(v.get('WoWAIDB.outbox'),'nil');
+});
+
 test('all drops exposes unassigned items without attaching them to a boss, and task details include rewards',()=>{
  const v=vm(`local d=WoWAIDungeonData.dungeons[1];d.loot[2]={id=102,name='小怪掉落',bosses={},from='小怪',basis='classic',icon='Interface\\\\Icons\\\\inv_misc_bag_08'};local q=d.quests[1];q.steps={{name='先找向导',from='城里 20, 30',instructions='和向导谈话',optional=true}};q.followups={{name='部落后续',faction='horde',instructions='返回部落'},{name='联盟后续',faction='alliance',instructions='返回联盟'}};q.rewards={{id=103,name='任务奖励披风',quality=3,icon='Interface\\\\Icons\\\\inv_misc_cape_18'}};q.xp=1000;STUB.quests={{questID=1,title='副本任务'}}`);
  v.run(`WoWAI.SelectTab('dungeon');WoWAIDungeonUI.allLootButton.scripts.OnClick()`);
