@@ -1,3 +1,7 @@
+# 0.6.0-beta.5
+
+Fix Windows installer Unicode decoding; remove game-account selection and automatically discover addon saves.
+
 # Changelog
 
 ## 0.6.0-beta.4
