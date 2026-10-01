@@ -1,12 +1,14 @@
 # Azeroth Adventure Companion
 
+> Source and three-language guides are updated for 0.6.0-beta.2. The new Windows package is still pending upload and is not public yet. The release page currently provides the previous 0.6.0-beta.1 package.
+
 [简体中文](README.md) · [繁體中文](README.zh-TW.md) · [English](README.en.md)
 
 AI quest assistance, daily adventure journals and dungeon assistance for **WoW: Forever**. A community enhancement of [chelinho139/wow-ai](https://github.com/chelinho139/wow-ai).
 
 **0.6.0-beta.2** · Windows x64 · Forever 1.60 Beta
 
-**[Download the Windows package](https://github.com/hukekele-dotcom/azeroth-adventure-companion/releases/tag/v0.6.0-beta.2)** · **[English installation guide](tools/release/guides/Install-Guide-en.txt)** · **[Report an issue](https://github.com/hukekele-dotcom/azeroth-adventure-companion/issues)**
+**[Download the Windows package](https://github.com/hukekele-dotcom/azeroth-adventure-companion/releases)** · **[English installation guide](tools/release/guides/Install-Guide-en.txt)** · **[Report an issue](https://github.com/hukekele-dotcom/azeroth-adventure-companion/issues)**
 
 ## Features
 

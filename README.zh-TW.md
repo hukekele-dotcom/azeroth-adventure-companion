@@ -1,12 +1,14 @@
 # Azeroth Adventure Companion
 
+> 目前原始碼已更新至 0.6.0-beta.2。三語說明可直接閱讀；新版 Windows 安裝包上傳中，尚未公開。發布頁面仍可下載上一版 0.6.0-beta.1。
+
 [簡體中文](README.md) · [繁體中文](README.zh-TW.md) · [English](README.en.md)
 
 **艾澤拉斯冒險夥伴** — 為《魔獸世界：無限》準備的 AI 任務助手、冒險日誌和副本助手。
 
 基於 [chelinho139/wow-ai](https://github.com/chelinho139/wow-ai) 的社群增強版。當前版本 **0.6.0-beta.2**，面向 Windows x64 / Forever 1.60 內測。
 
-**[下載 Windows 內測安裝包](https://github.com/hukekele-dotcom/azeroth-adventure-companion/releases/tag/v0.6.0-beta.2)** · **[簡體說明](tools/release/guides/Install-Guide-zhCN.txt)** · **[繁體說明](tools/release/guides/Install-Guide-zhTW.txt)** · **[English guide](tools/release/guides/Install-Guide-en.txt)** · **[反饋問題](https://github.com/hukekele-dotcom/azeroth-adventure-companion/issues)**
+**[下載 Windows 內測安裝包](https://github.com/hukekele-dotcom/azeroth-adventure-companion/releases)** · **[簡體說明](tools/release/guides/Install-Guide-zhCN.txt)** · **[繁體說明](tools/release/guides/Install-Guide-zhTW.txt)** · **[English guide](tools/release/guides/Install-Guide-en.txt)** · **[反饋問題](https://github.com/hukekele-dotcom/azeroth-adventure-companion/issues)**
 
 ## 可以做什麼
 
