@@ -1,5 +1,5 @@
 Azeroth Adventure Companion — Installation and User Guide
-Version: 0.6.0-beta.3 (Windows x64 Beta)
+Version: 0.6.0-beta.4 (Windows x64 Beta)
 
 First use: Extract everything → Install → Sign in to AI → Start bridge → Restart game → /wow-ai
 Daily use: Open the “WoW AI 无限” desktop shortcut → Start bridge → Enter the game.
@@ -13,10 +13,19 @@ This package targets the WoW: Forever 1.60 client with WowB.exe. Other WoW clien
 You need:
 • An installed game client. Log into it at least once and exit normally to create its account folder.
 • Internet access and your own AI account. You can start with either Codex or WorkBuddy and configure the other later.
-• The complete WoWAI-Forever-0.6.0-beta.3-win-x64.zip package.
+• The complete WoWAI-Forever-0.6.0-beta.4-win-x64.zip package.
 
 Node.js is included; you do not need to install it separately. The official AI tools are downloaded when you first sign in. Each player uses their own account and allowance. The package does not include an AI account or credits.
 The “bridge” is the background program that connects the game addon to AI. Both the addon and the bridge must be running for AI communication.
+
+Do I need to install Codex or WorkBuddy first?
+• AI chat, AI route planning and travelogue generation require at least one AI runtime to be installed and signed in. You do not need both.
+• With this Windows installer, you do not need to install either desktop application beforehand. Complete “1. 安装 / 升级” (Install / Upgrade), then click “2. 登录所选 AI” (Sign in to selected AI). The program downloads and installs the selected official runtime and starts its sign-in flow.
+• Codex installs the Codex CLI and asks you to sign in with your own account. WorkBuddy installs the official CodeBuddy Code runtime and requires a separate China-region account sign-in.
+• Even if you are signed into a desktop application, follow this package's sign-in flow to confirm access. WorkBuddy desktop sign-in does not automatically sign this runtime in.
+• To switch between both providers in game, use “登录 Codex” (Sign in to Codex) and “登录 WorkBuddy” (Sign in to WorkBuddy), completing installation and sign-in for each.
+• Keep this addon's bridge running during use; the Codex / WorkBuddy desktop windows do not need to stay open. The first runtime download needs internet access, as do AI requests, which also need an account with available access and allowance for the selected service.
+• “Installation complete” confirms addon installation only. Complete the two-message in-game test in Step 6 before relying on AI features.
 
 2. First installation: six steps
 
