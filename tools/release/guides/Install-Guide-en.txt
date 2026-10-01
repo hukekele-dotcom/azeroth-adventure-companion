@@ -1,0 +1,172 @@
+Azeroth Adventure Companion — Installation and User Guide
+Version: 0.6.0-beta.2 (Windows x64 Beta)
+
+First use: Extract everything → Install → Sign in to AI → Start bridge → Restart game → /wow-ai
+Daily use: Open the “WoW AI 无限” desktop shortcut → Start bridge → Enter the game.
+
+This guide covers installation, AI sign-in, everyday use, troubleshooting, backups and removal. Open README.html in the package to select Simplified Chinese, Traditional Chinese or English. All three guides work offline. The installer and desktop manager currently use Chinese labels; this English guide includes those exact labels so you can identify the controls. The in-game panel has its own language setting. Selecting a guide does not change the game language.
+
+1. Before you install
+
+This package targets the WoW: Forever 1.60 client with WowB.exe. Other WoW clients have not been verified. This Windows x64 package does not run on macOS.
+
+You need:
+• An installed game client. Log into it at least once and exit normally to create its account folder.
+• Internet access and your own AI account. You can start with either Codex or WorkBuddy and configure the other later.
+• The complete WoWAI-Forever-0.6.0-beta.2-win-x64.zip package.
+
+Node.js is included; you do not need to install it separately. The official AI tools are downloaded when you first sign in. Each player uses their own account and allowance. The package does not include an AI account or credits.
+The “bridge” is the background program that connects the game addon to AI. Both the addon and the bridge must be running for AI communication.
+
+2. First installation: six steps
+
+Step 1: Extract the entire ZIP
+
+Extract the archive to a normal folder. It should contain Install.cmd, README.html, the three Install-Guide-*.txt files, runtime and app.
+Do not run the installer from inside an archive viewer or copy only Install.cmd. Download the named Windows ZIP from Releases; GitHub's automatically generated “Source code” archives are for developers, not player installation.
+
+Step 2: Exit the game and stop the old bridge
+
+Completely exit the game. If the tool is already installed, open the “WoW AI 无限” desktop shortcut and click “停止桥接” (Stop bridge). Also stop any bridge from a previous manual installation.
+Do not run old and new bridges against the same WoWAI addon at the same time.
+
+Step 3: Select the client, account and AI
+
+Double-click Install.cmd. In the installer:
+① Click “选择目录” (Choose folder). Select the folder directly containing WowB.exe and Interface, usually _classic_beta_.
+   For a game installed in D:\Games\World of Warcraft, select D:\Games\World of Warcraft\_classic_beta_.
+   Do not select the outer launcher folder or Interface\AddOns.
+② Under “游戏账号” (Game account), select the account you want to use. These entries are account folders created by the game, not character names. Explicitly choose an account if there are several.
+③ Under “默认 AI” (Default AI), choose Codex or WorkBuddy. You can switch in game later, but each provider requires its own sign-in.
+
+If the account list is empty, log into this specific client once, exit normally, then select the client folder again.
+The “说明 / 說明 / Help” button opens the offline language selection page.
+
+Step 4: Install the files
+
+Click “1. 安装 / 升级” (Install / Upgrade) and wait for completion.
+The installer copies the addon, generates communication files and creates the “WoW AI 无限” desktop shortcut. The default installation location is:
+%LOCALAPPDATA%\WoWAI-Forever
+
+Step 5: Sign in to the selected AI
+
+Click “2. 登录所选 AI” (Sign in to selected AI). The first attempt opens a command window, downloads the official AI tool and starts its sign-in flow. Keep your internet connection available.
+
+For Codex:
+• Follow the command window and official sign-in page to sign in to your own account.
+• After signing in, return to the command window and follow its closing instructions.
+
+For WorkBuddy:
+• This integration uses the official CodeBuddy Code execution engine. Seeing the name CodeBuddy is expected.
+• Select the China region and sign in to your own account as prompted. If you reach the interactive interface without signing in, enter /login.
+• Once signed in, enter /exit to leave the interactive interface, then close the window as prompted.
+• The addon uses the system model selection, auto, rather than the author's custom API configuration.
+• Being signed into the WorkBuddy desktop application does not mean this execution engine is signed in. Account benefits and quotas are not guaranteed to be shared between products.
+
+You do not need the author's API key. Closing the sign-in window does not prove communication works: complete the next step.
+
+Step 6: Start the bridge and test
+
+① Click “3. 启动桥接” (Start bridge). On future visits, use “启动桥接” in the desktop manager.
+② Restart the game. In the addon list, enable WoWAI and the communication addons whose names start with WoWAI_S. A first installation requires a full game restart; /reload alone is not enough.
+③ Use Fullscreen (Windowed) or borderless windowed mode. Exclusive fullscreen is not supported. Minimizing or covering the game may interrupt communication.
+④ Enter a character, then type /wow-ai in game chat to open the panel.
+⑤ Open AI Chat, select the AI you signed into, send “Where am I?”, then send a follow-up message.
+
+The initial communication test is complete only when both replies correctly reflect the current character context. “Bridge started” only confirms that the background process is running.
+
+3. Daily use
+
+1. Double-click the “WoW AI 无限” desktop shortcut and click “启动桥接” (Start bridge).
+2. Enter the game and type /wow-ai to open the panel.
+3. Use AI Chat, Quest Assistant, Adventure Journal and Dungeon Assistant.
+4. Exit the game normally when finished. If you no longer need AI, click “停止桥接” (Stop bridge) in the desktop manager.
+
+You normally do not need to sign in every day; sign in again if authentication expires. The bridge must run, but the Codex and WorkBuddy desktop chat windows do not have to stay open. This version does not start automatically with Windows.
+
+To configure the other AI: stop the bridge → click “登录 Codex” or “登录 WorkBuddy” (Sign in) → complete sign-in → restart the bridge → switch AI in the game panel.
+To reopen this guide after installation, click “说明 / 說明 / Help” in the desktop manager and choose a language.
+
+4. Using the main features
+
+Quest Assistant
+“AI 规划路线” (AI route planning) plans the tasks you currently have. It is controlled separately from “自动更新” (Automatic updates). Task areas on the current map are numbered in route order and advance according to actual quest progress. Dungeon quests are excluded from outdoor routes. The arrow provides direction; it does not move your character or complete quests for you.
+Use “清除 AI 标记” (Clear AI markers) at the top of the panel to remove AI map markers.
+
+Adventure Journal and travelogues
+Recording begins automatically when you log in. Browse each day's journey by page, including quests, kills and loot, without a full combat log. The journal starts with the login location when available; missing locations in older records are not invented.
+“同步新增日志” (Sync new entries) transfers only records whose synchronization has not yet been acknowledged. “生成游记” (Generate travelogue) turns recorded events into readable text; long records are processed in batches.
+Click “查看冒险档案” (Open adventure archive) in the desktop manager to open the computer archive. Normal logout or /reload saves in-game records; synchronization saves another copy on the computer. Unsaved and unsynchronized records can still be lost if the game crashes.
+
+Dungeon Assistant
+Check quest availability before entering a dungeon. Quests are filtered by faction and requirements. View boss drop icons and comparison hints based on the character's talents and equipment. Coverage and scoring are still incomplete; not all quests or drops are guaranteed to be included.
+
+5. Troubleshooting
+
+No installer window appears
+Check that you extracted the entire archive and that Install.cmd, Install.ps1 and runtime are in the same folder. If Windows blocks the program, retain the exact message for a report; do not disable global security protection to try to run it.
+
+Invalid folder or no accounts found
+Select the folder containing both WowB.exe and Interface, usually _classic_beta_. If no accounts are listed, log into that client once, exit normally, then select the folder again.
+
+Asked to exit the game or stop the bridge
+Completely exit the game and stop both old and current bridges before retrying. Closing the addon panel inside the game does not stop the background bridge.
+
+Access denied or no write permission
+Check whether your Windows user can write to Interface\AddOns in the selected game folder. Do not delete WTF, other addons or the whole game folder to address this.
+
+AI tool download fails
+Check your connection, stop the bridge and click the corresponding sign-in button again. If it still fails, record the command window's error text. Reinstalling the game is not necessary.
+
+WorkBuddy reports “Authentication required” or incomplete authentication
+Stop the bridge, click “登录 WorkBuddy”, complete the China-region sign-in in the official CodeBuddy execution engine, then start the bridge and test in game. Opening the WorkBuddy desktop application alone does not resolve this separate sign-in requirement.
+
+“exited with code 0 and no result” or another bridge error
+Record the selected AI, time and full error message. Click “打开桥接日志目录” (Open bridge log folder) in the desktop manager and check bridge.log, startup.log and startup-error.log. Share only necessary excerpts, not a whole account folder or sign-in cache.
+
+/wow-ai does nothing, or the addon is missing from the list
+Confirm you installed into the client you are actually running. Check that the addons are enabled, then completely exit and restart the game.
+
+The bridge is running, but messages get no replies
+Confirm you signed into the AI selected in game. Use Fullscreen (Windowed) and keep the game visible. Check “安装状态检查” (Installation status check) and the bridge logs. Status checks examine local files and processes; they do not replace an account authentication test and an in-game conversation.
+
+Colored bars appear at the top left
+The bars carry data from the game to the bridge during chat, planning and synchronization. Do not cover them.
+
+Cannot find the adventure archive
+Complete “同步新增日志” in game first, then click “查看冒险档案” in the desktop manager. Before synchronization, the computer archive may not contain that character yet.
+
+The help page does not open or a browser is unavailable
+Open Install-Guide-en.txt in a text editor. The matching Simplified and Traditional Chinese files are Install-Guide-zhCN.txt and Install-Guide-zhTW.txt. No internet connection is needed to read them. Keep the entire extracted folder together so local HTML links work.
+
+6. Updates, backups and removal
+
+Update: exit the game, stop the bridge, extract the new package and run Install.cmd. Versions installed by this installer preserve configuration, chat, sign-in caches and adventure archives. Old addon files and configuration are backed up under backups in the installation folder.
+Computer archives from an older manual installation are not migrated automatically; back them up separately first. The installer does not delete the game's WTF saves.
+If installation is interrupted, do not start the game until you resolve the reported permission or disk-space issue and retry. You can restore the old addon from the backed-up WoWAI folder if needed. The installer is not a transactional rollback tool for the entire installation.
+
+Backup: after a normal game exit, back up the computer adventure archive and the corresponding account's WoWAI SavedVariables files. Do not repackage a used installation for other players; it may contain sign-in data and private records.
+
+Removal: stop the bridge, exit the game and back up your data. You can then remove WoWAI and WoWAI_S001 through WoWAI_S200 from AddOns, plus the desktop shortcut. Delete the program installation folder manually only after confirming your archives are backed up. Do not remove unrelated addons or the entire WTF folder.
+
+Default paths (paste into File Explorer's address bar):
+• Program: %LOCALAPPDATA%\WoWAI-Forever
+• Adventure archive: %LOCALAPPDATA%\WoWAI-Forever\data\workspace\adventure-log
+• Bridge logs and chat state: %LOCALAPPDATA%\WoWAI-Forever\app\bridge
+• WorkBuddy sign-in cache: %LOCALAPPDATA%\WoWAI-Forever\data\workbuddy-auth
+Codex sign-in is managed by the official CLI.
+
+7. Beta feedback, privacy and credits
+
+When reporting a problem, include the addon version, client version, selected AI, steps, time and error text or screenshot. Hide character or chat details you do not want to publish. Never send passwords, verification codes, API keys or sign-in caches. Do not upload your entire installation or WTF folder.
+
+Automated code and installation checks have been performed. Real account sign-in and the complete in-game flow still need verification on other computers. Use and distribute this as a Beta. Dungeon information is incomplete, and exclusive fullscreen is unsupported.
+Chat sends your message and character context to the selected AI service. Planning sends quest information; travelogue generation sends adventure records. Each player uses their own account and allowance. AI access is configured for lookup tasks by default; keep private files out of the adventure workspace.
+The published package contains no developer account, AI credentials, personal configuration, chat or adventure records.
+
+Project and downloads: https://github.com/hukekele-dotcom/azeroth-adventure-companion
+Issue reports: https://github.com/hukekele-dotcom/azeroth-adventure-companion/issues
+Original project: https://github.com/chelinho139/wow-ai
+This is a community modification, not an official Blizzard, OpenAI or Tencent product. The installed names, paths and /wow-ai command remain WoW AI / WoWAI for save compatibility.
+The upstream author's MIT LICENSE is preserved. Third-party data notices are in app\addon\WoWAI\THIRD_PARTY.md. Node.js and bundled component licenses are in runtime\LICENSE. AI tools have their own licenses and terms. Original license texts are preserved; this guide does not replace them.
+The package includes addon and bridge source, not the game client, game images or audio.
