@@ -6,6 +6,15 @@ const path = require('path');
 const os = require('os');
 const P = require('../bridge/protocol');
 
+test('model selection survives both pixel flags and SavedVariables transport',()=>{
+  for(const model of ['auto','glm-5.3','deepseek-v4.1-flash']){
+    const row=['session','chat','12','','agent=workbuddy;model='+model,'Chat','hello'].join('\x1f');
+    assert.equal(P.jobsFromStrip(12,row)[0].model,model);
+    const job=P.parseOutbox('["outbox"] = {["id"] = 12, ["text"] = "6869", ["agent"] = "workbuddy", ["model"] = "'+model+'"}');
+    assert.equal(job.model,model);assert.equal(job.agent,'workbuddy');
+  }
+});
+
 test('luaStr escapes everything Lua 5.1 needs', () => {
   assert.equal(P.luaStr('a"b\\c\nd\re\x01'), '"a\\"b\\\\c\\nde\\001"');
   assert.equal(P.luaStr(null), '""');

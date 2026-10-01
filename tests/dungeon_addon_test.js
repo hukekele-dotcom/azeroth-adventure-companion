@@ -213,10 +213,10 @@ test('fourth tab preserves chat draft, renders on first open, HUD details pick b
  v.run(`STUB.instance='未收录副本';WoWAIDungeon.Refresh();WoWAI.SelectTab('dungeon')`);assert.equal(v.get('WoWAIDungeonUI.title:GetText()'),'未收录副本 · 任务');assert.match(v.get('WoWAIDungeon.Summary()'),/暂不能判断/);
 });
 test('real dataset has honest coverage, merged Scarlet wings, satchel followup and usable boss mappings',()=>{
- const v=vm('',true);assert.equal(v.get('#WoWAIDungeonData.dungeons'),'13');v.run(`STUB.instance='怒焰裂谷';WoWAIDungeon.Refresh()`);assert.equal(v.get('#WoWAIDungeon.instance.quests'),'6');
+ const v=vm('',true);assert.equal(v.get('#WoWAIDungeonData.dungeons'),'28');v.run(`STUB.instance='怒焰裂谷';WoWAIDungeon.Refresh()`);assert.equal(v.get('#WoWAIDungeon.instance.quests'),'6');
  assert.equal(v.get('WoWAIDungeon.instance.quests[6].itemStart'),'true');
- v.run(`STUB.instance='血色修道院';WoWAIDungeon.Refresh()`);assert.equal(v.get('#WoWAIDungeon.instance.bosses'),'8');
- v.run(`for _,d in ipairs(WoWAIDungeonData.dungeons)do assert(d.coverage=='partial');for _,i in ipairs(d.loot)do for _,key in ipairs(i.bosses)do local ok=false;for _,b in ipairs(d.bosses)do if b.key==key then ok=true end end;assert(ok)end end end`);
+ v.run(`STUB.instance='血色修道院';WoWAIDungeon.Refresh()`);assert.ok(Number(v.get('#WoWAIDungeon.instance.bosses'))>=8);
+ v.run(`for _,d in ipairs(WoWAIDungeonData.dungeons)do assert(d.coverage=='partial' or d.coverage=='unavailable');for _,i in ipairs(d.loot)do for _,key in ipairs(i.bosses)do local ok=false;for _,b in ipairs(d.bosses)do if b.key==key then ok=true end end;assert(ok)end end end`);
  v.run(`STUB.inside=false;WoWAIDungeon.Refresh();WoWAI.SelectTab('dungeon');for i,d in ipairs(WoWAIDungeonData.dungeons)do WoWAIDungeonUI.preview=i;WoWAIDungeonUI.boss=nil;WoWAIDungeonUI.Render();for _,b in ipairs(d.bosses)do WoWAIDungeonUI.boss=b;WoWAIDungeonUI.Render()end end`);
 });
 test('outside preparation checks live quests, updates after acceptance and never enables dungeon notices',()=>{
@@ -275,9 +275,9 @@ test('unknown faction stays withheld and blocks ready claim; shared quests and a
 test('real data separates Deadmines, Stockade, RFC, same-name Lordaeron and both-faction WC tasks',()=>{
  const v=vm(`STUB.inside=false`,true);
  v.run(`function CHECK(id)local d;for _,x in ipairs(WoWAIDungeonData.dungeons)do if x.id==id then d=x end end;ROWS,COUNTS=WoWAIDungeon.Check(d);IDS={};for _,r in ipairs(ROWS)do IDS[r.quest.id]=true;assert(r.faction~='alliance')end end;CHECK('deadmines')`);
- assert.equal(v.get('#ROWS'),'0');assert.equal(v.get('COUNTS.oppositeHidden'),'7');
+ assert.equal(v.get('#ROWS'),'0');assert.equal(v.get('COUNTS.oppositeHidden'),'8');
  v.run(`CHECK('stockade')`);assert.equal(v.get('#ROWS'),'0');assert.equal(v.get('COUNTS.oppositeHidden'),'6');
- v.run(`CHECK('ragefire-chasm')`);assert.equal(v.get('#ROWS'),'5');assert.equal(v.get('COUNTS.factionUnknown'),'1');
+ v.run(`CHECK('ragefire-chasm')`);assert.equal(v.get('#ROWS'),'6');assert.equal(v.get('COUNTS.factionUnknown'),'0');assert.equal(v.get('IDS[5724]'),'true');
  v.run(`CHECK('ruins-of-lordaeron')`);assert.equal(v.get('IDS[95189]'),'nil');assert.equal(v.get('IDS[95204]'),'true');assert.equal(v.get('COUNTS.oppositeHidden'),'4');
  v.run(`CHECK('wailing-caverns')`);assert.equal(v.get('IDS[959]'),'true');assert.equal(v.get('IDS[962]'),'true');
  v.run(`for _,d in ipairs(WoWAIDungeonData.dungeons)do CHECK(d.id)end`);

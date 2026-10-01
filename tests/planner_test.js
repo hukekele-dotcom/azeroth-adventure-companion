@@ -45,6 +45,34 @@ function regionPlan(v){
  return {identity,snap,raw};
 }
 
+test('WoW 14-digit JSON coordinates retain the selected candidate and numbered route',()=>{
+ const v=vm();v.run(`QUESTS={{questID=100010,title='诅咒神教'}};
+ C_QuestLog.GetNextWaypoint=function()return 1431,.6785799860954285,.6464729905128479 end
+ WoWAIAdventure.SendPlan(false,true);WoWAIAdventure.Ack({{ledger=CHAR.ledger,seq=CHAR.seq}});WoWAIAdventure.Tick()
+ local build=WoWAIAdventure.BuildRegions;WoWAIAdventure.BuildRegions=function()build();STUB.built=#CHAR.plan.regions end`);
+ const identity={ledger:v.get('CHAR.ledger'),snapshot:v.get('CHAR.plan.id')};
+ const snap=v.json('CHAR.plan');
+ // WoW Lua 5.1 tostring uses fewer digits than Fengari: emulate the actual wire.
+ for(const q of snap.quests)for(const w of q.locations){w.x=Number(w.x.toPrecision(14));w.y=Number(w.y.toPrecision(14));}
+ const plan=Planner.parse(answer(identity,snap.quests),identity,snap);
+ assert.equal(plan.steps[0].waypoint.key,snap.quests[0].locations[0].key);
+ v.reply(plan);
+ assert.equal(v.get('STUB.built'),'1','coordinates must survive before refresh/recovery');
+ assert.equal(v.get('#CHAR.plan.regions'),'1');assert.equal(v.get('CHAR.plan.unplanned'),'0');
+ assert.equal(v.get('CHAR.plan.route[1].x==CHAR.plan.quests[1].locations[1].x'),'true');
+ assert.equal(v.get('WoWAIAdventure.StartNavigation(100010)'),'true');
+});
+
+test('an old empty area route recovers from known quest coordinates without another AI call',()=>{
+ const v=vm();regionPlan(v);v.run(`CHAR.plan.regions={};WoWAIAdventure.NavigationStopped();STUB.nav=nil`);
+ assert.equal(v.get('#WoWAIAdventure.NavigationRoute(CHAR.plan)'),'3');
+ assert.equal(v.get('WoWAIAdventure.StartNavigation(100001)'),'true');
+ v.run(`WoWAIAdventure.NavigationStopped();STUB.nav=nil;WoWAIAdventure.RefreshLocations()`);
+ assert.equal(v.get('#CHAR.plan.regions'),'2');assert.equal(v.get('CHAR.plan.unplanned'),'0');
+ assert.equal(v.get('STUB.calls'),'1');assert.equal(v.get('STUB.nav'),'nil');
+ assert.equal(v.get('WoWAIAdventure.StartNavigation(100001)'),'true');
+});
+
 test('current-map AI plan groups numbered areas and advances only after all area tasks complete',()=>{
  const v=vm(),{identity,snap,raw}=regionPlan(v);
  assert.equal(v.get('CHAR.plan.scopeMap'),'1431');assert.equal(v.get('#CHAR.plan.regions'),'2');assert.equal(v.get('#CHAR.plan.regions[1].members'),'2');assert.equal(v.get('STUB.nav'),'1');

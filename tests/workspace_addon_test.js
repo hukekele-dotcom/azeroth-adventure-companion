@@ -51,17 +51,42 @@ test('provider selection reaches chat and helpers, locks during requests and sur
  assert.equal(v.get('WoWAIDB.outbox.agent'),'workbuddy');
 });
 
-test('configured model is read from serialized bridge metadata and follows provider selection',()=>{
+test('WorkBuddy selector overrides the bridge default and remains scoped to that provider',()=>{
  const P=require('../bridge/protocol'),v=vm();
  v.run(`WoWAI.IsConnected=function()return true end;WoWAI.SelectProvider('workbuddy');WoWAI.Send('连接');C=WoWAIDB.chats[1]`);
  const reply={chat:v.get('C.id'),id:Number(v.get('C.pendingId')),status:'done',text:'好了',agent:'workbuddy'};
  v.run(P.luaTable('MODEL_SLOT',[reply],{agent:'codex',agents:['codex','workbuddy'],agentModels:{workbuddy:'custom-local:deepseek-v4-pro',codex:''}}));
  v.run(`STUB.onLoadAddOn=function()WoWAI_SlotData=MODEL_SLOT end;STUB.texts={};WoWAI.Send('',nil,C)`);
- assert.match(v.get('table.concat(STUB.texts,"|")'),/AI：WorkBuddy · 配置模型：deepseek-v4-pro/);
+ assert.match(v.get('table.concat(STUB.texts,"|")'),/AI：WorkBuddy · 配置模型：自动/);
  v.run(`STUB.texts={};WoWAI.SelectProvider('codex')`);
  assert.doesNotMatch(v.get('table.concat(STUB.texts,"|")'),/配置模型：deepseek-v4-pro/);
  v.run(`WoWAI_Inbox=MODEL_SLOT;STUB.FireEvent('ADDON_LOADED','WoWAI');STUB.texts={};WoWAI.SelectProvider('workbuddy')`);
- assert.match(v.get('table.concat(STUB.texts,"|")'),/配置模型：deepseek-v4-pro/);
+ assert.match(v.get('table.concat(STUB.texts,"|")'),/配置模型：自动/);
+});
+
+test('model menu freezes selections into chat, resend, planner and travelogue requests and persists',()=>{
+ const P=require('../bridge/protocol'),v=vm();
+ v.run(`WoWAI.IsConnected=function()return true end;WoWAI.SelectProvider('workbuddy');WoWAIInput:SetText('保留草稿');WoWAIModelSelector.scripts.OnClick()`);
+ assert.equal(v.get('WoWAIModelMenu:IsShown()'),'true');
+ v.run(`WoWAIModelOption2.scripts.OnClick()`);
+ assert.equal(v.get('WoWAIModelMenu:IsShown()'),'false');
+ assert.equal(v.get('WoWAIDB.settings.workbuddyModel'),'glm-5.3');assert.equal(v.get('WoWAIInput:GetText()'),'保留草稿');
+ v.run(`WoWAI.Send('测试');C=WoWAIDB.chats[1]`);
+ assert.equal(v.get('WoWAIDB.outbox.model'),'glm-5.3');
+ assert.equal(P.parseFlags(v.get('C.pendingFlags')).model,'glm-5.3');
+ assert.equal(v.get("WoWAI.SelectWorkBuddyModel('deepseek-v4.1-flash')"),'false');
+ assert.equal(v.get('WoWAIModelSelector:IsEnabled()'),'false');
+ v.run(`WoWAI.Resend()`);assert.equal(P.parseFlags(v.get('C.pendingFlags')).model,'glm-5.3');
+ v.run(`C.pendingId=nil;WoWAI.SelectWorkBuddyModel('deepseek-v4.1-flash');WoWAI.SendAdventurePlan('[WOWAI_PLAN:test:1]')`);
+ assert.equal(v.get('WoWAIDB.outbox.model'),'deepseek-v4.1-flash');
+ v.run(`for _,c in ipairs(WoWAIDB.chats) do c.pendingId=nil end;WoWAI.SelectWorkBuddyModel('auto');WoWAI.SendAdventureDraft('[WOWAI_DRAFT:test:session:1:zhCN]')`);
+ assert.equal(v.get('WoWAIDB.outbox.model'),'auto');
+ v.run(`for _,c in ipairs(WoWAIDB.chats) do c.pendingId=nil end;WoWAI.SelectWorkBuddyModel('glm-5.3');STUB.FireEvent('ADDON_LOADED','WoWAI');WoWAI.SelectProvider('codex');WoWAI.Send('Codex')`);
+ assert.equal(v.get('WoWAIDB.settings.workbuddyModel'),'glm-5.3');assert.equal(v.get('WoWAIDB.outbox.model'),'nil');
+ assert.equal(v.get('WoWAIModelSelector:IsShown()'),'false');
+ v.run(`for _,c in ipairs(WoWAIDB.chats) do c.pendingId=nil end;WoWAI.SelectProvider('workbuddy')`);
+ assert.match(v.get('WoWAIModelSelector:GetText()'),/GLM-5.3/);
+ assert.equal(v.get("WoWAI.SelectWorkBuddyModel('custom-local:other')"),'false');
 });
 
 test('three native tabs isolate widgets, preserve drafts and do not send AI or expose pixel strips',()=>{
