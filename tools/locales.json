@@ -1,5 +1,9 @@
 {
   "zh": {
+    "自动": "Auto",
+    "模型：": "Model: ",
+    "选择 WorkBuddy 系统模型": "Choose a WorkBuddy built-in model",
+    "用于聊天、任务规划和游记。切换后开启新的 AI 会话，聊天记录保留。处理请求时不能切换。": "Used for chat, quest planning and travelogues. Switching starts a new AI session and keeps your chat history. Wait for active requests to finish before switching.",
     "正在整理游记：第 %d / %d 段，已完成的段落会保留。": "Writing travelogue: part %d / %d. Completed parts are saved.",
     "集中交付任务": "Turn in nearby quests",
     "AI 规划本地图": "AI plan this map",
@@ -430,7 +434,11 @@
     "%d 项在副本内或由物品触发，不能要求进本前全部接好。": "%d quests start inside the dungeon or from items and cannot all be collected beforehand.",
     "部分任务还需核对职业、专业、声望等接取条件。": "Some quests still need checks for class, profession, reputation, or other requirements.",
     "仅按已收录任务的接取等级推算，不是战斗等级建议，也不保证一趟完成全部任务。": "Based only on documented quest acceptance levels; this is not a combat-level recommendation or a guarantee of completing everything in one run.",
-    "集中清任务建议": "Planning your dungeon quests"
+    "集中清任务建议": "Planning your dungeon quests",
+    "无限社区记录 · ": "Forever community record · ",
+    "首领归属为参考记录，尚未核实无限版实际掉落。": "Boss assignment is a reference and has not been verified in Forever.",
+    "本地资料 · %s · %d 项任务 / %d 件掉落；含经典参考，尚未全部核实。": "Local data · %s · %d quests / %d items; includes unverified Classic references.",
+    "经典版任务流程参考；无限版目标和奖励请以游戏任务日志为准。": "Classic quest walkthrough reference. Check the in-game quest log for Forever objectives and rewards."
   },
   "en": {
     "You": "你",
