@@ -1,7 +1,7 @@
 'use strict';
 const test=require('node:test'), assert=require('node:assert/strict');
 const fs=require('fs'),path=require('path'),os=require('os');
-const {install,discover,verify,inside}=require('./installer.cjs');
+const {install,discover,verify,inside,wireJson}=require('./installer.cjs');
 const {hash}=require('./build.cjs');
 const fixture=fs.mkdtempSync(path.join(os.tmpdir(),'wowai-release-test-'));
 const write=(file,text)=>{fs.mkdirSync(path.dirname(file),{recursive:true});fs.writeFileSync(file,text);};
@@ -18,11 +18,10 @@ test('validates package manifest and rejects traversal',()=>{
   assert.ok(Object.keys(verify(bundle).files).length>20);
   assert.throws(()=>inside(bundle,'../outside'),/Invalid/);
 });
-test('requires Forever client and explicit existing account',()=>{
+test('requires Forever client and rejects invalid explicit account',()=>{
   assert.deepEqual(discover(client).accounts,['FIRST','SECOND']);
   assert.throws(()=>discover(fixture),/WowB/);
-  assert.throws(()=>install({...options,account:undefined}),/明确选择/);
-  assert.throws(()=>install({...options,account:'../OTHER'}),/明确选择/);
+  assert.throws(()=>install({...options,account:'../OTHER'}),/账号目录无效/);
   assert.throws(()=>install({...options,provider:'other'}),/Invalid/);
   assert.equal(fs.existsSync(target),false);
 });
@@ -77,6 +76,36 @@ test('existing unrelated destination cannot be overwritten',()=>{
   const unrelated=path.join(fixture,'unrelated');write(path.join(unrelated,'personal'),'safe');
   assert.throws(()=>install({...options,target:unrelated}),/不属于/);
   assert.equal(fs.readFileSync(path.join(unrelated,'personal'),'utf8'),'safe');
+});
+test('ASCII protocol preserves Unicode strings and paths',()=>{
+  const value={ok:true,target:'D:\\中文 游戏\\安装',message:'安装完成。😀',error:'"引号"\n结束'};
+  assert.match(wireJson(value),/^[\x00-\x7f]*$/);
+  assert.deepEqual(JSON.parse(wireJson(value)),value);
+});
+test('install without a game account configures automatic discovery',()=>{
+  const fresh=path.join(fixture,'首次安装 无账号');
+  write(path.join(fresh,'WowB.exe'),'fixture');fs.mkdirSync(path.join(fresh,'Interface'),{recursive:true});
+  const dest=path.join(fixture,'自动安装');
+  assert.equal(install({...options,client:fresh,target:dest,account:undefined}).ok,true);
+  const cfg=read(path.join(dest,'app/bridge/config.json'));
+  assert.equal(cfg.savedVariablesFile,'');
+  assert.equal(cfg.savedVariablesRoot,path.join(fresh,'WTF','Account'));
+  assert.equal(fs.existsSync(cfg.savedVariablesRoot),false);
+});
+test('upgrade to automatic mode preserves previous account saves',()=>{
+  assert.equal(install({...options,account:undefined}).ok,true);
+  const cfg=read(path.join(target,'app/bridge/config.json'));
+  assert.equal(cfg.savedVariablesFile,'');assert.equal(cfg.savedVariablesRoot,path.join(client,'WTF','Account'));
+  assert.equal(fs.readFileSync(path.join(client,'WTF/Account/SECOND/SavedVariables/WoWAI.lua'),'utf8'),'keep-this-data');
+});
+test('Windows PowerShell Core decodes success and failure under GBK', {skip:process.platform!=='win32'},()=>{
+  const cp=require('child_process');
+  const source=fs.readFileSync(path.join(__dirname,'Install.ps1'),'utf8');
+  const core=source.slice(source.indexOf('function Core('),source.indexOf('function CheckClient'));
+  const q=s=>"'"+s.replace(/'/g,"''")+"'";
+  const ps=`$ErrorActionPreference='Stop'; [Console]::OutputEncoding=[Text.Encoding]::GetEncoding(936); $bundle=${q(bundle)}; ${core}\n$r=Core 'discover' @{client=${q(client)}}; if ($r.client -ne ${q(client)} -or $r.accounts.Count -ne 2) {throw 'Unicode result mismatch'}; try { $null=Core 'discover' @{client=${q(fixture)}}; throw 'Expected failure' } catch { if ($_.Exception.Message -notmatch '请选择包含 WowB.exe') {throw} }; Write-Output 'GBK_PROTOCOL_PASS'`;
+  const result=cp.spawnSync('powershell.exe',['-NoProfile','-NonInteractive','-EncodedCommand',Buffer.from(ps,'utf16le').toString('base64')],{encoding:'utf8',windowsHide:true});
+  assert.equal(result.status,0,result.stderr+result.stdout);assert.match(result.stdout,/GBK_PROTOCOL_PASS/);
 });
 test.after(()=>{
   const resolved=path.resolve(fixture);

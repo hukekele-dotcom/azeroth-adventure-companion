@@ -1,5 +1,5 @@
-﻿Azeroth Adventure Companion / 艾泽拉斯冒险伙伴 / 艾澤拉斯冒險夥伴
-0.6.0-beta.4 · Windows x64 Beta
+Azeroth Adventure Companion / 艾泽拉斯冒险伙伴 / 艾澤拉斯冒險夥伴
+0.6.0-beta.5 · Windows x64 Beta
 
 简体中文：打开 README.html 选择语言，或阅读 Install-Guide-zhCN.txt。
 繁體中文：開啟 README.html 選擇語言，或閱讀 Install-Guide-zhTW.txt。

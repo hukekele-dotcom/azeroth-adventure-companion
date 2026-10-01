@@ -32,15 +32,11 @@ $game=New-Object System.Windows.Forms.TextBox
 $game.Location=New-Object System.Drawing.Point(24,92); $game.Size=New-Object System.Drawing.Size(488,28)
 $form.Controls.Add($game)
 $browse=Button '选择目录' 524 88 112
-$null=Label '游戏账号' 24 138 270 24
-$accounts=New-Object System.Windows.Forms.ComboBox
-$accounts.DropDownStyle='DropDownList'; $accounts.Location=New-Object System.Drawing.Point(24,168); $accounts.Size=New-Object System.Drawing.Size(282,28)
-$form.Controls.Add($accounts)
-$null=Label '默认 AI（游戏里也可切换，需各自登录）' 330 138 310 24
+$null=Label '默认 AI（游戏里也可切换，需各自登录）' 24 138 600 24
 $ai=New-Object System.Windows.Forms.ComboBox
-$ai.DropDownStyle='DropDownList'; $ai.Location=New-Object System.Drawing.Point(330,168); $ai.Size=New-Object System.Drawing.Size(306,28)
+$ai.DropDownStyle='DropDownList'; $ai.Location=New-Object System.Drawing.Point(24,168); $ai.Size=New-Object System.Drawing.Size(612,28)
 [void]$ai.Items.AddRange(@('Codex','WorkBuddy')); $ai.SelectedIndex=0; $form.Controls.Add($ai)
-$null=Label "安装到：$script:installTarget`n升级保留本工具的聊天、账号配置和冒险档案。" 24 211 612 52
+$null=Label "安装到：$script:installTarget`n无需选择游戏账号；升级保留聊天、AI 配置和冒险档案。" 24 211 612 52
 $null=Label 'AI 使用你自己的账号和额度。发送时会附带角色、任务等游戏信息；生成游记会发送冒险记录。WorkBuddy 使用官方 CodeBuddy 执行引擎，需单独登录，不读取桌面会话。' 24 269 612 72
 $install=Button '1. 安装 / 升级' 24 350 190
 $login=Button '2. 登录所选 AI' 234 350 192
@@ -51,31 +47,29 @@ function Core($action,$argsObject) {
   try {
     [IO.File]::WriteAllText($tmp,($argsObject | ConvertTo-Json -Depth 12),(New-Object Text.UTF8Encoding($false)))
     $output=& (Join-Path $bundle 'runtime/node.exe') (Join-Path $bundle 'installer.cjs') $action $tmp 2>&1
-    if ($LASTEXITCODE -ne 0) { throw ($output -join "`n") }
-    return (($output -join "`n") | ConvertFrom-Json)
+    $exitCode=$LASTEXITCODE
+    $result=($output -join "`n") | ConvertFrom-Json
+    if ($exitCode -ne 0 -or $result.ok -eq $false) { throw $result.error }
+    return $result
   } finally { if (Test-Path -LiteralPath $tmp) { Remove-Item -LiteralPath $tmp } }
 }
-function RefreshAccounts {
-  $accounts.Items.Clear()
-  $found=Core 'discover' @{client=$game.Text}
-  foreach ($item in $found.accounts) { [void]$accounts.Items.Add($item) }
-  if ($accounts.Items.Count -eq 1) { $accounts.SelectedIndex=0 }
-  $status.Text=if ($accounts.Items.Count -gt 0) {'请选择账号，然后点击安装。'} else {'未发现账号。请先登录游戏一次，正常退出后重新选择目录。'}
+function CheckClient {
+  $null=Core 'discover' @{client=$game.Text}
+  $status.Text='客户端目录有效，可直接安装；游戏存档将自动识别。'
 }
 $browse.Add_Click({
   $dialog=New-Object System.Windows.Forms.FolderBrowserDialog
   $dialog.Description='选择包含 WowB.exe 的客户端目录'
   if ($dialog.ShowDialog() -eq 'OK') {
     $game.Text=$dialog.SelectedPath
-    try { RefreshAccounts } catch { $status.Text=$_.Exception.Message }
+    try { CheckClient } catch { $status.Text=$_.Exception.Message }
   }
 })
-$game.Add_Leave({ if ($game.Text) { try { RefreshAccounts } catch { $status.Text=$_.Exception.Message } } })
+$game.Add_Leave({ if ($game.Text) { try { CheckClient } catch { $status.Text=$_.Exception.Message } } })
 $install.Add_Click({
   try {
-    if (!$accounts.SelectedItem) { throw '请先选择游戏账号。' }
     $install.Enabled=$false; $status.Text='正在校验文件、备份旧插件并安装，请稍候……'; $form.Refresh()
-    $result=Core 'install' @{bundle=$bundle;target=$script:installTarget;client=$game.Text;account=[string]$accounts.SelectedItem;provider=$ai.Text.ToLowerInvariant()}
+    $result=Core 'install' @{bundle=$bundle;target=$script:installTarget;client=$game.Text;provider=$ai.Text.ToLowerInvariant()}
     $shell=New-Object -ComObject WScript.Shell
     $shortcut=$shell.CreateShortcut((Join-Path ([Environment]::GetFolderPath('Desktop')) 'WoW AI 无限.lnk'))
     $shortcut.TargetPath=Join-Path $env:SystemRoot 'System32/WindowsPowerShell/v1.0/powershell.exe'

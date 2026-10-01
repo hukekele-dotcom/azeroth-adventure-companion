@@ -37,7 +37,7 @@ function checkRunning() {
 function install({bundle, target, client, account, provider, checkProcesses = checkRunning, slotLimits}) {
   if (!['codex','workbuddy'].includes(provider)) throw Error('Invalid AI choice');
   const found = discover(client);
-  if (!found.accounts.includes(account)) throw Error('请明确选择一个游戏账号；若列表为空，请先登录游戏一次并退出。');
+  if (account && !found.accounts.includes(account)) throw Error('指定的游戏账号目录无效。');
   const manifest = verify(bundle);
   target = path.resolve(target);
   if (target === path.resolve(bundle) || target.startsWith(path.resolve(bundle) + path.sep)) throw Error('安装目录不能位于解压包内部。');
@@ -68,7 +68,8 @@ function install({bundle, target, client, account, provider, checkProcesses = ch
   const workspace = old?.defaultCwd || path.join(target,'data','workspace');
   fs.mkdirSync(workspace, {recursive:true});
   const cfg = {...template, ...old, agent:provider, addonDir,
-    savedVariablesFile:path.join(found.client,'WTF','Account',account,'SavedVariables','WoWAI.lua'),
+    savedVariablesRoot:account ? '' : path.join(found.client,'WTF','Account'),
+    savedVariablesFile:account ? path.join(found.client,'WTF','Account',account,'SavedVariables','WoWAI.lua') : '',
     inboxFile:path.join(liveAddon,'Inbox.lua'), defaultCwd:workspace,
     adventureDir:old?.adventureDir || path.join(workspace,'adventure-log'),
     capture:{...template.capture,...old?.capture,processName:'WowB'},
@@ -87,12 +88,17 @@ function install({bundle, target, client, account, provider, checkProcesses = ch
   write(path.join(target,'installation.json'),{version:manifest.version,client:found.client,account,provider,installedAt:new Date().toISOString(),backup});
   return {ok:true, target, version:manifest.version, backup, message:'安装完成。下一步登录 AI，然后启动桥接并重新启动游戏。'};
 }
+// Windows PowerShell 5.1 decodes native stdout using the console code page.
+// Keep the protocol ASCII; ConvertFrom-Json restores Chinese and Unicode paths.
+function wireJson(value) {
+  return JSON.stringify(value).replace(/[\u007f-\uffff]/g, c => '\\u' + c.charCodeAt(0).toString(16).padStart(4,'0'));
+}
 if (require.main === module) {
   try {
     const [action, file] = process.argv.slice(2);
     const args = json(file);
     const result = action === 'discover' ? discover(args.client) : action === 'install' ? install(args) : (()=>{throw Error('Unknown action');})();
-    process.stdout.write(JSON.stringify(result));
-  } catch (e) { process.stderr.write(e.message); process.exitCode=1; }
+    process.stdout.write(wireJson(result));
+  } catch (e) { process.stdout.write(wireJson({ok:false,error:e.message})); process.exitCode=1; }
 }
-module.exports = {install, discover, verify, inside};
+module.exports = {install, discover, verify, inside, wireJson};

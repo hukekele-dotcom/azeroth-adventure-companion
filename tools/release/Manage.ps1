@@ -36,7 +36,7 @@ function Diagnose {
   $cfg=Get-Content -LiteralPath $config -Raw -Encoding UTF8 | ConvertFrom-Json
   $checks=@(('版本：'+(Get-Content -LiteralPath (Join-Path $root 'release.json') -Raw | ConvertFrom-Json).version),
     ('桥接运行：'+[bool](OwnBridges)), ('插件目录存在：'+(Test-Path -LiteralPath $cfg.addonDir)),
-    ('游戏存档存在：'+(Test-Path -LiteralPath $cfg.savedVariablesFile)),
+    ('游戏存档：'+$(if ($cfg.savedVariablesRoot) {'自动识别（所有本机游戏账号）'} else {[string](Test-Path -LiteralPath $cfg.savedVariablesFile)})),
     ('Codex 工具：'+[bool]($cfg.agents.codex.path -and (Test-Path -LiteralPath $cfg.agents.codex.path))),
     ('WorkBuddy 工具：'+[bool]($cfg.agents.workbuddy.path -and (Test-Path -LiteralPath $cfg.agents.workbuddy.path))),
     '账号认证与游戏内通信：请分别发送消息验证；本检查不访问账号。')

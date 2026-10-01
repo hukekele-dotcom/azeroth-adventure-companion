@@ -5,7 +5,7 @@ $install=Get-Content -LiteralPath (Join-Path $Bundle 'Install.ps1') -Raw -Encodi
 $install=$install.Replace('[void]$form.ShowDialog()', @'
 if ($form.Controls.Count -lt 10) { throw 'Installer controls missing' }
 if ($ai.Items.Count -ne 2) { throw 'AI choices missing' }
-if ($accounts.DropDownStyle -ne 'DropDownList') { throw 'Account selector is editable' }
+if ($form.Controls | Where-Object { $_.Text -eq '游戏账号' }) { throw 'Unnecessary account selector remains' }
 Write-Output 'Installer controls: PASS'
 $form.Dispose()
 '@)

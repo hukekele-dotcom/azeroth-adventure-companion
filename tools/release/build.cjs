@@ -5,7 +5,7 @@ const version=require('../../package.json').version;
 const nodeVersion='v22.23.3';
 const nodeHash='2b0ff57b049cda1bbcea2240eec20467018713c1efe1f7360c2681859b90ed71';
 const addon=['Adventure.lua','AdventureUI.lua','Codec.lua','Dungeon.lua','DungeonData.lua','DungeonUI.lua','Gear.lua','Kills.lua','Locale.lua','Map.lua','QuestLocations.lua','WoWAI.lua','WoWAI.toc','THIRD_PARTY.md'];
-const bridge=['adventure.js','agents.js','bridge.js','capture.ps1','diary.js','draft-run.js','install-slots.js','job-limits.js','narrative.js','planner.js','protocol.js','supervisor.js','workbuddy-launch.cjs','workbuddy.js'];
+const bridge=['adventure.js','agents.js','bridge.js','capture.ps1','diary.js','draft-run.js','install-slots.js','job-limits.js','saved-variables.js','narrative.js','planner.js','protocol.js','supervisor.js','workbuddy-launch.cjs','workbuddy.js'];
 function walk(root) { return fs.readdirSync(root,{withFileTypes:true}).flatMap(e=>e.isDirectory()?walk(path.join(root,e.name)):[path.join(root,e.name)]); }
 function hash(file) {return crypto.createHash('sha256').update(fs.readFileSync(file)).digest('hex');}
 function build(output) {
