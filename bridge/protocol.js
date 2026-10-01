@@ -123,6 +123,7 @@ function parseFlags(flags) {
     else if (tok === 'c') out.context = true;
     else if (tok.startsWith('allow=')) out.allow.push(...tok.slice(6).split(',').map(s => s.trim()).filter(Boolean));
     else if (tok.startsWith('agent=')) out.agent = tok.slice(6).trim().toLowerCase();
+    else if (tok.startsWith('model=')) out.model = tok.slice(6).trim();
   }
   return out;
 }
@@ -169,6 +170,8 @@ function parseOutbox(src) {
   if (ctx) job.ctx = fromHex(ctx[1]);
   const agent = b.match(/\["agent"\]\s*=\s*"([0-9a-zA-Z_-]*)"/);
   if (agent && agent[1]) job.agent = agent[1].toLowerCase();
+  const model = b.match(/\["model"\]\s*=\s*"([^"\r\n]*)"/);
+  if (model) job.model = model[1];
   const allow = b.match(/\["allow"\]\s*=\s*"([0-9a-fA-F]*)"/);
   if (allow && allow[1]) job.allow = fromHex(allow[1]).split('\x1F').filter(Boolean);
   return job;

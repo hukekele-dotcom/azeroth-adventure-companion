@@ -509,6 +509,18 @@ function agentConfig(cfg, id) {
   return { ...legacy, ...own };
 }
 
+// Game requests may select only these hosted models, never a custom provider.
+function requestConfig(cfg, id, model) {
+  const own = agentConfig(cfg, id);
+  if (model !== undefined && model !== '') {
+    if (id !== 'workbuddy' || !['auto', 'glm-5.3', 'deepseek-v4.1-flash'].includes(model)) {
+      throw new Error('Unsupported WorkBuddy model selection. Choose Auto, GLM-5.3 or DeepSeek-V4.1-Flash.');
+    }
+    own.model = model;
+  }
+  return own;
+}
+
 // ---------------------------------------------------------------------------
 // Finding the executable
 // ---------------------------------------------------------------------------
@@ -622,7 +634,7 @@ function resolveCommand(id, cfg = {}) {
 }
 
 module.exports = {
-  AGENTS, DEFAULT_AGENT, agentIds, normalizeAgent, displayName, agentConfig,
+  AGENTS, DEFAULT_AGENT, agentIds, normalizeAgent, displayName, agentConfig, requestConfig,
   grokRules, snippet, contextBlock,
   claudeParser, codexParser, grokParser, agyParser, hermesParser, codexItemLine, grokCall, grokRefusal, shellInner,
   resolveCommand, unwrapShim, nativeNextTo, codexDesktopPaths,

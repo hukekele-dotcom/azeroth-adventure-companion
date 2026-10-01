@@ -33,6 +33,7 @@ const A = require('./agents');   // how each agent is launched and read, unit-te
 const { AdventureStore } = require('./adventure');
 const Narrative = require('./narrative');
 const Planner = require('./planner');
+const JobLimits = require('./job-limits');
 
 const HERE = __dirname;
 const CONFIG_FILE = path.join(HERE, 'config.json');
@@ -179,6 +180,7 @@ function forgetChat(job) {
   delete state.sessions[chatKey(job)];
   if (state.sessionCwd) delete state.sessionCwd[sessKey(job)];
   if (state.sessionAgent) delete state.sessionAgent[sessKey(job)];
+  if (state.sessionModel) delete state.sessionModel[sessKey(job)];
   if (pendingRestore) pendingRestore.chats = pendingRestore.chats.filter(c => c.id !== job.chat);
   saveTranscripts();
   log(`#${job.id}${job.session ? '@' + job.session : ''} forgot chat ${job.chat}${had ? '' : ' (nothing stored)'}`);
@@ -496,16 +498,24 @@ function runJob(job) {
   job.cwd = cwd;
   const tag = `#${job.id}${job.session ? '@' + job.session : ''}`;
   try {
-    if(!job.draftRun){
+    if(!job.draftRun && !job.planRequest){
       job.planRequest = Planner.request(job.text);
       job.draftRequest = Narrative.request(job.text);
       if(job.draftRequest){
         job.draftEvents=adventure.draftEvents(job.draftRequest);
-        job.draftRun=new(require('./draft-run').DraftRun)(adventure.root,job.draftRequest,job.draftEvents,job.agent||DEFAULT_AGENT);
+        const provider=job.agent||DEFAULT_AGENT;
+        const model=A.requestConfig(cfg,provider,job.model).model||'';
+        // Partial drafts from another selected model must not mix into this run.
+        const draftAgent=provider==='workbuddy'?provider+':'+model:provider;
+        job.draftRun=new(require('./draft-run').DraftRun)(adventure.root,job.draftRequest,job.draftEvents,draftAgent);
       }else{
         if (job.planRequest) job.planSnapshot = adventure.snapshot(job.planRequest.ledger, job.planRequest.snapshot);
         job.text = adventure.prepare(job.text);
       }
+    }
+    if(job.planRequest){
+      job.planResearch = !job.planFastRetry && Planner.needsResearch(job.planSnapshot);
+      job.text = Planner.prompt(job.planRequest, job.planSnapshot, {research: job.planResearch});
     }
     if(job.draftRun){if(job.draftRun.done){finish(job,'done','');return;}job.text=job.draftRun.prompt;}
   }
@@ -530,15 +540,17 @@ function runJob(job) {
   }
   job.agent = agentId;
   const agent = A.AGENTS[agentId];
-  const acfg = A.agentConfig(cfg, agentId);
+  let acfg;
+  try { acfg = A.requestConfig(cfg, agentId, job.model); }
+  catch (e) { finish(job, 'error', e.message); return; }
   if (job.planRequest || job.draftRequest) {
     acfg.permissionMode = 'default';
     if (agentId === 'workbuddy') {
       acfg.permissionMode = 'dontAsk';
-      acfg.tools = job.draftRequest ? [] : ['Read','Glob','Grep','WebSearch','WebFetch'];
+      acfg.tools = job.planResearch ? ['WebSearch','WebFetch'] : [];
       acfg.allowedTools = acfg.tools;
     }
-    if (agentId === 'codex') acfg.extraArgs = ['-c', job.draftRequest?'web_search="disabled"':'web_search="live"'];
+    if (agentId === 'codex') acfg.extraArgs = ['-c', job.planResearch?'web_search="live"':'web_search="disabled"'];
   }
   const cmd = A.resolveCommand(agentId, acfg);
   if (!cmd.found) {
@@ -560,6 +572,12 @@ function runJob(job) {
     log(`${tag} agent changed (${prevAgent} -> ${agentId}): new session`);
     delete state.sessions[skey]; delete state.sessions[key];
   }
+  // A resumed session can retain its old model. A selection change starts a
+  // fresh engine session while keeping the addon's visible chat history.
+  if (agentId === 'workbuddy' && state.sessionModel?.[skey] !== String(acfg.model || '') && (state.sessions[skey] || state.sessions[key])) {
+    log(`${tag} WorkBuddy model changed: new session (${acfg.model || 'default'})`);
+    delete state.sessions[skey]; delete state.sessions[key];
+  }
   if (Array.isArray(job.allow) && job.allow.length) {
     const added = allowRules(agentId, job.allow);
     log(`${tag} allowed for ${agentId}: ${job.allow.join(', ')}${added.length ? '' : ' (already allowed)'}`);
@@ -579,7 +597,7 @@ function runJob(job) {
   }
   const args = [...cmd.args, ...agent.args({
     cfg: acfg, resume, cwd, system, systemShort, promptFile,
-    prompt: job.text, timeoutMs: cfg.timeoutMs,
+    prompt: job.text, timeoutMs: JobLimits.timeoutMs(job, cfg),
   })];
   const env = agent.env({ ...process.env }, acfg);
   // Where this run's tools append map commands (docs/MAP.md); any agent can use it.
@@ -594,7 +612,8 @@ function runJob(job) {
   running.set(key, { job, child });
   const draftProgress=()=>job.draftRun?{draftRequest:job.draftRequest,draftProgress:{...job.draftRun.progress,stamp:Date.now()}}:{};
   const stage=job.draftRun?(job.draftRequest.locale==='enUS'?`Writing travelogue, part ${job.draftRun.progress.part}/${job.draftRun.progress.total}`:job.draftRequest.locale==='zhTW'?`正在整理遊記 ${job.draftRun.progress.part}/${job.draftRun.progress.total} 段`:`正在整理游记 ${job.draftRun.progress.part}/${job.draftRun.progress.total} 段`):'';
-  publish(key, { chat: job.chat, id: job.id, status: 'working', text: stage || (resume ? 'thinking...' : 'starting a new session...'), cwd, session: resume, agent: agentId,...draftProgress() }, true);
+  const planStage = job.planFastRetry ? JobLimits.retryMessage(job) : '';
+  publish(key, { chat: job.chat, id: job.id, status: 'working', text: stage || planStage || (resume ? 'thinking...' : 'starting a new session...'), cwd, session: resume, agent: agentId,...draftProgress() }, true);
   if (input.stdin !== undefined) { child.stdin.on('error', () => {}); child.stdin.end(input.stdin); }
 
   const parser = agent.parser();
@@ -660,8 +679,10 @@ function runJob(job) {
   });
   child.stderr.on('data', (chunk) => { stderr += chunk.toString('utf8'); });
 
-  const timeoutMs = job.draftRequest ? 600000 : job.planRequest ? 300000 : cfg.timeoutMs || 1800000;
+  const timeoutMs = JobLimits.timeoutMs(job, cfg);
+  let timedOut = false;
   const timer = setTimeout(() => {
+    timedOut = true;
     log(`${tag} timed out after ${timeoutMs} ms, killing`);
     killTree(child);
   }, timeoutMs);
@@ -690,10 +711,24 @@ function runJob(job) {
       }
     }
     if (buffer.trim()) handleLine(buffer.trim());
+    // Kill-induced exit code 1 is a timeout, not an authentication/connection
+    // failure. Only research timeouts get one retry; auth failures never do.
+    if (timedOut && !(result && !result.error)) {
+      if (job.planResearch && !job.planFastRetry) {
+        log(`${tag} location research timed out; planning once with known coordinates (same model)`);
+        running.delete(key);
+        job.planFastRetry = true;
+        runJob(job);
+        return;
+      }
+      finish(job, 'error', JobLimits.timeoutMessage(job, agent.name, timeoutMs), sessionId);
+      return;
+    }
     if (sessionId) {
       state.sessions[skey] = sessionId;
       (state.sessionCwd = state.sessionCwd || {})[skey] = cwd;
       (state.sessionAgent = state.sessionAgent || {})[skey] = agentId;
+      (state.sessionModel = state.sessionModel || {})[skey] = String(acfg.model || '');
     }
     // Map marks count whatever the outcome: the tools already reported them.
     const mapped = takeMapCommands(job, result ? result.text : '');
