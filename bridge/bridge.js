@@ -34,6 +34,7 @@ const { AdventureStore } = require('./adventure');
 const Narrative = require('./narrative');
 const Planner = require('./planner');
 const JobLimits = require('./job-limits');
+const SavedVariables = require('./saved-variables');
 
 const HERE = __dirname;
 const CONFIG_FILE = path.join(HERE, 'config.json');
@@ -186,7 +187,7 @@ function forgetChat(job) {
   log(`#${job.id}${job.session ? '@' + job.session : ''} forgot chat ${job.chat}${had ? '' : ' (nothing stored)'}`);
 }
 
-let lastMtime = 0;
+const savedFileStamps = new Map();
 const running = new Map(); // chatKey -> { job, child }
 const queued = new Map();  // chatKey -> job waiting for that chat (or for a free parallel slot)
 const live = new Map();    // chatKey -> latest record shown to the game
@@ -381,13 +382,6 @@ function presenceBeat() {
 // ---------------------------------------------------------------------------
 // Inputs
 // ---------------------------------------------------------------------------
-
-// The reload path: the addon writes its outbox into SavedVariables on /reload.
-function readOutbox() {
-  let src;
-  try { src = fs.readFileSync(SAVED_VARS, 'utf8'); } catch { return null; }
-  return P.parseOutbox(src);
-}
 
 // The addon sends the player's in-game context (character, location, ...) with
 // its hello and again whenever it changes; an empty one means "context off".
@@ -793,16 +787,22 @@ function finish(job, status, text, session, denied) {
 // ---------------------------------------------------------------------------
 
 function pollSavedVariables() {
-  let st;
-  try { st = fs.statSync(SAVED_VARS); } catch { return; }
-  if (st.mtimeMs === lastMtime) return;
-  try {
-    const n = adventure.importSaved(fs.readFileSync(SAVED_VARS, 'utf8'));
-    if(n) { log(`adventure: imported ${n} saved events`); archiveAdventure(); publishNow(); }
-    lastMtime = st.mtimeMs;
-  } catch(e) { adventure.error = e.message; log('adventure saved import:', e.message); }
-  const job = readOutbox();
-  if (job) submit(job);
+  const files = SavedVariables.savedVariableFiles(cfg);
+  for (const file of files) {
+    let st;
+    try { st = fs.statSync(file); } catch { continue; }
+    const stamp = `${st.mtimeMs}:${st.size}`;
+    if (savedFileStamps.get(file) === stamp) continue;
+    try {
+      const src = fs.readFileSync(file, 'utf8');
+      const n = adventure.importSaved(src);
+      if(n) { log(`adventure: imported ${n} saved events`); archiveAdventure(); publishNow(); }
+      savedFileStamps.set(file, stamp);
+      const job = P.parseOutbox(src);
+      // Auto-discovery must not replay old requests from another account.
+      if (job && (!cfg.savedVariablesRoot || SavedVariables.matchesActiveSession(job, state.context?.session))) submit(job);
+    } catch(e) { adventure.error = e.message; log('adventure saved import:', e.message); }
+  }
 }
 
 // Windows: capture.ps1 (GDI). macOS: capture_mac.py (native screencapture). Elsewhere: capture_x11.py (Wine/X11).
@@ -888,7 +888,7 @@ function banner() {
   console.log(`  slots    : ${slotsInstalled() ? SLOTS + ' installed' : 'NOT INSTALLED - run: node setup.js (or node bridge/install-slots.js), then restart WoW'}`);
   console.log(`  capture  : ${cap.enabled ? 'on (' + cap.processName + ', ' + cap.cellsPerRow + 'x' + cap.maxRows + ' cells of ' + cap.cellPx + 'px)' : 'off'}`);
   console.log(`  parallel : up to ${MAX_PARALLEL} chats at once`);
-  console.log(`  fallback : ${SAVED_VARS}`);
+  console.log(`  fallback : ${cfg.savedVariablesRoot || SAVED_VARS}`);
   console.log(`  agent    : ${DEFAULT_AGENT} (default; chats pick their own with /wow-ai agent)`);
   for (const id of A.agentIds()) console.log(`  ${id.padEnd(9)}: ${agentLine(id)}`);
   console.log(`  sessions : ${Object.keys(state.sessions).length} saved`);
