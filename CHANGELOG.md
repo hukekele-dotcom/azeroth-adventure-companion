@@ -1,5 +1,13 @@
 # 0.6.0-beta.8
 
+
+## 本地资料库 / 本機資料庫 / Shared local catalog
+两端共用 4,228 条任务的坐标资料库；库内候选地点仅传引用编号，实时任务目标和新坐标保留。电脑端还原完整资料后交给 AI 出方案，插件校验后标记。版本不一致会明确报错，不使用错误坐标。暂未启用跨请求的进度差量传输。
+兩端共用 4,228 筆任務座標資料；以引用編號減少重複傳輸，保留即時目標及新座標。電腦端還原完整資料供 AI 規劃，版本不符時明確提示。
+Both sides share coordinate references for 4,228 quests. Static candidates travel as references; live objectives and new coordinates remain intact. The bridge restores full data for AI planning. Catalog mismatches fail explicitly. Cross-request progress deltas are not enabled.
+
+Three reference quests: 4,649 -> 1,211 UTF-8 bytes, with all objectives and candidates verified after reconstruction. This is a transfer-size measurement, not an end-to-end latency guarantee.
+
 先使用已有坐标生成本地图备用数字路线，AI 继续接收完整任务目标和候选坐标并优化路线。备用算法选择邻近候选点并进行有限次折返优化，优先普通任务；副本、其他地图任务不纳入路线，未知坐标不猜测。明确显示同步、桥接未确认、等待 AI 通道和规划状态；重复点击显示原因而不重复发送。AI 结果仍须通过快照和坐标校验。备用路线不代表实际道路最短路线。
 
 # 0.6.0-beta.7

@@ -67,7 +67,7 @@ Addon source is in `addon/WoWAI`, bridge source in `bridge`, and installer/build
 
 ## Beta status
 
-The baseline passed 248 regression tests, seven installer tests and codec round-trip checks. Real account sign-in and the complete in-game flow still need validation on other computers, including route markers, logout persistence and upgrades. This is a Beta, not a stable release.
+The baseline passed 250 regression tests, seven installer tests and codec round-trip checks. Real account sign-in and the complete in-game flow still need validation on other computers, including route markers, logout persistence and upgrades. This is a Beta, not a stable release.
 
 ## Credits and licensing
 
