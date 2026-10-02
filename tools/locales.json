@@ -438,7 +438,16 @@
     "无限社区记录 · ": "Forever community record · ",
     "首领归属为参考记录，尚未核实无限版实际掉落。": "Boss assignment is a reference and has not been verified in Forever.",
     "本地资料 · %s · %d 项任务 / %d 件掉落；含经典参考，尚未全部核实。": "Local data · %s · %d quests / %d items; includes unverified Classic references.",
-    "经典版任务流程参考；无限版目标和奖励请以游戏任务日志为准。": "Classic quest walkthrough reference. Check the in-game quest log for Forever objectives and rewards."
+    "经典版任务流程参考；无限版目标和奖励请以游戏任务日志为准。": "Classic quest walkthrough reference. Check the in-game quest log for Forever objectives and rewards.",
+    "备用路线按已知坐标减少折返；直线距离不代表实际道路，AI 仍会检查完整任务。": "The fallback reduces backtracking using known coordinates; straight-line distance is not road distance. AI still reviews the full quests.",
+    "本地备用路线已生成，AI 完成后再优化；缺少可靠坐标的任务仍保留。": "Local fallback ready; AI will optimize it when finished. Quests without reliable coordinates remain listed.",
+    "任务快照未能建立，尚未发送给 AI；请刷新任务后重试。": "Could not build the quest snapshot. Nothing sent to AI; refresh quests and retry.",
+    "备用路线可先使用。": "Fallback route available.",
+    "任务已送达桥接，等待 AI 通道空闲：%d 秒": "Quests delivered to bridge; waiting for AI channel: %d seconds",
+    "桥接尚未确认收到，请检查桥接是否启动、游戏彩条是否可见。": "No bridge acknowledgement yet. Check that the bridge is running and the game color strip is visible.",
+    "正在生成游记，完成后可规划任务。": "Travelogue generation in progress. Quest planning will be available when it finishes.",
+    "冒险日志正在同步，完成或取消同步后可规划任务。": "Adventure log sync in progress. Finish or cancel sync before planning quests.",
+    "任务资料库版本不一致或引用无效，请用同一安装包升级插件和桥接。": "Quest catalog mismatch or invalid reference. Update both the addon and bridge using the same installer."
   },
   "en": {
     "You": "你",
