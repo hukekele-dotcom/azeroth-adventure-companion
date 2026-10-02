@@ -21,7 +21,7 @@ function build(output) {
   fs.writeFileSync(path.join(stage,'app/addon/WoWAI/Inbox.lua'),'-- Clean distribution placeholder\nWoWAI_Inbox = { id = 0, replies = {} }\n');
   const toc=path.join(stage,'app/addon/WoWAI/WoWAI.toc');
   fs.writeFileSync(toc,fs.readFileSync(toc,'utf8').replace(/^## Version:.*$/m,'## Version: '+version));
-  for(const name of bridge)copy('bridge/'+name,'app/bridge/'+name);
+  for(const name of [...bridge,'quest-catalog.js','quest-locations.json'])copy('bridge/'+name,'app/bridge/'+name);
   const cfg={tocInterface:'16001',slots:200,actMax:60,presenceMax:2000,presenceIntervalMs:30000,maxParallel:3,
     capture:{enabled:true,processName:'WowB',cellPx:4,cellsPerRow:200,maxRows:48,intervalMs:250,keepComposited:false},
     agent:'codex',agents:{},gameContext:true,primerFile:'docs/WOW-ADDON-PRIMER.md',pollMs:750,progressWriteMs:3000,timeoutMs:1800000};
