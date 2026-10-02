@@ -307,7 +307,9 @@ local function RenderTasks(c,pending)
     t.auto:SetText(c.autoPlan and L('任务变化自动重算：开') or L('任务变化自动重算：关'))
     local phase=J.PlanPhase()
     t.ai:SetText(phase=='syncing' and L('正在同步当前任务…') or phase=='planning' and L('AI 正在规划…') or L('AI 规划本地图'))
-    t.ai:SetEnabled(p~=nil and p.complete and #J.EligibleQuests(p.quests)>0 and J.CanPlan());t.next:SetEnabled(p~=nil and #p.route>0)
+    -- Keep busy clicks observable: SendPlan reports the active stage without
+    -- enqueuing a duplicate request.
+    t.ai:SetEnabled(p~=nil and p.complete and #J.EligibleQuests(p.quests)>0);t.next:SetEnabled(p~=nil and #p.route>0)
     t.cancel:SetShown(pending~=nil)
 end
 

@@ -400,6 +400,60 @@ function J.SortRoute(quests,pos)
     end
     return route,missing
 end
+-- Immediate, bounded fallback using observed coordinates only. AI still receives
+-- every eligible quest and its full objectives/candidate list below.
+function J.LocalMapRoute(p)
+    if not p.scopeMap then return end
+    local pool,missing,chosen={},{},{}
+    local level=Try(UnitLevel,'player') or 1
+    for _,q in ipairs(J.PlanningQuests(p)) do
+        q.waypoint=nil;q.reason=nil;q.action=nil;q.region=nil;q.sourceURL=nil
+        local options={}
+        for _,w in ipairs(q.locations or {}) do if w.m==p.scopeMap and not w.entrance then options[#options+1]=w end end
+        if #options==0 then missing[#missing+1]=q.id
+        else pool[#pool+1]={q=q,options=options,risk=not q.complete and ((q.group or 0)>1 or (q.level or 0)>level+3) and 1 or 0} end
+    end
+    local start={x=p.position.x or 50,y=p.position.y or 50}
+    local function Dist(a,b)return math.sqrt((a.x-b.x)^2+(a.y-b.y)^2) end
+    local at=start
+    while #pool>0 do
+        local best,point,score
+        for i,item in ipairs(pool) do for _,w in ipairs(item.options) do
+            local d=Dist(at,w)+item.risk*10000
+            if not score or d<score then best,point,score=i,w,d end
+        end end
+        local item=table.remove(pool,best);item.q.waypoint=point;chosen[#chosen+1]=item;at=point
+    end
+    -- At most four 2-opt passes remove crossings; risky tasks stay in their band.
+    for pass=1,4 do
+        local changed=false
+        for i=1,#chosen-1 do for j=i+1,#chosen do
+            if chosen[i].risk==chosen[j].risk then
+                local a=i==1 and start or chosen[i-1].q.waypoint
+                local b,c=chosen[i].q.waypoint,chosen[j].q.waypoint
+                local d=chosen[j+1] and chosen[j+1].q.waypoint
+                if Dist(a,c)+(d and Dist(b,d) or 0)+0.001<Dist(a,b)+(d and Dist(c,d) or 0) then
+                    local l,r=i,j;while l<r do chosen[l],chosen[r]=chosen[r],chosen[l];l=l+1;r=r-1 end;changed=true
+                end
+            end
+        end end
+        if not changed then break end
+    end
+    p.order={};p.ai=false;p.localRoute=true
+    for _,item in ipairs(chosen) do
+        local q=item.q;q.region=q.area~='' and q.area or nil
+        q.reason=L('备用路线按已知坐标减少折返；直线距离不代表实际道路，AI 仍会检查完整任务。')
+        p.order[#p.order+1]=q.id
+    end
+    for _,id in ipairs(missing) do p.order[#p.order+1]=id end
+    p.summary=L('本地备用路线已生成，AI 完成后再优化；缺少可靠坐标的任务仍保留。')
+    J.ReorderRoute();J.BuildRegions();p.unplanned=#missing
+    for _,r in ipairs(p.regions) do
+        r.total=#r.members;r.closed=0;r.label=r.name..' (0/'..r.total..')';r.detail=''
+    end
+    p.regionIndex=#p.regions>0 and 1 or nil
+    if WoWAIMap then WoWAIMap.SetAdventureRoute(p.regions,1,true) end
+end
 function J.Plan(startNavigation,reset)
     if not current then Notify(L('请等待角色进入世界。'));return end
     if not reset and not inFlight and not pendingAI and J.UpdateRegions() then J.Render();return end
@@ -458,7 +512,9 @@ function J.SendPlan(automatic,mapOnly)
     if not current or not char then Notify(L('请等待角色进入世界。'));return end
     if automatic==true and not char.autoPlan then return end
     if not db.enabled then Notify(L('请先开启冒险记录，以同步本次任务快照。'));return end
-    if inFlight or pendingAI or draftFlight then return end
+    if inFlight or pendingAI or draftFlight then
+        Notify(J.PlanningStatus()~='' and J.PlanningStatus() or L('已有同步或规划正在进行，请等待完成。'));J.Render();return
+    end
     local scoped=mapOnly==true or (automatic==true and char.plan and char.plan.scopeMap~=nil)
     J.Plan(false,true);local p=char.plan
     if not p or not p.complete then return end
@@ -466,6 +522,7 @@ function J.SendPlan(automatic,mapOnly)
     if #J.PlanningQuests(p)==0 then planDue=nil;autoDue=nil;planNotice=nil;p.summary=L('当前地图没有可规划的任务，副本及其他地图任务已跳过。');J.Render();return end
     if #db.queue+#p.quests+3>=LIMIT then Notify(L('待同步缓冲不足，请先同步日志。'));return end
     p.id=Token();planDue=nil;autoDue=nil;planNotice=nil;nextAI=time()+30
+    if scoped then J.LocalMapRoute(p) end
     local quests=J.PlanningQuests(p)
     local first=#db.queue+1
     J.Record('snapshot_begin',{snapshot=p.id,count=#quests,complete=p.complete,position=p.position,scopeMap=p.scopeMap,player=State()})
@@ -477,7 +534,7 @@ function J.SendPlan(automatic,mapOnly)
         for i=first,#db.queue do local r=db.queue[i];wire[#wire+1]=r;sequences[r.seq]=true end
         pendingAI={text='[WOWAI_PLAN:'..char.ledger..':'..p.id..']',seq=e.seq,started=time(),snapshot=p.id,automatic=automatic==true,wire=wire,sequences=sequences,received={}}
         cursor,part=1,1;Notify(L('正在同步任务，期间会显示彩色通信条；完整确认后才请求 AI，可点击“取消同步”。'));nextPoll=time()+6
-    end
+    else p.error=L('任务快照未能建立，尚未发送给 AI；请刷新任务后重试。');Notify(p.error) end
     J.Render()
 end
 function J.CancelSync()
@@ -579,7 +636,7 @@ function J.PlanReply(reply)
     local byID,seen={},{};for _,q in ipairs(J.PlanningQuests(p)) do byID[q.id]=q end
     for _,step in ipairs(result.steps) do if not byID[step.questID] or byID[step.questID].dungeon or seen[step.questID] then p.error=L('任务规划包含已跳过的副本任务或数据不完整。');J.Render();return false end;seen[step.questID]=true end
     local at=WoWAIMap and WoWAIMap.AdventureStatus and WoWAIMap.AdventureStatus()
-    p.order={};p.summary=result.summary;p.ai=true;p.error=nil;planNotice=nil
+    p.order={};p.summary=result.summary;p.ai=true;p.localRoute=nil;p.error=nil;planNotice=nil
     for _,step in ipairs(result.steps) do
         local q=byID[step.questID];q.reason=step.reason;q.action=step.action;q.region=Text(step.region);q.sourceURL=step.sourceURL;q.waypoint=nil
         local w=step.waypoint
@@ -642,12 +699,17 @@ end
 function J.NavigationWanted() return navigationWanted end
 function J.NavigationStopped() navigationWanted=false end
 function J.PlanningStatus()
+    local fallback=char and char.plan and char.plan.localRoute and L('备用路线可先使用。')..' ' or ''
     if pendingAI and pendingAI.snapshot then
-        if pendingAI.ready then return L('任务同步完成，正在等待 AI 通道') end
+        if pendingAI.ready then return fallback..string.format(L('任务已送达桥接，等待 AI 通道空闲：%d 秒'),time()-pendingAI.started) end
         local received=0;for _ in pairs(pendingAI.received) do received=received+1 end
-        return string.format(L('同步当前任务：%d/%d，已等待 %d 秒'),received,#pendingAI.wire,time()-pendingAI.started)
+        local status=string.format(L('同步当前任务：%d/%d，已等待 %d 秒'),received,#pendingAI.wire,time()-pendingAI.started)
+        if received==0 and time()-pendingAI.started>=15 then status=status..' '..L('桥接尚未确认收到，请检查桥接是否启动、游戏彩条是否可见。') end
+        return fallback..status
     end
-    if inFlight then return string.format(L('AI 正在规划路线，已等待 %d 秒'),time()-inFlight.started) end
+    if inFlight then return fallback..string.format(L('AI 正在规划路线，已等待 %d 秒'),time()-inFlight.started) end
+    if draftFlight then return L('正在生成游记，完成后可规划任务。') end
+    if pendingAI then return L('冒险日志正在同步，完成或取消同步后可规划任务。') end
     if autoDue and char.autoPlan then return L('任务已变化，等待合并更新') end
     return planNotice or (char and char.plan and (char.plan.error or (char.plan.ai and L('AI 规划已更新')))) or ''
 end
