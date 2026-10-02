@@ -42,7 +42,10 @@ function workbuddyParser() {
         if (b.type === 'text' && typeof b.text === 'string') { texts.push(b.text); out.progress.push(snippet(b.text)); }
         else if (b.type === 'tool_use') out.progress.push(describeToolUse(b));
       }
-      if (texts.length) lastText = texts.join('\n');
+      if (texts.length) {
+        lastText = texts.join('\n');
+        if (!(ev.message?.content || []).some(b=>b.type==='tool_use')) out.answer = lastText;
+      }
     } else if (ev.type === 'result') {
       const errors = (Array.isArray(ev.errors) ? ev.errors : []).map(e => typeof e === 'string' ? e : e?.message || JSON.stringify(e));
       let error = !!ev.is_error || /^error/.test(ev.subtype || '') || errors.length > 0;
@@ -72,6 +75,10 @@ const AGENTS = {workbuddy:{
     if (Array.isArray(cfg.tools)) a.push('--tools',cfg.tools.join(','));
     a.push('--strict-mcp-config','--mcp-config','{"mcpServers":{}}');
     if (cfg.model) a.push('--model',cfg.model);
+    if (cfg.effort) {
+      if (!['minimal','low','medium','high','xhigh','max'].includes(cfg.effort)) throw Error('Invalid reasoning effort');
+      a.push('--effort',cfg.effort);
+    }
     if (resume) a.push('--resume',resume);
     const allowed=Array.isArray(cfg.allowedTools)?cfg.allowedTools.filter(Boolean):[];
     const denied=Array.isArray(cfg.deniedTools)?cfg.deniedTools.filter(Boolean):[];

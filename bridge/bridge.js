@@ -543,6 +543,7 @@ function runJob(job) {
       acfg.permissionMode = 'dontAsk';
       acfg.tools = job.planResearch ? ['WebSearch','WebFetch'] : [];
       acfg.allowedTools = acfg.tools;
+      if (job.planRequest) acfg.effort = 'low';
     }
     if (agentId === 'codex') acfg.extraArgs = ['-c', job.planResearch?'web_search="live"':'web_search="disabled"'];
   }
@@ -602,6 +603,7 @@ function runJob(job) {
   } catch (e) { log(`${tag} map file unavailable: ${e.message}`); }
 
   log(`${tag} (${job.via}) ${agent.name} starting in ${cwd}${resume ? ' (resume ' + resume.slice(0, 8) + ')' : ' (new session)'}${ctx ? ' [game context]' : ''}${running.size ? ' [' + (running.size + 1) + ' running]' : ''}`);
+  if (job.planRequest) log(`${tag} planner stage=${job.planResearch?'research':'route'} model=${acfg.model||'default'} effort=${acfg.effort||'default'} promptChars=${job.text.length}`);
   const child = spawn(cmd.file, args, { cwd, env, windowsHide: true, stdio: [input.stdin !== undefined ? 'pipe' : 'ignore', 'pipe', 'pipe'] });
   running.set(key, { job, child });
   const draftProgress=()=>job.draftRun?{draftRequest:job.draftRequest,draftProgress:{...job.draftRun.progress,stamp:Date.now()}}:{};
@@ -620,6 +622,9 @@ function runJob(job) {
   let buffer = '';
   let stdoutText = '';
   let parserError = false;
+  let planValidated = false;
+  let lastAgentEvent = Date.now();
+  let assistantChars = 0;
 
   const pushProgress = (line) => {
     progress.push(line);
@@ -633,10 +638,11 @@ function runJob(job) {
   const keepalive = setInterval(() => {beat(job);if(job.draftRun)publish(key,{chat:job.chat,id:job.id,status:'working',text:stage,cwd,agent:agentId,...draftProgress()},false);}, 45000);
 
   const handleLine = (line) => {
-    if (parserError) return;
+    if (parserError || planValidated) return;
     let ev;
     try { ev = JSON.parse(line); } catch { return; }
     if (!ev || typeof ev !== 'object') return;
+    lastAgentEvent = Date.now();
     let r;
     try {
       r = parser.feed(ev);
@@ -656,6 +662,20 @@ function runJob(job) {
     for (const d of r.denied) denied.add(d);
     notes.push(...r.notes);
     if (r.done) result = r.done;
+    // An assistant message is not generally a final result. For a fixed route
+    // only, accept it early after full snapshot, quest and coordinate validation.
+    const routeText = r.done && !r.done.error ? r.done.text : r.answer;
+    if (job.planRequest && typeof routeText === 'string') {
+      assistantChars = routeText.length;
+      try {
+        Planner.parse(routeText, job.planRequest, job.planSnapshot);
+        planValidated = true;
+        result = {text:routeText,error:false};
+        log(`${tag} planner complete validated route received; finishing without waiting for CLI shutdown`);
+        clearTimeout(timer);
+        killTree(child);
+      } catch { /* incomplete/invalid output cannot replace the current route */ }
+    }
   };
 
   child.stdout.on('data', (chunk) => {
@@ -677,7 +697,7 @@ function runJob(job) {
   let timedOut = false;
   const timer = setTimeout(() => {
     timedOut = true;
-    log(`${tag} timed out after ${timeoutMs} ms, killing`);
+    log(`${tag} timed out after ${timeoutMs} ms, killing; silenceMs=${Date.now()-lastAgentEvent} assistantChars=${assistantChars}`);
     killTree(child);
   }, timeoutMs);
 
