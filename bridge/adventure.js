@@ -3,6 +3,7 @@
 const fs = require('fs');
 const path = require('path');
 const Planner = require('./planner');
+const QuestCatalog = require('./quest-catalog');
 const Narrative = require('./narrative');
 const ID = /^[A-Za-z0-9_-]{1,100}$/;
 const KINDS = new Set(['session_start','session_end','interrupted','ui_reload','heartbeat','pause','resume','gap','zone','position','quest_accept','quest_progress','quest_ready','quest_turnin','quest_removed','level','xp','money','loot','equipment','skill','kill','death','resurrect','boss','achievement','note','snapshot_begin','snapshot_quest','snapshot_end']);
@@ -119,8 +120,8 @@ class AdventureStore {
       groups.get(key).received.push(e.seq);
     }
     return [...groups.values()].sort((a,b)=>b.t-a.t).slice(0,4).map(g=>{
-      let ready=false;try{this.snapshot(g.ledger,g.snapshot);ready=true;}catch{}
-      return {ledger:g.ledger,snapshot:g.snapshot,received:g.received.sort((a,b)=>a-b).slice(0,200),ready};
+      let ready=false,error;try{this.snapshot(g.ledger,g.snapshot);ready=true;}catch(e){if(e.code==='QUEST_CATALOG')error=e.message;}
+      return {ledger:g.ledger,snapshot:g.snapshot,received:g.received.sort((a,b)=>a-b).slice(0,200),ready,...(error?{error}:{})};
     });
   }
   all(){return [...this.records.values()].flatMap(m=>[...m.values()]).sort((a,b)=>a.t-b.t||a.seq-b.seq);}
@@ -128,7 +129,7 @@ class AdventureStore {
     const rows=[...(this.records.get(ledger)?.values()||[])].filter(e=>e.data.snapshot===id).sort((a,b)=>a.seq-b.seq);
     const first=rows.find(e=>e.kind==='snapshot_begin'),last=rows.find(e=>e.kind==='snapshot_end');
     if(!first||!last)throw Error('任务快照尚未完整同步，请等待同步完成后重试。');
-    const qs=rows.filter(e=>e.kind==='snapshot_quest').map(e=>e.data.quest);
+    const qs=rows.filter(e=>e.kind==='snapshot_quest').map(e=>QuestCatalog.expand(e.data.quest));
     if(qs.length!==first.data.count||last.data.count!==qs.length||new Set(qs.map(q=>q.id)).size!==qs.length||first.data.complete===false)throw Error('任务列表不完整，请展开任务日志所有分组后重新规划。');
     if(Date.now()/1000-first.t>600)throw Error('任务快照已超过十分钟，请刷新任务后重新规划。');
     return {character:first.character,t:first.t,player:first.data.player,position:first.data.position,scopeMap:first.data.scopeMap,quests:qs,route:last.data.route||[],missing:last.data.missing||[]};
