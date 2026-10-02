@@ -28,10 +28,14 @@ function setup(t,mode){
  fs.mkdirSync(path.join(addons,'WoWAI'),{recursive:true});fs.mkdirSync(project);fs.mkdirSync(archive);
  fs.writeFileSync(path.join(addons,'WoWAI','WoWAI.toc'),'## Interface: 16001\n');
  const cli=path.join(root,'fake-cli.cjs');
- fs.writeFileSync(cli,`const fs=require('fs'),path=require('path');const args=process.argv.slice(2);const tools=args[args.indexOf('--tools')+1];fs.appendFileSync(path.join(__dirname,'launches.jsonl'),JSON.stringify({tools,model:args[args.indexOf('--model')+1],resume:args.includes('--resume')})+'\\n');let input='';process.stdin.on('data',c=>input+=c);process.stdin.on('end',()=>{
+ fs.writeFileSync(cli,`const fs=require('fs'),path=require('path');const args=process.argv.slice(2);const tools=args[args.indexOf('--tools')+1];if(args[args.indexOf('--effort')+1]!=='low')throw Error('Missing low effort');fs.appendFileSync(path.join(__dirname,'launches.jsonl'),JSON.stringify({tools,model:args[args.indexOf('--model')+1],resume:args.includes('--resume')})+'\\n');let input='';process.stdin.on('data',c=>input+=c);process.stdin.on('end',()=>{
  if(${JSON.stringify(mode)}==='auth'){console.log(JSON.stringify({type:'result',is_error:true,result:'Authentication required'}));return;}
  if(tools||${JSON.stringify(mode)}==='hang'){setInterval(()=>{},1000);return;}
  const plan={snapshot:'s',summary:'Verified route first',steps:[{questID:1,locationKey:'a',region:'known',reason:'nearby',action:'complete'},{questID:2,locationKey:'',reason:'unknown',action:'位置待确认'}]};
+ if(['assistant-hang','invalid-hang'].includes(${JSON.stringify(mode)})){
+  if(${JSON.stringify(mode)}==='invalid-hang')plan.steps[0].locationKey='invented';
+  console.log(JSON.stringify({type:'assistant',message:{content:[{type:'text',text:'\x60\x60\x60wowplan'+JSON.stringify(plan)+'\x60\x60\x60'}]}}));setInterval(()=>{},1000);return;
+ }
  console.log(JSON.stringify({type:'result',result:'\x60\x60\x60wowplan\\n'+JSON.stringify(plan)+'\\n\x60\x60\x60'}));});`);
  const cfg={agent:'workbuddy',agents:{workbuddy:{path:cli,model:'deepseek-v4.1-flash'}},addonDir:addons,savedVariablesFile:saved,defaultCwd:project,adventureDir:archive,slots:2,capture:{enabled:false},plannerResearchTimeoutMs:750,plannerTimeoutMs:1500,primerFile:false};
  fs.writeFileSync(path.join(root,'config.json'),JSON.stringify(cfg));
@@ -58,4 +62,25 @@ test('both stages hanging give a truthful timeout and never loop or change model
 test('authentication errors do not retry or get hidden as research timeouts',t=>{
  const {result,inbox,launches}=setup(t,'auth');
  assert.equal(result.status,1);assert.equal(launches.length,1);assert.match(inbox,/AUTH_REQUIRED/);
+});
+
+test('complete assistant route is accepted even when CLI never emits final result',t=>{
+ const {result,inbox,launches}=setup(t,'assistant-hang');
+ assert.equal(result.status,0,result.stdout+'\n'+result.stderr);
+ assert.match(inbox,/Verified route first/);assert.doesNotMatch(inbox,/TIMEOUT/);
+ assert.match(result.stdout,/complete validated route received/);assert.equal(launches.length,2);
+});
+test('invalid streamed route cannot bypass waypoint validation',t=>{
+ const {result,inbox}=setup(t,'invalid-hang');
+ assert.equal(result.status,1);assert.match(inbox,/TIMEOUT/);assert.doesNotMatch(inbox,/Verified route first/);
+});
+test('compact model route is validated and expanded into the existing game format',()=>{
+ const snap={scopeMap:1,quests:[{id:1,locations:[{key:'a',m:1,x:20,y:30}]},{id:2,locations:[]}]},id={snapshot:'s'};
+ const raw={snapshot:'s',summary:'route',route:[[1,'a','North','complete',''],[2,'','Unknown','位置待确认','']]};
+ const block=x=>'```wowplan'+JSON.stringify(x)+'```';
+ const plan=Planner.parse(block(raw),id,snap);
+ assert.equal(plan.steps[0].waypoint.x,20);assert.equal(plan.steps[1].waypoint,null);
+ raw.route[0][1]='invented';assert.throws(()=>Planner.parse(block(raw),id,snap),/不存在/);
+ raw.route[0][1]='a';raw.route[1][0]=1;assert.throws(()=>Planner.parse(block(raw),id,snap),/重复/);
+ raw.route[1]=[2,''];assert.throws(()=>Planner.parse(block(raw),id,snap),/格式/);
 });
