@@ -2672,7 +2672,10 @@ local function BuildUI()
 
 	-- A small native menu avoids client-specific Blizzard dropdown APIs.
 	local modelButton = MakeButton(f, '', 238, function()
-		if not AnyPending() then ui.modelMenu:SetShown(not ui.modelMenu:IsShown()) end
+		if not AnyPending() then
+			GameTooltip:Hide()
+			ui.modelMenu:SetShown(not ui.modelMenu:IsShown())
+		end
 	end)
 	_G.WoWAIModelSelector = modelButton
 	modelButton:SetHeight(20)
@@ -2687,8 +2690,9 @@ local function BuildUI()
 	ui.modelSelector = modelButton
 	local modelMenu = CreateFrame('Frame', 'WoWAIModelMenu', f, 'BackdropTemplate')
 	modelMenu:SetSize(238, 88)
-	modelMenu:SetPoint('TOPRIGHT', modelButton, 'BOTTOMRIGHT', 0, -3)
-	modelMenu:SetFrameStrata('DIALOG')
+	modelMenu:SetPoint('TOPLEFT', modelButton, 'TOPRIGHT', 8, 0)
+	modelMenu:SetFrameStrata('TOOLTIP')
+	modelMenu:SetClampedToScreen(true)
 	modelMenu:SetBackdrop(BACKDROP)
 	modelMenu:SetBackdropColor(0.045, 0.038, 0.024, 1)
 	modelMenu:EnableMouse(true)
