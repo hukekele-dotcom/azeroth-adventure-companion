@@ -45,3 +45,10 @@ AI 为连续可合做的任务提供区域名称及顺序；客户端只合并�
 English: Routes with complete verified coordinates skip web tools. Missing locations get bounded research (90 seconds; prompt instructs at most four web calls). A research timeout permits only one fresh AI planning attempt, using the same snapshot and model with web tools disabled (150 seconds). This recovery may incur one additional model invocation. Unknown locations remain unresolved; no invented arrow coordinates or provider fallback. Final timeouts show TIMEOUT and preserve the previous route and journal. Authentication and snapshot-sync errors are not retried. Limits can be configured with plannerResearchTimeoutMs and plannerTimeoutMs.
 
 本次核验：241 项测试通过，另通过 Lua 加载顺序与像素编解码检查。独立目录真实回放截图对应的 7 个任务，DeepSeek-V4.1-Flash 在约 77 秒内返回并通过规划解析，3 个候选坐标、4 个位置待确认；测试不写入游戏路线，不等于游戏内验收。
+
+
+## 2026-10-02：缩短规划输出和结束等待
+
+WorkBuddy 规划调用单独设置 --effort low，不改变聊天设置或用户选定模型。AI 返回紧凑 route 数组，桥接转换为原有 steps 格式；旧 steps 仍兼容。assistant 文本本身不代表完成：只有完整 wowplan 通过快照、任务覆盖和坐标白名单检查，才能提前结束进程并交付路线。不完整或无效文本仍等待正式结果或超时。新增阶段、模型、提示词长度、已收到文本长度及静默时长日志，不记录密钥。
+
+246 项回归测试通过。真实历史 7 任务快照使用 DeepSeek-V4.1-Flash，低推理强度，约 37 秒获得有效路线；没有修改游戏数据。报错电脑的具体请求日志尚未取得，不能断言服务端超时已消除。
