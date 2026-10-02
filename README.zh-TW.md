@@ -4,7 +4,7 @@
 
 **艾澤拉斯冒險夥伴** — 為《魔獸世界：無限》準備的 AI 任務助手、冒險日誌和副本助手。
 
-基於 [chelinho139/wow-ai](https://github.com/chelinho139/wow-ai) 的社群增強版。當前版本 **0.6.0-beta.5**，面向 Windows x64 / Forever 1.60 內測。
+基於 [chelinho139/wow-ai](https://github.com/chelinho139/wow-ai) 的社群增強版。當前版本 **0.6.0-beta.6**，面向 Windows x64 / Forever 1.60 內測。
 
 **[下載 Windows 內測安裝包](https://github.com/hukekele-dotcom/azeroth-adventure-companion/releases)** · **[簡體說明](tools/release/guides/Install-Guide-zhCN.txt)** · **[繁體說明](tools/release/guides/Install-Guide-zhTW.txt)** · **[English guide](tools/release/guides/Install-Guide-en.txt)** · **[反饋問題](https://github.com/hukekele-dotcom/azeroth-adventure-companion/issues)**
 
@@ -23,7 +23,7 @@
 
 ## 玩家安裝
 
-1. 從上方內測發布頁下載 `WoWAI-Forever-0.6.0-beta.5-win-x64.zip`，**完整解壓縮**。GitHub 自動生成的 “Source code” 是開發原始碼，不是玩家安裝包。
+1. 從上方內測發布頁下載 `WoWAI-Forever-0.6.0-beta.6-win-x64.zip`，**完整解壓縮**。GitHub 自動生成的 “Source code” 是開發原始碼，不是玩家安裝包。
 2. 退出遊戲和舊橋接，執行 `Install.cmd`。
 3. 選擇包含 `WowB.exe` 和 `Interface` 的客戶端目錄（通常為 `_classic_beta_`），選擇預設 AI，無需選擇遊戲帳號。
 4. 按“安裝 / 升級 → 登入所選 AI → 啟動橋接”操作。
@@ -66,7 +66,7 @@ npm test
 
 ## 內測狀態
 
-本地迴歸測試 243 項、安裝測試 11 項及通訊編解碼檢查已通過。仍需在其他電腦完成真實帳號登入、遊戲內通訊、路線標記、下線儲存及升級測試。請按 Beta 使用；這不是正式穩定版。
+本地迴歸測試 246 項、安裝測試 11 項及通訊編解碼檢查已通過。仍需在其他電腦完成真實帳號登入、遊戲內通訊、路線標記、下線儲存及升級測試。請按 Beta 使用；這不是正式穩定版。
 
 ## 致謝與許可
 

@@ -1,3 +1,7 @@
+# 0.6.0-beta.6
+
+Reduce planning effort/output and accept validated complete routes before CLI shutdown; preserve model selection and timeout safeguards.
+
 # 0.6.0-beta.5
 
 Fix Windows installer Unicode decoding; remove game-account selection and automatically discover addon saves.
