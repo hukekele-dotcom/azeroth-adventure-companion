@@ -4,7 +4,7 @@
 
 AI quest assistance, daily adventure journals and dungeon assistance for **WoW: Forever**. A community enhancement of [chelinho139/wow-ai](https://github.com/chelinho139/wow-ai).
 
-**0.6.0-beta.6** · Windows x64 · Forever 1.60 Beta
+**0.6.0-beta.7** · Windows x64 · Forever 1.60 Beta
 
 **[Download the Windows package](https://github.com/hukekele-dotcom/azeroth-adventure-companion/releases)** · **[English installation guide](tools/release/guides/Install-Guide-en.txt)** · **[Report an issue](https://github.com/hukekele-dotcom/azeroth-adventure-companion/issues)**
 
@@ -23,7 +23,7 @@ Dungeon coverage and equipment scoring remain incomplete. Not every hidden quest
 
 ## Player installation
 
-1. Download **WoWAI-Forever-0.6.0-beta.6-win-x64.zip** from the release page and extract everything. GitHub's generated “Source code” archives are not player installers.
+1. Download **WoWAI-Forever-0.6.0-beta.7-win-x64.zip** from the release page and extract everything. GitHub's generated “Source code” archives are not player installers.
 2. Open **README.html** and choose English, or open **Install-Guide-en.txt**. The complete guides work offline.
 3. Exit the game and stop the old bridge. Run **Install.cmd**.
 4. Select the client folder containing **WowB.exe** and **Interface** (usually **_classic_beta_**), then your default AI. No game-account selection is needed.

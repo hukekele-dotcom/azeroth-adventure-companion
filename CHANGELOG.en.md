@@ -1,3 +1,7 @@
+# 0.6.0-beta.7
+
+Open the WorkBuddy model menu to the right of its button, above chat controls. Keep it within screen bounds and hide the hover tooltip when opening it.
+
 # 0.6.0-beta.6
 
 Reduce planning effort/output and accept validated complete routes before CLI shutdown; preserve model selection and timeout safeguards.

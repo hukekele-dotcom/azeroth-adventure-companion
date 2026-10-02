@@ -1,18 +1,18 @@
-# Azeroth Adventure Companion 0.6.0-beta.6
+# Azeroth Adventure Companion 0.6.0-beta.7
 
 ## 简体中文
-优化 WorkBuddy 任务规划超时：规划请求使用低推理强度，保留玩家选择的系统模型；缩短路线输出，减少逐任务重复说明。收到完整路线后先校验快照、全部任务和候选坐标，合格即返回，不再等待 CLI 结束信号。缺失或无效坐标不会生成箭头，未完成或过期的路线不能覆盖原路线。
+WorkBuddy 模型菜单现在从按钮右侧弹出，并显示在聊天编辑框上方，避免遮挡选项。菜单保持在屏幕范围内，打开时关闭说明提示。保留 beta.6 的任务规划响应优化；模型选项和账号配置不变。
 
-查资料仍有 90 秒上限；必要时仅用同一模型和快照进行一次不联网规划（150 秒）。服务端无响应仍可能超时，不会自动切换模型。新增阶段、模型、输出量与无响应时长诊断信息，便于后续排查。
-
-246 项功能测试通过。历史 7 任务快照在 DeepSeek-V4.1-Flash 上约 37 秒返回有效规划；这不是所有请求的时间保证，也不等于报错电脑已通过游戏内验收。
+升级：退出游戏并停止旧桥接，完整解压安装包，运行 Install.cmd 安装/升级，再启动桥接和游戏。已有记录和 AI 登录配置保留。游戏内实际显示仍需玩家确认。
 
 ## 繁體中文
-優化 WorkBuddy 任務規劃逾時：降低規劃推理強度、縮短路線輸出，保留玩家選擇的系統模型。完整路線通過快照、任務及候選座標檢查後即返回，不再等待 CLI 結束訊號。不完整或過期的結果不會覆蓋原路線，也不會猜測箭頭座標。保留 90 秒查詢與必要時同模型 150 秒不聯網規劃上限；服務端無回應仍可能逾時。
+WorkBuddy 模型選單改為從按鈕右側展開，顯示在聊天輸入框上方，避免選項被遮住。選單保持在螢幕範圍內，開啟時關閉說明提示。保留 beta.6 的任務規劃回應優化。
+
+升級：退出遊戲並停止舊橋接，完整解壓縮安裝包，執行 Install.cmd，再啟動橋接與遊戲。保留原有紀錄及 AI 登入設定。遊戲內實際顯示仍需玩家確認。
 
 ## English
-Reduces WorkBuddy planning latency with low reasoning effort and compact route output, preserving the selected hosted model. A complete assistant route is returned immediately after validating its snapshot, quest coverage and coordinate candidates, without waiting for CLI shutdown. Invalid, stale or incomplete routes cannot replace the previous route. Research remains capped at 90 seconds with at most one same-model, tools-disabled 150-second planning attempt. Service-side stalls may still time out.
+The WorkBuddy model menu opens to the right of its button, above chat controls. It stays within screen bounds and dismisses the hover tooltip when opened. Includes beta.6 planning response improvements without changing model choices or account configuration.
 
-246 tests passed. A historical seven-quest snapshot produced a valid plan in about 37 seconds with DeepSeek-V4.1-Flash; this is not a latency guarantee or validation on the affected PC.
+Upgrade: exit the game, stop the old bridge, extract the complete package, run Install.cmd, then restart the bridge and game. Records and AI sign-in settings are preserved. In-game visual confirmation remains pending.
 
-下载 / 下載 / Download: **WoWAI-Forever-0.6.0-beta.6-win-x64.zip**. Exit the game, stop the old bridge, extract fully, run Install.cmd, then start the updated bridge. Existing records and AI sign-in configuration are preserved. No game-account selection is required. Windows x64 Beta.
+**Download / 下载 / 下載: WoWAI-Forever-0.6.0-beta.7-win-x64.zip**
