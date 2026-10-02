@@ -1,5 +1,5 @@
 Azeroth Adventure Companion — Installation and User Guide
-Version: 0.6.0-beta.5 (Windows x64 Beta)
+Version: 0.6.0-beta.6 (Windows x64 Beta)
 
 First use: Extract everything → Install → Sign in to AI → Start bridge → Restart game → /wow-ai
 Daily use: Open the “WoW AI 无限” desktop shortcut → Start bridge → Enter the game.
@@ -13,7 +13,7 @@ This package targets the WoW: Forever 1.60 client with WowB.exe. Other WoW clien
 You need:
 • An installed Forever client. No prior game login or game-account selection is required.
 • Internet access and your own AI account. You can start with either Codex or WorkBuddy and configure the other later.
-• The complete WoWAI-Forever-0.6.0-beta.5-win-x64.zip package.
+• The complete WoWAI-Forever-0.6.0-beta.6-win-x64.zip package.
 
 Node.js is included; you do not need to install it separately. The official AI tools are downloaded when you first sign in. Each player uses their own account and allowance. The package does not include an AI account or credits.
 The “bridge” is the background program that connects the game addon to AI. Both the addon and the bridge must be running for AI communication.
