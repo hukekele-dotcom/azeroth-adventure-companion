@@ -156,6 +156,10 @@ function J.Ack(acks, snapshots)
         local request=pendingAI
         for _,a in ipairs(type(snapshots)=='table' and snapshots or {}) do
             if a.ledger==char.ledger and a.snapshot==request.snapshot then
+                if a.error then
+                    char.plan.error=L('任务资料库版本不一致或引用无效，请用同一安装包升级插件和桥接。')
+                    Notify(char.plan.error);pendingAI=nil;break
+                end
                 for _,seq in ipairs(a.received or {}) do
                     if request.sequences[seq] then request.received[seq]=true end
                 end
@@ -508,6 +512,27 @@ function J.ToggleAutoPlan()
     end
     J.Render()
 end
+function J.PackQuest(q)
+    -- Keep all live objectives and metadata. Shared static coordinates travel as
+    -- indices; native POIs remain exact inline coordinates and take precedence.
+    if not WoWAIQuestCatalogVersion then return q end
+    local packed={}
+    for k,v in pairs(q) do if k~='locations' and k~='waypoint' and k~='reason' and k~='action' and k~='region' and k~='sourceURL' then packed[k]=v end end
+    local sources,sourceIDs,points={},{},{}
+    local entry=WoWAIQuestLocations and WoWAIQuestLocations[q.id]
+    local rows=entry and entry[q.complete and 'turnin' or 'objective'] or {}
+    for _,w in ipairs(q.locations or {}) do
+        local source=w.source or ''
+        if not sourceIDs[source] then sources[#sources+1]=source;sourceIDs[source]=#sources end
+        local i=tonumber((w.key or ''):match('^db(%d+)$'));local row=i and rows[i]
+        if row and row[1]==w.m and row[2]==w.x and row[3]==w.y and (row[4]>4)==(w.entrance==true) then points[#points+1]={i,sourceIDs[source]}
+        else points[#points+1]={w.key,w.m,w.x,w.y,sourceIDs[source],w.entrance==true} end
+    end
+    packed.locationCatalog={version=WoWAIQuestCatalogVersion,points=points,sources=sources}
+    -- A one-point or empty quest may be smaller in the legacy representation.
+    local raw={};for k,v in pairs(packed) do if k~='locationCatalog' then raw[k]=v end end;raw.locations=q.locations or {}
+    return #J.JSON(packed)<#J.JSON(raw) and packed or raw
+end
 function J.SendPlan(automatic,mapOnly)
     if not current or not char then Notify(L('请等待角色进入世界。'));return end
     if automatic==true and not char.autoPlan then return end
@@ -526,7 +551,7 @@ function J.SendPlan(automatic,mapOnly)
     local quests=J.PlanningQuests(p)
     local first=#db.queue+1
     J.Record('snapshot_begin',{snapshot=p.id,count=#quests,complete=p.complete,position=p.position,scopeMap=p.scopeMap,player=State()})
-    for _,q in ipairs(quests) do J.Record('snapshot_quest',{snapshot=p.id,quest=q}) end
+    for _,q in ipairs(quests) do J.Record('snapshot_quest',{snapshot=p.id,quest=J.PackQuest(q)}) end
     -- Coordinates already live on each quest; do not transmit a duplicate route.
     local e=J.Record('snapshot_end',{snapshot=p.id,count=#quests})
     if e then
