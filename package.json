@@ -1,6 +1,6 @@
 {
   "name": "azeroth-adventure-companion",
-  "version": "0.6.0-beta.7",
+  "version": "0.6.0-beta.8",
   "private": true,
   "description": "艾泽拉斯冒险伙伴：WoW Forever AI task routes, daily journals and dungeon assistance.",
   "license": "MIT",

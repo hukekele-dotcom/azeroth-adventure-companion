@@ -1,3 +1,7 @@
+# 0.6.0-beta.8
+
+Build an immediate local numbered fallback from known coordinates while AI still receives all eligible quest objectives and candidate positions. Greedy candidate selection plus bounded 2-opt reduces geometric backtracking and defers harder tasks. Dungeon and other-map quests are excluded; unknown coordinates are not invented. Show bridge acknowledgement, channel wait and planning stages; busy clicks explain status without duplicate requests. AI results still require snapshot and coordinate validation. The fallback does not claim a shortest walkable route.
+
 # 0.6.0-beta.7
 
 Open the WorkBuddy model menu to the right of its button, above chat controls. Keep it within screen bounds and hide the hover tooltip when opening it.

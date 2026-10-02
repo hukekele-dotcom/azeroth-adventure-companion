@@ -1,18 +1,16 @@
-# Azeroth Adventure Companion 0.6.0-beta.7
+# Azeroth Adventure Companion 0.6.0-beta.8
 
 ## 简体中文
-WorkBuddy 模型菜单现在从按钮右侧弹出，并显示在聊天编辑框上方，避免遮挡选项。菜单保持在屏幕范围内，打开时关闭说明提示。保留 beta.6 的任务规划响应优化；模型选项和账号配置不变。
-
-升级：退出游戏并停止旧桥接，完整解压安装包，运行 Install.cmd 安装/升级，再启动桥接和游戏。已有记录和 AI 登录配置保留。游戏内实际显示仍需玩家确认。
+先使用已有坐标生成本地图备用数字路线，AI 继续接收完整任务目标和候选坐标并优化路线。备用算法选择邻近候选点并进行有限次折返优化，优先普通任务；副本、其他地图任务不纳入路线，未知坐标不猜测。明确显示同步、桥接未确认、等待 AI 通道和规划状态；重复点击显示原因而不重复发送。AI 结果仍须通过快照和坐标校验。备用路线不代表实际道路最短路线。
 
 ## 繁體中文
-WorkBuddy 模型選單改為從按鈕右側展開，顯示在聊天輸入框上方，避免選項被遮住。選單保持在螢幕範圍內，開啟時關閉說明提示。保留 beta.6 的任務規劃回應優化。
-
-升級：退出遊戲並停止舊橋接，完整解壓縮安裝包，執行 Install.cmd，再啟動橋接與遊戲。保留原有紀錄及 AI 登入設定。遊戲內實際顯示仍需玩家確認。
+先使用已知座標產生本地備用數字路線，AI 仍接收完整任務目標及候選座標以優化路線。排除副本及其他地圖任務，不猜測未知座標。清楚顯示同步、橋接未確認、等待 AI 通道及規劃狀態；重複點擊提示原因而不重複傳送。備用路線不代表實際道路最短路線。
 
 ## English
-The WorkBuddy model menu opens to the right of its button, above chat controls. It stays within screen bounds and dismisses the hover tooltip when opened. Includes beta.6 planning response improvements without changing model choices or account configuration.
+Build an immediate local numbered fallback from known coordinates while AI still receives all eligible quest objectives and candidate positions. Greedy candidate selection plus bounded 2-opt reduces geometric backtracking and defers harder tasks. Dungeon and other-map quests are excluded; unknown coordinates are not invented. Show bridge acknowledgement, channel wait and planning stages; busy clicks explain status without duplicate requests. AI results still require snapshot and coordinate validation. The fallback does not claim a shortest walkable route.
 
-Upgrade: exit the game, stop the old bridge, extract the complete package, run Install.cmd, then restart the bridge and game. Records and AI sign-in settings are preserved. In-game visual confirmation remains pending.
+248 automated tests passed. The affected remote PC has not yet been verified in-game.
 
-**Download / 下载 / 下載: WoWAI-Forever-0.6.0-beta.7-win-x64.zip**
+升级 / 升級 / Upgrade: 退出游戏、停止旧桥接，完整解压并运行 Install.cmd，再启动桥接和游戏。Exit the game and stop the old bridge, extract fully and run Install.cmd, then restart. Records and sign-in settings are preserved.
+
+**WoWAI-Forever-0.6.0-beta.8-win-x64.zip**
