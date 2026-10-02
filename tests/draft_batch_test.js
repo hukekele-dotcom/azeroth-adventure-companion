@@ -36,7 +36,7 @@ test('failed long draft resumes validated parts; completed and changed snapshots
 test('full bridge chains parts, reports progress, resumes after agent failure and publishes one complete draft',t=>{
  const root=scratch(t),src=path.resolve(__dirname,'../bridge'),journal=path.join(root,'journal'),addon=path.join(root,'addons','WoWAI');
  fs.mkdirSync(journal,{recursive:true});fs.mkdirSync(addon,{recursive:true});
- for(const f of fs.readdirSync(src).filter(f=>/\.(js|cjs)$/.test(f)))fs.copyFileSync(path.join(src,f),path.join(root,f));
+ for(const f of fs.readdirSync(src).filter(f=>/\.(js|cjs)$/.test(f)||f==='quest-locations.json'))fs.copyFileSync(path.join(src,f),path.join(root,f));
  const events=Array.from({length:310},(_,i)=>event(i+1,'note',{text:'这是真实测试手记'+i}));
  fs.writeFileSync(path.join(journal,'hero.jsonl'),events.map(e=>JSON.stringify(e)).join('\n')+'\n');
  fs.writeFileSync(path.join(addon,'WoWAI.toc'),'## Interface: 16001\n');

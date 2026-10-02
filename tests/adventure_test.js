@@ -44,6 +44,17 @@ test('snapshot receipts acknowledge sparse data without claiming missing journal
  s.ingest({...event(103,'snapshot_begin',{snapshot:'expired',count:0}),t:epoch-700});
  assert.equal(s.snapshotAck().length,1);
 });
+
+test('shared catalog expands from durable snapshots and mismatches return an explicit receipt',t=>{
+ const s=store(t),catalog=require('../bridge/quest-catalog');
+ const q={id:905,complete:false,objectives:[{text:'Current progress',have:2,need:3}],locationCatalog:{version:catalog.version,sources:['reference'],points:[[1,1]]}};
+ s.ingest(event(10,'snapshot_begin',{snapshot:'catalog',count:1,complete:true}));
+ s.ingest(event(11,'snapshot_quest',{snapshot:'catalog',quest:q}));s.ingest(event(12,'snapshot_end',{snapshot:'catalog',count:1}));
+ assert.deepEqual(new AdventureStore(s.root).snapshot('charA','catalog').quests[0],catalog.expand(q));
+ s.ingest(event(20,'snapshot_begin',{snapshot:'mismatch',count:1,complete:true}));
+ s.ingest(event(21,'snapshot_quest',{snapshot:'mismatch',quest:{...q,locationCatalog:{...q.locationCatalog,version:'outdated'}}}));s.ingest(event(22,'snapshot_end',{snapshot:'mismatch',count:1}));
+ const receipt=s.snapshotAck().find(a=>a.snapshot==='mismatch');assert.equal(receipt.ready,false);assert.match(receipt.error,/资料库版本/);
+});
 test('logout SavedVariables import never executes Lua and deduplicates',t=>{
  const s=store(t),e=event(1,'session_end'),hex=Buffer.from(JSON.stringify(e)).toString('hex');
  const src='WoWAIAdventureDB = {\n["adventureExport"] = {\n"'+hex+'",\n},\n}\nos.execute("bad")';

@@ -29,6 +29,59 @@ function vm(){
 }
 function answer(identity,quests){return '```wowplan\n'+JSON.stringify({snapshot:identity.snapshot,summary:'顺路交付，再处理邻近目标',steps:quests.map(q=>({questID:q.id,locationKey:Planner.candidates(q)[0]?.key||'',reason:'顺路',action:'按当前目标完成'}))})+'\n```';}
 
+test('map fallback is immediately usable offline without dropping AI quest data',()=>{
+ const v=vm();v.run(`QUESTS={{questID=100001,title='Nearby',level=12},{questID=100002,title='Far',level=12},{questID=100003,title='Unknown'},{questID=100004,title='Other map'},{questID=962,title='Dungeon'}}
+ C_QuestLog.GetNextWaypoint=function(id)if id==100001 then return 1431,.51,.5 elseif id==100002 then return 1431,.8,.8 elseif id==100004 then return 1413,.1,.1 end end
+ WoWAIAdventure.SendPlan(false,true)`);
+ const p=v.json('CHAR.plan');
+ assert.equal(p.localRoute,true);assert.equal(p.ai,false);
+ assert.equal(p.regions.length,2);assert.equal(p.route.length,2);
+ assert.deepEqual(new Set(p.order),new Set([100001,100002,100003]));
+ assert.ok(p.route.every(w=>w.m===1431));assert.equal(v.get('STUB.calls'),'nil');
+ assert.equal(v.get('WoWAIAdventure.StartNavigation(100001)'),'true');
+ v.run('STUB.now=STUB.now+16;WoWAIAdventure.Tick();WoWAIAdventure.SendPlan(false,true)');
+ assert.match(v.get('WoWAIAdventure.PlanningStatus()'),/桥接尚未确认/);
+ assert.match(v.get('STUB.prints[#STUB.prints]'),/桥接尚未确认/);
+ assert.equal(v.get('CHAR.plan.id'),p.id);
+ const wire=v.json('select(4,WoWAIAdventure.Context()).wire');
+ const snapshots=wire.map(e=>JSON.parse(Buffer.from(e.hex,'hex').toString('utf8'))).filter(e=>e.kind==='snapshot_quest').map(e=>require('../bridge/quest-catalog').expand(e.data.quest));
+ assert.equal(snapshots.length,3);
+ for(const q of snapshots){const original=p.quests.find(x=>x.id===q.id);assert.deepEqual(q.objectives,original.objectives);assert.deepEqual(q.locations,original.locations);}
+ v.run('STUB.now=STUB.now+241;WoWAIAdventure.Tick()');
+ assert.equal(v.get('WoWAIAdventure.PlanPhase()'),'idle');assert.equal(v.get('#CHAR.plan.regions'),'2');
+ assert.equal(v.get('STUB.calls'),'nil');
+});
+
+test('local route uses only candidate points, defers hard quests, and accepts later AI optimization',()=>{
+ const v=vm();v.run(`QUESTS={{questID=100001,title='A',level=12},{questID=100002,title='B',level=12},{questID=100003,title='Hard',suggestedGroup=5},{questID=100004,title='Unknown'}}
+ C_QuestLog.GetNextWaypoint=function(id)if id==100001 then return 1431,.2,.2 elseif id==100002 then return 1431,.7,.7 elseif id==100003 then return 1431,.5,.5 end end
+ WoWAIAdventure.SendPlan(false,true);WoWAIAdventure.Ack({{ledger=CHAR.ledger,seq=CHAR.seq}});WoWAIAdventure.Tick()`);
+ const snap=v.json('CHAR.plan'), identity={ledger:v.get('CHAR.ledger'),snapshot:snap.id};
+ assert.equal(snap.route[2].questID,100003);
+ for(const stop of snap.route){const q=snap.quests.find(q=>q.id===stop.questID);assert.ok(q.locations.some(w=>w.m===stop.m&&w.x===stop.x&&w.y===stop.y));}
+ v.reply(Planner.parse(answer(identity,[...snap.quests].reverse()),identity,snap));
+ assert.equal(v.get('CHAR.plan.ai'),'true');assert.equal(v.get('CHAR.plan.localRoute'),'nil');
+ assert.equal(v.get('CHAR.plan.order[1]'),'100004');assert.equal(v.get('STUB.calls'),'1');
+});
+
+test('shared quest catalog shrinks transfer without losing candidates or live objectives',t=>{
+ const v=vm();v.run(`QUESTS={{questID=16,title='Static quest',level=12},{questID=38,title='Many locations',level=12},{questID=905,title='Raptors',level=17}};WoWAIAdventure.Plan(false,true)`);
+ const catalog=require('../bridge/quest-catalog');let before=0,after=0;
+ for(let i=1;i<=3;i++){
+  const q=v.json('CHAR.plan.quests['+i+']'),packed=v.json('WoWAIAdventure.PackQuest(CHAR.plan.quests['+i+'])');
+  if(q.locations.length>2)assert.ok(packed.locationCatalog,`quest ${q.id}: multiple coordinates should use a catalog reference`);
+  const expanded=catalog.expand(packed);
+  assert.deepEqual(expanded.locations,q.locations);assert.deepEqual(expanded.objectives,q.objectives);
+  before+=Buffer.byteLength(JSON.stringify(q));after+=Buffer.byteLength(JSON.stringify(packed));
+ }
+ assert.ok(after<before*.6,`before ${before}, after ${after}`);t.diagnostic(`3 reference quests: ${before} -> ${after} UTF-8 bytes; full candidate and objective round trip verified`);
+ v.run(`C_QuestLog.GetQuestsOnMap=function()return {{questID=905,x=.123456789,y=.987654321}}end;WoWAIAdventure.Plan(false,true)`);
+ const native=v.json('CHAR.plan.quests[3]');assert.deepEqual(catalog.expand(v.json('WoWAIAdventure.PackQuest(CHAR.plan.quests[3])')).locations,native.locations);
+ const packed=v.json('WoWAIAdventure.PackQuest(CHAR.plan.quests[1])');packed.locationCatalog.version='wrong';assert.throws(()=>catalog.expand(packed),/资料库版本/);
+ v.run(`WoWAIAdventure.SendPlan(false,true);WoWAIAdventure.Ack({},{{ledger=CHAR.ledger,snapshot=CHAR.plan.id,received={},ready=false,error='version mismatch'}})`);
+ assert.equal(v.get('WoWAIAdventure.PlanPhase()'),'idle');assert.match(v.get('WoWAIAdventure.PlanningStatus()'),/资料库版本/);assert.equal(v.get('STUB.calls'),'nil');
+});
+
 function regionPlan(v){
  v.run(`QUESTS={{questID=100001,title='岸边收集'},{questID=100002,title='岸边清怪'},{questID=100003,title='山上任务'},{questID=100004,title='别的地图'},{questID=962,title='毒蛇花'}};DONE={}
  C_QuestLog.IsComplete=function(id)return DONE[id]==true end
@@ -158,7 +211,7 @@ test('repeated stale receipts cannot rewind a multi-part packet or match another
 test('manual button captures current quests once, leaves auto off and blocks duplicate clicks',()=>{
  const v=vm();v.run(`QUESTS[#QUESTS+1]={questID=887,title='新接任务'};WoWAIAdventure.Show('tasks');WoWAIAdventureUI.tasks.ai.scripts.OnClick();FIRST=CHAR.plan.id;SEQ=CHAR.seq;WoWAIAdventureUI.tasks.ai.scripts.OnClick()`);
  assert.equal(v.get('CHAR.autoPlan'),'false');assert.equal(v.get('#CHAR.plan.quests'),'4');assert.equal(v.get('CHAR.plan.id'),v.get('FIRST'));assert.equal(v.get('CHAR.seq'),v.get('SEQ'));
- assert.equal(v.get('WoWAIAdventureUI.tasks.ai:IsEnabled()'),'false');assert.equal(v.get('WoWAIAdventureUI.tasks.ai:GetText()'),'正在同步当前任务…');
+ assert.equal(v.get('WoWAIAdventureUI.tasks.ai:IsEnabled()'),'true');assert.equal(v.get('WoWAIAdventureUI.tasks.ai:GetText()'),'正在同步当前任务…');
  v.run("WoWAIAdventure.Event('QUEST_LOG_UPDATE')");assert.equal(v.get('CHAR.plan.stale'),'false','a delayed log event matching the captured snapshot must not invalidate it');
  v.run('WoWAIAdventure.Ack({{ledger=CHAR.ledger,seq=CHAR.seq}});WoWAIAdventure.Tick();WoWAIAdventure.SendPlan()');
  assert.equal(v.get('STUB.calls'),'1');assert.equal(v.get('WoWAIAdventureUI.tasks.ai:GetText()'),'AI 正在规划…');

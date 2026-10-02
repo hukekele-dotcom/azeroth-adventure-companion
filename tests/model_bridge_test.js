@@ -20,7 +20,7 @@ test('actual bridge launches the selected model, reuses only same-model sessions
  assert.equal(path.dirname(path.resolve(root)),path.resolve(os.tmpdir()));
  t.after(()=>fs.rmSync(root,{recursive:true,force:true}));
  const source=path.resolve(__dirname,'../bridge');
- for(const file of fs.readdirSync(source))if(/\.(js|cjs)$/.test(file))fs.copyFileSync(path.join(source,file),path.join(root,file));
+ for(const file of fs.readdirSync(source))if(/\.(js|cjs)$/.test(file)||file==='quest-locations.json')fs.copyFileSync(path.join(source,file),path.join(root,file));
  const addons=path.join(root,'addons'),project=path.join(root,'project'),saved=path.join(root,'SavedVariables.lua');
  fs.mkdirSync(path.join(addons,'WoWAI'),{recursive:true});fs.mkdirSync(project);
  fs.writeFileSync(path.join(addons,'WoWAI','WoWAI.toc'),'## Interface: 16001\n');
