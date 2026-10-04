@@ -1,5 +1,5 @@
 Azeroth Adventure Companion — Installation and User Guide
-Version: 0.6.0-beta.8 (Windows x64 Beta)
+Version: 0.6.0-beta.9 (Windows x64 Beta)
 
 First use: Extract everything → Install → Sign in to AI → Start bridge → Restart game → /wow-ai
 Daily use: Open the “WoW AI 无限” desktop shortcut → Start bridge → Enter the game.
@@ -13,7 +13,7 @@ This package targets the WoW: Forever 1.60 client with WowB.exe. Other WoW clien
 You need:
 • An installed Forever client. No prior game login or game-account selection is required.
 • Internet access and your own AI account. You can start with either Codex or WorkBuddy and configure the other later.
-• The complete WoWAI-Forever-0.6.0-beta.8-win-x64.zip package.
+• The complete WoWAI-Forever-0.6.0-beta.9-win-x64.zip package.
 
 Node.js is included; you do not need to install it separately. The official AI tools are downloaded when you first sign in. Each player uses their own account and allowance. The package does not include an AI account or credits.
 The “bridge” is the background program that connects the game addon to AI. Both the addon and the bridge must be running for AI communication.
@@ -180,4 +180,7 @@ Issue reports: https://github.com/hukekele-dotcom/azeroth-adventure-companion/is
 Original project: https://github.com/chelinho139/wow-ai
 This is a community modification, not an official Blizzard, OpenAI or Tencent product. The installed names, paths and /wow-ai command remain WoW AI / WoWAI for save compatibility.
 The upstream author's MIT LICENSE is preserved. Third-party data notices are in app\addon\WoWAI\THIRD_PARTY.md. Node.js and bundled component licenses are in runtime\LICENSE. AI tools have their own licenses and terms. Original license texts are preserved; this guide does not replace them.
-The package includes addon and bridge source, not the game client, game images or audio.
+The package includes addon and bridge source, does not include the game client or audio. Bundled reference map artwork retains its attribution and license.
+
+
+0.6.0-beta.9: quest recommendations, regional flows, per-stop navigation instructions and dungeon reference maps. Flow data: CC BY-NC-SA 4.0; map artwork: GPL-2.0; original engine: MIT. See app/addon/WoWAI/THIRD_PARTY.md and the license files. In-game verification remains necessary.

@@ -1,5 +1,5 @@
 艾澤拉斯冒險夥伴 · 安裝與使用說明
-適用版本：0.6.0-beta.8（Windows x64 內測版）
+適用版本：0.6.0-beta.9（Windows x64 內測版）
 
 第一次使用：完整解壓縮 → 安裝 → 登入 AI → 啟動橋接 → 重啟遊戲 → /wow-ai
 以後使用：桌面“WoW AI 无限” → 啟動橋接 → 進入遊戲。
@@ -13,7 +13,7 @@
 請準備：
 • 已安裝的無限客戶端；不必先登入遊戲，也不必選擇遊戲帳號。
 • 可用網路和你自己的 AI 帳號。Codex、WorkBuddy 可以先選一種，另一種以後再配置。
-• 完整的 WoWAI-Forever-0.6.0-beta.8-win-x64.zip。
+• 完整的 WoWAI-Forever-0.6.0-beta.9-win-x64.zip。
 
 執行環境已隨包提供，不需要自己安裝 Node.js。AI 工具在首次登入時連網下載，每位玩家使用自己的帳號與額度，本包不附贈 AI 帳號或額度。
 「橋接」是電腦後臺連線遊戲插件和 AI 的程式。遊戲裡的插件和電腦上的橋接需要配合執行。
@@ -182,4 +182,7 @@ Codex 登入由官方 CLI 管理。
 原專案：https://github.com/chelinho139/wow-ai
 本版為社群修改版，不是暴雪、OpenAI 或騰訊官方產品。保留原作者 chelinho139 的 MIT LICENSE。第三方資料許可見 app\addon\WoWAI\THIRD_PARTY.md；Node.js 及附帶元件許可見 runtime\LICENSE。AI 工具適用各自的許可與服務條款。
 
-為相容存檔，安裝路徑、插件名和命令仍保留 WoW AI / WoWAI。原始許可證文本保持原文，本說明不能替代許可證。包內含插件和橋接原始碼，不含遊戲客戶端、遊戲圖片和音訊。
+為相容存檔，安裝路徑、插件名和命令仍保留 WoW AI / WoWAI。原始許可證文本保持原文，本說明不能替代許可證。包內含插件和橋接原始碼，不含遊戲客戶端和音訊；附帶副本參考地圖保留來源與授權。
+
+
+0.6.0-beta.9: quest recommendations, regional flows, per-stop navigation instructions and dungeon reference maps. Flow data: CC BY-NC-SA 4.0; map artwork: GPL-2.0; original engine: MIT. See app/addon/WoWAI/THIRD_PARTY.md and the license files. In-game verification remains necessary.
