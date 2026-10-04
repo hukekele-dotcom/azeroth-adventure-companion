@@ -1,3 +1,15 @@
+# 0.6.0-beta.9 · 2026-10-04
+
+- Add condition-aware nearby quest recommendations and separate pickup/objective/turn-in navigation.
+- Add map quest references and authored regional flows with chapter preview, explicit activation, skipping and pause outside the selected map. Local guide navigation suppresses automatic AI replanning.
+- Adapt 27 public Forever level chapters: 2,958 phase actions across 21 maps, including cities and transit maps. Other maps remain reference mode.
+- Preserve per-stop action and alongside-task instructions, show current actions on arrow hover, and hide completed map regions while connecting remaining stops.
+- Validate objective/location associations and repair selected neighboring-map POI projections.
+- Expand factual data and reference maps: 4,103 pickup entries, 4,231 coordinate quests, 278 dungeon quest records, 1,315 items, and 20 reference map pages for 15 dungeon entries.
+- Synchronize the detailed Chinese README with the NGA post and eight supplied screenshots.
+
+These flows and reference maps still need in-game verification. They do not automate movement, combat or quest interactions. Regional flow data: CC BY-NC-SA 4.0; Atlas maps: GPL-2.0; original engine: MIT. The complete beta.9 Windows bundle is also available through Quark.
+
 # 0.6.0-beta.8
 
 

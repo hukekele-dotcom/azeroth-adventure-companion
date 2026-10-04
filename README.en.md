@@ -4,9 +4,11 @@
 
 AI quest assistance, daily adventure journals and dungeon assistance for **WoW: Forever**. A community enhancement of [chelinho139/wow-ai](https://github.com/chelinho139/wow-ai).
 
-**0.6.0-beta.8** · Windows x64 · Forever 1.60 Beta
+**0.6.0-beta.9** · Windows x64 · Forever 1.60 Beta
 
 **[Download the Windows package](https://github.com/hukekele-dotcom/azeroth-adventure-companion/releases)** · **[English installation guide](tools/release/guides/Install-Guide-en.txt)** · **[Report an issue](https://github.com/hukekele-dotcom/azeroth-adventure-companion/issues)**
+
+[Quark download · beta.9 · Windows x64](https://pan.quark.cn/s/a611b721e586)
 
 ## Features
 
@@ -23,7 +25,7 @@ Dungeon coverage and equipment scoring remain incomplete. Not every hidden quest
 
 ## Player installation
 
-1. Download **WoWAI-Forever-0.6.0-beta.8-win-x64.zip** from the release page and extract everything. GitHub's generated “Source code” archives are not player installers.
+1. Download **WoWAI-Forever-0.6.0-beta.9-win-x64.zip** from the release page and extract everything. GitHub's generated “Source code” archives are not player installers.
 2. Open **README.html** and choose English, or open **Install-Guide-en.txt**. The complete guides work offline.
 3. Exit the game and stop the old bridge. Run **Install.cmd**.
 4. Select the client folder containing **WowB.exe** and **Interface** (usually **_classic_beta_**), then your default AI. No game-account selection is needed.
@@ -65,12 +67,12 @@ npm test
 
 Addon source is in `addon/WoWAI`, bridge source in `bridge`, and installer/build tools in `tools/release`. See [BUILD.md](tools/release/BUILD.md) for Windows packaging. Runtime configuration, personal saves and Node.js binaries are excluded from this source repository.
 
-## Beta status
+## Current update
 
-The baseline passed 250 regression tests, seven installer tests and codec round-trip checks. Real account sign-in and the complete in-game flow still need validation on other computers, including route markers, logout persistence and upgrades. This is a Beta, not a stable release.
+See the detailed [Chinese README](README.md) and [beta.9 changelog](CHANGELOG.en.md) for nearby quest recommendations, regional quest flows, per-stop instructions and dungeon reference maps. In-game verification remains necessary.
 
 ## Credits and licensing
 
 Based on [chelinho139/wow-ai](https://github.com/chelinho139/wow-ai), with upstream attribution and [MIT LICENSE](LICENSE) preserved. Third-party data sources and notices are in [THIRD_PARTY.md](addon/WoWAI/THIRD_PARTY.md). The Windows bundle includes Node.js's own license. Original legal texts are preserved verbatim.
 
-This is not an official Blizzard, OpenAI or Tencent product. It includes no game client, game images or user accounts.
+This is not an official Blizzard, OpenAI or Tencent product. It includes no game client or user accounts. The provided UI screenshots and reference maps retain their source notices.

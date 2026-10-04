@@ -1,24 +1,34 @@
-# Azeroth Adventure Companion 0.6.0-beta.8
+# 0.6.0-beta.9 · 2026-10-04
 
-## 简体中文
-先使用已有坐标生成本地图备用数字路线，AI 继续接收完整任务目标和候选坐标并优化路线。备用算法选择邻近候选点并进行有限次折返优化，优先普通任务；副本、其他地图任务不纳入路线，未知坐标不猜测。明确显示同步、桥接未确认、等待 AI 通道和规划状态；重复点击显示原因而不重复发送。AI 结果仍须通过快照和坐标校验。备用路线不代表实际道路最短路线。
+- 新增建议接取：按地图、角色条件与已知前置筛选任务，独立导航接取、完成、交付和已知后续。
+- 新增本地图任务攻略与区域任务流程，支持章节预览、明确启用、跳过和离图暂停；本地导航期间抑制自动 AI 重排。
+- 整理公开 Forever 流程的 27 个等级章节、2,958 个任务阶段动作，涉及 21 张地图。其余地图保持任务资料模式。
+- 保留 AI 分站行动与兼做说明，箭头悬停显示当前行动；隐藏已完成区域并连接剩余路线。
+- 检查目标与地点对应关系，过滤已完成目标，修正部分跨地图 POI 投影和旧路线显示。
+- 扩充接取/前置资料、副本任务与地图：4,103 个接取条目、4,231 个坐标任务，278 条副本任务记录、1,315 条物品，15 个副本条目/20 页参考地图。
+- README 与 NGA 详细说明同步，保留八张功能截图；提供 beta.9 夸克完整安装包下载。
 
-## 繁體中文
-先使用已知座標產生本地備用數字路線，AI 仍接收完整任務目標及候選座標以優化路線。排除副本及其他地圖任務，不猜測未知座標。清楚顯示同步、橋接未確認、等待 AI 通道及規劃狀態；重複點擊提示原因而不重複傳送。備用路線不代表實際道路最短路線。
+地图和流程仍需游戏实跑核对；48 张任务索引及 21 张涉及地图不代表完整实测攻略。任务推进以真实进度为准，不自动移动、战斗或接交任务。区域流程数据 CC BY-NC-SA 4.0，Atlas 地图 GPL-2.0，原始引擎 MIT。
 
-## English
-Build an immediate local numbered fallback from known coordinates while AI still receives all eligible quest objectives and candidate positions. Greedy candidate selection plus bounded 2-opt reduces geometric backtracking and defers harder tasks. Dungeon and other-map quests are excluded; unknown coordinates are not invented. Show bridge acknowledgement, channel wait and planning stages; busy clicks explain status without duplicate requests. AI results still require snapshot and coordinate validation. The fallback does not claim a shortest walkable route.
+## Download / 下载
 
-250 automated tests passed. The affected remote PC has not yet been verified in-game.
+**WoWAI-Forever-0.6.0-beta.9-win-x64.zip**
 
-升级 / 升級 / Upgrade: 退出游戏、停止旧桥接，完整解压并运行 Install.cmd，再启动桥接和游戏。Exit the game and stop the old bridge, extract fully and run Install.cmd, then restart. Records and sign-in settings are preserved.
+## English update
 
-**WoWAI-Forever-0.6.0-beta.8-win-x64.zip**
+- Add condition-aware nearby quest recommendations and separate pickup/objective/turn-in navigation.
+- Add map quest references and authored regional flows with chapter preview, explicit activation, skipping and pause outside the selected map. Local guide navigation suppresses automatic AI replanning.
+- Adapt 27 public Forever level chapters: 2,958 phase actions across 21 maps, including cities and transit maps. Other maps remain reference mode.
+- Preserve per-stop action and alongside-task instructions, show current actions on arrow hover, and hide completed map regions while connecting remaining stops.
+- Validate objective/location associations and repair selected neighboring-map POI projections.
+- Expand factual data and reference maps: 4,103 pickup entries, 4,231 coordinate quests, 278 dungeon quest records, 1,315 items, and 20 reference map pages for 15 dungeon entries.
+- Synchronize the detailed Chinese README with the NGA post and eight supplied screenshots.
+
+These flows and reference maps still need in-game verification. They do not automate movement, combat or quest interactions. Regional flow data: CC BY-NC-SA 4.0; Atlas maps: GPL-2.0; original engine: MIT. The complete beta.9 Windows bundle is also available through Quark.
 
 
-## 本地资料库 / 本機資料庫 / Shared local catalog
-两端共用 4,228 条任务的坐标资料库；库内候选地点仅传引用编号，实时任务目标和新坐标保留。电脑端还原完整资料后交给 AI 出方案，插件校验后标记。版本不一致会明确报错，不使用错误坐标。暂未启用跨请求的进度差量传输。
-兩端共用 4,228 筆任務座標資料；以引用編號減少重複傳輸，保留即時目標及新座標。電腦端還原完整資料供 AI 規劃，版本不符時明確提示。
-Both sides share coordinate references for 4,228 quests. Static candidates travel as references; live objectives and new coordinates remain intact. The bridge restores full data for AI planning. Catalog mismatches fail explicitly. Cross-request progress deltas are not enabled.
+升级：退出游戏、停止旧桥接，完整解压新包并运行 Install.cmd，再重启桥接和游戏。安装器保留原有记录与登录设置。
 
-Three reference quests: 4,649 -> 1,211 UTF-8 bytes, with all objectives and candidates verified after reconstruction. This is a transfer-size measurement, not an end-to-end latency guarantee.
+国内下载 / Quark: [WoWAI-Forever-0.6.0-beta.9-win-x64.zip](https://pan.quark.cn/s/a611b721e586) · 70.2 MiB.
+
+验证：301 项功能测试、11 项安装测试、Lua 加载顺序、4 项通信编解码及安装器 UI 检查通过。SHA-256：5830e1487996b1df6f9a5086566fb5ea0a2eaa55bd6d8410322af68920f97ced。
