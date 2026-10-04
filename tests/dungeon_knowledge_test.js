@@ -7,7 +7,8 @@ test('catalog expands populated instances, has real coverage gaps and every ques
  validate(data);assert.ok(data.dungeons.filter(d=>d.quests.length&&d.loot.length).length>=21);
  assert.ok(data.dungeons.reduce((n,d)=>n+d.loot.length,0)>1000);
  for(const d of data.dungeons)assert.equal(d.counts.items,d.loot.length);
- assert.equal(dungeon('excavation-site').coverage,'unavailable');assert.equal(dungeon('excavation-site').counts.quests,0);
+ assert.equal(dungeon('excavation-site').coverage,'partial');assert.equal(dungeon('excavation-site').counts.quests,14);
+ assert.equal(dungeon('dalaran').counts.quests,5);
 });
 test('reviewed local knowledge survives import: treaty, turn-in, class materials and unsupported mappings',()=>{
  const q=quest('hall-of-thanes',98423);assert.equal(q.faction,'alliance');assert.equal(q.minLevel,9);assert.equal(q.itemStart,true);assert.equal(q.gatesKnown,false);assert.match(q.instructions,/石板/);
@@ -31,6 +32,27 @@ test('same-name faction counterparts stay distinct and incomplete conditions are
 test('Lua export matches catalog without private paths or embedded credentials',()=>{
  const exported=readAssignment(path.join(root,'addon/WoWAI/DungeonData.lua'),'WoWAIDungeonData');assert.equal(exported.version,data.version);assert.equal(exported.dungeons.length,data.dungeons.length);
  const text=fs.readFileSync(path.join(root,'addon/WoWAI/DungeonData.lua'),'utf8');assert.doesNotMatch(text,/C:\\\\Users\\\\|api_key|access_token|refresh_token|key\.dpapi/i);
+});
+
+test('October quest research distinguishes real acceptance levels, optional leads, faction gaps and item starts',()=>{
+ const research=require('../knowledge/dungeons/quest-research.json');
+ assert.equal(research.reviewed.length,13);
+ for(const id of ['dalaran','excavation-site'])for(const q of dungeon(id).quests){
+  assert.equal(q.minLevel,24);assert.equal(q.gatesKnown,false);
+  assert.ok(q.instructionsEn);assert.ok(q.sources.some(s=>s.includes('wowforevertalents.com/quests/')));
+ }
+ assert.equal(quest('dalaran',92456).faction,'alliance');
+ assert.equal(quest('dalaran',96988).faction,'horde');
+ assert.equal(quest('excavation-site',95772).faction,'unknown');
+ for(const id of [95810,95664,95809]){assert.equal(quest('excavation-site',id).itemStart,true);assert.equal(quest('excavation-site',id).inside,true);}
+ assert.deepEqual(quest('excavation-site',95682).pre,[95663]);
+ assert.deepEqual(quest('excavation-site',98823).pre,[95664]);
+ assert.deepEqual(quest('excavation-site',98824).pre,[95810]);
+ const optional=quest('excavation-site',95647);assert.equal(optional.steps[0].optional,true);assert.equal(optional.pre,undefined);
+ assert.match(quest('excavation-site',98823).instructions,/莫高雷西北部/);
+ assert.match(quest('excavation-site',95664).followups[0].instructions,/莫高雷西北部/);
+ assert.match(quest('excavation-site',95646).turnIn,/56.2, 40.5/);
+ assert.doesNotMatch(JSON.stringify(data),/\$undefined/);
 });
 test('source parser preserves Classic caveats and never evaluates scripts',()=>{
  const payload=['$',null,null,{bosses:[{name:'Boss',items:[{i:1}]}],quests:[{id:1,title:'Quest',forever:true}]}];

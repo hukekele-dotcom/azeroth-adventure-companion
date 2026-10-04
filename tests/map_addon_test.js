@@ -24,13 +24,32 @@ test('adventure arrow persists across AI map sync and arrival does not complete 
 test('numbered area pins keep their numbers and completed areas cannot restart navigation',()=>{
  const vm=newVM();
  vm.run(`REGIONS={{m=1432,x=45.2,y=67.8,label='岸边 (2/2)',number=1,done=true,members={},detail='两个任务完成'},{m=1432,x=60,y=60,label='山上 (0/1)',number=2,members={}},{m=1432,x=80,y=80,label='交付 (0/2)',number=3,members={}}};WoWAIMap.SetAdventureRoute(REGIONS,2)`);
- assert.deepEqual(shownPins(vm).map(p=>p.split(',')[2]),['1','2','3']);assert.equal(vm.evaluate('WoWAIMapDB.nav.index'),'2');
+ assert.deepEqual(shownPins(vm).map(p=>p.split(',')[2]),['2','3']);assert.equal(vm.evaluate('WoWAIMapDB.nav.index'),'2');
  vm.run(`WoWAIMap.Navigate('adventure-tasks',1)`);assert.equal(vm.evaluate('WoWAIMapDB.nav.index'),'2');
  vm.run('WoWAIMap.UpdateNavigator()');assert.equal(vm.evaluate('WoWAIMapDB.nav.index'),'2','arrival does not advance an area');
  vm.run(`REGIONS[2].done=true;WoWAIMap.SetAdventureRoute(REGIONS,3);WoWAIMap.Step(-1)`);
  assert.equal(vm.evaluate('WoWAIMapDB.nav.index'),'3');
  vm.run(`WoWAIMap.StopAdventure();WoWAIMap.SetAdventureRoute(REGIONS,3,true)`);assert.equal(vm.evaluate('WoWAIMapDB.nav'),null);
- assert.deepEqual(shownPins(vm).map(p=>p.split(',')[2]),['1','2','3']);
+ assert.deepEqual(shownPins(vm).map(p=>p.split(',')[2]),['3']);
+});
+
+test('completed middle region disappears with its connectors; unfinished areas retain stable clickable numbers',()=>{
+ const vm=newVM();
+ const lines=()=>vm.num(`(function() local n=0;local canvas=WorldMapFrame:GetCanvas();local overlay=canvas.children[#canvas.children];for _,l in ipairs(overlay.textures) do if l.kind=='Line' and l.shown then n=n+1 end end;return n end)()`);
+ vm.run(`REGIONS={{m=1432,x=20,y=20,number=1,label='Partially complete (1/2)',done=false,members={}},{m=1432,x=50,y=50,number=2,label='Turned in (2/2)',done=false,members={}},{m=1432,x=80,y=80,number=3,label='Remaining',members={}}};WoWAIMap.SetAdventureRoute(REGIONS,3)`);
+ assert.equal(lines(),5,'three badge leaders and two route segments');
+ vm.run(`REGIONS[2].done=true;WoWAIMap.SetAdventureRoute(REGIONS,3)`);
+ assert.deepEqual(shownPins(vm).map(p=>p.split(',')[2]),['1','3']);
+ assert.equal(lines(),3,'two badge leaders and one direct remaining-route segment');
+ assert.equal(vm.evaluate('WoWAIMapDB.nav.index'),'3');
+ // The remaining badge must still target original region 3, not compacted index 2.
+ vm.run(`WoWAIMap.StopAdventure();local canvas=WorldMapFrame:GetCanvas();for _,b in ipairs(canvas.children[#canvas.children].children) do if b.kind=='Button' and b.shown and b.num.text=='3' then b.scripts.OnClick(b) end end`);
+ assert.equal(vm.evaluate('WoWAIMapDB.nav.index'),'3');
+ // A map refresh/reopen must also hide completed points from an older saved route.
+ vm.run(`STUB.shownMap=1415;WoWAIMap.Refresh()`);
+ assert.deepEqual(shownPins(vm).map(p=>p.split(',')[2]),['1','3']);
+ vm.run(`for _,r in ipairs(REGIONS) do r.done=true end;WoWAIMap.SetAdventureRoute(REGIONS,1,true);WoWAIMap.StopAdventure(true);STUB.shownMap=1432;WoWAIMap.Refresh()`);
+ assert.deepEqual(shownPins(vm),[]);assert.equal(lines(),0);assert.equal(vm.evaluate('WoWAINavigator.shown'),'false');
 });
 
 // Map-specific client stubs: Loch Modan (1432) sits at x .5-.6, y .4-.5 of
@@ -302,4 +321,66 @@ test('/wow-ai map hide, show, nav and stop', () => {
   assert.equal(vm.evaluate('WoWAIMapDB.nav'), null);
   assert.equal(vm.evaluate('WoWAINavigator.shown'), 'false');
   vm.run('SlashCmdList.WOWAIMAP("")'); // status never errors
+});
+
+
+test('navigator hover shows live task guidance for its actual stop, refreshes progress, and closes on stop',()=>{
+ const vm=newVM();
+ vm.run(`
+ function GameTooltip:SetOwner(owner)self.owner=owner end
+ function GameTooltip:IsOwned(owner)return self.owner==owner end
+ function GameTooltip:ClearLines()self.tipLines={} end
+ function GameTooltip:AddLine(text)self.tipLines[#self.tipLines+1]=text end
+ PLAN={complete=true,regionIndex=1,quests={{id=1,title='Coastal hunt',objectives={{text='1/5 enemies',done=false}}},{id=2,title='Report back',complete=true,objectives={}}},regions={
+ {m=1432,x=20,y=20,number=1,name='Coast',label='Coast (0/1)',members={{questID=1,phase='quest',action='Defeat enemies along the shore.'}}},
+ {m=1432,x=60,y=60,number=2,name='Town',label='Town (0/1)',kind='turnin',members={{questID=2,phase='turnin',action='Speak to the captain.'}}}}}
+ WoWAIAdventure={Context=function()return {},{plan=PLAN}end}
+ `);
+ vm.run(fs.readFileSync(path.join(ADDON,'AdventureUI.lua'),'utf8'),'WoWAI');
+ vm.run(`WoWAIMap.SetAdventureRoute(PLAN.regions,1);WoWAINavigator.scripts.OnEnter(WoWAINavigator)`);
+ const text=()=>vm.evaluate("table.concat(GameTooltip.tipLines,'\\n')");
+ assert.match(text(),/Coastal hunt[\s\S]*Defeat enemies along the shore\.[\s\S]*1\/5 enemies/);
+ vm.run(`PLAN.quests[1].objectives[1].text='3/5 enemies';WoWAIMap.UpdateNavigator()`);
+ assert.match(text(),/3\/5 enemies/);assert.doesNotMatch(text(),/1\/5 enemies/);
+ vm.run(`WoWAIMap.Navigate('adventure-tasks',2)`);
+ assert.match(text(),/Main task: Report back[\s\S]*Speak to the captain/);
+ assert.doesNotMatch(text(),/Coastal hunt|3\/5 enemies/);
+ assert.equal(vm.evaluate('PLAN.regionIndex'),'1','tooltip must not depend on stale UI selection or mutate progress');
+ vm.run(`WoWAIMap.StopAdventure()`);assert.equal(vm.evaluate('GameTooltip.shown'),'false');
+ vm.run(`WoWAIMap.SetAdventureRoute(PLAN.regions,1);WoWAINavigator.scripts.OnEnter(WoWAINavigator);GameTooltip:SetOwner(WorldMapFrame);GameTooltip:ClearLines();GameTooltip:AddLine('Unrelated tooltip');WoWAIMap.UpdateNavigator();WoWAINavigator.scripts.OnLeave(WoWAINavigator)`);
+ assert.equal(text(),'Unrelated tooltip');assert.equal(vm.evaluate('GameTooltip.shown'),'true','do not steal or hide another owner tooltip');
+});
+
+test('navigator tooltip falls back to saved route details when live quest context is unavailable',()=>{
+ const vm=newVM();vm.run(`WoWAIMap.SetAdventureRoute({{m=1432,x=45,y=65,label='Coast (1/2)',detail='Hunt: 3/5; Collect: 1/1',members={}}})`);
+ const text=vm.evaluate("table.concat(WoWAIMap.NavigationTipLines(),'\\n')");
+ assert.match(text,/Coast \(1\/2\)/);assert.match(text,/45.0, 65.0/);assert.match(text,/Hunt: 3\/5/);
+});
+
+test('local pickup guidance survives AI clear and arrival, and is removed cleanly on cancellation',()=>{
+ const vm=newVM();vm.run(`WoWAIMap.SetAdventureRoute({{m=1432,x=70,y=70,label='Existing task'}},1,true);WoWAIMap.SetQuestPickup({1432,45.2,67.8},'Accept a quest','Talk to the giver');WoWAIMap.UpdateNavigator();WoWAIMap.ClearAILayers()`);
+ assert.equal(vm.evaluate('WoWAIMapDB.nav.layer'),'quest-pickup');
+ assert.equal(vm.evaluate('WoWAIMapDB.adventureRoute.points[1][4]'),'Existing task');
+ assert.match(vm.evaluate("table.concat(WoWAIMap.NavigationTipLines(),'\\n')"),/Talk to the giver/);
+ vm.run('WoWAIMap.ClearQuestPickup()');assert.equal(vm.evaluate('WoWAIMapDB.pickupRoute'),null);assert.equal(vm.evaluate('WoWAIMapDB.nav'),null);
+});
+test('real guide and map modules cancel together and never revive another character guide',()=>{
+ const vm=newVM();
+ vm.run(`CHAR={questGuide={id=999,stage='objective'}};WoWAIAdventure={Context=function()return {},CHAR end,Position=function()return {map=1432}end,Quests=function()return {{id=999,title='Hunt',objectives={{text='1/5 wolves'}},locations={{m=1432,x=50,y=60}}}},true end};WoWAIQuestOffersData={quests={},maps={}}`);
+ vm.run(fs.readFileSync(path.join(ADDON,'QuestOffers.lua'),'utf8'),'WoWAI');
+ vm.run('WoWAIQuestOffers.Tick()');assert.equal(vm.evaluate('WoWAIMapDB.nav.layer'),'quest-pickup');
+ vm.run('WoWAIMap.Stop();WoWAIQuestOffers.Tick()');assert.equal(vm.evaluate('CHAR.questGuide'),null);assert.equal(vm.evaluate('WoWAIMapDB.nav'),null);
+ vm.run(`CHAR.questGuide={id=999,stage='objective'};WoWAIQuestOffers.Tick();WoWAIMap.SetAdventureRoute({{m=1432,x=70,y=70,label='Route'}})`);
+ assert.equal(vm.evaluate('CHAR.questGuide'),null);assert.equal(vm.evaluate('WoWAIMapDB.nav.layer'),'adventure-tasks');
+ vm.run(`CHAR.questGuide={id=999,stage='objective'};WoWAIQuestOffers.Tick();CHAR={};WoWAIQuestOffers.Tick()`);
+ assert.equal(vm.evaluate('WoWAIMapDB.pickupRoute'),null);assert.equal(vm.evaluate('WoWAIMapDB.nav'),null);
+});
+
+test('zone workflow pins are separate from AI, survive AI clear, and never auto-complete on arrival',()=>{
+ const vm=newVM();vm.run(`ACTIVE={map=1432};WoWAIZoneGuide={Active=function()return ACTIVE end,Stop=function()ACTIVE=nil;WoWAIMap.ClearZoneGuide()end,Skip=function()SKIPS=(SKIPS or 0)+1 end};WoWAIMap.SetAdventureRoute({{m=1432,x=80,y=80,label='Old AI'}} ,1,true);WoWAIMap.SetZoneGuide({{m=1432,x=45.2,y=67.8,label='Accept',kind='quest',number=1,detail='Talk to giver'},{m=1432,x=70,y=75,label='Work',kind='quest',number=2}});WoWAIMap.UpdateNavigator();WoWAIMap.ClearAILayers()`);
+ assert.equal(vm.evaluate('WoWAIMapDB.nav.layer'),'zone-guide');assert.equal(vm.evaluate('SKIPS'),null);
+ assert.equal(vm.evaluate('WoWAIMapDB.adventureRoute.points[1][4]'),'Old AI');
+ assert.equal(shownPins(vm).length,2,'AI route is hidden while the local workflow is active');
+ vm.run("WoWAIMap.Navigate('zone-guide',2);WoWAIMap.Step(1)");assert.equal(vm.evaluate('WoWAIMap.ZoneGuideIndex()'),'2');assert.equal(vm.evaluate('SKIPS'),'1');
+ vm.run('WoWAIMap.Stop()');assert.equal(vm.evaluate('ACTIVE'),null);assert.equal(vm.evaluate('WoWAIMapDB.zoneGuide'),null);assert.equal(vm.evaluate('WoWAIMapDB.nav'),null);
 });

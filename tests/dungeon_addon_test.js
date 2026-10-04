@@ -2,6 +2,19 @@
 const test=require('node:test'),assert=require('node:assert/strict'),fs=require('fs'),path=require('path');
 const {lua,lauxlib,lualib,to_luastring,to_jsstring}=require('fengari');
 
+test('researched quest pickup and turn-in render in three languages while real new faction gates stay conservative',()=>{
+ const v=vm(`STUB.inside=false;local q=WoWAIDungeonData.dungeons[1].quests[1];q.pickupDetails='入口旁';q.pickupDetailsEn='Beside entrance';q.turnIn='米奈希尔港';q.turnInEn='Menethil Harbor';q.researchNote='接取条件待核实';q.researchNoteEn='Eligibility unverified'`);
+ v.run(`WoWAI.SelectTab('dungeon')`);assert.match(v.get('WoWAIDungeonUI.rows[1].body:GetText()'),/交付：米奈希尔港/);
+ v.run(`WoWAIDB.settings.language='enUS';WoWAIDungeonUI.Render()`);assert.match(v.get('WoWAIDungeonUI.rows[1].body:GetText()'),/Turn in: Menethil Harbor/);
+ v.run(`WoWAIDB.settings.language='zhTW';WoWAIDungeonUI.Render()`);assert.doesNotMatch(v.get('WoWAIDungeonUI.rows[1].body:GetText()'),/資料說明：/);
+ const actual=vm(`STUB.inside=false`,true);
+ actual.run(`local d=WoWAIDungeon.Match('达拉然城');ROWS,COUNTS,READY=WoWAIDungeon.Check(d);for _,r in ipairs(ROWS)do assert(r.quest.faction=='horde')end`);
+ assert.equal(actual.get('#ROWS'),'3');assert.equal(actual.get('COUNTS.unknown'),'3');assert.equal(actual.get('COUNTS.missing'),'0');
+ assert.doesNotMatch(actual.get("WoWAIDungeon.Summary(WoWAIDungeon.Match('达拉然城'),COUNTS)"),/已接齐/);
+ actual.run(`function UnitFactionGroup()return 'Alliance' end;ROWS=WoWAIDungeon.Check(WoWAIDungeon.Match('达拉然城'));for _,r in ipairs(ROWS)do assert(r.quest.faction=='alliance')end`);
+ assert.equal(actual.get('#ROWS'),'2');
+});
+
 test('acceptance levels remain visible for active quests, missing levels never use quest difficulty',()=>{
  const v=vm(`STUB.inside=false;local q=WoWAIDungeonData.dungeons[1].quests[1];q.minLevel=40;q.level=60;STUB.quests={{questID=1,title='副本任务'}}`);
  v.run(`WoWAI.SelectTab('dungeon')`);
@@ -87,7 +100,7 @@ function vm(extra='',realData=false){
  function UnitName(unit)if unit=='player'then return '测试角色' end;return STUB.mobName end
  function UnitIsDead()return STUB.dead==true end
  `);
- for(const f of ['Locale.lua', 'Codec.lua','Inbox.lua','WoWAI.lua','Map.lua','Adventure.lua','Kills.lua','AdventureUI.lua','DungeonData.lua','Gear.lua','Dungeon.lua','DungeonUI.lua'])run(fs.readFileSync(path.join(__dirname,'../addon/WoWAI',f),'utf8'),'WoWAI');
+ for(const f of ['Locale.lua', 'Codec.lua','Inbox.lua','WoWAI.lua','Map.lua','Adventure.lua','Kills.lua','AdventureUI.lua','DungeonData.lua','Gear.lua','Dungeon.lua','DungeonAtlas.lua','DungeonMap.lua','DungeonUI.lua'])run(fs.readFileSync(path.join(__dirname,'../addon/WoWAI',f),'utf8'),'WoWAI');
  if(!realData)run(`WoWAIDungeonData={dungeons={{id='test',name='测试副本',aliases={'测试副本'},source='fixture',quests={{id=1,name='副本任务',from='城里',instructions='击败测试首领',gatesKnown=true,minLevel=10,classes=128,races=16}},bosses={{key='boss',name='测试首领',aliases={'测试首领','Test Boss'}}},loot={{id=101,name='掉落法袍',bosses={'boss'},level=10,slot='胸部',type='布甲',basis='site',stats={{label='智力',value=10}}}}}}}`);
  run(extra);run(`STUB.FireEvent('ADDON_LOADED','WoWAI');STUB.FireEvent('PLAYER_LOGIN');STUB.FireEvent('PLAYER_ENTERING_WORLD',true,false)`);
  return {run,get};
@@ -99,6 +112,153 @@ test('entry checks missing eligible tasks, completion closes only task notice, e
  v.run(`STUB.quests[1].done=true;WoWAIDungeon.Refresh()`);assert.equal(v.get('WoWAIDungeon.taskVisible'),'false');assert.equal(v.get('WoWAIDungeon.bossVisible'),'true');assert.equal(v.get('WoWAIDungeon.counts.ready'),'1');
  v.run(`STUB.inside=false;WoWAIDungeon.Refresh()`);assert.equal(v.get('WoWAIDungeonHUD:IsVisible()'),'false');
  assert.equal(v.get('#(STUB.blockedRegistrations or {})'),'0');assert.equal(v.get('WoWAIDB.outbox'),'nil');
+});
+
+test('dungeon atlas discovers named native floors, crops edge tiles and opens boss loot',()=>{
+ const v=vm(`C_Map.GetMapInfo=function(id)if id==71 or id==72 then return {mapID=id,name=id==71 and '测试副本' or '上层',mapType=4,parentMapID=1}end;return {mapID=id,name='野外',mapType=3}end
+ C_Map.GetBestMapForUnit=function()return 71 end
+ C_Map.GetMapGroupID=function()return 5 end
+ C_Map.GetMapGroupMembersInfo=function()return {{mapID=72,name='上层',floorIndex=2},{mapID=71,name='下层',floorIndex=1}}end
+ C_Map.GetMapArtLayers=function()return {{layerWidth=300,layerHeight=200,tileWidth=256,tileHeight=256}}end
+ C_Map.GetMapArtLayerTextures=function(id)return id==71 and {1001,1002} or {2001,2002}end
+ C_EncounterJournal={GetEncountersOnMap=function(id)return id==71 and {{encounterID=11,mapX=.25,mapY=.75}} or {}end}
+ function EJ_GetEncounterInfo()return '测试首领'end`);
+ v.run(`WoWAI.SelectTab('dungeon');WoWAIDungeonUI.mapButton:GetScript('OnClick')()`);
+ assert.equal(v.get('WoWAIDungeonUI.mapFrame.floors[1].id'),'71');assert.equal(v.get('#WoWAIDungeonUI.mapFrame.floors'),'2');
+ assert.equal(v.get('#WoWAIDungeonUI.mapFrame.tiles'),'2');assert.equal(v.get('#WoWAIDungeonUI.mapFrame.pins'),'1');
+ assert.equal(v.get('WoWAIDungeonUI.scroll:IsShown()'),'false');
+ v.run(`WoWAIDungeonUI.mapFrame.next:GetScript('OnClick')()`);
+ assert.equal(v.get('WoWAIDungeonUI.mapFrame.selected'),'2');assert.equal(v.get('WoWAIDungeonUI.mapFrame.pins[1]:IsShown()'),'false');
+ v.run(`WoWAIDungeonUI.mapFrame.prev:GetScript('OnClick')();WoWAIDungeonUI.mapFrame.pins[1]:GetScript('OnClick')()`);
+ assert.equal(v.get('WoWAIDungeonUI.boss.key'),'boss');assert.equal(v.get('WoWAIDungeonUI.mapFrame:IsShown()'),'false');assert.equal(v.get('WoWAIDungeonUI.scroll:IsShown()'),'true');
+});
+
+test('dungeon atlas never substitutes instance ID or an outdoor map, and handles missing APIs',()=>{
+ const v=vm(`WoWAIDungeonData.dungeons[1].mapID=999
+ C_Map.GetMapInfo=function(id)return {mapID=id,name='测试副本',mapType=3}end
+ C_Map.GetBestMapForUnit=function()return 999 end
+ C_Map.GetFallbackWorldMapID=function()return 1 end
+ C_Map.GetMapChildrenInfo=function()return {{mapID=999,name='测试副本',mapType=3}}end`);
+ assert.equal(v.get('#WoWAIDungeonMap.Floors(WoWAIDungeonData.dungeons[1])'),'0');
+ v.run(`C_Map=nil;WoWAI.SelectTab('dungeon');WoWAIDungeonUI.mapButton:GetScript('OnClick')()`);
+ assert.match(v.get('WoWAIDungeonUI.mapFrame.note:GetText()'),/副本地图待补充/);
+});
+
+test('bundled atlas includes under-30 coverage and renders all 20 pages without native map APIs',()=>{
+ const v=vm(`C_Map=nil;C_EncounterJournal={GetEncountersOnMap=function()error('wrong projection')end}`,true);
+ const catalog=require('../tools/dungeon-knowledge').readAssignment(path.join(__dirname,'../addon/WoWAI/DungeonAtlas.lua'),'WoWAIDungeonAtlas');
+ assert.equal(Object.keys(catalog).length,15);
+ const coverage=require('../knowledge/dungeon-maps/under30-coverage.json');
+ for(const d of coverage.dungeons)assert.ok(catalog[d.id],d.id);
+ let pageCount=0;
+ for(const [id,root] of Object.entries(catalog)){
+  v.run(`for _,d in ipairs(WoWAIDungeonData.dungeons)do if d.id=='${id}' then MAP_D=d end end;MAP_F=WoWAIDungeonMap.Create(UIParent,function(b)CHOSEN=b.key end);WoWAIDungeonMap.Show(MAP_F,MAP_D)`);
+  const pages=root.pages||[root];
+  for(const [index,map] of pages.entries()){
+  pageCount++;
+  v.run(`MAP_F.selected=${index+1};WoWAIDungeonMap.Draw(MAP_F)`);
+  assert.equal(v.get('MAP_F.floors[MAP_F.selected].id'),map.id);
+  assert.equal(v.get('MAP_F.tiles[1]:GetTexture()'),map.texture);
+  assert.equal(v.get('MAP_F.tiles[1]:IsShown()'),'true');
+  for(const pin of Object.values(map.pins))for(const key of Object.values(pin.bossKeys))assert.equal(v.get(`(function()for _,b in ipairs(MAP_D.bosses)do if b.key==${JSON.stringify(key)} then return true end end return false end)()`),'true','Map boss must resolve by identity: '+key);
+  assert.equal(v.get('MAP_F.note:GetText()'),'');
+  assert.equal(v.get('MAP_F.note:IsShown()'),'false');
+  const file=path.join(__dirname,'../addon/WoWAI/Maps',map.texture.split('\\').pop()+'.tga'),buf=fs.readFileSync(file);
+  assert.equal(buf[2],2);assert.equal(buf.readUInt16LE(12),map.textureWidth);assert.equal(buf.readUInt16LE(14),map.textureHeight);
+  assert.equal(buf[16],24);assert.equal(buf.length,18+map.textureWidth*map.textureHeight*3+26);
+  assert.ok(map.width<=map.textureWidth&&map.height<=map.textureHeight);
+  for(const pin of Object.values(map.pins)){assert.ok(pin.x>=0&&pin.x<=1&&pin.y>=0&&pin.y<=1);}
+  assert.ok(Number(v.get('#MAP_F.pins'))>0,'Every bundled page must display boss markers: '+map.id);
+  }
+ }
+ assert.equal(pageCount,20);
+});
+
+test('new dungeon room markers open the matching loot entry in every language',()=>{
+ const research=require('../knowledge/dungeon-maps/boss-positions.json');
+ const v=vm('C_Map=nil',true);
+ for(const language of ['zhCN','zhTW','enUS'])for(const [id,map]of Object.entries(research.maps)){
+  v.run(`WoWAIDB.settings.language='${language}';for _,d in ipairs(WoWAIDungeonData.dungeons)do if d.id=='${id}'then MAP_D=d end end;MAP_F=WoWAIDungeonMap.Create(UIParent,function(b)CHOSEN=b.key end);WoWAIDungeonMap.Show(MAP_F,MAP_D)`);
+  assert.equal(Number(v.get('#MAP_F.pins')),map.pins.length);
+  for(const [i,pin]of map.pins.entries()){
+   v.run(`CHOSEN=nil;MAP_F.pins[${i+1}]:GetScript('OnClick')()`);
+   assert.equal(v.get('CHOSEN'),pin.bossKeys[0],`${language}: ${id}: ${pin.number}`);
+   assert.equal(v.get(`WoWAIDungeonMap.Number(MAP_D,WoWAIDungeonMap.Pins(MAP_D,'static:${id}')[${i+1}].boss)`),String(pin.number));
+   const note=v.get(`WoWAIDungeonMap.Pins(MAP_D,'static:${id}')[${i+1}].note`);
+   if(language==='enUS')assert.doesNotMatch(note,/[\u3400-\u9fff]/);
+  }
+  assert.equal(v.get('MAP_F.note:IsShown()'),'false');
+ }
+});
+
+test('map coverage accounts for every catalog boss and explicitly preserves unresolved Dalaran positions',()=>{
+ const atlas=require('../tools/dungeon-knowledge').readAssignment(path.join(__dirname,'../addon/WoWAI/DungeonAtlas.lua'),'WoWAIDungeonAtlas');
+ const data=require('../knowledge/dungeons/catalog.json'),research=require('../knowledge/dungeon-maps/boss-positions.json');
+ for(const [id,map]of Object.entries(atlas)){
+  const located=new Set((map.pages||[map]).flatMap(p=>Object.values(p.pins).flatMap(p=>Object.values(p.bossKeys))));
+  const expected=data.dungeons.find(d=>d.id===id).bosses.map(b=>b.key).filter(key=>!research.excluded[id]?.[key]);
+  assert.deepEqual([...located].sort(),expected.sort(),id);
+ }
+ assert.ok(research.maps.dalaran.unlocated.includes('Atrexis the Grave Knight'));
+ assert.ok(research.maps.dalaran.unlocated.every(key=>!research.maps.dalaran.pins.some(p=>p.bossKeys.includes(key))));
+});
+
+test('multi-page maps keep boss identity, selected page and faction-only quest labels separate',()=>{
+ const v=vm(`C_Map=nil;for _,d in ipairs(WoWAIDungeonData.dungeons)do if d.id=='blackfathom-deeps'then MAP_D=d end end;MAP_F=WoWAIDungeonMap.Create(UIParent,function(b)CHOSEN=b.key end);WoWAIDungeonMap.Show(MAP_F,MAP_D)`,true);
+ assert.equal(v.get('#MAP_F.floors'),'3');
+ v.run(`function HAS_MANUSCRIPT()for _,p in ipairs(WoWAIDungeonMap.Pins(MAP_D,'static:blackfathom-deeps:1'))do if p.label=='洛迦里斯手稿'then return true end end return false end`);
+ assert.equal(v.get('HAS_MANUSCRIPT()'),'false');
+ v.run(`function UnitFactionGroup()return 'Alliance'end`);assert.equal(v.get('HAS_MANUSCRIPT()'),'true');
+ v.run(`MAP_F.next:GetScript('OnClick')();MAP_F.next:GetScript('OnClick')()`);
+ assert.equal(v.get('MAP_F.floors[MAP_F.selected].id'),'static:blackfathom-deeps:3');
+ assert.equal(v.get('MAP_F.pins[2]:IsShown()'),'false');
+ v.run(`MAP_F.pins[1]:GetScript('OnClick')()`);assert.equal(v.get('CHOSEN'),"Old Serra'kis");
+ v.run(`WoWAIDungeonMap.Show(MAP_F,MAP_D)`);assert.equal(v.get('MAP_F.selected'),'3');
+ assert.equal(v.get('WoWAIDungeonMap.Number(MAP_D,MAP_D.bosses[5])'),'9');
+ v.run(`WoWAIDB.settings.language='enUS';WoWAIDungeonMap.Show(MAP_F,MAP_D)`);assert.match(v.get('MAP_F.floorLabel:GetText()'),/Underwater/);
+ v.run(`WoWAIDB.settings.language='zhTW';MAP_F.prev:GetScript('OnClick')();WoWAIDungeonMap.Show(MAP_F,MAP_D)`);assert.match(v.get('MAP_F.floorLabel:GetText()'),/神殿/);
+});
+
+test('shared map area offers all matching bosses, and navigation hides the chooser and old markers',()=>{
+ const v=vm(`C_Map=nil;for _,d in ipairs(WoWAIDungeonData.dungeons)do if d.id=='deadmines'then MAP_D=d elseif d.id=='ruins-of-lordaeron'then EMPTY_D=d end end;MAP_F=WoWAIDungeonMap.Create(UIParent,function(b)CHOSEN=b.key end);WoWAIDungeonMap.Show(MAP_F,MAP_D)`,true);
+ v.run(`MAP_F.pins[8]:GetScript('OnClick')()`);
+ assert.equal(v.get('#MAP_F.chooser.buttons'),'4');
+ v.run(`MAP_F.chooser.buttons[2]:GetScript('OnClick')()`);assert.equal(v.get('CHOSEN'),'Edwin VanCleef');
+ assert.equal(v.get('MAP_F.chooser:IsShown()'),'false');
+ v.run(`MAP_F.pins[8]:GetScript('OnClick')();WoWAIDungeonMap.Show(MAP_F,EMPTY_D)`);
+ assert.equal(v.get('MAP_F.chooser:IsShown()'),'false');assert.equal(v.get('MAP_F.pins[8]:IsShown()'),'false');
+});
+
+test('bundled map numbering matches boss identity rather than catalog order and missing textures give guidance',()=>{
+ const v=vm(`C_Map=nil;for _,d in ipairs(WoWAIDungeonData.dungeons)do if d.id=='wailing-caverns'then MAP_D=d end end`,true);
+ assert.equal(v.get('WoWAIDungeonMap.Number(MAP_D,MAP_D.bosses[1])'),'3');
+ v.run(`MAP_F=WoWAIDungeonMap.Create(UIParent,function()end);WoWAIDungeonMap.Show(MAP_F,MAP_D);MAP_F.tiles[1].SetTexture=function()return false end;WoWAIDungeonMap.Draw(MAP_F)`);
+ assert.match(v.get('MAP_F.note:GetText()'),/地图文件缺失/);
+ v.run(`WoWAIDB.settings.language='enUS';WoWAIDungeonMap.Draw(MAP_F)`);assert.match(v.get('MAP_F.note:GetText()'),/Map texture missing/);
+ v.run(`WoWAIDB.settings.language='zhTW';WoWAIDungeonMap.Draw(MAP_F)`);assert.match(v.get('MAP_F.note:GetText()'),/地圖/);
+});
+
+test('dungeon checklist hides completed objectives and preserves missing-quest checks',()=>{
+ const v=vm(`STUB.quests={{questID=1,title='副本任务'}}
+ C_QuestLog.GetQuestObjectives=function()return {{text='已收集',finished=true},{text='待击杀',finished=false}}end`);
+ v.run(`WoWAI.SelectTab('dungeon');WoWAIDungeonUI.checklistButton:GetScript('OnClick')()`);
+ assert.match(v.get('WoWAIDungeonUI.rows[1].body:GetText()'),/待击杀/);assert.doesNotMatch(v.get('WoWAIDungeonUI.rows[1].body:GetText()'),/已收集/);
+ v.run(`STUB.quests[1].done=true;WoWAIDungeon.Refresh()`);
+ assert.match(v.get('WoWAIDungeonUI.rows[1].title:GetText()'),/没有待完成/);
+});
+
+test('prerequisites distinguish any/all/active conditions without leaking opposite-faction names',()=>{
+ const v=vm(`local d=WoWAIDungeonData.dungeons[1]
+ d.quests[2]={id=2,name='部落前置',faction='horde'}
+ d.quests[3]={id=3,name='联盟专属',faction='alliance'}
+ STUB.completed[2]=true;STUB.quests={{questID=1,title='当前任务'}}`);
+ assert.match(v.get("WoWAIDungeon.PrerequisiteText({pre={2}})"),/任一已交付.*\n\[已满足\] 部落前置/);
+ assert.match(v.get("WoWAIDungeon.PrerequisiteText({preAll={8}})"),/全部已交付.*\n\[未满足\] 任务 ID：8/);
+ assert.match(v.get("WoWAIDungeon.PrerequisiteText({parent=1})"),/已满足/);
+ assert.match(v.get("WoWAIDungeon.PrerequisiteText({parent=9})"),/未满足/);
+ assert.doesNotMatch(v.get("WoWAIDungeon.PrerequisiteText({pre={3}})"),/联盟专属/);
+ v.run(`C_QuestLog.IsQuestFlaggedCompleted=nil`);
+ assert.match(v.get("WoWAIDungeon.PrerequisiteText({pre={99}})"),/待确认/);
 });
 test('gates exclude faction, race, class, level, prerequisite and alternate branches without false missing',()=>{
  const v=vm();v.run(`Q=WoWAIDungeon.instance.quests[1];function E()return WoWAIDungeon.Eligibility(Q,{})end`);

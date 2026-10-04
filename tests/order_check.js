@@ -9,7 +9,7 @@ const luaparse = require('luaparse');
 
 const ADDON = process.argv[2] || path.join(__dirname, '..', 'addon', 'WoWAI');
 let bad = 0;
-for (const f of ['Locale.lua', 'Codec.lua', 'WoWAI.lua', 'Inbox.lua', 'Map.lua', 'QuestLocations.lua', 'Adventure.lua', 'Kills.lua', 'AdventureUI.lua', 'DungeonData.lua', 'Gear.lua', 'Dungeon.lua', 'DungeonUI.lua']) {
+for (const f of ['Locale.lua', 'Codec.lua', 'WoWAI.lua', 'Inbox.lua', 'Map.lua', 'QuestLocations.lua', 'Adventure.lua','QuestOffersData.lua','QuestOffers.lua','ZoneGuideData.lua','ZoneGuide.lua', 'Kills.lua', 'AdventureUI.lua', 'DungeonData.lua', 'Gear.lua', 'Dungeon.lua', 'DungeonUI.lua']) {
   const src = fs.readFileSync(path.join(ADDON, f), 'utf8');
   luaparse.parse(src, { luaVersion: '5.1' });
   console.log('OK   ' + f + ' parses');
