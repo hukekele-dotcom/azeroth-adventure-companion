@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-01.1",
+  "version": "2026-10-03.1",
   "quests": [
     {
       "dungeon": "ragefire-chasm",
@@ -9,7 +9,9 @@
       "gatesKnown": true,
       "minLevel": 9,
       "sources": [
-        "https://foreverchanges.pro/dungeons/ragefire-chasm"
+        "https://foreverchanges.pro/dungeons/ragefire-chasm",
+        "https://wowf.io/zh/dungeons/ragefire-chasm/quests",
+        "https://wowf.io/en/dungeons/ragefire-chasm/quests"
       ]
     },
     {
@@ -19,7 +21,10 @@
       "faction": "horde",
       "gatesKnown": true,
       "minLevel": 9,
-      "sources": []
+      "sources": [
+        "https://wowf.io/zh/dungeons/ragefire-chasm/quests",
+        "https://wowf.io/en/dungeons/ragefire-chasm/quests"
+      ]
     },
     {
       "dungeon": "ragefire-chasm",
@@ -29,7 +34,9 @@
       "gatesKnown": true,
       "minLevel": 9,
       "sources": [
-        "https://foreverchanges.pro/dungeons/ragefire-chasm"
+        "https://foreverchanges.pro/dungeons/ragefire-chasm",
+        "https://wowf.io/zh/dungeons/ragefire-chasm/quests",
+        "https://wowf.io/en/dungeons/ragefire-chasm/quests"
       ]
     },
     {
@@ -40,7 +47,9 @@
       "gatesKnown": true,
       "minLevel": 9,
       "sources": [
-        "https://foreverchanges.pro/dungeons/ragefire-chasm"
+        "https://foreverchanges.pro/dungeons/ragefire-chasm",
+        "https://wowf.io/zh/dungeons/ragefire-chasm/quests",
+        "https://wowf.io/en/dungeons/ragefire-chasm/quests"
       ]
     },
     {
@@ -51,7 +60,9 @@
       "gatesKnown": true,
       "minLevel": 9,
       "sources": [
-        "https://foreverchanges.pro/dungeons/ragefire-chasm"
+        "https://foreverchanges.pro/dungeons/ragefire-chasm",
+        "https://wowf.io/zh/dungeons/ragefire-chasm/quests",
+        "https://wowf.io/en/dungeons/ragefire-chasm/quests"
       ]
     },
     {
@@ -73,7 +84,9 @@
       "gatesKnown": false,
       "minLevel": 10,
       "sources": [
-        "https://foreverchanges.pro/dungeons/hall-of-thanes"
+        "https://foreverchanges.pro/dungeons/hall-of-thanes",
+        "https://wowf.io/zh/dungeons/hall-of-thanes/quests",
+        "https://wowf.io/en/dungeons/hall-of-thanes/quests"
       ]
     },
     {
@@ -84,7 +97,9 @@
       "gatesKnown": false,
       "minLevel": 10,
       "sources": [
-        "https://foreverchanges.pro/dungeons/hall-of-thanes"
+        "https://foreverchanges.pro/dungeons/hall-of-thanes",
+        "https://wowf.io/zh/dungeons/hall-of-thanes/quests",
+        "https://wowf.io/en/dungeons/hall-of-thanes/quests"
       ]
     },
     {
@@ -95,7 +110,9 @@
       "gatesKnown": false,
       "minLevel": 10,
       "sources": [
-        "https://foreverchanges.pro/dungeons/hall-of-thanes"
+        "https://foreverchanges.pro/dungeons/hall-of-thanes",
+        "https://wowf.io/zh/dungeons/hall-of-thanes/quests",
+        "https://wowf.io/en/dungeons/hall-of-thanes/quests"
       ]
     },
     {
@@ -107,6 +124,8 @@
       "minLevel": 9,
       "sources": [
         "https://foreverchanges.pro/dungeons/hall-of-thanes",
+        "https://wowf.io/zh/dungeons/hall-of-thanes/quests",
+        "https://wowf.io/en/dungeons/hall-of-thanes/quests",
         "https://wowforevertalents.com/quests/old-ironforge-incursion-96393/"
       ]
     },
@@ -119,6 +138,8 @@
       "minLevel": 9,
       "sources": [
         "https://foreverchanges.pro/dungeons/hall-of-thanes",
+        "https://wowf.io/zh/dungeons/hall-of-thanes/quests",
+        "https://wowf.io/en/dungeons/hall-of-thanes/quests",
         "https://www.wowhead.com/forever/quest=98423/the-treaty-of-understanding"
       ]
     },
@@ -130,7 +151,9 @@
       "gatesKnown": false,
       "minLevel": 16,
       "sources": [
-        "https://foreverchanges.pro/dungeons/ruins-of-lordaeron"
+        "https://foreverchanges.pro/dungeons/ruins-of-lordaeron",
+        "https://wowf.io/zh/dungeons/ruins-of-lordaeron/quests",
+        "https://wowf.io/en/dungeons/ruins-of-lordaeron/quests"
       ]
     },
     {
@@ -141,7 +164,9 @@
       "gatesKnown": false,
       "minLevel": 15,
       "sources": [
-        "https://foreverchanges.pro/dungeons/ruins-of-lordaeron"
+        "https://foreverchanges.pro/dungeons/ruins-of-lordaeron",
+        "https://wowf.io/zh/dungeons/ruins-of-lordaeron/quests",
+        "https://wowf.io/en/dungeons/ruins-of-lordaeron/quests"
       ]
     },
     {
@@ -152,7 +177,9 @@
       "gatesKnown": false,
       "minLevel": 16,
       "sources": [
-        "https://foreverchanges.pro/dungeons/ruins-of-lordaeron"
+        "https://foreverchanges.pro/dungeons/ruins-of-lordaeron",
+        "https://wowf.io/zh/dungeons/ruins-of-lordaeron/quests",
+        "https://wowf.io/en/dungeons/ruins-of-lordaeron/quests"
       ]
     },
     {
@@ -163,7 +190,9 @@
       "gatesKnown": false,
       "minLevel": 16,
       "sources": [
-        "https://foreverchanges.pro/dungeons/ruins-of-lordaeron"
+        "https://foreverchanges.pro/dungeons/ruins-of-lordaeron",
+        "https://wowf.io/zh/dungeons/ruins-of-lordaeron/quests",
+        "https://wowf.io/en/dungeons/ruins-of-lordaeron/quests"
       ]
     },
     {
@@ -175,6 +204,8 @@
       "minLevel": 16,
       "sources": [
         "https://foreverchanges.pro/dungeons/ruins-of-lordaeron",
+        "https://wowf.io/zh/dungeons/ruins-of-lordaeron/quests",
+        "https://wowf.io/en/dungeons/ruins-of-lordaeron/quests",
         "https://www.wowhead.com/forever/quest=97288/unending-torment"
       ]
     },
@@ -186,7 +217,9 @@
       "gatesKnown": false,
       "minLevel": 15,
       "sources": [
-        "https://foreverchanges.pro/dungeons/ruins-of-lordaeron"
+        "https://foreverchanges.pro/dungeons/ruins-of-lordaeron",
+        "https://wowf.io/zh/dungeons/ruins-of-lordaeron/quests",
+        "https://wowf.io/en/dungeons/ruins-of-lordaeron/quests"
       ]
     },
     {
@@ -197,7 +230,9 @@
       "gatesKnown": false,
       "minLevel": 15,
       "sources": [
-        "https://foreverchanges.pro/dungeons/ruins-of-lordaeron"
+        "https://foreverchanges.pro/dungeons/ruins-of-lordaeron",
+        "https://wowf.io/zh/dungeons/ruins-of-lordaeron/quests",
+        "https://wowf.io/en/dungeons/ruins-of-lordaeron/quests"
       ]
     },
     {
@@ -208,7 +243,9 @@
       "gatesKnown": false,
       "minLevel": 16,
       "sources": [
-        "https://foreverchanges.pro/dungeons/ruins-of-lordaeron"
+        "https://foreverchanges.pro/dungeons/ruins-of-lordaeron",
+        "https://wowf.io/zh/dungeons/ruins-of-lordaeron/quests",
+        "https://wowf.io/en/dungeons/ruins-of-lordaeron/quests"
       ]
     },
     {
@@ -219,7 +256,9 @@
       "gatesKnown": false,
       "minLevel": 16,
       "sources": [
-        "https://foreverchanges.pro/dungeons/ruins-of-lordaeron"
+        "https://foreverchanges.pro/dungeons/ruins-of-lordaeron",
+        "https://wowf.io/zh/dungeons/ruins-of-lordaeron/quests",
+        "https://wowf.io/en/dungeons/ruins-of-lordaeron/quests"
       ]
     },
     {
@@ -230,7 +269,9 @@
       "gatesKnown": false,
       "minLevel": 15,
       "sources": [
-        "https://foreverchanges.pro/dungeons/ruins-of-lordaeron"
+        "https://foreverchanges.pro/dungeons/ruins-of-lordaeron",
+        "https://wowf.io/zh/dungeons/ruins-of-lordaeron/quests",
+        "https://wowf.io/en/dungeons/ruins-of-lordaeron/quests"
       ]
     },
     {
@@ -241,7 +282,9 @@
       "gatesKnown": true,
       "minLevel": 14,
       "sources": [
-        "https://foreverchanges.pro/dungeons/the-deadmines"
+        "https://foreverchanges.pro/dungeons/the-deadmines",
+        "https://wowf.io/zh/dungeons/deadmines/quests",
+        "https://wowf.io/en/dungeons/deadmines/quests"
       ]
     },
     {
@@ -252,7 +295,9 @@
       "gatesKnown": true,
       "minLevel": 14,
       "sources": [
-        "https://foreverchanges.pro/dungeons/the-deadmines"
+        "https://foreverchanges.pro/dungeons/the-deadmines",
+        "https://wowf.io/zh/dungeons/deadmines/quests",
+        "https://wowf.io/en/dungeons/deadmines/quests"
       ]
     },
     {
@@ -261,7 +306,10 @@
       "name": "Destruction in Deadmines",
       "faction": "alliance",
       "gatesKnown": false,
-      "sources": []
+      "sources": [
+        "https://wowf.io/zh/dungeons/deadmines/quests",
+        "https://wowf.io/en/dungeons/deadmines/quests"
+      ]
     },
     {
       "dungeon": "deadmines",
@@ -271,7 +319,9 @@
       "gatesKnown": true,
       "minLevel": 15,
       "sources": [
-        "https://foreverchanges.pro/dungeons/the-deadmines"
+        "https://foreverchanges.pro/dungeons/the-deadmines",
+        "https://wowf.io/zh/dungeons/deadmines/quests",
+        "https://wowf.io/en/dungeons/deadmines/quests"
       ]
     },
     {
@@ -282,7 +332,9 @@
       "gatesKnown": true,
       "minLevel": 15,
       "sources": [
-        "https://foreverchanges.pro/dungeons/the-deadmines"
+        "https://foreverchanges.pro/dungeons/the-deadmines",
+        "https://wowf.io/zh/dungeons/deadmines/quests",
+        "https://wowf.io/en/dungeons/deadmines/quests"
       ]
     },
     {
@@ -293,7 +345,9 @@
       "gatesKnown": true,
       "minLevel": 14,
       "sources": [
-        "https://foreverchanges.pro/dungeons/the-deadmines"
+        "https://foreverchanges.pro/dungeons/the-deadmines",
+        "https://wowf.io/zh/dungeons/deadmines/quests",
+        "https://wowf.io/en/dungeons/deadmines/quests"
       ]
     },
     {
@@ -302,7 +356,10 @@
       "name": "未寄出的信",
       "faction": "alliance",
       "gatesKnown": false,
-      "sources": []
+      "sources": [
+        "https://wowf.io/zh/dungeons/deadmines/quests",
+        "https://wowf.io/en/dungeons/deadmines/quests"
+      ]
     },
     {
       "dungeon": "deadmines",
@@ -323,7 +380,9 @@
       "gatesKnown": true,
       "minLevel": 13,
       "sources": [
-        "https://foreverchanges.pro/dungeons/wailing-caverns"
+        "https://foreverchanges.pro/dungeons/wailing-caverns",
+        "https://wowf.io/zh/dungeons/wailing-caverns/quests",
+        "https://wowf.io/en/dungeons/wailing-caverns/quests"
       ]
     },
     {
@@ -334,7 +393,9 @@
       "gatesKnown": true,
       "minLevel": 14,
       "sources": [
-        "https://foreverchanges.pro/dungeons/wailing-caverns"
+        "https://foreverchanges.pro/dungeons/wailing-caverns",
+        "https://wowf.io/zh/dungeons/wailing-caverns/quests",
+        "https://wowf.io/en/dungeons/wailing-caverns/quests"
       ]
     },
     {
@@ -345,7 +406,9 @@
       "gatesKnown": true,
       "minLevel": 14,
       "sources": [
-        "https://foreverchanges.pro/dungeons/wailing-caverns"
+        "https://foreverchanges.pro/dungeons/wailing-caverns",
+        "https://wowf.io/zh/dungeons/wailing-caverns/quests",
+        "https://wowf.io/en/dungeons/wailing-caverns/quests"
       ]
     },
     {
@@ -356,7 +419,9 @@
       "gatesKnown": true,
       "minLevel": 13,
       "sources": [
-        "https://foreverchanges.pro/dungeons/wailing-caverns"
+        "https://foreverchanges.pro/dungeons/wailing-caverns",
+        "https://wowf.io/zh/dungeons/wailing-caverns/quests",
+        "https://wowf.io/en/dungeons/wailing-caverns/quests"
       ]
     },
     {
@@ -367,7 +432,9 @@
       "gatesKnown": true,
       "minLevel": 15,
       "sources": [
-        "https://foreverchanges.pro/dungeons/wailing-caverns"
+        "https://foreverchanges.pro/dungeons/wailing-caverns",
+        "https://wowf.io/zh/dungeons/wailing-caverns/quests",
+        "https://wowf.io/en/dungeons/wailing-caverns/quests"
       ]
     },
     {
@@ -378,7 +445,9 @@
       "gatesKnown": true,
       "minLevel": 11,
       "sources": [
-        "https://foreverchanges.pro/dungeons/wailing-caverns"
+        "https://foreverchanges.pro/dungeons/wailing-caverns",
+        "https://wowf.io/zh/dungeons/wailing-caverns/quests",
+        "https://wowf.io/en/dungeons/wailing-caverns/quests"
       ]
     },
     {
@@ -389,7 +458,9 @@
       "gatesKnown": false,
       "minLevel": 15,
       "sources": [
-        "https://foreverchanges.pro/dungeons/wailing-caverns"
+        "https://foreverchanges.pro/dungeons/wailing-caverns",
+        "https://wowf.io/zh/dungeons/wailing-caverns/quests",
+        "https://wowf.io/en/dungeons/wailing-caverns/quests"
       ]
     },
     {
@@ -399,7 +470,10 @@
       "faction": "alliance",
       "gatesKnown": true,
       "minLevel": 20,
-      "sources": []
+      "sources": [
+        "https://wowf.io/zh/dungeons/shadowfang-keep/quests",
+        "https://wowf.io/en/dungeons/shadowfang-keep/quests"
+      ]
     },
     {
       "dungeon": "shadowfang-keep",
@@ -410,6 +484,8 @@
       "minLevel": 18,
       "sources": [
         "https://foreverchanges.pro/dungeons/shadowfang-keep",
+        "https://wowf.io/zh/dungeons/shadowfang-keep/quests",
+        "https://wowf.io/en/dungeons/shadowfang-keep/quests",
         "https://wowforevertalents.com/quests/deathstalkers-in-shadowfang-1098/"
       ]
     },
@@ -420,7 +496,10 @@
       "faction": "both",
       "gatesKnown": true,
       "minLevel": 20,
-      "sources": []
+      "sources": [
+        "https://wowf.io/zh/dungeons/shadowfang-keep/quests",
+        "https://wowf.io/en/dungeons/shadowfang-keep/quests"
+      ]
     },
     {
       "dungeon": "shadowfang-keep",
@@ -430,7 +509,9 @@
       "gatesKnown": true,
       "minLevel": 16,
       "sources": [
-        "https://foreverchanges.pro/dungeons/shadowfang-keep"
+        "https://foreverchanges.pro/dungeons/shadowfang-keep",
+        "https://wowf.io/zh/dungeons/shadowfang-keep/quests",
+        "https://wowf.io/en/dungeons/shadowfang-keep/quests"
       ]
     },
     {
@@ -441,7 +522,9 @@
       "gatesKnown": true,
       "minLevel": 18,
       "sources": [
-        "https://foreverchanges.pro/dungeons/shadowfang-keep"
+        "https://foreverchanges.pro/dungeons/shadowfang-keep",
+        "https://wowf.io/zh/dungeons/shadowfang-keep/quests",
+        "https://wowf.io/en/dungeons/shadowfang-keep/quests"
       ]
     },
     {
@@ -452,7 +535,9 @@
       "gatesKnown": true,
       "minLevel": 17,
       "sources": [
-        "https://foreverchanges.pro/dungeons/blackfathom-deeps"
+        "https://foreverchanges.pro/dungeons/blackfathom-deeps",
+        "https://wowf.io/zh/dungeons/blackfathom-deeps/quests",
+        "https://wowf.io/en/dungeons/blackfathom-deeps/quests"
       ]
     },
     {
@@ -463,7 +548,9 @@
       "gatesKnown": true,
       "minLevel": 17,
       "sources": [
-        "https://foreverchanges.pro/dungeons/blackfathom-deeps"
+        "https://foreverchanges.pro/dungeons/blackfathom-deeps",
+        "https://wowf.io/zh/dungeons/blackfathom-deeps/quests",
+        "https://wowf.io/en/dungeons/blackfathom-deeps/quests"
       ]
     },
     {
@@ -474,7 +561,9 @@
       "gatesKnown": true,
       "minLevel": 10,
       "sources": [
-        "https://foreverchanges.pro/dungeons/blackfathom-deeps"
+        "https://foreverchanges.pro/dungeons/blackfathom-deeps",
+        "https://wowf.io/zh/dungeons/blackfathom-deeps/quests",
+        "https://wowf.io/en/dungeons/blackfathom-deeps/quests"
       ]
     },
     {
@@ -484,7 +573,10 @@
       "faction": "alliance",
       "gatesKnown": true,
       "minLevel": 18,
-      "sources": []
+      "sources": [
+        "https://wowf.io/zh/dungeons/blackfathom-deeps/quests",
+        "https://wowf.io/en/dungeons/blackfathom-deeps/quests"
+      ]
     },
     {
       "dungeon": "blackfathom-deeps",
@@ -494,7 +586,9 @@
       "gatesKnown": true,
       "minLevel": 18,
       "sources": [
-        "https://foreverchanges.pro/dungeons/blackfathom-deeps"
+        "https://foreverchanges.pro/dungeons/blackfathom-deeps",
+        "https://wowf.io/zh/dungeons/blackfathom-deeps/quests",
+        "https://wowf.io/en/dungeons/blackfathom-deeps/quests"
       ]
     },
     {
@@ -505,7 +599,9 @@
       "gatesKnown": true,
       "minLevel": 20,
       "sources": [
-        "https://foreverchanges.pro/dungeons/blackfathom-deeps"
+        "https://foreverchanges.pro/dungeons/blackfathom-deeps",
+        "https://wowf.io/zh/dungeons/blackfathom-deeps/quests",
+        "https://wowf.io/en/dungeons/blackfathom-deeps/quests"
       ]
     },
     {
@@ -516,7 +612,9 @@
       "gatesKnown": true,
       "minLevel": 17,
       "sources": [
-        "https://foreverchanges.pro/dungeons/blackfathom-deeps"
+        "https://foreverchanges.pro/dungeons/blackfathom-deeps",
+        "https://wowf.io/zh/dungeons/blackfathom-deeps/quests",
+        "https://wowf.io/en/dungeons/blackfathom-deeps/quests"
       ]
     },
     {
@@ -527,7 +625,9 @@
       "gatesKnown": false,
       "minLevel": 18,
       "sources": [
-        "https://foreverchanges.pro/dungeons/blackfathom-deeps"
+        "https://foreverchanges.pro/dungeons/blackfathom-deeps",
+        "https://wowf.io/zh/dungeons/blackfathom-deeps/quests",
+        "https://wowf.io/en/dungeons/blackfathom-deeps/quests"
       ]
     },
     {
@@ -538,7 +638,9 @@
       "gatesKnown": false,
       "minLevel": 18,
       "sources": [
-        "https://foreverchanges.pro/dungeons/blackfathom-deeps"
+        "https://foreverchanges.pro/dungeons/blackfathom-deeps",
+        "https://wowf.io/zh/dungeons/blackfathom-deeps/quests",
+        "https://wowf.io/en/dungeons/blackfathom-deeps/quests"
       ]
     },
     {
@@ -549,7 +651,9 @@
       "gatesKnown": true,
       "minLevel": 21,
       "sources": [
-        "https://foreverchanges.pro/dungeons/blackfathom-deeps"
+        "https://foreverchanges.pro/dungeons/blackfathom-deeps",
+        "https://wowf.io/zh/dungeons/blackfathom-deeps/quests",
+        "https://wowf.io/en/dungeons/blackfathom-deeps/quests"
       ]
     },
     {
@@ -558,7 +662,10 @@
       "name": "阿奎尼斯男爵",
       "faction": "horde",
       "gatesKnown": false,
-      "sources": []
+      "sources": [
+        "https://wowf.io/zh/dungeons/blackfathom-deeps/quests",
+        "https://wowf.io/en/dungeons/blackfathom-deeps/quests"
+      ]
     },
     {
       "dungeon": "blackfathom-deeps",
@@ -590,7 +697,9 @@
       "gatesKnown": true,
       "minLevel": 22,
       "sources": [
-        "https://foreverchanges.pro/dungeons/the-stockade"
+        "https://foreverchanges.pro/dungeons/the-stockade",
+        "https://wowf.io/zh/dungeons/stockade/quests",
+        "https://wowf.io/en/dungeons/stockade/quests"
       ]
     },
     {
@@ -601,7 +710,9 @@
       "gatesKnown": true,
       "minLevel": 22,
       "sources": [
-        "https://foreverchanges.pro/dungeons/the-stockade"
+        "https://foreverchanges.pro/dungeons/the-stockade",
+        "https://wowf.io/zh/dungeons/stockade/quests",
+        "https://wowf.io/en/dungeons/stockade/quests"
       ]
     },
     {
@@ -612,7 +723,9 @@
       "gatesKnown": true,
       "minLevel": 22,
       "sources": [
-        "https://foreverchanges.pro/dungeons/the-stockade"
+        "https://foreverchanges.pro/dungeons/the-stockade",
+        "https://wowf.io/zh/dungeons/stockade/quests",
+        "https://wowf.io/en/dungeons/stockade/quests"
       ]
     },
     {
@@ -623,7 +736,9 @@
       "gatesKnown": true,
       "minLevel": 22,
       "sources": [
-        "https://foreverchanges.pro/dungeons/the-stockade"
+        "https://foreverchanges.pro/dungeons/the-stockade",
+        "https://wowf.io/zh/dungeons/stockade/quests",
+        "https://wowf.io/en/dungeons/stockade/quests"
       ]
     },
     {
@@ -634,7 +749,9 @@
       "gatesKnown": true,
       "minLevel": 22,
       "sources": [
-        "https://foreverchanges.pro/dungeons/the-stockade"
+        "https://foreverchanges.pro/dungeons/the-stockade",
+        "https://wowf.io/zh/dungeons/stockade/quests",
+        "https://wowf.io/en/dungeons/stockade/quests"
       ]
     },
     {
@@ -645,7 +762,9 @@
       "gatesKnown": true,
       "minLevel": 16,
       "sources": [
-        "https://foreverchanges.pro/dungeons/the-stockade"
+        "https://foreverchanges.pro/dungeons/the-stockade",
+        "https://wowf.io/zh/dungeons/stockade/quests",
+        "https://wowf.io/en/dungeons/stockade/quests"
       ]
     },
     {
@@ -656,7 +775,9 @@
       "gatesKnown": true,
       "minLevel": 20,
       "sources": [
-        "https://foreverchanges.pro/dungeons/razorfen-kraul"
+        "https://foreverchanges.pro/dungeons/razorfen-kraul",
+        "https://wowf.io/zh/dungeons/razorfen-kraul/quests",
+        "https://wowf.io/en/dungeons/razorfen-kraul/quests"
       ]
     },
     {
@@ -667,7 +788,9 @@
       "gatesKnown": false,
       "minLevel": 23,
       "sources": [
-        "https://foreverchanges.pro/dungeons/razorfen-kraul"
+        "https://foreverchanges.pro/dungeons/razorfen-kraul",
+        "https://wowf.io/zh/dungeons/razorfen-kraul/quests",
+        "https://wowf.io/en/dungeons/razorfen-kraul/quests"
       ]
     },
     {
@@ -678,7 +801,9 @@
       "gatesKnown": false,
       "minLevel": 25,
       "sources": [
-        "https://foreverchanges.pro/dungeons/razorfen-kraul"
+        "https://foreverchanges.pro/dungeons/razorfen-kraul",
+        "https://wowf.io/zh/dungeons/razorfen-kraul/quests",
+        "https://wowf.io/en/dungeons/razorfen-kraul/quests"
       ]
     },
     {
@@ -689,7 +814,9 @@
       "gatesKnown": true,
       "minLevel": 30,
       "sources": [
-        "https://foreverchanges.pro/dungeons/razorfen-kraul"
+        "https://foreverchanges.pro/dungeons/razorfen-kraul",
+        "https://wowf.io/zh/dungeons/razorfen-kraul/quests",
+        "https://wowf.io/en/dungeons/razorfen-kraul/quests"
       ]
     },
     {
@@ -700,7 +827,9 @@
       "gatesKnown": true,
       "minLevel": 29,
       "sources": [
-        "https://foreverchanges.pro/dungeons/razorfen-kraul"
+        "https://foreverchanges.pro/dungeons/razorfen-kraul",
+        "https://wowf.io/zh/dungeons/razorfen-kraul/quests",
+        "https://wowf.io/en/dungeons/razorfen-kraul/quests"
       ]
     },
     {
@@ -711,7 +840,9 @@
       "gatesKnown": true,
       "minLevel": 29,
       "sources": [
-        "https://foreverchanges.pro/dungeons/razorfen-kraul"
+        "https://foreverchanges.pro/dungeons/razorfen-kraul",
+        "https://wowf.io/zh/dungeons/razorfen-kraul/quests",
+        "https://wowf.io/en/dungeons/razorfen-kraul/quests"
       ]
     },
     {
@@ -721,7 +852,10 @@
       "faction": "alliance",
       "gatesKnown": true,
       "minLevel": 20,
-      "sources": []
+      "sources": [
+        "https://wowf.io/zh/dungeons/razorfen-kraul/quests",
+        "https://wowf.io/en/dungeons/razorfen-kraul/quests"
+      ]
     },
     {
       "dungeon": "razorfen-kraul",
@@ -730,7 +864,188 @@
       "faction": "horde",
       "gatesKnown": true,
       "minLevel": 20,
-      "sources": []
+      "sources": [
+        "https://wowf.io/zh/dungeons/razorfen-kraul/quests",
+        "https://wowf.io/en/dungeons/razorfen-kraul/quests"
+      ]
+    },
+    {
+      "dungeon": "excavation-site",
+      "id": 98815,
+      "name": "高地兽皮",
+      "faction": "alliance",
+      "gatesKnown": false,
+      "minLevel": 24,
+      "sources": [
+        "https://wowf.io/zh/dungeons/excavation-site/quests",
+        "https://wowf.io/en/dungeons/excavation-site/quests",
+        "https://wowforevertalents.com/quests/highland-hides-98815/"
+      ]
+    },
+    {
+      "dungeon": "excavation-site",
+      "id": 95646,
+      "name": "高地恐魔",
+      "faction": "alliance",
+      "gatesKnown": false,
+      "minLevel": 24,
+      "sources": [
+        "https://wowf.io/zh/dungeons/excavation-site/quests",
+        "https://wowf.io/en/dungeons/excavation-site/quests",
+        "https://wowforevertalents.com/quests/horrors-in-the-highland-95646/",
+        "https://foreverchanges.pro/dungeons/excavation-site"
+      ]
+    },
+    {
+      "dungeon": "excavation-site",
+      "id": 95647,
+      "name": "灌木丛中的失踪者",
+      "faction": "alliance",
+      "gatesKnown": false,
+      "minLevel": 24,
+      "sources": [
+        "https://wowf.io/zh/dungeons/excavation-site/quests",
+        "https://wowf.io/en/dungeons/excavation-site/quests",
+        "https://wowforevertalents.com/quests/lost-in-the-thicket-things-95647/"
+      ]
+    },
+    {
+      "dungeon": "excavation-site",
+      "id": 95810,
+      "name": "失落的圣物",
+      "faction": "alliance",
+      "gatesKnown": false,
+      "minLevel": 24,
+      "sources": [
+        "https://wowf.io/zh/dungeons/excavation-site/quests",
+        "https://wowf.io/en/dungeons/excavation-site/quests",
+        "https://wowforevertalents.com/quests/lost-relic-carry-95810/",
+        "https://foreverchanges.pro/dungeons/excavation-site"
+      ]
+    },
+    {
+      "dungeon": "excavation-site",
+      "id": 95697,
+      "name": "口味变化",
+      "faction": "horde",
+      "gatesKnown": false,
+      "minLevel": 24,
+      "sources": [
+        "https://wowf.io/zh/dungeons/excavation-site/quests",
+        "https://wowf.io/en/dungeons/excavation-site/quests",
+        "https://wowforevertalents.com/quests/changing-tastes-95697/",
+        "https://foreverchanges.pro/dungeons/excavation-site"
+      ]
+    },
+    {
+      "dungeon": "excavation-site",
+      "id": 95664,
+      "name": "长者的知识",
+      "faction": "horde",
+      "gatesKnown": false,
+      "minLevel": 24,
+      "sources": [
+        "https://wowf.io/zh/dungeons/excavation-site/quests",
+        "https://wowf.io/en/dungeons/excavation-site/quests",
+        "https://wowforevertalents.com/quests/elder-knowledge-95664/",
+        "https://foreverchanges.pro/dungeons/excavation-site"
+      ]
+    },
+    {
+      "dungeon": "excavation-site",
+      "id": 95682,
+      "name": "深入龙喉",
+      "faction": "horde",
+      "gatesKnown": false,
+      "minLevel": 24,
+      "sources": [
+        "https://wowf.io/zh/dungeons/excavation-site/quests",
+        "https://wowf.io/en/dungeons/excavation-site/quests",
+        "https://wowforevertalents.com/quests/open-the-maw-95682/",
+        "https://foreverchanges.pro/dungeons/excavation-site"
+      ]
+    },
+    {
+      "dungeon": "excavation-site",
+      "id": 95772,
+      "name": "寻找桑布雷德",
+      "faction": "unknown",
+      "gatesKnown": false,
+      "minLevel": 24,
+      "sources": [
+        "https://wowf.io/zh/dungeons/excavation-site/quests",
+        "https://wowf.io/en/dungeons/excavation-site/quests",
+        "https://wowforevertalents.com/quests/songblade-search-95772/"
+      ]
+    },
+    {
+      "dungeon": "excavation-site",
+      "id": 95663,
+      "name": "龙喉传闻",
+      "faction": "unknown",
+      "gatesKnown": false,
+      "minLevel": 24,
+      "sources": [
+        "https://wowforevertalents.com/quests/dragonmaw-rumors-95663/"
+      ]
+    },
+    {
+      "dungeon": "excavation-site",
+      "id": 98823,
+      "name": "大地回响",
+      "faction": "horde",
+      "gatesKnown": false,
+      "minLevel": 24,
+      "sources": [
+        "https://wowforevertalents.com/quests/earthen-echo-98823/",
+        "https://foreverchanges.pro/dungeons/excavation-site"
+      ]
+    },
+    {
+      "dungeon": "excavation-site",
+      "id": 95795,
+      "name": "沼泽中的逝者",
+      "faction": "alliance",
+      "gatesKnown": false,
+      "minLevel": 24,
+      "sources": [
+        "https://wowforevertalents.com/quests/fallen-in-the-fen-95795/",
+        "https://foreverchanges.pro/dungeons/excavation-site"
+      ]
+    },
+    {
+      "dungeon": "excavation-site",
+      "id": 95809,
+      "name": "编织的心",
+      "faction": "alliance",
+      "gatesKnown": false,
+      "minLevel": 24,
+      "sources": [
+        "https://wowforevertalents.com/quests/heartwoven-95809/"
+      ]
+    },
+    {
+      "dungeon": "excavation-site",
+      "id": 98824,
+      "name": "史前棱镜",
+      "faction": "alliance",
+      "gatesKnown": false,
+      "minLevel": 24,
+      "sources": [
+        "https://wowforevertalents.com/quests/prehistoric-prism-98824/",
+        "https://foreverchanges.pro/dungeons/excavation-site"
+      ]
+    },
+    {
+      "dungeon": "excavation-site",
+      "id": 95737,
+      "name": "寻找凯特林",
+      "faction": "unknown",
+      "gatesKnown": false,
+      "minLevel": 24,
+      "sources": [
+        "https://wowforevertalents.com/quests/seeking-caitlin-95737/"
+      ]
     },
     {
       "dungeon": "gnomeregan",
@@ -740,7 +1055,9 @@
       "gatesKnown": false,
       "minLevel": 24,
       "sources": [
-        "https://foreverchanges.pro/dungeons/gnomeregan"
+        "https://foreverchanges.pro/dungeons/gnomeregan",
+        "https://wowf.io/zh/dungeons/gnomeregan/quests",
+        "https://wowf.io/en/dungeons/gnomeregan/quests"
       ]
     },
     {
@@ -751,7 +1068,9 @@
       "gatesKnown": false,
       "minLevel": 28,
       "sources": [
-        "https://foreverchanges.pro/dungeons/gnomeregan"
+        "https://foreverchanges.pro/dungeons/gnomeregan",
+        "https://wowf.io/zh/dungeons/gnomeregan/quests",
+        "https://wowf.io/en/dungeons/gnomeregan/quests"
       ]
     },
     {
@@ -762,7 +1081,9 @@
       "gatesKnown": true,
       "minLevel": 24,
       "sources": [
-        "https://foreverchanges.pro/dungeons/gnomeregan"
+        "https://foreverchanges.pro/dungeons/gnomeregan",
+        "https://wowf.io/zh/dungeons/gnomeregan/quests",
+        "https://wowf.io/en/dungeons/gnomeregan/quests"
       ]
     },
     {
@@ -773,7 +1094,9 @@
       "gatesKnown": true,
       "minLevel": 20,
       "sources": [
-        "https://foreverchanges.pro/dungeons/gnomeregan"
+        "https://foreverchanges.pro/dungeons/gnomeregan",
+        "https://wowf.io/zh/dungeons/gnomeregan/quests",
+        "https://wowf.io/en/dungeons/gnomeregan/quests"
       ]
     },
     {
@@ -784,7 +1107,9 @@
       "gatesKnown": true,
       "minLevel": 25,
       "sources": [
-        "https://foreverchanges.pro/dungeons/gnomeregan"
+        "https://foreverchanges.pro/dungeons/gnomeregan",
+        "https://wowf.io/zh/dungeons/gnomeregan/quests",
+        "https://wowf.io/en/dungeons/gnomeregan/quests"
       ]
     },
     {
@@ -795,7 +1120,9 @@
       "gatesKnown": true,
       "minLevel": 20,
       "sources": [
-        "https://foreverchanges.pro/dungeons/gnomeregan"
+        "https://foreverchanges.pro/dungeons/gnomeregan",
+        "https://wowf.io/zh/dungeons/gnomeregan/quests",
+        "https://wowf.io/en/dungeons/gnomeregan/quests"
       ]
     },
     {
@@ -806,7 +1133,9 @@
       "gatesKnown": true,
       "minLevel": 25,
       "sources": [
-        "https://foreverchanges.pro/dungeons/gnomeregan"
+        "https://foreverchanges.pro/dungeons/gnomeregan",
+        "https://wowf.io/zh/dungeons/gnomeregan/quests",
+        "https://wowf.io/en/dungeons/gnomeregan/quests"
       ]
     },
     {
@@ -817,7 +1146,9 @@
       "gatesKnown": true,
       "minLevel": 25,
       "sources": [
-        "https://foreverchanges.pro/dungeons/gnomeregan"
+        "https://foreverchanges.pro/dungeons/gnomeregan",
+        "https://wowf.io/zh/dungeons/gnomeregan/quests",
+        "https://wowf.io/en/dungeons/gnomeregan/quests"
       ]
     },
     {
@@ -826,7 +1157,10 @@
       "name": "数据囤积者",
       "faction": "alliance",
       "gatesKnown": false,
-      "sources": []
+      "sources": [
+        "https://wowf.io/zh/dungeons/gnomeregan/quests",
+        "https://wowf.io/en/dungeons/gnomeregan/quests"
+      ]
     },
     {
       "dungeon": "gnomeregan",
@@ -903,6 +1237,71 @@
       "minLevel": 28,
       "sources": [
         "https://foreverchanges.pro/dungeons/gnomeregan"
+      ]
+    },
+    {
+      "dungeon": "dalaran",
+      "id": 92456,
+      "name": "绿色样本",
+      "faction": "alliance",
+      "gatesKnown": false,
+      "minLevel": 24,
+      "sources": [
+        "https://wowf.io/zh/dungeons/dalaran/quests",
+        "https://wowf.io/en/dungeons/dalaran/quests",
+        "https://wowforevertalents.com/quests/a-green-sample-92456/"
+      ]
+    },
+    {
+      "dungeon": "dalaran",
+      "id": 92489,
+      "name": "强大力量",
+      "faction": "alliance",
+      "gatesKnown": false,
+      "minLevel": 24,
+      "sources": [
+        "https://wowf.io/zh/dungeons/dalaran/quests",
+        "https://wowf.io/en/dungeons/dalaran/quests",
+        "https://wowforevertalents.com/quests/power-overwhelming-92489/"
+      ]
+    },
+    {
+      "dungeon": "dalaran",
+      "id": 96987,
+      "name": "求学良机",
+      "faction": "horde",
+      "gatesKnown": false,
+      "minLevel": 24,
+      "sources": [
+        "https://wowf.io/zh/dungeons/dalaran/quests",
+        "https://wowf.io/en/dungeons/dalaran/quests",
+        "https://wowforevertalents.com/quests/opportunistic-education-96987/"
+      ]
+    },
+    {
+      "dungeon": "dalaran",
+      "id": 96988,
+      "name": "力量之源",
+      "faction": "horde",
+      "gatesKnown": false,
+      "minLevel": 24,
+      "sources": [
+        "https://wowf.io/zh/dungeons/dalaran/quests",
+        "https://wowf.io/en/dungeons/dalaran/quests",
+        "https://wowforevertalents.com/quests/source-of-power-96988/"
+      ]
+    },
+    {
+      "dungeon": "dalaran",
+      "id": 96986,
+      "name": "墓穴骑士",
+      "faction": "horde",
+      "gatesKnown": false,
+      "minLevel": 24,
+      "sources": [
+        "https://wowf.io/zh/dungeons/dalaran/quests",
+        "https://wowf.io/en/dungeons/dalaran/quests",
+        "https://wowforevertalents.com/quests/the-grave-knight-96986/"
       ]
     },
     {

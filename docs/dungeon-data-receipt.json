@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-01.1",
+  "version": "2026-10-03.1",
   "policy": "Partial reference only. Observed item stats do not prove boss drops. Classic references are labelled. Unknown eligibility stays unknown.",
   "coverage": [
     {
@@ -131,12 +131,12 @@
     {
       "id": "excavation-site",
       "name": "挖掘场：湿地",
-      "coverage": "unavailable",
-      "quests": 0,
+      "coverage": "partial",
+      "quests": 14,
       "classicQuests": 0,
       "bosses": 4,
       "items": 0,
-      "knownLevels": 0,
+      "knownLevels": 14,
       "knownGates": 0,
       "observedItems": 0,
       "classicItems": 0,
@@ -159,12 +159,12 @@
     {
       "id": "dalaran",
       "name": "达拉然城",
-      "coverage": "unavailable",
-      "quests": 0,
+      "coverage": "partial",
+      "quests": 5,
       "classicQuests": 0,
       "bosses": 1,
       "items": 0,
-      "knownLevels": 0,
+      "knownLevels": 5,
       "knownGates": 0,
       "observedItems": 0,
       "classicItems": 0,
@@ -608,6 +608,202 @@
       "lang": "en"
     }
   ],
+  "questResearch": {
+    "date": "2026-10-03",
+    "reviewed": [
+      {
+        "dungeon": "ragefire-chasm",
+        "url": "https://foreverchanges.pro/dungeons/ragefire-chasm",
+        "sha256": "2a435fe20a33a96fcea4c2c1041a198bba1b37e6e7914d10f4e1686f940b4b81",
+        "questIds": [
+          5723,
+          5728,
+          5724,
+          5761,
+          5725
+        ]
+      },
+      {
+        "dungeon": "hall-of-thanes",
+        "url": "https://foreverchanges.pro/dungeons/hall-of-thanes",
+        "sha256": "abab3bbb4ec69d5c26008cf937238f1cfb97443dcc64efc1adc629da1e11a1ff",
+        "questIds": [
+          96393,
+          96394,
+          96395,
+          96403,
+          98423
+        ]
+      },
+      {
+        "dungeon": "ruins-of-lordaeron",
+        "url": "https://foreverchanges.pro/dungeons/ruins-of-lordaeron",
+        "sha256": "da15fd191204d10dbe19afadc455a646821c498758c4ba247da5ea0d8fb66428",
+        "questIds": [
+          92422,
+          92421,
+          92401,
+          95216,
+          97288,
+          95204,
+          95250,
+          95195,
+          92415,
+          95189
+        ]
+      },
+      {
+        "dungeon": "wailing-caverns",
+        "url": "https://foreverchanges.pro/dungeons/wailing-caverns",
+        "sha256": "eee3e615ad7a9b2d2ed9ccb3c7b3e66278530adae9eee95c3087b954feca5650",
+        "questIds": [
+          914,
+          1486,
+          1491,
+          962,
+          959,
+          1487,
+          6981
+        ]
+      },
+      {
+        "dungeon": "deadmines",
+        "url": "https://foreverchanges.pro/dungeons/the-deadmines",
+        "sha256": "1f3dd2c88a2a5002f15bb35c49bab58cbdd7355f985b50199cc32058eef29c43",
+        "questIds": [
+          214,
+          168,
+          166,
+          167,
+          2040
+        ]
+      },
+      {
+        "dungeon": "shadowfang-keep",
+        "url": "https://foreverchanges.pro/dungeons/shadowfang-keep",
+        "sha256": "abb47a39f0d7463bb69e1b8b88d73da22d9fa75dad0ed5244b65356ec2390e73",
+        "questIds": [
+          1013,
+          1098,
+          1014
+        ]
+      },
+      {
+        "dungeon": "blackfathom-deeps",
+        "url": "https://foreverchanges.pro/dungeons/blackfathom-deeps",
+        "sha256": "82fa2bb021cd6893174e126f2643ea4c45b2622345af1f5cc980154db28dabe0",
+        "questIds": [
+          971,
+          6564,
+          6563,
+          6565,
+          1275,
+          1200,
+          6561,
+          1199,
+          6921
+        ]
+      },
+      {
+        "dungeon": "stockade",
+        "url": "https://foreverchanges.pro/dungeons/the-stockade",
+        "sha256": "6fbab4dfb894a781bbe759b9f9a18432d7cdb3e7822768642178009abf059309",
+        "questIds": [
+          391,
+          386,
+          377,
+          387,
+          388,
+          378
+        ]
+      },
+      {
+        "dungeon": "excavation-site",
+        "url": "https://foreverchanges.pro/dungeons/excavation-site",
+        "sha256": "1aec0f6fcb74a1957a0a7fc65322c9c4d6f5f3d6c6327b9e4ce3ccbb5253dd54",
+        "questIds": [
+          95795,
+          95697,
+          95810,
+          95664,
+          95682,
+          95646
+        ]
+      },
+      {
+        "dungeon": "dalaran",
+        "url": "https://foreverchanges.pro/dungeons/city-of-dalaran",
+        "sha256": "ebb12ec4fc8438b334db86adc7f202a153a5896c8c7ef4e8d5385a4d8d744efc",
+        "questIds": []
+      },
+      {
+        "dungeon": "gnomeregan",
+        "url": "https://foreverchanges.pro/dungeons/gnomeregan",
+        "sha256": "9b7dfe9752fbe612f294959dae67e4dcf6f56f009006adc4b85f3c79e0a4d25e",
+        "questIds": [
+          2922,
+          2926,
+          2928,
+          2962,
+          2843,
+          2904,
+          2924,
+          2930,
+          2951,
+          2952,
+          2841,
+          2929,
+          2945,
+          2947,
+          2949
+        ]
+      },
+      {
+        "dungeon": "razorfen-kraul",
+        "url": "https://foreverchanges.pro/dungeons/razorfen-kraul",
+        "sha256": "8cdb16979756490f5a049b9d013f700db4af4f73ba8afe90764a928316fb4e3e",
+        "questIds": [
+          1221,
+          1144,
+          1142,
+          1102,
+          1101,
+          1109
+        ]
+      },
+      {
+        "dungeon": "scarlet-monastery",
+        "url": "https://foreverchanges.pro/dungeons/scarlet-monastery-graveyard",
+        "sha256": "35a94db3eb22e128da3c8894ffd2abdec68356f148b6a460c823d2cc8aeb7e08",
+        "questIds": [
+          1051,
+          1160,
+          1049,
+          1050,
+          1113
+        ]
+      }
+    ],
+    "records": 92,
+    "sources": [
+      {
+        "file": "foreverchanges.json",
+        "sha256": "cc35fddb835b2648e296f65a269ec5a060fe4d3889b258dd5bd7e308ae4a4c52"
+      },
+      {
+        "file": "wowf.json",
+        "sha256": "6b1ad28beebac435258ed8ebf4f2b5add5b9d301428192a6982737fcfaaa82cb"
+      },
+      {
+        "file": "wowf-en.json",
+        "sha256": "03a15046795556488f5831a62008fa3917a30e6ee117172f37c7453f2df5d6b4"
+      },
+      {
+        "file": "wft-quests.json",
+        "sha256": "47210a002df04730f8d19e29645160cf4b2f3a960e94bccc2bc1d92b9d598b06"
+      }
+    ]
+  },
   "localResearch": [
     {
       "document": "哀嚎洞穴专题_2026-09-22/资料核对.md",
@@ -678,5 +874,5 @@
       "sha256": "ea6dd640f4ce1d88df49af40df26bce9eb0685aa05b09a204d623d34e03ab69e"
     }
   ],
-  "outputSha256": "2122588ac545d6ad666583a4494b50ce74cc4c39db49754d1932c6d6f819112c"
+  "outputSha256": "2c55993b44fc2c7a12b9ef99837c61281c74b5b7e3ab5abb78dfb5f298d83ea0"
 }

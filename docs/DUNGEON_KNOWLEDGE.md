@@ -28,6 +28,14 @@ The source archive uses AES-256-GCM with a separate key protected by Windows Cur
 
 ## Maintenance
 
+2026-10-03 更新：重新核对 13 个低等级副本条目（血色地图范围为墓地；任务库保留整个血色修道院）。新增湿地挖掘场 14 条任务与前后续、达拉然城 5 条任务，并补充 85 条任务的接取或交付位置。新任务最低接取等级来自独立任务详情页，不能用任务难度等级代替。未知阵营不显示为本阵营漏接；可选引导不是强制前置；物品触发和本内任务不能要求进本前接好。新任务中文名为暂译，完整条件仍待实测。
+
+2026-10-03 更新：重新核對 13 個低等級副本項目，新增濕地挖掘場 14 條任務與前後續、達拉然城 5 條任務，並補充 85 條任務的接取或交付位置。最低接取等級與任務難度分開；未知陣營不當成己方漏接，可選引導不當成強制前置。本內及物品觸發任務不要求進本前接好。新任務中文名為暫譯，完整條件仍待實測。
+
+2026-10-03 update: reviewed 13 low-level dungeon entries, including Scarlet Graveyard (the quest catalog retains all Scarlet wings). Added 14 Excavation Site quests/chain steps and 5 Dalaran quests; enriched 85 records with pickup or turn-in references. Acceptance levels come from individual quest pages, never quest difficulty. Unknown faction/eligibility remains unknown. Optional leads are not mandatory prerequisites; item-start and inside quests are not pre-entry omissions. Chinese names of new quests are provisional translations.
+
+`quest-research.json` contains the reviewed supplement with dated sources. `import-under30-quest-research.js <snapshot directory>` rebuilds it from the 2026-10-03 archived public facts without network calls. `merge-dungeon-quest-research.js` applies it before `corrections.json`, preserving prior editorial corrections. Sources: [WOWF quest pages](https://wowf.io/zh/dungeons/dalaran/quests), [Forever Talents quest details](https://wowforevertalents.com/dungeons/excavation-site-wetlands/), [ForeverChanges](https://foreverchanges.pro/dungeons/excavation-site). Reference coordinates are world-zone coordinates, not positions on the static dungeon atlas. No unverified indoor pins are generated.
+
 Normal offline rebuild (no network, no private files):
 
 ```text

@@ -1,0 +1,249 @@
+{
+  "maps": [
+    {
+      "id": 1411,
+      "quests": 158,
+      "authoredChapters": 7
+    },
+    {
+      "id": 1412,
+      "quests": 190,
+      "authoredChapters": 2
+    },
+    {
+      "id": 1413,
+      "quests": 319,
+      "authoredChapters": 5
+    },
+    {
+      "id": 1416,
+      "quests": 182,
+      "authoredChapters": 0
+    },
+    {
+      "id": 1417,
+      "quests": 169,
+      "authoredChapters": 0
+    },
+    {
+      "id": 1418,
+      "quests": 166,
+      "authoredChapters": 0
+    },
+    {
+      "id": 1419,
+      "quests": 124,
+      "authoredChapters": 0
+    },
+    {
+      "id": 1420,
+      "quests": 220,
+      "authoredChapters": 4
+    },
+    {
+      "id": 1421,
+      "quests": 133,
+      "authoredChapters": 1
+    },
+    {
+      "id": 1422,
+      "quests": 200,
+      "authoredChapters": 0
+    },
+    {
+      "id": 1423,
+      "quests": 255,
+      "authoredChapters": 0
+    },
+    {
+      "id": 1424,
+      "quests": 222,
+      "authoredChapters": 0
+    },
+    {
+      "id": 1425,
+      "quests": 180,
+      "authoredChapters": 0
+    },
+    {
+      "id": 1426,
+      "quests": 217,
+      "authoredChapters": 4
+    },
+    {
+      "id": 1427,
+      "quests": 121,
+      "authoredChapters": 0
+    },
+    {
+      "id": 1428,
+      "quests": 132,
+      "authoredChapters": 0
+    },
+    {
+      "id": 1429,
+      "quests": 270,
+      "authoredChapters": 4
+    },
+    {
+      "id": 1430,
+      "quests": 31,
+      "authoredChapters": 0
+    },
+    {
+      "id": 1431,
+      "quests": 165,
+      "authoredChapters": 0
+    },
+    {
+      "id": 1432,
+      "quests": 165,
+      "authoredChapters": 4
+    },
+    {
+      "id": 1433,
+      "quests": 135,
+      "authoredChapters": 3
+    },
+    {
+      "id": 1434,
+      "quests": 338,
+      "authoredChapters": 0
+    },
+    {
+      "id": 1435,
+      "quests": 145,
+      "authoredChapters": 0
+    },
+    {
+      "id": 1436,
+      "quests": 148,
+      "authoredChapters": 4
+    },
+    {
+      "id": 1437,
+      "quests": 159,
+      "authoredChapters": 0
+    },
+    {
+      "id": 1438,
+      "quests": 205,
+      "authoredChapters": 5
+    },
+    {
+      "id": 1439,
+      "quests": 185,
+      "authoredChapters": 4
+    },
+    {
+      "id": 1440,
+      "quests": 209,
+      "authoredChapters": 3
+    },
+    {
+      "id": 1441,
+      "quests": 170,
+      "authoredChapters": 0
+    },
+    {
+      "id": 1442,
+      "quests": 149,
+      "authoredChapters": 1
+    },
+    {
+      "id": 1443,
+      "quests": 162,
+      "authoredChapters": 0
+    },
+    {
+      "id": 1444,
+      "quests": 216,
+      "authoredChapters": 0
+    },
+    {
+      "id": 1445,
+      "quests": 188,
+      "authoredChapters": 0
+    },
+    {
+      "id": 1446,
+      "quests": 254,
+      "authoredChapters": 0
+    },
+    {
+      "id": 1447,
+      "quests": 174,
+      "authoredChapters": 0
+    },
+    {
+      "id": 1448,
+      "quests": 203,
+      "authoredChapters": 0
+    },
+    {
+      "id": 1449,
+      "quests": 112,
+      "authoredChapters": 0
+    },
+    {
+      "id": 1450,
+      "quests": 89,
+      "authoredChapters": 6
+    },
+    {
+      "id": 1451,
+      "quests": 169,
+      "authoredChapters": 0
+    },
+    {
+      "id": 1452,
+      "quests": 181,
+      "authoredChapters": 0
+    },
+    {
+      "id": 1453,
+      "quests": 330,
+      "authoredChapters": 9
+    },
+    {
+      "id": 1454,
+      "quests": 300,
+      "authoredChapters": 4
+    },
+    {
+      "id": 1455,
+      "quests": 305,
+      "authoredChapters": 4
+    },
+    {
+      "id": 1456,
+      "quests": 176,
+      "authoredChapters": 2
+    },
+    {
+      "id": 1457,
+      "quests": 144,
+      "authoredChapters": 3
+    },
+    {
+      "id": 1458,
+      "quests": 187,
+      "authoredChapters": 3
+    },
+    {
+      "id": 1459,
+      "quests": 63,
+      "authoredChapters": 0
+    },
+    {
+      "id": 2521,
+      "quests": 142,
+      "authoredChapters": 0
+    }
+  ],
+  "mapCount": 48,
+  "method": "Public Forever authored quest phases where available; local reference graph elsewhere; actual progress and prerequisites govern navigation",
+  "authoredSource": "https://github.com/RestedXP/RXPGuides",
+  "authoredRevision": "f3570d06a6b46cf1d080502a9578c50e396e963c",
+  "authoredChapters": 27
+}
