@@ -1,0 +1,190 @@
+{
+  "checked": "2026-10-03",
+  "scope": "Recommended starting level below 30, plus Scarlet Graveyard at 30; not minimum entry level or confirmed beta availability.",
+  "source": "https://foreverchanges.pro/dungeons",
+  "alternateSource": "https://warcraftforever.games/zh-CN/dungeons",
+  "rangeCaveat": "Classic recommendations are not confirmed Forever entry gates. Fan sources disagree on Excavation Site and Stockade ranges.",
+  "dungeons": [
+    {
+      "id": "ragefire-chasm",
+      "range": [
+        13,
+        18
+      ],
+      "pages": 1,
+      "scope": "dungeon",
+      "bossPositionBasis": "classic reference",
+      "mappedBosses": 4,
+      "unlocated": [],
+      "excluded": {}
+    },
+    {
+      "id": "hall-of-thanes",
+      "range": [
+        13,
+        18
+      ],
+      "pages": 1,
+      "scope": "dungeon",
+      "bossPositionBasis": "community room/area reference",
+      "mappedBosses": 4,
+      "unlocated": [],
+      "excluded": {}
+    },
+    {
+      "id": "ruins-of-lordaeron",
+      "range": [
+        15,
+        20
+      ],
+      "pages": 1,
+      "scope": "dungeon",
+      "bossPositionBasis": "community room/area reference",
+      "mappedBosses": 7,
+      "unlocated": [],
+      "excluded": {}
+    },
+    {
+      "id": "wailing-caverns",
+      "range": [
+        17,
+        24
+      ],
+      "pages": 1,
+      "scope": "dungeon",
+      "bossPositionBasis": "classic reference",
+      "mappedBosses": 9,
+      "unlocated": [],
+      "excluded": {}
+    },
+    {
+      "id": "deadmines",
+      "range": [
+        17,
+        26
+      ],
+      "pages": 1,
+      "scope": "dungeon",
+      "bossPositionBasis": "classic reference",
+      "mappedBosses": 9,
+      "unlocated": [],
+      "excluded": {}
+    },
+    {
+      "id": "shadowfang-keep",
+      "range": [
+        22,
+        30
+      ],
+      "pages": 1,
+      "scope": "dungeon",
+      "bossPositionBasis": "classic reference",
+      "mappedBosses": 11,
+      "unlocated": [],
+      "excluded": {}
+    },
+    {
+      "id": "blackfathom-deeps",
+      "range": [
+        24,
+        32
+      ],
+      "pages": 3,
+      "scope": "dungeon",
+      "bossPositionBasis": "classic reference",
+      "mappedBosses": 8,
+      "unlocated": [],
+      "excluded": {}
+    },
+    {
+      "id": "stockade",
+      "range": [
+        24,
+        32
+      ],
+      "pages": 1,
+      "scope": "dungeon",
+      "bossPositionBasis": "classic reference",
+      "mappedBosses": 6,
+      "unlocated": [],
+      "excluded": {}
+    },
+    {
+      "id": "excavation-site",
+      "range": [
+        26,
+        31
+      ],
+      "pages": 1,
+      "scope": "dungeon",
+      "bossPositionBasis": "community room/area reference",
+      "mappedBosses": 4,
+      "unlocated": [],
+      "excluded": {}
+    },
+    {
+      "id": "dalaran",
+      "range": [
+        28,
+        33
+      ],
+      "pages": 1,
+      "scope": "dungeon",
+      "bossPositionBasis": "community room/area reference",
+      "mappedBosses": 1,
+      "unlocated": [
+        "Atrexis the Grave Knight",
+        "Arcane Anomaly",
+        "Fel Ancient",
+        "Unstable Sentinel",
+        "Mana Wraith",
+        "Mana Devourer",
+        "Mana Elemental",
+        "Lyn the Ignored",
+        "Arcanic Enigma"
+      ],
+      "excluded": {}
+    },
+    {
+      "id": "gnomeregan",
+      "range": [
+        29,
+        38
+      ],
+      "pages": 1,
+      "scope": "dungeon",
+      "bossPositionBasis": "classic reference",
+      "mappedBosses": 6,
+      "unlocated": [],
+      "excluded": {
+        "Techbot": "Outside instance; current map only contains instanced interior."
+      }
+    },
+    {
+      "id": "razorfen-kraul",
+      "range": [
+        29,
+        38
+      ],
+      "pages": 1,
+      "scope": "dungeon",
+      "bossPositionBasis": "classic reference",
+      "mappedBosses": 9,
+      "unlocated": [],
+      "excluded": {}
+    },
+    {
+      "id": "scarlet-monastery",
+      "range": [
+        30,
+        38
+      ],
+      "pages": 4,
+      "scope": "all four wings; higher-level wings included",
+      "bossPositionBasis": "classic reference",
+      "mappedBosses": 11,
+      "unlocated": [],
+      "excluded": {}
+    }
+  ]
+}
