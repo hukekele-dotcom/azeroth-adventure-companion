@@ -3,13 +3,15 @@
 const fs=require('fs'),path=require('path');
 const {serialize,validate,sha256}=require('./dungeon-knowledge');
 const {classify}=require('./dungeon-factions');
+const {mergeQuestResearch}=require('./merge-dungeon-quest-research');
 const root=path.resolve(__dirname,'..'),dir=path.join(root,'knowledge/dungeons');
 const read=f=>JSON.parse(fs.readFileSync(path.join(dir,f),'utf8'));
 const arrays=new Set(['dungeons','bosses','quests','loot','aliases','stats','effects','effectsEn','steps','followups','rewards','pre','preAll','excl','classes','rep','repEn']);
 function fix(v){if(!v||typeof v!=='object')return v;for(const [k,x]of Object.entries(v)){if(arrays.has(k)&&x&&typeof x==='object'&&!Object.keys(x).length)v[k]=[];else fix(x);}return v;}
 const data=fix(read('baseline.json')),fc=read('community.json'),local=read('local-research.json'),names=read('quest-names.json'),gates=read('eligibility.json').tables,patch=read('corrections.json');
 const npc=read('npc-names.json');
-data.version='2026-10-01.1';data.schema=1;data.client='1.60.1';
+const questResearch=read('quest-research.json');
+data.version='2026-10-03.1';data.schema=1;data.client='1.60.1';
 const idOf=id=>id.startsWith('scarlet-monastery-')?'scarlet-monastery':id.startsWith('dire-maul-')?'dire-maul':id.startsWith('stratholme-')?'stratholme':id.endsWith('-blackrock-spire')?'blackrock-spire':({'the-deadmines':'deadmines','the-stockade':'stockade','city-of-dalaran':'dalaran'})[id]||id;
 const dungeonNames={
  'razorfen-downs':['剃刀高地','Razorfen Downs'],uldaman:['奥达曼','Uldaman'],zulfarrak:['祖尔法拉克',"Zul'Farrak"],maraudon:['玛拉顿','Maraudon'],'sunken-temple':['阿塔哈卡神庙','Sunken Temple'],
@@ -82,6 +84,7 @@ for(const r of fc.records.filter(r=>r.lang==='en')){
  }
 }
 for(const p of patch.sharedQuests||[]){const source=data.dungeons.find(d=>d.id===p.from)?.quests.find(q=>q.id===p.id),target=data.dungeons.find(d=>d.id===p.to);if(!source||!target)throw Error('Missing shared quest '+p.id);if(!target.quests.some(q=>q.id===p.id)){const q=structuredClone(source);Object.assign(q,p.set);q.sources=[...new Set([...(q.sources||[]),p.source])];target.quests.push(q);}}
+mergeQuestResearch(data,questResearch);
 for(const p of patch.quests){const d=data.dungeons.find(d=>d.id===p.dungeon),q=d?.quests.find(q=>q.id===p.id);if(!q)throw Error('Missing corrected quest '+p.id);Object.assign(q,p.set);q.sources=[...new Set([...(q.sources||[]),...p.sources])];}
 for(const p of patch.blockMappings){const d=data.dungeons.find(d=>d.id===p.dungeon),i=d?.loot.find(i=>i.id===p.item);if(i){i.bosses=[];i.mapping='unknown';i.dropUnverified=true;i.from=p.reason;i.fromEn=p.reasonEn;}}
 for(const d of data.dungeons){
@@ -93,7 +96,7 @@ for(const d of data.dungeons){
 validate(data);
 const output=path.join(root,'addon/WoWAI/DungeonData.lua');fs.writeFileSync(output,'-- Generated offline from knowledge/dungeons. See docs/DUNGEON_KNOWLEDGE.md.\nWoWAIDungeonData = '+serialize(data)+'\n');
 fs.writeFileSync(path.join(dir,'catalog.json'),JSON.stringify(data,null,2)+'\n');
-const report={version:data.version,policy:'Partial reference only. Observed item stats do not prove boss drops. Classic references are labelled. Unknown eligibility stays unknown.',coverage:data.dungeons.map(d=>({id:d.id,name:d.name,coverage:d.coverage,...d.counts})),conflicts,sources,localResearch:local.documents,outputSha256:sha256(fs.readFileSync(output))};
+const report={version:data.version,policy:'Partial reference only. Observed item stats do not prove boss drops. Classic references are labelled. Unknown eligibility stays unknown.',coverage:data.dungeons.map(d=>({id:d.id,name:d.name,coverage:d.coverage,...d.counts})),conflicts,sources,questResearch:{date:questResearch.date,reviewed:questResearch.reviewed,records:questResearch.records.length,sources:questResearch.sources},localResearch:local.documents,outputSha256:sha256(fs.readFileSync(output))};
 fs.writeFileSync(path.join(root,'docs/dungeon-data-receipt.json'),JSON.stringify(report,null,2)+'\n');
 fs.writeFileSync(path.join(root,'docs/dungeon-faction-audit.json'),JSON.stringify({version:data.version,quests:data.dungeons.flatMap(d=>d.quests.map(q=>({dungeon:d.id,id:q.id,name:q.name,faction:q.faction,gatesKnown:q.gatesKnown,minLevel:q.minLevel,sources:q.sources||[]})))},null,2)+'\n');
 console.log(JSON.stringify({dungeons:data.dungeons.length,quests:data.dungeons.reduce((n,d)=>n+d.quests.length,0),items:data.dungeons.reduce((n,d)=>n+d.loot.length,0),conflicts:conflicts.length}));

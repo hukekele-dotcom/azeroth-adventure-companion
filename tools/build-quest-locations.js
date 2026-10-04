@@ -28,5 +28,7 @@ for(const row of fs.readFileSync(path.join(root,'Data','QuestCategory_Forever.lu
  if(Number(row[2])%2===1)(data[row[1]]??={}).dungeon=true;
 }
 const serialize=v=>Array.isArray(v)?'{'+v.map(serialize).join(',')+'}':v&&typeof v==='object'?'{'+Object.entries(v).map(([k,x])=>(/^\d+$/.test(k)?'['+k+']':k)+'='+serialize(x)).join(',')+'}':JSON.stringify(v);
-fs.writeFileSync('addon/WoWAI/QuestLocations.lua','-- Derived from EverythingQuests Forever data, MIT (see THIRD_PARTY.md).\n-- Columns: uiMapID, x percent, y percent, kind, objective mask.\nWoWAIQuestLocations = '+serialize(data)+'\n');
+const version=require('crypto').createHash('sha256').update(JSON.stringify(data)).digest('hex').slice(0,24);
+fs.writeFileSync('addon/WoWAI/QuestLocations.lua','-- Derived from EverythingQuests Forever data, MIT (see THIRD_PARTY.md).\n-- Columns: uiMapID, x percent, y percent, kind, objective mask.\nWoWAIQuestLocations = '+serialize(data)+'\nWoWAIQuestCatalogVersion = '+JSON.stringify(version)+'\n');
+fs.writeFileSync('bridge/quest-locations.json',JSON.stringify({version,quests:data})+'\n');
 console.log(Object.keys(data).length+' quests, '+fs.statSync('addon/WoWAI/QuestLocations.lua').size+' bytes');
