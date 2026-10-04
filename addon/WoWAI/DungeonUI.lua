@@ -17,9 +17,8 @@ local function Button(p,text,w,fn)
     local b=CreateFrame('Button',nil,p,'UIPanelButtonTemplate');b:SetSize(w,26);b:SetText(text);b:SetScript('OnClick',fn);return b
 end
 local function Source(item)
-    local r=item.ref or {};local text=r.basis=='classic' and L('经典版参考，无限实际掉落待核实') or r.basis=='site' and (L('无限社区记录 · ')..(r.sourceDate or '2026-09-30')) or L('来源未确认，勿作为确定掉落')
-    if r.dropUnverified then text=text..'\n'..L('首领归属为参考记录，尚未核实无限版实际掉落。')end
-    return text
+    local r=item.ref or {}
+    return r.basis=='classic' and L('[经典版参考] ') or (r.dropUnverified or r.basis~='site') and L('[来源待核] ') or ''
 end
 local function Objective(row)
     local a={};for _,o in ipairs(row.live and row.live.objectives or {})do a[#a+1]=(o.done and '✓ ' or '· ')..(o.text or '')end
@@ -72,20 +71,25 @@ local function Build(parent)
     U.sideTitle=Label(side,L('副本助手'),16);U.sideTitle:SetPoint('TOPLEFT',12,-14);U.sideTitle:SetPoint('TOPRIGHT',-12,-14)
     U.prev=Button(side,L('上一个'),84,function()local n=#WoWAIDungeonData.dungeons;U.preview=(U.preview-2+n)%n+1;U.boss=nil;U.Render()end);U.prev:SetPoint('TOPLEFT',12,-58)
     U.next=Button(side,L('下一个'),84,function()U.preview=U.preview%#WoWAIDungeonData.dungeons+1;U.boss=nil;U.Render()end);U.next:SetPoint('LEFT',U.prev,'RIGHT',8,0)
-    U.taskButton=Button(side,L('任务检查'),180,function()U.boss=nil;U.allLoot=false;U.scroll:SetVerticalScroll(0);D.Refresh();U.Render()end);U.taskButton:SetPoint('TOPLEFT',12,-96)
-    U.allLootButton=Button(side,L('全部掉落'),180,function()U.boss=nil;U.allLoot=true;U.scroll:SetVerticalScroll(0);U.Render()end);U.allLootButton:SetPoint('TOPLEFT',12,-130)
+    U.taskButton=Button(side,L('任务检查'),180,function()U.mode=nil;U.boss=nil;U.allLoot=false;U.scroll:SetVerticalScroll(0);D.Refresh();U.Render()end);U.taskButton:SetPoint('TOPLEFT',12,-96)
+    U.allLootButton=Button(side,L('全部掉落'),180,function()U.mode=nil;U.boss=nil;U.allLoot=true;U.scroll:SetVerticalScroll(0);U.Render()end);U.allLootButton:SetPoint('TOPLEFT',12,-130)
+    U.mapButton=Button(side,L('副本地图'),180,function()U.mode='map';U.boss=nil;U.allLoot=false;U.Render()end);U.mapButton:SetPoint('TOPLEFT',12,-164)
+    U.checklistButton=Button(side,L('本次目标清单'),180,function()U.mode='checklist';U.boss=nil;U.allLoot=false;U.scroll:SetVerticalScroll(0);U.Render()end);U.checklistButton:SetPoint('TOPLEFT',12,-198)
     U.bossButtons={}
-    U.bossScroll=CreateFrame('ScrollFrame',nil,side,'UIPanelScrollFrameTemplate');U.bossScroll:SetPoint('TOPLEFT',12,-166);U.bossScroll:SetPoint('BOTTOMRIGHT',-28,10)
+    U.bossScroll=CreateFrame('ScrollFrame',nil,side,'UIPanelScrollFrameTemplate');U.bossScroll:SetPoint('TOPLEFT',12,-234);U.bossScroll:SetPoint('BOTTOMRIGHT',-28,10)
     U.bossContent=CreateFrame('Frame',nil,U.bossScroll);U.bossContent:SetSize(160,1);U.bossScroll:SetScrollChild(U.bossContent)
     local right=Box(f);right:SetPoint('TOPLEFT',side,'TOPRIGHT',10,0);right:SetPoint('BOTTOMRIGHT')
     U.title=Label(right,L('副本助手'),18);U.title:SetPoint('TOPLEFT',14,-14);U.title:SetPoint('TOPRIGHT',-145,-14)
     U.alerts=Button(right,L('浮窗：开'),112,function()local s=D.Settings();s.alerts=not s.alerts;D.taskDismissed=false;D.Refresh()end);U.alerts:SetPoint('TOPRIGHT',-12,-10)
     U.summary=Label(right,'',13);U.summary:SetPoint('TOPLEFT',14,-46);U.summary:SetPoint('TOPRIGHT',-14,-46);U.summary:SetHeight(42)
-    U.scroll=CreateFrame('ScrollFrame',nil,right,'UIPanelScrollFrameTemplate');U.scroll:SetPoint('TOPLEFT',14,-96);U.scroll:SetPoint('BOTTOMRIGHT',-32,58)
+    U.scroll=CreateFrame('ScrollFrame',nil,right,'UIPanelScrollFrameTemplate');U.scroll:SetPoint('TOPLEFT',14,-96);U.scroll:SetPoint('BOTTOMRIGHT',-32,14)
     U.content=CreateFrame('Frame',nil,U.scroll);U.content:SetSize(500,1);U.scroll:SetScrollChild(U.content);U.rows={}
     U.preparation=Label(U.content,'',13);U.preparation:SetPoint('TOPLEFT',4,-4);U.preparation:SetTextColor(.95,.83,.52)
+    if WoWAIDungeonMap then
+        U.mapFrame=WoWAIDungeonMap.Create(right,function(boss)U.mode=nil;U.boss=boss;U.allLoot=false;U.scroll:SetVerticalScroll(0);U.Render()end)
+        U.mapFrame:SetPoint('TOPLEFT',14,-96);U.mapFrame:SetPoint('BOTTOMRIGHT',-14,14);U.mapFrame:Hide()
+    end
     U.scroll:HookScript('OnSizeChanged',function()if U.frame:IsVisible()then U.Render()end end)
-    U.footer=Label(right,L('按当前天赋自动比较；预计升级是基础属性估算。资料未完整覆盖所有副本。'),12);U.footer:SetPoint('BOTTOMLEFT',14,12);U.footer:SetPoint('BOTTOMRIGHT',-14,12);U.footer:SetHeight(32);U.footer:SetTextColor(.68,.64,.54)
 end
 local function BuildHUD()
     local f=CreateFrame('Frame','WoWAIDungeonHUD',UIParent);U.hud=f;f:SetSize(370,492);f:SetFrameStrata('MEDIUM');f:SetClampedToScreen(true);f:SetMovable(true)
@@ -97,7 +101,7 @@ local function BuildHUD()
         p.title=Label(p,key=='task' and L('副本任务') or L('首领掉落'),15);p.title:SetPoint('TOPLEFT',12,-10);p.title:SetPoint('TOPRIGHT',-35,-10)
         p.body=Label(p,'',13);p.body:SetPoint('TOPLEFT',12,-36);p.body:SetPoint('BOTTOMRIGHT',-12,40)
         p.close=Button(p,'×',24,function()if key=='task'then D.taskVisible=false;D.taskDismissed=true else D.bossVisible=false end;U.Render()end);p.close:SetPoint('TOPRIGHT',-6,-6)
-        p.details=Button(p,L('查看详情'),100,function()U.lastDungeon=D.instance and D.instance.id;U.allLoot=false;U.boss=key=='boss' and D.boss or nil;WoWAI.SelectTab('dungeon')end);p.details:SetPoint('BOTTOMRIGHT',-10,9)
+        p.details=Button(p,L('查看详情'),100,function()U.mode=key=='task' and 'checklist' or nil;U.lastDungeon=D.instance and D.instance.id;U.allLoot=false;U.boss=key=='boss' and D.boss or nil;WoWAI.SelectTab('dungeon')end);p.details:SetPoint('BOTTOMRIGHT',-10,9)
         if key=='boss' then
             p:SetHeight(278);p.body:ClearAllPoints();p.body:SetPoint('TOPLEFT',12,-36);p.body:SetPoint('TOPRIGHT',-12,-36);p.body:SetHeight(32)
             p.items={}
@@ -146,20 +150,37 @@ function U.Render(force)
     local d=DisplayedDungeon();if not d then return end
     if U.lastDungeon~=d.id then U.boss=nil;U.allLoot=false;U.lastDungeon=d.id;U.scroll:SetVerticalScroll(0);U.bossScroll:SetVerticalScroll(0)end
     U.sideTitle:SetText(WoWAILocale.Field(d));U.prev:SetEnabled(not D.instanceKey);U.next:SetEnabled(not D.instanceKey)
-    if d.counts then
-        U.footer:SetText(string.format(L('本地资料 · %s · %d 项任务 / %d 件掉落；含经典参考，尚未全部核实。'),d.sourceDate or '',d.counts.quests,d.counts.items))
-    end
     U.taskButton:SetText(D.instanceKey and L('任务检查') or L('进本前检查'))
     U.alerts:SetText(D.Settings().alerts==false and L('浮窗：关') or L('浮窗：开'))
     for i,b in ipairs(d.bosses)do
         local button=U.bossButtons[i]
         if not button then button=Button(U.bossContent,'',160,nil);button:SetPoint('TOPLEFT',0,-(i-1)*34);U.bossButtons[i]=button end
-        button:SetText(WoWAILocale.Field(b));button:SetScript('OnClick',function()U.boss=b;U.allLoot=false;U.scroll:SetVerticalScroll(0);U.Render()end);button:Show()
+        local number=WoWAIDungeonMap and WoWAIDungeonMap.Number(d,b)
+        local bundled=WoWAIDungeonAtlas and WoWAIDungeonAtlas[d.id]
+        button:SetText((number and tostring(number)..'. ' or (not bundled and i..'. ' or ''))..WoWAILocale.Field(b));button:SetScript('OnClick',function()U.mode=nil;U.boss=b;U.allLoot=false;U.scroll:SetVerticalScroll(0);U.Render()end);button:Show()
     end
     for i=#d.bosses+1,#U.bossButtons do U.bossButtons[i]:Hide()end
     U.bossContent:SetHeight(math.max(1,#d.bosses*34))
     ResetRows()
-    if U.boss or U.allLoot then
+    if U.mapFrame then U.mapFrame:Hide() end;U.scroll:Show()
+    if U.mode=='map' then
+        U.title:SetText(WoWAILocale.Field(d)..' · '..L('副本地图'));U.summary:SetText(L('按楼层查看；首领编号可打开掉落详情。'))
+        if U.mapFrame then U.scroll:Hide();WoWAIDungeonMap.Show(U.mapFrame,d);return end
+        Row(L('副本地图待补充'),L('请重新加载插件以启用副本地图。'))
+    elseif U.mode=='checklist' then
+        local checked,counts,complete=D.Check(d);local active=0
+        U.title:SetText(WoWAILocale.Field(d)..' · '..L('本次目标清单'));U.summary:SetText(D.Summary(d,counts))
+        for _,r in ipairs(checked) do
+            if r.live and r.status=='active' then
+                local lines={}
+                for _,o in ipairs(r.live.objectives or {}) do if not o.done then lines[#lines+1]='· '..(o.text or '') end end
+                if #lines==0 then lines[1]=WoWAILocale.Field(r.quest,'instructions') end
+                Row(r.live.title,table.concat(lines,'\n'));active=active+1
+            end
+        end
+        if not complete then Row(L('任务列表正在读取'),L('任务列表暂不完整，暂不能判断目标是否全部完成。'))
+        elseif active==0 then Row(L('没有待完成的已接目标'),L('已完成目标会自动移出清单；漏接、前置条件和交付地点请查看任务检查。')) end
+    elseif U.boss or U.allLoot then
         U.title:SetText(U.allLoot and (WoWAILocale.Field(d)..' · '..L('全部掉落')) or (WoWAILocale.Field(U.boss)..L(' · 掉落')));local p=WoWAIGear.Profile();U.summary:SetText(p.className..' · '..p.name..' · '..p.points..L(' 点主系天赋')..'\n'..WoWAIGear.Guidance(p))
         local loot=D.Loot(U.boss,d,U.allLoot)
         for _,r in ipairs(loot)do
@@ -168,7 +189,6 @@ function U.Render(force)
             if reference then for _,line in ipairs(reference)do a[#a+1]=WoWAILocale.Reference(line)end
             else for _,s in ipairs(r.item.ref.stats or {})do a[#a+1]='+'..tostring(s.value)..' '..L(s.label) end end
             for _,e in ipairs((WoWAILocale.Get()=='enUS' and r.item.ref.effectsEn or r.item.ref.effects) or {})do a[#a+1]=WoWAILocale.Reference(e.text or '') end
-            if WoWAILocale.Get()=='enUS' and (not r.item.ref.nameEn or (#(r.item.ref.effects or {})>0 and not r.item.ref.effectsEn)) then a[#a+1]=L('英文资料待补充，请以游戏任务日志和物品提示为准。') end
             a[#a+1]=Source(r.item)..L(' · 装备需求 ')..r.item.level..L(' 级')
             local origins={};for _,key in ipairs(r.item.ref.bosses or {})do for _,b in ipairs(d.bosses)do if b.key==key then origins[#origins+1]=WoWAILocale.Field(b)end end end
             a[#a+1]=L('掉落来源：')..(#origins>0 and table.concat(origins,' / ') or (WoWAILocale.Field(r.item.ref,'from')~='' and WoWAILocale.Field(r.item.ref,'from') or L('具体来源待核实')))
@@ -188,7 +208,10 @@ function U.Render(force)
             local rank={missing=1,active=2,inside=3,unknown=4,ready=5,unavailable=6,done=7};local rows={};for _,r in ipairs(checked)do rows[#rows+1]=r end;table.sort(rows,function(a,b)if rank[a.status]~=rank[b.status]then return rank[a.status]<rank[b.status]end;return a.quest.id<b.quest.id end)
             for _,r in ipairs(rows)do
                 local q=r.quest;local a={L(FACTION[r.faction] or '阵营待核实')..' · '..r.reason,D.LevelText(q),L('接取：')..WoWAILocale.Field(q,'from'),WoWAILocale.Field(q,'instructions')};if q.prerequisites and q.prerequisites~='' then a[#a+1]=L('前置链：')..WoWAILocale.Field(q,'prerequisites') end
-                if q.basis=='classic' then table.insert(a,1,L('经典版任务流程参考；无限版目标和奖励请以游戏任务日志为准。'))end
+                local prerequisites=D.PrerequisiteText(q);if prerequisites~='' then a[#a+1]=prerequisites end
+                if q.pickupDetails and q.pickupDetails~=q.from then a[#a+1]=L('接取位置详情：')..WoWAILocale.Field(q,'pickupDetails')end
+                if q.turnIn then a[#a+1]=L('交付：')..WoWAILocale.Field(q,'turnIn')end
+                if q.basis=='classic' then a[1]=a[1]..' · '..L('[经典版参考] ')end
                 if r.status=='active' then a[#a+1]=Objective(r)end
                 for i,s in ipairs(q.steps or {})do
                     a[#a+1]=L('前置步骤 ')..i..'：'..WoWAILocale.Field(s)..(s.optional and L('（可选）') or '')..'\n'..WoWAILocale.Field(s,'from')..'\n'..WoWAILocale.Field(s,'instructions')
@@ -197,19 +220,17 @@ function U.Render(force)
                 if q.xp then a[#a+1]=L('参考经验：')..q.xp end
                 if q.rep then a[#a+1]=L('声望：')..WoWAILocale.Field(q,'rep')end
                 if q.rewardNote then a[#a+1]=WoWAILocale.Field(q,'rewardNote')end
-                if WoWAILocale.Get()=='enUS' and not q.instructionsEn and not r.live then a[#a+1]=L('英文资料待补充，请以游戏任务日志和物品提示为准。') end
                 Row((COLOR[r.status]or'')..'['..L(STATUS[r.status])..'] '..(r.live and r.live.title or WoWAILocale.Field(q))..'|r',table.concat(a,'\n'))
                 for _,reward in ipairs(q.rewards or {})do
-                    local item=WoWAIGear.Item(reward);local info={L('奖励及选择数量以游戏任务窗口为准。')}
+                    local item=WoWAIGear.Item(reward);local info={}
                     for _,s in ipairs(reward.stats or {})do info[#info+1]='+'..s.value..' '..L(s.label)end
                     Row(L('任务奖励：')..item.name,table.concat(info,'\n'),item)
                 end
             end
         end
-        if (counts.factionUnknown or 0)>0 then Row(L('阵营待核实：')..counts.factionUnknown..L(' 项'),L('未确认归属的任务暂不列入清单，也不计入漏接；不会把阵营缺失当作双方可接。'))end
+        if (counts.factionUnknown or 0)>0 then Row(L('阵营待核实：')..counts.factionUnknown..L(' 项'),'')end
         if #checked==0 and #d.quests>0 and (counts.factionUnknown or 0)==0 then Row(L('暂无适合当前阵营的已收录任务'),L('对方阵营的任务已隐藏。'))end
         if #d.quests==0 then Row(L('任务资料待补充'),L('暂不能判断是否接满。'))end
-        Row(L('资料范围'),L('目前是已收录清单，不能保证覆盖全部新增、隐藏或职业任务。\n')..d.source)
     end
     FinishRows()
 end

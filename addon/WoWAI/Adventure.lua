@@ -235,9 +235,15 @@ function J.PlanningQuests(p)
     for _,q in ipairs(J.EligibleQuests(p.quests)) do
         local localPoint=false
         for _,w in ipairs(q.locations or {}) do if w.m==p.scopeMap then localPoint=true end end
-        if not p.scopeMap or localPoint or #(q.locations or {})==0 then out[#out+1]=q end
+        if not q.offMapPOI and (not p.scopeMap or localPoint or #(q.locations or {})==0) then out[#out+1]=q end
     end
     return out
+end
+function J.InScope(q,map)
+    if q.offMapPOI then return false end
+    if not map or #(q.locations or {})==0 then return true end
+    for _,w in ipairs(q.locations) do if w.m==map then return true end end
+    return false
 end
 function J.NavigationRoute(p)
     if not p then return {} end
@@ -247,12 +253,12 @@ function J.BuildRegions()
     local p=char.plan;p.regions={};p.turnedIn={}
     local byID={};for _,q in ipairs(p.quests) do byID[q.id]=q end
     for _,stop in ipairs(p.route) do
-        local q=byID[stop.questID];local name=q.region or '';local r=p.regions[#p.regions]
+        local q=byID[stop.questID];local name=stop.region or q.region or '';local r=p.regions[#p.regions]
         -- Never merge far-apart points or cross objective/turn-in phases.
         if not r or name=='' or r.name~=name or r.m~=stop.m or r.kind~=stop.kind or (r.x-stop.x)^2+(r.y-stop.y)^2>64 then
             r={m=stop.m,x=stop.x,y=stop.y,name=name~='' and name or q.title,kind=stop.kind,members={},number=#p.regions+1};p.regions[#p.regions+1]=r
         end
-        r.members[#r.members+1]={questID=q.id,phase=stop.kind,title=q.title}
+        r.members[#r.members+1]={questID=q.id,phase=stop.kind,title=stop.label or q.title,action=stop.action,objectiveIndex=stop.objectiveIndex,stepID=stop.stepID,waypoint=stop.objectiveIndex and {m=stop.m,x=stop.x,y=stop.y,source=stop.source} or nil}
     end
 end
 function J.UpdateRegions()
@@ -278,11 +284,15 @@ function J.UpdateRegions()
         local closed,removed,lines=0,0,{};local target
         for _,member in ipairs(r.members) do
             local q=byID[member.questID];planned[member.questID]=true
-            member.removed=not q and not p.turnedIn[member.questID] or false
-            member.done=p.turnedIn[member.questID] or (member.phase~='turnin' and q and q.complete) or member.removed or false
+            local inScope=false
+            for _,w in ipairs(q and q.locations or {}) do if w.m==p.scopeMap then inScope=true end end
+            member.outOfScope=q and (q.offMapPOI or (p.scopeMap and #q.locations>0 and not inScope)) or false
+            member.removed=(not q and not p.turnedIn[member.questID]) or member.outOfScope or false
+            local objective=q and member.objectiveIndex and member.objectiveIndex>0 and q.objectives[member.objectiveIndex]
+            member.done=p.turnedIn[member.questID] or (member.phase~='turnin' and q and (q.complete or (objective and objective.done))) or member.removed or false
             if member.done then closed=closed+1;if member.removed then removed=removed+1 end
-            elseif not target and q and q.waypoint then target=q.waypoint;r.questID=q.id end
-            lines[#lines+1]=(member.removed and L('[已移除] ') or member.done and L('[完成] ') or L('[进行中] '))..member.title
+            elseif not target and q then target=member.waypoint or q.waypoint;r.questID=q.id end
+            lines[#lines+1]=(member.outOfScope and L('[其他地图] ') or member.removed and L('[已移除] ') or member.done and L('[完成] ') or L('[进行中] '))..member.title
             if member.phase~='turnin' and q and q.complete and not p.turnedIn[q.id] and not turnins[q.id] and q.waypoint and q.waypoint.m==p.scopeMap then
                 local w=q.waypoint;additions[#additions+1]={m=w.m,x=w.x,y=w.y,name=L('交任务：')..q.title,kind='turnin',members={{questID=q.id,phase='turnin',title=q.title}}};turnins[q.id]=true
             end
@@ -315,12 +325,32 @@ function J.UpdateRegions()
     end
     return true
 end
+function J.PointObjectives(q,p)
+    if q.complete then return nil end
+    local kind=p[4]>4 and p[4]-4 or p[4];local types={'monster','object','item'}
+    if not types[kind] or type(p[5])~='number' or p[5]<=0 or p[5]~=math.floor(p[5]) then return nil end
+    local bucket,indices={},{}
+    for i,o in ipairs(q.objectives or {}) do if o.type==types[kind] then bucket[#bucket+1]=i end end
+    local mask,bit=p[5],1
+    while mask>0 do
+        if mask%2==1 then if not bucket[bit] then return nil end;indices[#indices+1]=bucket[bit] end
+        mask=math.floor(mask/2);bit=bit+1
+    end
+    return #indices>0 and indices or nil
+end
+function J.PointMatchesObjective(q,w,index)
+    if q.complete or type(w.objectiveIndices)~='table' or #w.objectiveIndices==0 then return true end
+    for _,i in ipairs(w.objectiveIndices) do
+        if q.objectives[i] and not q.objectives[i].done and (index==0 or index==i) then return true end
+    end
+    return false
+end
 function J.Locations(q)
     if q.dungeon then return {} end
     local out,maps,seen={},{},{}
-    local function Add(m,x,y,source,entrance,key)
+    local function Add(m,x,y,source,entrance,key,indices)
         if type(m)~='number' or type(x)~='number' or type(y)~='number' or x~=x or y~=y or x<0 or x>100 or y<0 or y>100 or (x==0 and y==0) then return end
-        out[#out+1]={m=m,x=x,y=y,source=source,entrance=entrance or false,key=key or ('p'..(#out+1))}
+        out[#out+1]={m=m,x=x,y=y,source=source,entrance=entrance or false,key=key or ('p'..(#out+1)),objectiveIndices=indices}
     end
     local function Map(m)if type(m)=='number' and not seen[m] then seen[m]=true;maps[#maps+1]=m end end
     local pos=J.Position();Map(pos.map);Map(Try(C_QuestLog and C_QuestLog.GetMapForQuestPOIs))
@@ -338,15 +368,28 @@ function J.Locations(q)
             if poi.questID==q.id and type(poi.x)=='number' and type(poi.y)=='number' then Add(map,poi.x*100,poi.y*100,L('游戏地图任务标记'),false,'poi'..map) end
         end
     end
-    -- Live locations take precedence over the shipped reference database.
-    if #out>0 then return out end
+    -- A POI can project a neighbouring zone. Matching live/reference turn-in
+    -- positions resolve this ambiguity without replacing a lone live POI.
+    if #out>0 then
+        local matched={}
+        if q.complete then for _,w in ipairs(out) do for _,p in ipairs(points) do
+            if w.m==p[1] and (w.x-p[2])^2+(w.y-p[3])^2<0.0625 then matched[w.m]=true end
+        end end end
+        local filtered={}
+        for _,w in ipairs(out) do
+            local info=Try(C_Map and C_Map.GetMapInfoAtPosition,w.m,w.x/100,w.y/100)
+            if (not info or info.mapType~=3 or info.mapID==w.m) and (not next(matched) or matched[w.m]) then filtered[#filtered+1]=w end
+        end
+        q.offMapPOI=#filtered==0 or nil
+        return filtered
+    end
     local buckets={};for _,o in ipairs(q.objectives) do local t=o.type or '';buckets[t]=buckets[t] or {};table.insert(buckets[t],o) end
     local kindType={'monster','object','item'}
     for i,p in ipairs(points) do
         local kind=p[4]>4 and p[4]-4 or p[4];local bucket=buckets[kindType[kind] or ''];local wanted=q.complete or not bucket or #bucket==0
         local mask,bit=p[5],1
         while mask>0 do if mask%2==1 and (not bucket or not bucket[bit] or not bucket[bit].done) then wanted=true end;mask=math.floor(mask/2);bit=bit+1 end
-        if wanted then Add(p[1],p[2],p[3],L('无限任务资料 / EverythingQuests')..(p[4]>4 and L('（副本入口）') or ''),p[4]>4,'db'..i) end
+        if wanted then Add(p[1],p[2],p[3],L('无限任务资料 / EverythingQuests')..(p[4]>4 and L('（副本入口）') or ''),p[4]>4,'db'..i,J.PointObjectives(q,p)) end
     end
     table.sort(out,function(a,b)
         local function Score(w)return (w.m==pos.map and 0 or 1000000)+(w.x-(pos.x or 50))^2+(w.y-(pos.y or 50))^2 end
@@ -469,7 +512,7 @@ function J.Plan(startNavigation,reset)
     local activeID=at and old and old.route[at] and old.route[at].questID
     char.plan={id=id,t=time(),quests=qs,complete=complete,position=pos,route=route,order=order,missing=missing,stale=false,fingerprint=fingerprint}
     if old and old.fingerprint==fingerprint then
-        char.plan.id=old.id;char.plan.ai=old.ai;char.plan.summary=old.summary;char.plan.order=old.order or order
+        char.plan.id=old.id;char.plan.ai=old.ai;char.plan.summary=old.summary;char.plan.order=old.order or order;char.plan.stepsV2=old.stepsV2
         for _,q in ipairs(qs) do for _,prev in ipairs(old.quests) do if prev.id==q.id then
             q.reason=prev.reason;q.action=prev.action;q.region=prev.region;q.sourceURL=prev.sourceURL
             if old.ai and prev.waypoint then for _,w in ipairs(q.locations) do if w.key==prev.waypoint.key then q.waypoint=w end end end
@@ -493,7 +536,24 @@ function J.ReorderRoute()
     local p=char.plan;local byID={};for _,q in ipairs(p.quests) do byID[q.id]=q end
     p.route={};p.missing={}
     local order={}
-    for _,id in ipairs(p.order) do local q=byID[id];if q and not q.dungeon then local w=q.waypoint
+    if p.stepsV2 then
+        local seen,missing={},{}
+        for _,step in ipairs(p.stepsV2) do
+            local q=byID[step.questID]
+            if q and not q.dungeon and J.InScope(q,p.scopeMap) then
+                if not seen[q.id] then order[#order+1]=q.id;seen[q.id]=true end
+                local index=step.objectiveIndex or 0;local o=q.objectives[index]
+                local done=step.phase~='turnin' and (q.complete or (index>0 and o and o.done))
+                local w=step.waypoint
+                if not done then
+                    if w then p.route[#p.route+1]={questID=q.id,objectiveIndex=index,stepID=step.stepID,region=step.region,action=step.action,m=w.m,x=w.x,y=w.y,source=w.source,label=q.title..(index>0 and (' · '..(o and o.text or tostring(index))) or ''),kind=step.phase}
+                    elseif not missing[q.id] then p.missing[#p.missing+1]=q.id;missing[q.id]=true end
+                end
+            end
+        end
+        p.order=order;return
+    end
+    for _,id in ipairs(p.order) do local q=byID[id];if q and not q.dungeon and J.InScope(q,p.scopeMap) then local w=q.waypoint
         order[#order+1]=id
         if w then p.route[#p.route+1]={questID=id,m=w.m,x=w.x,y=w.y,source=w.source,label=(q.complete and L('交任务：') or L('完成：'))..q.title,kind=q.complete and 'turnin' or 'quest'}
         else p.missing[#p.missing+1]=id end
@@ -535,6 +595,10 @@ function J.PackQuest(q)
 end
 function J.SendPlan(automatic,mapOnly)
     if not current or not char then Notify(L('请等待角色进入世界。'));return end
+    if WoWAIZoneGuide and WoWAIZoneGuide.Active() then
+        if automatic==true then return end
+        WoWAIZoneGuide.Stop()
+    end
     if automatic==true and not char.autoPlan then return end
     if not db.enabled then Notify(L('请先开启冒险记录，以同步本次任务快照。'));return end
     if inFlight or pendingAI or draftFlight then
@@ -655,13 +719,37 @@ function J.PlanReply(reply)
         if not char.autoPlan then planNotice=L('规划期间任务已变化，旧结果未应用；请重新规划当前任务。') end
         J.Render();return false
     end
-    if reply.status~='done' or type(result)~='table' or result.ledger~=char.ledger or result.snapshot~=p.id or type(result.steps)~='table' or #result.steps~=#J.PlanningQuests(p) then
+    if reply.status~='done' or type(result)~='table' or result.ledger~=char.ledger or result.snapshot~=p.id or type(result.steps)~='table' then
         p.error=reply.text or L('AI 规划失败，请重试。');J.Render();return false
     end
     local byID,seen={},{};for _,q in ipairs(J.PlanningQuests(p)) do byID[q.id]=q end
-    for _,step in ipairs(result.steps) do if not byID[step.questID] or byID[step.questID].dungeon or seen[step.questID] then p.error=L('任务规划包含已跳过的副本任务或数据不完整。');J.Render();return false end;seen[step.questID]=true end
+    -- Validate the whole reply before replacing the previous usable route.
+    local staged={}
+    local function Reject()p.error=L('任务规划包含已跳过的副本任务或数据不完整。');J.Render();return false end
+    for _,step in ipairs(result.steps) do
+        local q=byID[step.questID];local index=step.objectiveIndex or 0
+        if not q or q.dungeon or type(index)~='number' or index<0 or index~=math.floor(index) then return Reject() end
+        if index>0 and (q.complete or not q.objectives[index] or q.objectives[index].done) then return Reject() end
+        local indices=seen[q.id] or {};if indices[index] or indices[0] or (index==0 and next(indices)) then return Reject() end
+        indices[index]=true;seen[q.id]=indices
+        local matched;local w=step.waypoint
+        if w~=nil then
+            if type(w)~='table' then return Reject() end
+            for _,candidate in ipairs(q.locations or {}) do
+                if (not w.key or candidate.key==w.key) and candidate.m==w.m and type(w.x)=='number' and type(w.y)=='number'
+                    and math.abs(candidate.x-w.x)<=0.000001 and math.abs(candidate.y-w.y)<=0.000001
+                    and (not p.scopeMap or w.m==p.scopeMap) then matched=candidate;break end
+            end
+            if not matched or not J.PointMatchesObjective(q,matched,index) then return Reject() end
+        end
+        staged[#staged+1]={questID=q.id,objectiveIndex=index,stepID=q.id..':'..(q.complete and 'turnin' or 'quest')..':'..index,phase=q.complete and 'turnin' or 'quest',region=Text(step.region),action=Text(step.action),waypoint=matched}
+    end
+    for id,q in pairs(byID) do
+        local indices=seen[id];if not indices then return Reject() end
+        if not indices[0] then for i,o in ipairs(q.objectives) do if not o.done and not indices[i] then return Reject() end end end
+    end
     local at=WoWAIMap and WoWAIMap.AdventureStatus and WoWAIMap.AdventureStatus()
-    p.order={};p.summary=result.summary;p.ai=true;p.localRoute=nil;p.error=nil;planNotice=nil
+    p.order={};p.stepsV2=staged;p.summary=result.summary;p.ai=true;p.localRoute=nil;p.error=nil;planNotice=nil
     for _,step in ipairs(result.steps) do
         local q=byID[step.questID];q.reason=step.reason;q.action=step.action;q.region=Text(step.region);q.sourceURL=step.sourceURL;q.waypoint=nil
         local w=step.waypoint
@@ -873,12 +961,15 @@ function J.Tick()
             planDue=nil
         end
     end
-    if autoDue and time()>=autoDue and time()>=nextAI and char.autoPlan and db.enabled and not pendingAI and not inFlight and not draftFlight then
+    if autoDue and time()>=autoDue and time()>=nextAI and char.autoPlan and db.enabled and not pendingAI and not inFlight and not draftFlight and not (WoWAIZoneGuide and WoWAIZoneGuide.Active()) then
         autoDue=nil;J.SendPlan(true)
     end
+    if WoWAIQuestOffers then WoWAIQuestOffers.Tick() end
+    if WoWAIZoneGuide then WoWAIZoneGuide.Tick() end
     J.Render()
 end
 function J.Event(event,...)
+    if WoWAIZoneGuide and (event:match('^QUEST_') or event:match('^ZONE_') or event=='PLAYER_ENTERING_WORLD' or event=='PLAYER_LEVEL_UP' or event=='SKILL_LINES_CHANGED') then WoWAIZoneGuide.Invalidate() end
     if event=='ADDON_LOADED' then
         if ...~=ADDON_NAME then return end
         WoWAIAdventureDB=WoWAIAdventureDB or {enabled=true,characters={},queue={},adventureExport={}}
@@ -900,6 +991,7 @@ function J.Event(event,...)
     elseif event=='QUEST_POI_UPDATE' then J.RefreshLocations()
     elseif event=='QUEST_ACCEPTED' or event=='QUEST_TURNED_IN' or event=='QUEST_REMOVED' then
         local id=event=='QUEST_ACCEPTED' and (type(b)=='number' and b or a) or a
+        if event=='QUEST_ACCEPTED' and WoWAIQuestOffers then WoWAIQuestOffers.Accepted(id) end
         if event=='QUEST_TURNED_IN' and char.plan and char.plan.regions then char.plan.turnedIn[id]=true end
         local q=questCache[id];local title=q and q.title or Try(C_QuestLog and C_QuestLog.GetTitleForQuestID,id)
         local kind=event=='QUEST_ACCEPTED' and 'quest_accept' or event=='QUEST_TURNED_IN' and 'quest_turnin' or 'quest_removed'

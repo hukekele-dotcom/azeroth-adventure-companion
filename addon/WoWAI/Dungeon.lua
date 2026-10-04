@@ -158,7 +158,31 @@ function D.Check(dungeon,name)
             if not catalogued[q.id] then add({id=q.id,name=q.title,instructions=L('按下方实时任务目标完成。'),from=L('已在任务日志中')})end
         end
     end
-    return rows,counts
+    return rows,counts,complete
+end
+function D.PrerequisiteText(q)
+    if not q.pre and not q.preAll and not q.parent then return '' end
+    local catalog={};for _,d in ipairs(WoWAIDungeonData and WoWAIDungeonData.dungeons or {}) do for _,entry in ipairs(d.quests or {}) do catalog[entry.id]=entry end end
+    local qs,complete=WoWAIAdventure.Quests();local active={};for _,entry in ipairs(qs) do active[entry.id]=true end
+    local lines={};local faction=D.PlayerFaction()
+    local function Group(ids,label,held)
+        if type(ids)~='table' or #ids==0 then return end
+        lines[#lines+1]=L(label)
+        for _,id in ipairs(ids) do
+            local entry=catalog[id];local side=entry and D.QuestFaction(entry)
+            -- A malformed cross-faction dependency must not leak the opposing quest list.
+            if not entry or side=='both' or side==faction then
+                local state
+                if held then state=active[id];if state==nil and complete then state=false end else state=D.Completed(id) end
+                local name=entry and WoWAILocale.Field(entry) or (L('任务 ID：')..tostring(id))
+                lines[#lines+1]=(state and L('[已满足] ') or state==false and L('[未满足] ') or L('[待确认] '))..name
+            else lines[#lines+1]=L('前置资料与当前阵营不匹配，待核实。') end
+        end
+    end
+    Group(q.pre,'前置任务：任一已交付')
+    Group(q.preAll,'前置任务：全部已交付')
+    if q.parent then Group({q.parent},'需要持有任务',true) end
+    return table.concat(lines,'\n')
 end
 function D.Refresh()
     local inside,kind=Read(IsInInstance)

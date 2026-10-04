@@ -56,7 +56,9 @@ local function Layers()
 	for _, l in ipairs(m and m.layers or {}) do
 		if not mdb.clearedLayers[l.name] then out[#out + 1] = l end
 	end
-	if DB().adventureRoute then out[#out + 1] = DB().adventureRoute end
+	if DB().zoneGuide then out[#out+1]=DB().zoneGuide
+    elseif DB().adventureRoute and not (WoWAIZoneGuide and WoWAIZoneGuide.Active()) then out[#out + 1] = DB().adventureRoute end
+	if DB().pickupRoute then out[#out + 1] = DB().pickupRoute end
 	return out
 end
 
@@ -310,6 +312,9 @@ function M.Refresh()
 		if not mdb.hidden[l.name] then
 			local prev, first
 			for i, p in ipairs(l.points) do
+				-- Keep stored indices stable for region progress/navigation, but draw
+				-- only remaining adventure stops, linking past completed regions.
+				if not (l.name == "adventure-tasks" and p[7]) then
 				local x, y = Project(p[1], p[2] / 100, p[3] / 100, mapID)
 				local inside = x and x >= 0 and x <= 1 and y >= 0 and y <= 1
 				if inside then
@@ -346,6 +351,7 @@ function M.Refresh()
 					first = first or { x, y, color }
 				else
 					prev = nil
+				end
 				end
 			end
 			-- A loop closes back to its first stop.
@@ -387,6 +393,40 @@ local function NavPoint()
 	return l, l.points[n.index], n.index
 end
 
+function M.NavigationTipLines()
+	local l,p,i=NavPoint();if not l then return {} end
+	if l.name=='adventure-tasks' and WoWAIAdventure and WoWAIAdventureUI then
+		local _,character=Try(WoWAIAdventure.Context)
+		local guidance=character and Try(WoWAIAdventureUI.GuidanceLines,character.plan,i)
+		if type(guidance)=='table' and #guidance>0 then return guidance end
+	end
+	-- Saved routes remain useful before the task module restores its context.
+	local lines={l.title,p[4]}
+	local map=Try(C_Map.GetMapInfo,p[1])
+	lines[#lines+1]=(map and map.name or string.format(L('地图 %d'),p[1]))..string.format(' (%.1f, %.1f)',p[2],p[3])
+	if p[8] and p[8]~='' then lines[#lines+1]=p[8] end
+	return lines
+end
+
+local function NavigatorTip(self)
+	local lines=M.NavigationTipLines();if #lines==0 then return end
+	local signature=table.concat(lines,'\n')
+	if self.tipSignature==signature and Try(GameTooltip.IsOwned,GameTooltip,self) then return end
+	self.tipSignature=signature
+	GameTooltip:SetOwner(self,'ANCHOR_BOTTOM')
+	GameTooltip:ClearLines()
+	for i=1,math.min(#lines,16) do GameTooltip:AddLine(lines[i],1,1,1,true) end
+	if #lines>16 then GameTooltip:AddLine(L('更多指引请打开任务助手。'),0.8,0.7,0.4,true) end
+	GameTooltip:AddLine(' ')
+	GameTooltip:AddLine(L('Drag to move, right-click to skip this stop. /wow-ai map for options.'),0.6,0.6,0.6,true)
+	GameTooltip:Show()
+end
+
+local function HideNavigatorTip(self)
+	self.hovering=nil;self.tipSignature=nil
+	if Try(GameTooltip.IsOwned,GameTooltip,self) then GameTooltip:Hide() end
+end
+
 local function BuildNavigator()
 	nav = CreateFrame("Frame", "WoWAINavigator", UIParent, "BackdropTemplate")
 	nav:SetSize(250, 44)
@@ -421,12 +461,10 @@ local function BuildNavigator()
 	nav.text:SetJustifyH("LEFT")
 	nav.text:SetWordWrap(false)
 	nav:SetScript("OnEnter", function(self)
-		GameTooltip:SetOwner(self, "ANCHOR_BOTTOM")
-		GameTooltip:AddLine("Route")
-		GameTooltip:AddLine(L("Drag to move, right-click to skip this stop. /wow-ai map for options."), 1, 1, 1, true)
-		GameTooltip:Show()
+		self.hovering=true;self.tipSignature=nil;NavigatorTip(self)
 	end)
-	nav:SetScript("OnLeave", function() GameTooltip:Hide() end)
+	nav:SetScript("OnLeave", HideNavigatorTip)
+	nav:SetScript("OnHide", HideNavigatorTip)
 	nav:SetScript("OnUpdate", function(self, elapsed)
 		self.t = (self.t or 0) + elapsed
 		if self.t < 0.1 then return end
@@ -441,6 +479,7 @@ function M.UpdateNavigator()
 	if not l then if nav then nav:Hide() end return end
 	if not nav then BuildNavigator() end
 	nav:Show()
+	if nav.hovering and Try(GameTooltip.IsOwned,GameTooltip,nav) then NavigatorTip(nav) end
 	nav.title:SetText(string.format("%d/%d  %s", i, #l.points, p[4] ~= "" and p[4] or l.title))
 	local dist, bearing = Heading(p)
 	if not dist and type(bearing) == "string" then
@@ -463,6 +502,8 @@ function M.UpdateNavigator()
 end
 
 function M.Navigate(layer, index)
+    if layer~='zone-guide' and WoWAIZoneGuide then WoWAIZoneGuide.Stop() end
+    if layer~='quest-pickup' and WoWAIQuestOffers then WoWAIQuestOffers.Stop() end
     if layer ~= 'adventure-tasks' and WoWAIAdventure and WoWAIAdventure.NavigationStopped then WoWAIAdventure.NavigationStopped() end
 	local l = FindLayer(layer)
 	if not l then Print(L("no layer ") .. tostring(layer)); return end
@@ -476,12 +517,14 @@ end
 function M.Step(delta, arrived)
 	local l, _, i = NavPoint()
 	if not l then return end
+    if l.name=='zone-guide' and WoWAIZoneGuide then if not arrived and delta>0 then WoWAIZoneGuide.Skip()end;return end
 	local nexti = i + delta
 	while l.points[nexti] and l.points[nexti][7] do nexti=nexti+delta end
 	if nexti > #l.points then
 		if l.loop then nexti = 1 else
 			Print(L("route finished: ") .. l.title)
 			mdb.nav = nil
+            if l.name=='quest-pickup' and WoWAIQuestOffers then WoWAIQuestOffers.Stop() end
             if WoWAIAdventure and WoWAIAdventure.NavigationStopped then WoWAIAdventure.NavigationStopped() end
 			M.UpdateNavigator()
 			M.Refresh()
@@ -499,6 +542,8 @@ end
 function M.Stop(preserveAdventure)
 	if not preserveAdventure and WoWAIAdventure and WoWAIAdventure.NavigationStopped then WoWAIAdventure.NavigationStopped() end
 	DB().nav = nil
+	if not preserveAdventure and WoWAIQuestOffers then WoWAIQuestOffers.Stop() end
+    if not preserveAdventure and WoWAIZoneGuide then WoWAIZoneGuide.Stop() end
 	M.UpdateNavigator()
 	M.Refresh()
 end
@@ -515,6 +560,26 @@ function M.SetAdventureRoute(route, index, displayOnly)
 	end
 	DB().adventureRoute = #points > 0 and {name="adventure-tasks", title=route[1].members and L('区域路线 · 完成后自动推进') or L("任务路线 · 完成后点下一步"), ordered=true, loop=false, manualAdvance=true, points=points} or nil
 	if #points > 0 then if not displayOnly then M.Navigate("adventure-tasks", index or 1) else M.Refresh() end else M.StopAdventure() end
+end
+function M.SetQuestPickup(point,title,detail)
+    DB().pickupRoute={name='quest-pickup',title=L('任务指引'),ordered=false,manualAdvance=true,points={{point[1],point[2],point[3],title,'quest',nil,false,detail}}}
+    M.Navigate('quest-pickup',1)
+end
+function M.ClearQuestPickup()
+    if DB().nav and DB().nav.layer=='quest-pickup' then M.Stop(true) end
+    DB().pickupRoute=nil;M.Refresh()
+end
+function M.HasQuestPickup() return DB().pickupRoute~=nil end
+function M.SetZoneGuide(route)
+    local points={};for _,r in ipairs(route or {})do points[#points+1]={r.m,r.x,r.y,r.label,r.kind,r.number,false,r.detail}end
+    DB().zoneGuide=#points>0 and {name='zone-guide',title=L('本地图任务攻略'),ordered=true,manualAdvance=true,points=points} or nil
+    if #points>0 then M.Navigate('zone-guide',1) else M.ClearZoneGuide()end
+end
+function M.HasZoneGuide()return DB().zoneGuide~=nil end
+function M.ZoneGuideIndex()local n=DB().nav;return n and n.layer=='zone-guide' and n.index or 1 end
+function M.ClearZoneGuide()
+    if DB().nav and DB().nav.layer=='zone-guide'then M.Stop(true)end
+    DB().zoneGuide=nil;M.Refresh()
 end
 function M.AdventureStatus()
 	local n = DB().nav
@@ -543,7 +608,7 @@ function M.ClearAILayers()
 		d.clearedLayers[layer.name] = LayerKey(layer)
 		d.hidden[layer.name] = nil
 	end
-	if d.nav and d.nav.layer ~= "adventure-tasks" then M.Stop(true) end
+	if d.nav and d.nav.layer ~= "adventure-tasks" and d.nav.layer ~= 'quest-pickup' and d.nav.layer~='zone-guide' then M.Stop(true) end
 	M.Refresh()
 	Print(L("已清除 AI 地图标记及对应导航。"))
 end

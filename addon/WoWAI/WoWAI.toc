@@ -15,9 +15,15 @@ WoWAI.lua
 Map.lua
 QuestLocations.lua
 Adventure.lua
+QuestOffersData.lua
+QuestOffers.lua
+ZoneGuideData.lua
+ZoneGuide.lua
 Kills.lua
 AdventureUI.lua
 DungeonData.lua
 Gear.lua
 Dungeon.lua
+DungeonAtlas.lua
+DungeonMap.lua
 DungeonUI.lua

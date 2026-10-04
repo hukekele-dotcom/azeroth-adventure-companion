@@ -101,15 +101,20 @@ local function BuildTasks(parent)
     local t=CreateFrame('Frame',nil,parent);t:SetAllPoints(parent);U.tasks=t
     local side=Box(t);side:SetPoint('TOPLEFT');side:SetPoint('BOTTOMLEFT');side:SetWidth(200)
     t.groups={}
-    for i,v in ipairs({{'route',L('任务顺序')},{'ready',L('可交付')},{'missing',L('位置待确认')},{'skipped',L('副本已跳过')}}) do
+    for i,v in ipairs({{'mapguide',L('本地图任务攻略')},{'pickups',L('建议接取')},{'route',L('任务顺序')},{'ready',L('可交付')},{'missing',L('位置待确认')},{'skipped',L('副本已跳过')}}) do
         local key=v[1]
-        local b=Button(side,v[2],180,function()U.group=key;t.list:SetVerticalScroll(0);U.Render()end)
+        local b=Button(side,v[2],180,function()
+            U.group=key;if key=='mapguide' then U.guideMap=J.Position().map;U.guideRoute=nil end
+            t.list:SetVerticalScroll(0);t.detailScroll:SetVerticalScroll(0);U.Render()
+        end)
         b:SetPoint('TOPLEFT',10,-10-(i-1)*34);t.groups[key]=b
     end
-    t.list=Scroll(side);t.list:SetPoint('TOPLEFT',8,-152);t.list:SetPoint('BOTTOMRIGHT',-26,8)
+    t.list=Scroll(side);t.list:SetPoint('TOPLEFT',8,-220);t.list:SetPoint('BOTTOMRIGHT',-26,8)
     local right=Box(t);right:SetPoint('TOPLEFT',side,'TOPRIGHT',10,0);right:SetPoint('BOTTOMRIGHT');t.right=right
     t.title=Label(right,L('任务助手'),18);t.title:SetPoint('TOPLEFT',14,-14);t.title:SetPoint('TOPRIGHT',-124,-14);t.title:SetTextColor(GOLD[1],GOLD[2],GOLD[3]);t.title:SetWordWrap(false)
-    t.refresh=Button(right,L('刷新任务'),100,function()J.Plan(false)end);t.refresh:SetPoint('TOPRIGHT',-12,-10)
+    t.refresh=Button(right,L('刷新任务'),100,function()
+        if U.group=='mapguide' and WoWAIZoneGuide then WoWAIZoneGuide.Invalidate();WoWAIZoneGuide.Tick();U.Render()else J.Plan(false)end
+    end);t.refresh:SetPoint('TOPRIGHT',-12,-10)
     t.summary=Label(right,'');t.summary:SetPoint('TOPLEFT',14,-48);t.summary:SetPoint('TOPRIGHT',-14,-48);t.summary:SetHeight(42)
     t.detailScroll=Scroll(right);t.detailScroll:SetPoint('TOPLEFT',14,-96);t.detailScroll:SetPoint('BOTTOMRIGHT',-32,112)
     t.body=Label(t.detailScroll.content,'',15);t.body:SetPoint('TOPLEFT');t.body:SetPoint('TOPRIGHT');t.body:SetWordWrap(true)
@@ -117,13 +122,33 @@ local function BuildTasks(parent)
     t.hint=Label(right,L('箭头为直线方位，请自行绕开地形；到达后不会自动判定任务完成。'),12)
     t.hint:SetPoint('BOTTOMLEFT',14,82);t.hint:SetPoint('BOTTOMRIGHT',-14,82);t.hint:SetHeight(26);t.hint:SetTextColor(0.66,0.62,0.52)
     t.auto=Button(right,L('任务变化自动重算：关'),180,J.ToggleAutoPlan);t.auto:SetPoint('BOTTOMLEFT',14,48)
+    local function ChangeFlow(delta)
+        local G=WoWAIZoneGuide;if not G then return end
+        local options=G.FlowOptions(U.guideMap);local selected=G.Preview(U.guideMap,U.guideRoute).flow;local index=1
+        for i,r in ipairs(options)do if selected and r.id==selected.id then index=i end end
+        index=math.max(1,math.min(#options,index+delta));U.guideRoute=options[index] and options[index].id
+        t.detailScroll:SetVerticalScroll(0);U.Render()
+    end
+    t.flowPrev=Button(right,L('上一阶段'),95,function()ChangeFlow(-1)end);t.flowPrev:SetPoint('BOTTOMLEFT',14,48);t.flowPrev:Hide()
+    t.flowNext=Button(right,L('下一阶段'),95,function()ChangeFlow(1)end);t.flowNext:SetPoint('LEFT',t.flowPrev,'RIGHT',8,0);t.flowNext:Hide()
     Tip(t.auto,L('独立开关。开启后，接取、交付或关键目标变化会自动请求 AI；连续变化合并处理，会使用 AI 额度。开关本身不立即规划。'))
     t.cancel=Button(right,L('取消 AI 同步'),115,J.CancelSync);t.cancel:SetPoint('LEFT',t.auto,'RIGHT',8,0)
     t.ai=Button(right,L('AI 规划本地图'),150,function()J.SendPlan(false,true)end);t.ai:SetPoint('BOTTOMLEFT',14,12)
     Tip(t.ai,L('按当前所在地图规划已接任务，合并任务区域并标记数字；完成后自动推进。副本和其他地图任务跳过，不改变自动重算开关。'))
-    t.next=Button(right,L('跳到下一区'),110,U.NextTask);t.next:SetPoint('LEFT',t.ai,'RIGHT',8,0)
+    t.next=Button(right,L('跳到下一区'),110,function()if U.group=='mapguide' and WoWAIZoneGuide then WoWAIZoneGuide.Skip();U.Render()else U.NextTask()end end);t.next:SetPoint('LEFT',t.ai,'RIGHT',8,0)
     Tip(t.next,L('手动切换导航目标，不会把当前区域标为完成。通常无需点击，区域任务完成后自动推进。'))
     t.nav=Button(right,L('开始导航'),120,function()
+        if U.group=='mapguide' and WoWAIZoneGuide then
+            local active=WoWAIZoneGuide.Active()
+            local selected=WoWAIZoneGuide.Preview(U.guideMap,U.guideRoute).flow
+            if active and active.map==U.guideMap and active.route==(selected and selected.id) then WoWAIZoneGuide.Stop()else WoWAIZoneGuide.Start(U.guideMap,selected and selected.id)end
+            U.Render();return
+        end
+        if U.group=='pickups' and WoWAIQuestOffers then
+            local _,c=J.Context()
+            if c and c.questGuide and c.questGuide.id==U.pickup then WoWAIQuestOffers.Stop() else WoWAIQuestOffers.Navigate(U.pickup) end
+            U.Render();return
+        end
         if NavIndex() or J.NavigationWanted() then WoWAIMap.StopAdventure() else J.StartNavigation(U.quest) end
         U.Render()
     end);t.nav:SetPoint('BOTTOMRIGHT',-14,12)
@@ -243,8 +268,114 @@ local function BuildLogs(parent)
     l.cancel=Button(right,L('取消同步'),90,J.CancelSync);l.cancel:SetPoint('RIGHT',l.review,'LEFT',-6,0)
 end
 
+-- Guidance follows actual remaining objectives. AI instructions are scoped to
+-- a step, so a later step cannot overwrite the current step of the same quest.
+function U.GuidanceLines(p,navigationIndex)
+    if not p or not p.complete then return {} end
+    local byID={};for _,q in ipairs(p.quests or {}) do byID[q.id]=q end
+    local function Remaining(member)
+        local q=byID[member.questID];local index=member.objectiveIndex or 0
+        if not q or q.dungeon or member.done or member.removed or (p.turnedIn and p.turnedIn[q.id]) then return end
+        if member.phase=='turnin' then if q.complete then return q end
+        elseif not q.complete and (index==0 or (q.objectives[index] and not q.objectives[index].done)) then return q end
+    end
+    local regionIndex=navigationIndex or p.regionIndex
+    local current=p.regions and regionIndex and p.regions[regionIndex]
+    local members,name,number,point,nextRegion={},nil,nil,nil,nil
+    if current and not current.done then
+        members=current.members;name=current.name;number=current.number;point=current
+        for i=regionIndex+1,#p.regions do if not p.regions[i].done then nextRegion=p.regions[i];break end end
+    elseif not p.regions then
+        for i=navigationIndex or 1,navigationIndex or #(p.route or {}) do
+            local stop=p.route and p.route[i];if not stop then break end
+            local member={questID=stop.questID,phase=stop.kind,objectiveIndex=stop.objectiveIndex,action=stop.action}
+            if Remaining(member) then members={member};name=byID[stop.questID].title;point=stop;break end
+        end
+    end
+    local active={};for _,member in ipairs(members) do local q=Remaining(member);if q then active[#active+1]={q=q,member=member} end end
+    if #active==0 then return {} end
+    local lines={L('|cffe0b75e当前路线指引|r')}
+    lines[#lines+1]=L('前往：')..(number and ('['..number..'] ') or '')..(name or '')
+    if point then
+        local map=C_Map and C_Map.GetMapInfo and C_Map.GetMapInfo(point.m)
+        lines[#lines+1]=(map and map.name or string.format(L('地图 %d'),point.m))..string.format(' (%.1f, %.1f)',point.x,point.y)
+    end
+    for i,item in ipairs(active) do
+        local q,member=item.q,item.member;local index=member.objectiveIndex or 0
+        lines[#lines+1]=(i==1 and L('主要行动：') or L('同区兼做：'))..q.title
+        if member.action and member.action~='' then lines[#lines+1]=member.action
+        elseif member.phase=='turnin' then lines[#lines+1]=L('与交付 NPC 交谈，交付这项已完成的任务。')
+        else lines[#lines+1]=L('到达目标地点后，完成以下目标：') end
+        if member.phase~='turnin' then
+            for oi,o in ipairs(q.objectives or {}) do if not o.done and (index==0 or oi==index) then lines[#lines+1]='• '..o.text end end
+        end
+        if (q.group or 0)>1 and member.phase~='turnin' then lines[#lines+1]=L('此任务建议组队完成。') end
+    end
+    if nextRegion then lines[#lines+1]=L('下一站：')..'['..nextRegion.number..'] '..nextRegion.name end
+    return lines
+end
+
 local function RenderTasks(c,pending)
     local t,p=U.tasks,c.plan;local list={};local counts={route=0,ready=0,missing=0,skipped=0}
+    t.flowPrev:SetText(L('上一阶段'));t.flowNext:SetText(L('下一阶段'))
+    t.flowPrev:Hide();t.flowNext:Hide()
+    Active(t.groups.mapguide,U.group=='mapguide')
+    t.next:SetText(U.group=='mapguide' and L('跳过此步') or L('跳到下一区'))
+    if U.group=='mapguide' and WoWAIZoneGuide then
+        local G=WoWAIZoneGuide;local active=G.Active();U.guideMap=U.guideMap or J.Position().map
+        local maps=G.Maps()
+        U.guideMap=U.guideMap or (maps[1] and maps[1].id)
+        for i,map in ipairs(maps)do local id=map.id
+            local row=Row(t.list,i,map.name,(active and active.map==id) and L('正在使用') or (map.flow and L('区域任务流程') or L('任务资料')),id==U.guideMap,function()U.guideMap=id;U.guideRoute=nil;t.detailScroll:SetVerticalScroll(0);U.Render()end)
+            row:SetPoint('TOPLEFT',0,-(i-1)*59)
+        end
+        EndRows(t.list,#maps,#maps*59)
+        local guide=G.Preview(U.guideMap,U.guideRoute);local lines={}
+        local using=active and active.map==U.guideMap and active.route==(guide.flow and guide.flow.id)
+        t.title:SetText(G.MapName(U.guideMap)..' · '..L('任务攻略'))
+        if not guide.supported then t.summary:SetText(L('当前版本暂无接取资料。'))
+        elseif not guide.complete then t.summary:SetText(L('等待任务记录就绪，请稍后刷新。'))
+        else t.summary:SetText((guide.flow and string.format(L('区域流程 · %d–%d 级'),guide.flow.min,guide.flow.max)..'\n' or '')..string.format(L('%d 个流程步骤 · %d 步当前可做'),#guide.steps,#guide.ready)) end
+        local phase,stage=nil,0;local phases={accept=L('集中接取'),quest=L('区域任务'),turnin=L('回访交付')}
+        for _,step in ipairs(guide.steps)do
+            if guide.flow and phase~=step.kind then stage=stage+1;phase=step.kind;lines[#lines+1]='|cffffd100'..string.format(L('第 %d 段 · %s'),stage,phases[phase])..'|r' end
+            lines[#lines+1]=table.concat(G.StepLines(step),'\n')
+        end
+        for _,row in ipairs(guide.waiting)do lines[#lines+1]=row.title..'\n'..row.reason end
+        if #lines==0 then lines[1]=L('当前等级与进度暂无可用步骤。')end
+        t.body:SetWidth(math.max(80,t.detailScroll:GetWidth()));t.body:SetText(table.concat(lines,'\n\n'));t.detailScroll.content:SetHeight(math.max(1,t.body:GetStringHeight()+20))
+        t.hint:SetText(using and (J.Position().map~=U.guideMap and L('到达所选地图后继续指引。') or L('正在使用本地攻略，按任务进度自动推进。')) or L('选择地图后点击“使用此攻略”，无需请求 AI。'))
+        t.auto:Hide();t.ai:Hide();t.cancel:Hide();t.next:SetShown(using==true);t.next:SetEnabled(#guide.ready>0)
+        if guide.flow then
+            local options=G.FlowOptions(U.guideMap);local index=1;for i,r in ipairs(options)do if r.id==guide.flow.id then index=i end end
+            t.flowPrev:Show();t.flowNext:Show();t.flowPrev:SetEnabled(index>1);t.flowNext:SetEnabled(index<#options)
+        end
+        t.nav:SetText(using and L('停止攻略') or L('使用此攻略'))
+        t.nav:SetEnabled(using or (guide.supported and guide.complete and #guide.steps>0 and J.PlanPhase()=='idle'))
+        return
+    end
+    local offers,state={},nil
+    if WoWAIQuestOffers then offers,state=WoWAIQuestOffers.List() end
+    t.groups.pickups:SetText(L('建议接取')..' ('..#offers..')');Active(t.groups.pickups,U.group=='pickups')
+    for _,button in ipairs({t.auto,t.ai,t.next}) do button:SetShown(U.group~='pickups') end
+    if U.group=='pickups' then
+        local selected
+        for _,offer in ipairs(offers) do if offer.id==U.pickup then selected=offer end end
+        selected=selected or offers[1];U.pickup=selected and selected.id
+        for i,offer in ipairs(offers) do local id=offer.id
+            local row=Row(t.list,i,offer.title,offer.giver,id==U.pickup,function()U.pickup=id;t.detailScroll:SetVerticalScroll(0);U.Render()end)
+            row:SetPoint('TOPLEFT',0,-(i-1)*59)
+        end
+        EndRows(t.list,#offers,#offers*59)
+        t.title:SetText(L('先接哪些任务'))
+        t.summary:SetText(state and not state.supported and L('当前版本暂无接取资料。') or state and (not state.complete or not state.history) and L('等待任务记录就绪，请稍后刷新。') or L('按当前等级与前置筛选；同一 NPC 的任务一起接。'))
+        local lines=WoWAIQuestOffers and WoWAIQuestOffers.Lines(selected,offers) or {}
+        t.body:SetWidth(math.max(80,t.detailScroll:GetWidth()));t.body:SetText(table.concat(lines,'\n\n'));t.detailScroll.content:SetHeight(math.max(1,t.body:GetStringHeight()+20))
+        t.hint:SetText(L('接取后自动移出建议；交付前置后显示可接后续。'))
+        t.nav:SetText(c.questGuide and c.questGuide.id==U.pickup and L('停止指引') or L('前往接取'));t.nav:SetEnabled(selected~=nil);t.cancel:Hide()
+        return
+    end
+    t.hint:SetText(L('箭头为直线方位，请自行绕开地形；到达后不会自动判定任务完成。'))
     if p then
         counts.route=#J.PlanningQuests(p)
         for _,q in ipairs(p.quests)do
@@ -291,11 +422,16 @@ local function RenderTasks(c,pending)
         lines[#lines+1]=L('\n|cffe0b75e推荐顺序|r')
         for i,id in ipairs(p.order or {})do if id==q.id then lines[#lines+1]=L('第 ')..i..L(' 个任务') end end
         lines[#lines+1]=q.reason or L('当前为地点邻近顺序；点击“AI 规划当前任务”获取顺路合并和交付安排。')
-        if q.action then lines[#lines+1]=L('下一步：')..q.action end
+        if q.action and not p.stepsV2 and not q.complete then lines[#lines+1]=L('下一步：')..q.action end
         if q.sourceURL and q.sourceURL~='' then lines[#lines+1]=L('检索资料：')..q.sourceURL end
         if p.summary then lines[#lines+1]=L('\n整体安排：')..p.summary end
         if (q.group or 0)>1 then lines[#lines+1]=L('此任务建议组队完成。') end
     else lines={L('此分组暂无任务。')} end
+    if U.group=='route' then
+        local guide=U.GuidanceLines(p)
+        if #guide>0 then table.insert(lines,1,table.concat(guide,'\n')) end
+        if offers[1] then table.insert(lines,1,string.format(L('附近可接：%s · %s。打开“建议接取”查看。'),offers[1].title,offers[1].giver)) end
+    end
     if p and p.regions then
         lines[#lines+1]=L('本地图区域顺序')
         for _,r in ipairs(p.regions) do lines[#lines+1]=(r.number==p.regionIndex and '> ' or '')..r.number..'. '..r.label..'\n'..(r.detail or '') end
@@ -309,7 +445,7 @@ local function RenderTasks(c,pending)
     t.ai:SetText(phase=='syncing' and L('正在同步当前任务…') or phase=='planning' and L('AI 正在规划…') or L('AI 规划本地图'))
     -- Keep busy clicks observable: SendPlan reports the active stage without
     -- enqueuing a duplicate request.
-    t.ai:SetEnabled(p~=nil and p.complete and #J.EligibleQuests(p.quests)>0);t.next:SetEnabled(p~=nil and #p.route>0)
+    t.ai:SetEnabled(p~=nil and p.complete and #J.EligibleQuests(p.quests)>0);t.next:SetEnabled(p~=nil and #J.NavigationRoute(p)>0)
     t.cancel:SetShown(pending~=nil)
 end
 
