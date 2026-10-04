@@ -1,0 +1,336 @@
+{
+  "schema": 1,
+  "checked": "2026-10-03",
+  "scope": "13 currently bundled low-level dungeon entries / 15 pages. Static room/area references, not live positions.",
+  "maps": {
+    "hall-of-thanes": {
+      "source": "https://foreverchanges.pro/dungeons/hall-of-thanes",
+      "method": "Room correspondence: sarcophagus hall, east cave, pillared hall, northern round vault. Coordinates mark rooms, not measured spawn points.",
+      "pins": [
+        {
+          "number": 1,
+          "x": 0.476,
+          "y": 0.706,
+          "bossKeys": [
+            "Faldrim Anvilmar"
+          ],
+          "note": "首领房间"
+        },
+        {
+          "number": 2,
+          "x": 0.737,
+          "y": 0.578,
+          "bossKeys": [
+            "Magmatus"
+          ],
+          "note": "首领房间"
+        },
+        {
+          "number": 3,
+          "x": 0.476,
+          "y": 0.612,
+          "bossKeys": [
+            "Plunder"
+          ],
+          "note": "首领房间"
+        },
+        {
+          "number": 4,
+          "x": 0.476,
+          "y": 0.365,
+          "bossKeys": [
+            "Durgen Dirgehammer"
+          ],
+          "note": "首领房间"
+        }
+      ],
+      "sourceSha256": "68985d4566348fae9c283992765d1432496a243f77ddee1b67a42ac07c775977",
+      "artSha256": "87363f7897f858ed4e6e732fcf1e77bd2537d845e5fca7cdbd710fe15d66bb56",
+      "precision": "room-or-area",
+      "sourceImage": {
+        "src": "https://foreverchanges.pro/dungeons/maps/hall-of-thanes.webp",
+        "width": 2100,
+        "height": 1400,
+        "pins": [
+          {
+            "boss": "faldrim-anvilmar",
+            "x": 50.9,
+            "y": 62.5
+          },
+          {
+            "boss": "magmatus",
+            "x": 62.5,
+            "y": 49
+          },
+          {
+            "boss": "plunder",
+            "x": 51,
+            "y": 49.5
+          },
+          {
+            "boss": "durgen-dirgehammer",
+            "x": 51,
+            "y": 22
+          }
+        ]
+      }
+    },
+    "ruins-of-lordaeron": {
+      "source": "https://foreverchanges.pro/dungeons/ruins-of-lordaeron",
+      "method": "Matched north wall corners, main circular chamber, southern wall to the client mosaic. Room/roaming-area positions only.",
+      "pins": [
+        {
+          "number": 1,
+          "x": 0.579,
+          "y": 0.646,
+          "bossKeys": [
+            "The Butcher(The Baron)"
+          ],
+          "note": "巡逻区域"
+        },
+        {
+          "number": 2,
+          "x": 0.689,
+          "y": 0.39,
+          "bossKeys": [
+            "Witherfang"
+          ],
+          "note": "巡逻区域"
+        },
+        {
+          "number": 3,
+          "x": 0.334,
+          "y": 0.508,
+          "bossKeys": [
+            "The Abandoned"
+          ],
+          "note": "点击雕像召唤"
+        },
+        {
+          "number": 4,
+          "x": 0.309,
+          "y": 0.418,
+          "bossKeys": [
+            "Bjork"
+          ],
+          "note": "首领房间"
+        },
+        {
+          "number": 5,
+          "x": 0.4,
+          "y": 0.587,
+          "bossKeys": [
+            "Rath'mael"
+          ],
+          "note": "首领房间"
+        },
+        {
+          "number": 6,
+          "x": 0.288,
+          "y": 0.605,
+          "bossKeys": [
+            "Viktor the Vile"
+          ],
+          "note": "屋内壁炉事件"
+        },
+        {
+          "number": 7,
+          "x": 0.3,
+          "y": 0.271,
+          "bossKeys": [
+            "Lordaeron Captain"
+          ],
+          "note": "稀有首领 · 巡逻区域"
+        }
+      ],
+      "sourceSha256": "18000a06adcdc60d8648f40146e7242fb0c3a790a2e371d441b20d36fd3fda02",
+      "artSha256": "f56b49890c8523743e4ec79a4d6a6207f42efe3ce323dd0824e22321d425deb9",
+      "precision": "room-or-area",
+      "sourceImage": {
+        "src": "https://foreverchanges.pro/dungeons/maps/ruins-of-lordaeron.webp",
+        "width": 2100,
+        "height": 1400,
+        "pins": [
+          {
+            "boss": "the-baron",
+            "x": 58.8,
+            "y": 69.8
+          },
+          {
+            "boss": "witherfang",
+            "x": 66.8,
+            "y": 39.2
+          },
+          {
+            "boss": "the-abandoned",
+            "x": 41,
+            "y": 53.3
+          },
+          {
+            "boss": "bjork",
+            "x": 39.2,
+            "y": 42.5
+          },
+          {
+            "boss": "rath-mael",
+            "x": 45.8,
+            "y": 62.7
+          },
+          {
+            "boss": "viktor-the-vile",
+            "x": 37.7,
+            "y": 64.8
+          },
+          {
+            "boss": "lordaeron-captain",
+            "x": 38.5,
+            "y": 25
+          }
+        ]
+      }
+    },
+    "excavation-site": {
+      "source": "https://foreverchanges.pro/dungeons/excavation-site",
+      "additionalSources": [
+        "https://warcraftforever.games/maps/excavation-site-wetlands"
+      ],
+      "method": "Source illustration is differently oriented. Use native mosaic Lost Marsh (0.609,0.444), Stalker's Thicket (0.3969,0.5), Site of the Guardian (0.3992,0.6597) area labels and visually matched northern Dragonmaw camp; never paste source illustration percentages.",
+      "pins": [
+        {
+          "number": 1,
+          "x": 0.609,
+          "y": 0.444,
+          "bossKeys": [
+            "Saltspine"
+          ],
+          "note": "巡逻区域"
+        },
+        {
+          "number": 2,
+          "x": 0.3969,
+          "y": 0.5,
+          "bossKeys": [
+            "Shadetooth"
+          ],
+          "note": "击败迅猛龙群后出现"
+        },
+        {
+          "number": 3,
+          "x": 0.4,
+          "y": 0.135,
+          "bossKeys": [
+            "Highland Horror"
+          ],
+          "note": "龙喉营地"
+        },
+        {
+          "number": 4,
+          "x": 0.3992,
+          "y": 0.6597,
+          "bossKeys": [
+            "Relic Guardian"
+          ],
+          "note": "点击旁边的控制台唤醒"
+        }
+      ],
+      "sourceSha256": "331c11e6f29b27f198f270e2dbaa013192e8b41ad21183e097486d71f7807b1e",
+      "artSha256": "649b508b9c0259573edcf72aee6e10f0a417c94edb4803ec8938d5ccf5e45f1e",
+      "precision": "room-or-area",
+      "sourceImage": {
+        "src": "https://foreverchanges.pro/dungeons/maps/excavation-site.webp",
+        "width": 2100,
+        "height": 1400,
+        "pins": [
+          {
+            "boss": "saltspine",
+            "x": 44.8,
+            "y": 55
+          },
+          {
+            "boss": "shadetooth",
+            "x": 55.6,
+            "y": 46.4
+          },
+          {
+            "boss": "highland-horror",
+            "x": 87.2,
+            "y": 66.5
+          },
+          {
+            "boss": "relic-guardian",
+            "x": 64.4,
+            "y": 25.3
+          }
+        ]
+      }
+    },
+    "dalaran": {
+      "source": "https://foreverchanges.pro/dungeons/city-of-dalaran",
+      "additionalSources": [
+        "https://www.wowhead.com/forever/guide/city-of-dalaran-dungeon-overview-location-rewards"
+      ],
+      "method": "Citadel roof footprint matched visually. Marker indicates the upper Purple Parlor room inside that building, not a street-level spawn coordinate.",
+      "pins": [
+        {
+          "number": 6,
+          "x": 0.398,
+          "y": 0.174,
+          "bossKeys": [
+            "Shade of the Archmage"
+          ],
+          "note": "紫罗兰城堡 · 上层房间"
+        }
+      ],
+      "unlocated": [
+        "Atrexis the Grave Knight",
+        "Arcane Anomaly",
+        "Fel Ancient",
+        "Unstable Sentinel",
+        "Mana Wraith",
+        "Mana Devourer",
+        "Mana Elemental",
+        "Lyn the Ignored",
+        "Arcanic Enigma"
+      ],
+      "unlocatedReason": "No reliable image-space coordinates for these encounters. Sewer boss must not be projected onto the street layer. Mana Wraith/Devourer/Elemental identities and encounter status also require beta confirmation.",
+      "sourceSha256": "55c1ea1e735e717db2ecf336a4fa2d09188365e749b89560184d01b70be9d1f3",
+      "artSha256": "58d45ba447f25e67e2e394180bc94cc8790c5f66332235954beca2dc4f1dd5ba",
+      "precision": "room-or-area"
+    }
+  },
+  "extraPins": {
+    "shadowfang-keep": {
+      "source": "https://www.hcguides.com/dungeons/shadowfang-keep",
+      "pins": [
+        {
+          "number": 10,
+          "x": 0.374,
+          "y": 0.178,
+          "bossKeys": [
+            "Deathsworn Captain"
+          ],
+          "note": "稀有首领 · 城墙巡逻"
+        }
+      ]
+    }
+  },
+  "sharedRooms": [
+    {
+      "dungeon": "shadowfang-keep",
+      "with": "Fenrus the Devourer",
+      "boss": "Arugal's Voidwalker",
+      "source": "https://warcraft.wiki.gg/wiki/Arugal%27s_Voidwalker"
+    },
+    {
+      "dungeon": "razorfen-kraul",
+      "with": "Overlord Ramtusk",
+      "boss": "Razorfen Spearhide",
+      "source": "https://www.wowhead.com/classic/guide/razorfen-kraul-dungeon-strategy-wow-classic"
+    }
+  ],
+  "excluded": {
+    "gnomeregan": {
+      "Techbot": "Outside instance; current map only contains instanced interior."
+    }
+  }
+}
