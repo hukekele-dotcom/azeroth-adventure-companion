@@ -4,7 +4,7 @@ const repo=path.resolve(__dirname,'../..');
 const version=require('../../package.json').version;
 const nodeVersion='v22.23.3';
 const nodeHash='2b0ff57b049cda1bbcea2240eec20467018713c1efe1f7360c2681859b90ed71';
-const addon=['Adventure.lua','AdventureUI.lua','Codec.lua','Dungeon.lua','DungeonData.lua','DungeonUI.lua','Gear.lua','Kills.lua','Locale.lua','Map.lua','QuestLocations.lua','WoWAI.lua','WoWAI.toc','THIRD_PARTY.md'];
+const addon=['Adventure.lua','AdventureUI.lua','Codec.lua','Dungeon.lua','DungeonData.lua','DungeonAtlas.lua','DungeonMap.lua','DungeonUI.lua','Gear.lua','Kills.lua','Locale.lua','Map.lua','QuestLocations.lua','QuestOffersData.lua','QuestOffers.lua','ZoneGuideData.lua','ZoneGuide.lua','WoWAI.lua','WoWAI.toc','THIRD_PARTY.md','RXP-FLOWS-LICENSE.txt'];
 const bridge=['adventure.js','agents.js','bridge.js','capture.ps1','diary.js','draft-run.js','install-slots.js','job-limits.js','saved-variables.js','narrative.js','planner.js','protocol.js','supervisor.js','workbuddy-launch.cjs','workbuddy.js'];
 function walk(root) { return fs.readdirSync(root,{withFileTypes:true}).flatMap(e=>e.isDirectory()?walk(path.join(root,e.name)):[path.join(root,e.name)]); }
 function hash(file) {return crypto.createHash('sha256').update(fs.readFileSync(file)).digest('hex');}
@@ -18,6 +18,10 @@ function build(output) {
   fs.mkdirSync(stage,{recursive:true});
   function copy(from,to) {fs.mkdirSync(path.dirname(path.join(stage,to)),{recursive:true});fs.copyFileSync(path.join(repo,from),path.join(stage,to));}
   for(const name of addon)copy('addon/WoWAI/'+name,'app/addon/WoWAI/'+name);
+  // Explicit asset allowlist; never package research files, generated prompts or local state.
+  for(const name of ['ragefire-chasm','wailing-caverns','shadowfang-keep','deadmines','ruins-of-lordaeron','excavation-site','hall-of-thanes','blackfathom-deeps-1','blackfathom-deeps-2','blackfathom-deeps-3','stockade','gnomeregan','razorfen-kraul','scarlet-graveyard','dalaran','scarlet-library','scarlet-armory','scarlet-cathedral','razorfen-downs','uldaman'])
+    copy('addon/WoWAI/Maps/'+name+'.tga','app/addon/WoWAI/Maps/'+name+'.tga');
+  for(const name of ['manifest.json','Atlas-GPL-2.0.txt'])copy('addon/WoWAI/Maps/'+name,'app/addon/WoWAI/Maps/'+name);
   fs.writeFileSync(path.join(stage,'app/addon/WoWAI/Inbox.lua'),'-- Clean distribution placeholder\nWoWAI_Inbox = { id = 0, replies = {} }\n');
   const toc=path.join(stage,'app/addon/WoWAI/WoWAI.toc');
   fs.writeFileSync(toc,fs.readFileSync(toc,'utf8').replace(/^## Version:.*$/m,'## Version: '+version));

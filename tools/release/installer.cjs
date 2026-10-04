@@ -80,7 +80,7 @@ function install({bundle, target, client, account, provider, checkProcesses = ch
   fs.mkdirSync(liveAddon, {recursive:true});
   for (const entry of fs.readdirSync(path.join(target,'app','addon','WoWAI'))) {
     if (entry === 'Inbox.lua' && fs.existsSync(path.join(liveAddon,entry))) continue;
-    fs.copyFileSync(path.join(target,'app','addon','WoWAI',entry),path.join(liveAddon,entry));
+    fs.cpSync(path.join(target,'app','addon','WoWAI',entry),path.join(liveAddon,entry),{recursive:true});
   }
   const node = path.join(target,'runtime','node.exe');
   const result = cp.spawnSync(node,[path.join(target,'app','bridge','install-slots.js')],{encoding:'utf8',windowsHide:true});
