@@ -1,0 +1,932 @@
+{
+  "checked": "2026-10-03",
+  "scope": "Known public outdoor/city map directory and the 28-dungeon local catalog; excludes battlegrounds, raids and unverified instances. Coverage is not completeness.",
+  "sources": [
+    "https://github.com/wheelbarrel00/EverythingQuests",
+    "https://warcraftforever.games/maps",
+    "https://warcraftforever.games/quests",
+    "https://github.com/nanderson11/Atlas"
+  ],
+  "pickupCatalog": 4103,
+  "coordinateCatalog": 4231,
+  "coordinateVersion": "211d0f14197bd168f82b5e87",
+  "workflowIndexes": 48,
+  "publicQuestIndex": 1537,
+  "maps": [
+    {
+      "id": 2548,
+      "slug": "riverglades",
+      "source": "https://warcraftforever.games/maps/riverglades",
+      "pickups": 0,
+      "unverifiedPickupGates": 0,
+      "objectives": 0,
+      "turnins": 0,
+      "prerequisiteRecords": 0,
+      "indexedQuests": 0,
+      "status": "missing-actionable-facts"
+    },
+    {
+      "id": 1416,
+      "slug": "alterac-mountains",
+      "source": "https://warcraftforever.games/maps/alterac-mountains",
+      "pickups": 95,
+      "unverifiedPickupGates": 0,
+      "objectives": 171,
+      "turnins": 105,
+      "prerequisiteRecords": 52,
+      "indexedQuests": 182,
+      "status": "partial-local-facts"
+    },
+    {
+      "id": 1417,
+      "slug": "arathi-highlands",
+      "source": "https://warcraftforever.games/maps/arathi-highlands",
+      "pickups": 123,
+      "unverifiedPickupGates": 0,
+      "objectives": 133,
+      "turnins": 124,
+      "prerequisiteRecords": 65,
+      "indexedQuests": 169,
+      "status": "partial-local-facts"
+    },
+    {
+      "id": 1418,
+      "slug": "badlands",
+      "source": "https://warcraftforever.games/maps/badlands",
+      "pickups": 64,
+      "unverifiedPickupGates": 0,
+      "objectives": 146,
+      "turnins": 61,
+      "prerequisiteRecords": 37,
+      "indexedQuests": 166,
+      "status": "partial-local-facts"
+    },
+    {
+      "id": 1419,
+      "slug": "blasted-lands",
+      "source": "https://warcraftforever.games/maps/blasted-lands",
+      "pickups": 23,
+      "unverifiedPickupGates": 0,
+      "objectives": 131,
+      "turnins": 25,
+      "prerequisiteRecords": 11,
+      "indexedQuests": 124,
+      "status": "partial-local-facts"
+    },
+    {
+      "id": 1428,
+      "slug": "burning-steppes",
+      "source": "https://warcraftforever.games/maps/burning-steppes",
+      "pickups": 48,
+      "unverifiedPickupGates": 0,
+      "objectives": 127,
+      "turnins": 51,
+      "prerequisiteRecords": 27,
+      "indexedQuests": 132,
+      "status": "partial-local-facts"
+    },
+    {
+      "id": 1430,
+      "slug": "deadwind-pass",
+      "source": "https://warcraftforever.games/maps/deadwind-pass",
+      "pickups": 0,
+      "unverifiedPickupGates": 0,
+      "objectives": 35,
+      "turnins": 0,
+      "prerequisiteRecords": 0,
+      "indexedQuests": 31,
+      "status": "partial-local-facts"
+    },
+    {
+      "id": 1426,
+      "slug": "dun-morogh",
+      "source": "https://warcraftforever.games/maps/dun-morogh",
+      "pickups": 115,
+      "unverifiedPickupGates": 15,
+      "objectives": 165,
+      "turnins": 75,
+      "prerequisiteRecords": 68,
+      "indexedQuests": 217,
+      "status": "partial-local-facts"
+    },
+    {
+      "id": 1431,
+      "slug": "duskwood",
+      "source": "https://warcraftforever.games/maps/duskwood",
+      "pickups": 72,
+      "unverifiedPickupGates": 0,
+      "objectives": 115,
+      "turnins": 70,
+      "prerequisiteRecords": 55,
+      "indexedQuests": 165,
+      "status": "partial-local-facts"
+    },
+    {
+      "id": 1423,
+      "slug": "eastern-plaguelands",
+      "source": "https://warcraftforever.games/maps/eastern-plaguelands",
+      "pickups": 209,
+      "unverifiedPickupGates": 0,
+      "objectives": 203,
+      "turnins": 238,
+      "prerequisiteRecords": 156,
+      "indexedQuests": 255,
+      "status": "partial-local-facts"
+    },
+    {
+      "id": 1429,
+      "slug": "elwynn-forest",
+      "source": "https://warcraftforever.games/maps/elwynn-forest",
+      "pickups": 148,
+      "unverifiedPickupGates": 8,
+      "objectives": 156,
+      "turnins": 124,
+      "prerequisiteRecords": 72,
+      "indexedQuests": 270,
+      "status": "partial-local-facts"
+    },
+    {
+      "id": 1424,
+      "slug": "hillsbrad-foothills",
+      "source": "https://warcraftforever.games/maps/hillsbrad-foothills",
+      "pickups": 72,
+      "unverifiedPickupGates": 0,
+      "objectives": 172,
+      "turnins": 75,
+      "prerequisiteRecords": 45,
+      "indexedQuests": 222,
+      "status": "partial-local-facts"
+    },
+    {
+      "id": 1455,
+      "slug": "ironforge",
+      "source": "https://warcraftforever.games/maps/ironforge",
+      "pickups": 278,
+      "unverifiedPickupGates": 2,
+      "objectives": 21,
+      "turnins": 268,
+      "prerequisiteRecords": 127,
+      "indexedQuests": 305,
+      "status": "partial-local-facts"
+    },
+    {
+      "id": 1432,
+      "slug": "loch-modan",
+      "source": "https://warcraftforever.games/maps/loch-modan",
+      "pickups": 50,
+      "unverifiedPickupGates": 0,
+      "objectives": 139,
+      "turnins": 49,
+      "prerequisiteRecords": 25,
+      "indexedQuests": 165,
+      "status": "partial-local-facts"
+    },
+    {
+      "id": 1433,
+      "slug": "redridge-mountains",
+      "source": "https://warcraftforever.games/maps/redridge-mountains",
+      "pickups": 42,
+      "unverifiedPickupGates": 1,
+      "objectives": 110,
+      "turnins": 42,
+      "prerequisiteRecords": 20,
+      "indexedQuests": 135,
+      "status": "partial-local-facts"
+    },
+    {
+      "id": 1427,
+      "slug": "searing-gorge",
+      "source": "https://warcraftforever.games/maps/searing-gorge",
+      "pickups": 35,
+      "unverifiedPickupGates": 0,
+      "objectives": 133,
+      "turnins": 32,
+      "prerequisiteRecords": 19,
+      "indexedQuests": 121,
+      "status": "partial-local-facts"
+    },
+    {
+      "id": 1421,
+      "slug": "silverpine-forest",
+      "source": "https://warcraftforever.games/maps/silverpine-forest",
+      "pickups": 44,
+      "unverifiedPickupGates": 0,
+      "objectives": 103,
+      "turnins": 40,
+      "prerequisiteRecords": 29,
+      "indexedQuests": 133,
+      "status": "partial-local-facts"
+    },
+    {
+      "id": 1453,
+      "slug": "stormwind-city",
+      "source": "https://warcraftforever.games/maps/stormwind-city",
+      "pickups": 249,
+      "unverifiedPickupGates": 1,
+      "objectives": 79,
+      "turnins": 229,
+      "prerequisiteRecords": 129,
+      "indexedQuests": 330,
+      "status": "partial-local-facts"
+    },
+    {
+      "id": 1434,
+      "slug": "stranglethorn-vale",
+      "source": "https://warcraftforever.games/maps/stranglethorn-vale",
+      "pickups": 213,
+      "unverifiedPickupGates": 0,
+      "objectives": 225,
+      "turnins": 219,
+      "prerequisiteRecords": 120,
+      "indexedQuests": 338,
+      "status": "partial-local-facts"
+    },
+    {
+      "id": 1435,
+      "slug": "swamp-of-sorrows",
+      "source": "https://warcraftforever.games/maps/swamp-of-sorrows",
+      "pickups": 39,
+      "unverifiedPickupGates": 0,
+      "objectives": 120,
+      "turnins": 36,
+      "prerequisiteRecords": 24,
+      "indexedQuests": 145,
+      "status": "partial-local-facts"
+    },
+    {
+      "id": 1425,
+      "slug": "the-hinterlands",
+      "source": "https://warcraftforever.games/maps/the-hinterlands",
+      "pickups": 41,
+      "unverifiedPickupGates": 0,
+      "objectives": 175,
+      "turnins": 40,
+      "prerequisiteRecords": 20,
+      "indexedQuests": 180,
+      "status": "partial-local-facts"
+    },
+    {
+      "id": 1420,
+      "slug": "tirisfal-glades",
+      "source": "https://warcraftforever.games/maps/tirisfal-glades",
+      "pickups": 111,
+      "unverifiedPickupGates": 0,
+      "objectives": 135,
+      "turnins": 89,
+      "prerequisiteRecords": 69,
+      "indexedQuests": 220,
+      "status": "partial-local-facts"
+    },
+    {
+      "id": 1458,
+      "slug": "undercity",
+      "source": "https://warcraftforever.games/maps/undercity",
+      "pickups": 165,
+      "unverifiedPickupGates": 0,
+      "objectives": 26,
+      "turnins": 156,
+      "prerequisiteRecords": 82,
+      "indexedQuests": 187,
+      "status": "partial-local-facts"
+    },
+    {
+      "id": 1422,
+      "slug": "western-plaguelands",
+      "source": "https://warcraftforever.games/maps/western-plaguelands",
+      "pickups": 81,
+      "unverifiedPickupGates": 0,
+      "objectives": 155,
+      "turnins": 83,
+      "prerequisiteRecords": 62,
+      "indexedQuests": 200,
+      "status": "partial-local-facts"
+    },
+    {
+      "id": 1436,
+      "slug": "westfall",
+      "source": "https://warcraftforever.games/maps/westfall",
+      "pickups": 49,
+      "unverifiedPickupGates": 1,
+      "objectives": 122,
+      "turnins": 44,
+      "prerequisiteRecords": 27,
+      "indexedQuests": 148,
+      "status": "partial-local-facts"
+    },
+    {
+      "id": 1437,
+      "slug": "wetlands",
+      "source": "https://warcraftforever.games/maps/wetlands",
+      "pickups": 52,
+      "unverifiedPickupGates": 0,
+      "objectives": 132,
+      "turnins": 47,
+      "prerequisiteRecords": 31,
+      "indexedQuests": 159,
+      "status": "partial-local-facts"
+    },
+    {
+      "id": 2482,
+      "slug": "mount-hyjal",
+      "source": "https://warcraftforever.games/maps/mount-hyjal",
+      "pickups": 0,
+      "unverifiedPickupGates": 0,
+      "objectives": 0,
+      "turnins": 0,
+      "prerequisiteRecords": 0,
+      "indexedQuests": 0,
+      "status": "missing-actionable-facts"
+    },
+    {
+      "id": 2652,
+      "slug": "shendralas",
+      "source": "https://warcraftforever.games/maps/shendralas",
+      "pickups": 0,
+      "unverifiedPickupGates": 0,
+      "objectives": 0,
+      "turnins": 0,
+      "prerequisiteRecords": 0,
+      "indexedQuests": 0,
+      "status": "missing-actionable-facts"
+    },
+    {
+      "id": 1440,
+      "slug": "ashenvale",
+      "source": "https://warcraftforever.games/maps/ashenvale",
+      "pickups": 97,
+      "unverifiedPickupGates": 0,
+      "objectives": 165,
+      "turnins": 106,
+      "prerequisiteRecords": 55,
+      "indexedQuests": 209,
+      "status": "partial-local-facts"
+    },
+    {
+      "id": 1447,
+      "slug": "azshara",
+      "source": "https://warcraftforever.games/maps/azshara",
+      "pickups": 45,
+      "unverifiedPickupGates": 0,
+      "objectives": 173,
+      "turnins": 47,
+      "prerequisiteRecords": 33,
+      "indexedQuests": 174,
+      "status": "partial-local-facts"
+    },
+    {
+      "id": 1439,
+      "slug": "darkshore",
+      "source": "https://warcraftforever.games/maps/darkshore",
+      "pickups": 74,
+      "unverifiedPickupGates": 3,
+      "objectives": 143,
+      "turnins": 68,
+      "prerequisiteRecords": 46,
+      "indexedQuests": 185,
+      "status": "partial-local-facts"
+    },
+    {
+      "id": 1457,
+      "slug": "darnassus",
+      "source": "https://warcraftforever.games/maps/darnassus",
+      "pickups": 110,
+      "unverifiedPickupGates": 0,
+      "objectives": 23,
+      "turnins": 123,
+      "prerequisiteRecords": 48,
+      "indexedQuests": 144,
+      "status": "partial-local-facts"
+    },
+    {
+      "id": 1443,
+      "slug": "desolace",
+      "source": "https://warcraftforever.games/maps/desolace",
+      "pickups": 65,
+      "unverifiedPickupGates": 0,
+      "objectives": 132,
+      "turnins": 63,
+      "prerequisiteRecords": 34,
+      "indexedQuests": 162,
+      "status": "partial-local-facts"
+    },
+    {
+      "id": 1411,
+      "slug": "durotar",
+      "source": "https://warcraftforever.games/maps/durotar",
+      "pickups": 102,
+      "unverifiedPickupGates": 1,
+      "objectives": 79,
+      "turnins": 75,
+      "prerequisiteRecords": 57,
+      "indexedQuests": 158,
+      "status": "partial-local-facts"
+    },
+    {
+      "id": 1445,
+      "slug": "dustwallow-marsh",
+      "source": "https://warcraftforever.games/maps/dustwallow-marsh",
+      "pickups": 69,
+      "unverifiedPickupGates": 0,
+      "objectives": 128,
+      "turnins": 76,
+      "prerequisiteRecords": 44,
+      "indexedQuests": 188,
+      "status": "partial-local-facts"
+    },
+    {
+      "id": 1448,
+      "slug": "felwood",
+      "source": "https://warcraftforever.games/maps/felwood",
+      "pickups": 102,
+      "unverifiedPickupGates": 0,
+      "objectives": 165,
+      "turnins": 100,
+      "prerequisiteRecords": 47,
+      "indexedQuests": 203,
+      "status": "partial-local-facts"
+    },
+    {
+      "id": 1444,
+      "slug": "feralas",
+      "source": "https://warcraftforever.games/maps/feralas",
+      "pickups": 98,
+      "unverifiedPickupGates": 0,
+      "objectives": 172,
+      "turnins": 94,
+      "prerequisiteRecords": 63,
+      "indexedQuests": 216,
+      "status": "partial-local-facts"
+    },
+    {
+      "id": 1450,
+      "slug": "moonglade",
+      "source": "https://warcraftforever.games/maps/moonglade",
+      "pickups": 36,
+      "unverifiedPickupGates": 0,
+      "objectives": 45,
+      "turnins": 40,
+      "prerequisiteRecords": 22,
+      "indexedQuests": 89,
+      "status": "partial-local-facts"
+    },
+    {
+      "id": 1412,
+      "slug": "mulgore",
+      "source": "https://warcraftforever.games/maps/mulgore",
+      "pickups": 108,
+      "unverifiedPickupGates": 1,
+      "objectives": 104,
+      "turnins": 94,
+      "prerequisiteRecords": 45,
+      "indexedQuests": 190,
+      "status": "partial-local-facts"
+    },
+    {
+      "id": 1454,
+      "slug": "orgrimmar",
+      "source": "https://warcraftforever.games/maps/orgrimmar",
+      "pickups": 268,
+      "unverifiedPickupGates": 0,
+      "objectives": 24,
+      "turnins": 247,
+      "prerequisiteRecords": 117,
+      "indexedQuests": 300,
+      "status": "partial-local-facts"
+    },
+    {
+      "id": 1451,
+      "slug": "silithus",
+      "source": "https://warcraftforever.games/maps/silithus",
+      "pickups": 107,
+      "unverifiedPickupGates": 0,
+      "objectives": 153,
+      "turnins": 150,
+      "prerequisiteRecords": 49,
+      "indexedQuests": 169,
+      "status": "partial-local-facts"
+    },
+    {
+      "id": 1442,
+      "slug": "stonetalon-mountains",
+      "source": "https://warcraftforever.games/maps/stonetalon-mountains",
+      "pickups": 41,
+      "unverifiedPickupGates": 0,
+      "objectives": 122,
+      "turnins": 37,
+      "prerequisiteRecords": 24,
+      "indexedQuests": 149,
+      "status": "partial-local-facts"
+    },
+    {
+      "id": 1446,
+      "slug": "tanaris",
+      "source": "https://warcraftforever.games/maps/tanaris",
+      "pickups": 133,
+      "unverifiedPickupGates": 0,
+      "objectives": 147,
+      "turnins": 142,
+      "prerequisiteRecords": 97,
+      "indexedQuests": 254,
+      "status": "partial-local-facts"
+    },
+    {
+      "id": 1438,
+      "slug": "teldrassil",
+      "source": "https://warcraftforever.games/maps/teldrassil",
+      "pickups": 97,
+      "unverifiedPickupGates": 0,
+      "objectives": 127,
+      "turnins": 82,
+      "prerequisiteRecords": 58,
+      "indexedQuests": 205,
+      "status": "partial-local-facts"
+    },
+    {
+      "id": 1413,
+      "slug": "the-barrens",
+      "source": "https://warcraftforever.games/maps/the-barrens",
+      "pickups": 202,
+      "unverifiedPickupGates": 0,
+      "objectives": 163,
+      "turnins": 219,
+      "prerequisiteRecords": 121,
+      "indexedQuests": 319,
+      "status": "partial-local-facts"
+    },
+    {
+      "id": 1441,
+      "slug": "thousand-needles",
+      "source": "https://warcraftforever.games/maps/thousand-needles",
+      "pickups": 53,
+      "unverifiedPickupGates": 0,
+      "objectives": 124,
+      "turnins": 54,
+      "prerequisiteRecords": 28,
+      "indexedQuests": 170,
+      "status": "partial-local-facts"
+    },
+    {
+      "id": 1456,
+      "slug": "thunder-bluff",
+      "source": "https://warcraftforever.games/maps/thunder-bluff",
+      "pickups": 123,
+      "unverifiedPickupGates": 0,
+      "objectives": 60,
+      "turnins": 128,
+      "prerequisiteRecords": 51,
+      "indexedQuests": 176,
+      "status": "partial-local-facts"
+    },
+    {
+      "id": 1449,
+      "slug": "ungoro-crater",
+      "source": "https://warcraftforever.games/maps/ungoro-crater",
+      "pickups": 47,
+      "unverifiedPickupGates": 0,
+      "objectives": 104,
+      "turnins": 47,
+      "prerequisiteRecords": 30,
+      "indexedQuests": 112,
+      "status": "partial-local-facts"
+    },
+    {
+      "id": 1452,
+      "slug": "winterspring",
+      "source": "https://warcraftforever.games/maps/winterspring",
+      "pickups": 69,
+      "unverifiedPickupGates": 0,
+      "objectives": 171,
+      "turnins": 67,
+      "prerequisiteRecords": 42,
+      "indexedQuests": 181,
+      "status": "partial-local-facts"
+    },
+    {
+      "id": 2521,
+      "slug": "zephras-isle",
+      "source": "https://warcraftforever.games/maps/zephras-isle",
+      "pickups": 142,
+      "unverifiedPickupGates": 142,
+      "objectives": 4,
+      "turnins": 12,
+      "prerequisiteRecords": 19,
+      "indexedQuests": 142,
+      "status": "partial-local-facts"
+    }
+  ],
+  "dungeons": [
+    {
+      "id": "ragefire-chasm",
+      "name": "怒焰裂谷",
+      "pages": 1,
+      "bosses": 4,
+      "mappedBosses": 4,
+      "questRecords": 6,
+      "rawSources": [],
+      "status": "bundled-reference"
+    },
+    {
+      "id": "hall-of-thanes",
+      "name": "领主大厅",
+      "pages": 1,
+      "bosses": 4,
+      "mappedBosses": 4,
+      "questRecords": 5,
+      "rawSources": [],
+      "status": "bundled-reference"
+    },
+    {
+      "id": "ruins-of-lordaeron",
+      "name": "洛丹伦废墟",
+      "pages": 1,
+      "bosses": 7,
+      "mappedBosses": 7,
+      "questRecords": 10,
+      "rawSources": [],
+      "status": "bundled-reference"
+    },
+    {
+      "id": "deadmines",
+      "name": "死亡矿井",
+      "pages": 1,
+      "bosses": 9,
+      "mappedBosses": 9,
+      "questRecords": 8,
+      "rawSources": [],
+      "status": "bundled-reference"
+    },
+    {
+      "id": "wailing-caverns",
+      "name": "哀嚎洞穴",
+      "pages": 1,
+      "bosses": 9,
+      "mappedBosses": 9,
+      "questRecords": 7,
+      "rawSources": [],
+      "status": "bundled-reference"
+    },
+    {
+      "id": "shadowfang-keep",
+      "name": "影牙城堡",
+      "pages": 1,
+      "bosses": 11,
+      "mappedBosses": 11,
+      "questRecords": 5,
+      "rawSources": [],
+      "status": "bundled-reference"
+    },
+    {
+      "id": "blackfathom-deeps",
+      "name": "黑暗深渊",
+      "pages": 3,
+      "bosses": 8,
+      "mappedBosses": 8,
+      "questRecords": 13,
+      "rawSources": [],
+      "status": "bundled-reference"
+    },
+    {
+      "id": "stockade",
+      "name": "暴风城监狱",
+      "pages": 1,
+      "bosses": 6,
+      "mappedBosses": 6,
+      "questRecords": 6,
+      "rawSources": [],
+      "status": "bundled-reference"
+    },
+    {
+      "id": "razorfen-kraul",
+      "name": "剃刀沼泽",
+      "pages": 1,
+      "bosses": 9,
+      "mappedBosses": 9,
+      "questRecords": 8,
+      "rawSources": [],
+      "status": "bundled-reference"
+    },
+    {
+      "id": "excavation-site",
+      "name": "挖掘场：湿地",
+      "pages": 1,
+      "bosses": 4,
+      "mappedBosses": 4,
+      "questRecords": 14,
+      "rawSources": [],
+      "status": "bundled-reference"
+    },
+    {
+      "id": "gnomeregan",
+      "name": "诺莫瑞根",
+      "pages": 1,
+      "bosses": 7,
+      "mappedBosses": 6,
+      "questRecords": 16,
+      "rawSources": [],
+      "status": "bundled-reference"
+    },
+    {
+      "id": "dalaran",
+      "name": "达拉然城",
+      "pages": 1,
+      "bosses": 1,
+      "mappedBosses": 1,
+      "questRecords": 5,
+      "rawSources": [],
+      "status": "bundled-reference"
+    },
+    {
+      "id": "scarlet-monastery",
+      "name": "血色修道院",
+      "pages": 4,
+      "bosses": 11,
+      "mappedBosses": 11,
+      "questRecords": 8,
+      "rawSources": [],
+      "status": "bundled-reference"
+    },
+    {
+      "id": "alcaz-prison",
+      "name": "奥卡兹监狱",
+      "pages": 0,
+      "bosses": 0,
+      "mappedBosses": 0,
+      "questRecords": 0,
+      "rawSources": [],
+      "status": "interior-layout-not-verified"
+    },
+    {
+      "id": "blackmaw-hold",
+      "name": "黑喉要塞",
+      "pages": 0,
+      "bosses": 0,
+      "mappedBosses": 0,
+      "questRecords": 0,
+      "rawSources": [],
+      "status": "interior-layout-not-verified"
+    },
+    {
+      "id": "blackrock-depths",
+      "name": "黑石深渊",
+      "pages": 0,
+      "bosses": 27,
+      "mappedBosses": 0,
+      "questRecords": 27,
+      "rawSources": [
+        "https://github.com/nanderson11/Atlas/blob/main/Images/Atlas_ClassicWoW/CL_BlackrockDepths.blp"
+      ],
+      "status": "source-collected-needs-refinement"
+    },
+    {
+      "id": "dire-maul",
+      "name": "厄运之槌",
+      "pages": 0,
+      "bosses": 18,
+      "mappedBosses": 0,
+      "questRecords": 27,
+      "rawSources": [
+        "https://github.com/nanderson11/Atlas/blob/main/Images/Atlas_ClassicWoW/CL_DireMaulEast.blp",
+        "https://github.com/nanderson11/Atlas/blob/main/Images/Atlas_ClassicWoW/CL_DireMaulNorth.blp",
+        "https://github.com/nanderson11/Atlas/blob/main/Images/Atlas_ClassicWoW/CL_DireMaulWest.blp"
+      ],
+      "status": "source-collected-needs-refinement"
+    },
+    {
+      "id": "kroldok-stronghold",
+      "name": "克罗多克要塞",
+      "pages": 0,
+      "bosses": 0,
+      "mappedBosses": 0,
+      "questRecords": 0,
+      "rawSources": [],
+      "status": "interior-layout-not-verified"
+    },
+    {
+      "id": "blackrock-spire",
+      "name": "黑石塔",
+      "pages": 0,
+      "bosses": 24,
+      "mappedBosses": 0,
+      "questRecords": 32,
+      "rawSources": [
+        "https://github.com/nanderson11/Atlas/blob/main/Images/Atlas_ClassicWoW/CL_BlackrockSpireLower.blp",
+        "https://github.com/nanderson11/Atlas/blob/main/Images/Atlas_ClassicWoW/CL_BlackrockSpireUpper.blp"
+      ],
+      "status": "source-collected-needs-refinement"
+    },
+    {
+      "id": "maraudon",
+      "name": "玛拉顿",
+      "pages": 0,
+      "bosses": 9,
+      "mappedBosses": 0,
+      "questRecords": 11,
+      "rawSources": [
+        "https://github.com/nanderson11/Atlas/blob/main/Images/Atlas_ClassicWoW/CL_Maraudon.blp"
+      ],
+      "status": "source-collected-needs-refinement"
+    },
+    {
+      "id": "razorfen-downs",
+      "name": "剃刀高地",
+      "pages": 1,
+      "bosses": 6,
+      "mappedBosses": 6,
+      "questRecords": 7,
+      "rawSources": [],
+      "status": "bundled-reference"
+    },
+    {
+      "id": "scholomance",
+      "name": "通灵学院",
+      "pages": 0,
+      "bosses": 15,
+      "mappedBosses": 0,
+      "questRecords": 11,
+      "rawSources": [
+        "https://github.com/nanderson11/Atlas/blob/main/Images/Atlas_ClassicWoW/CL_Scholomance.blp"
+      ],
+      "status": "source-collected-needs-refinement"
+    },
+    {
+      "id": "shapers-terrace",
+      "name": "塑形者露台",
+      "pages": 0,
+      "bosses": 0,
+      "mappedBosses": 0,
+      "questRecords": 0,
+      "rawSources": [],
+      "status": "interior-layout-not-verified"
+    },
+    {
+      "id": "stratholme",
+      "name": "斯坦索姆",
+      "pages": 0,
+      "bosses": 19,
+      "mappedBosses": 0,
+      "questRecords": 15,
+      "rawSources": [
+        "https://github.com/nanderson11/Atlas/blob/main/Images/Atlas_ClassicWoW/CL_Stratholme.blp"
+      ],
+      "status": "source-collected-needs-refinement"
+    },
+    {
+      "id": "sunken-temple",
+      "name": "阿塔哈卡神庙",
+      "pages": 0,
+      "bosses": 11,
+      "mappedBosses": 0,
+      "questRecords": 8,
+      "rawSources": [
+        "https://github.com/nanderson11/Atlas/blob/main/Images/Atlas_ClassicWoW/CL_TheSunkenTemple.blp"
+      ],
+      "status": "source-collected-needs-refinement"
+    },
+    {
+      "id": "the-drowned-city",
+      "name": "沉没之城",
+      "pages": 0,
+      "bosses": 0,
+      "mappedBosses": 0,
+      "questRecords": 0,
+      "rawSources": [],
+      "status": "interior-layout-not-verified"
+    },
+    {
+      "id": "uldaman",
+      "name": "奥达曼",
+      "pages": 1,
+      "bosses": 10,
+      "mappedBosses": 10,
+      "questRecords": 22,
+      "rawSources": [],
+      "status": "bundled-reference"
+    },
+    {
+      "id": "zulfarrak",
+      "name": "祖尔法拉克",
+      "pages": 0,
+      "bosses": 9,
+      "mappedBosses": 0,
+      "questRecords": 7,
+      "rawSources": [
+        "https://github.com/nanderson11/Atlas/blob/main/Images/Atlas_ClassicWoW/CL_ZulFarrak.blp"
+      ],
+      "status": "source-collected-needs-refinement"
+    }
+  ],
+  "caveats": [
+    "A map index is generated from known local facts, not a fully authored or in-game verified walkthrough.",
+    "Classic data may differ in Forever. New quest restrictions, Chinese names and objective/turn-in points are incomplete.",
+    "Zephras pickup gates remain unverified upstream; these facts are retained but do not become recommended pickups. Already accepted quests can still use known objectives.",
+    "World map images do not prove quest positions. No positions fabricated for Riverglades, Mount Hyjal or Shendralas.",
+    "Classic refined map pins identify rooms/areas, not measured Forever spawn positions."
+  ],
+  "additionalMapSources": [
+    {
+      "slug": "half-pint-tavern",
+      "status": "public-layout-collected-no-verified-dungeon-catalog-entry",
+      "source": "https://warcraftforever.games/maps/half-pint-tavern"
+    }
+  ]
+}
