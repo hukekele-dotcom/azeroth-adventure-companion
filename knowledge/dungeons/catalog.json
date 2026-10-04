@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-01.1",
+  "version": "2026-10-03.1",
   "client": "1.60.1",
   "dungeons": [
     {
@@ -10,7 +10,7 @@
         "Ragefire Chasm"
       ],
       "coverage": "partial",
-      "source": "Local knowledge base · 2026-10-01",
+      "source": "Local knowledge base · 2026-10-03",
       "quests": [
         {
           "id": 5723,
@@ -40,10 +40,36 @@
           "prerequisitesEn": "",
           "nameTw": "試探敵人",
           "sources": [
-            "https://foreverchanges.pro/dungeons/ragefire-chasm"
+            "https://foreverchanges.pro/dungeons/ragefire-chasm",
+            "https://wowf.io/zh/dungeons/ragefire-chasm/quests",
+            "https://wowf.io/en/dungeons/ragefire-chasm/quests"
           ],
-          "sourceDate": "2026-10-01",
-          "conditionsSource": "EverythingQuests Forever"
+          "sourceDate": "2026-10-03",
+          "conditionsSource": "EverythingQuests Forever",
+          "turnIn": "拉哈罗 · 雷霆崖 · 长者高地 · 70, 29.2",
+          "turnInEn": "Rahauro · Thunder Bluff · Elder Rise · 70, 29.2",
+          "turnInLocations": [
+            {
+              "name": "拉哈罗",
+              "kind": "npc",
+              "zone": "雷霆崖",
+              "place": "长者高地",
+              "x": 70,
+              "y": 29.2
+            }
+          ],
+          "pickupDetails": "拉哈罗 · 雷霆崖 · 长者高地 · 70, 29.2",
+          "pickupDetailsEn": "Rahauro · Thunder Bluff · Elder Rise · 70, 29.2",
+          "pickupLocations": [
+            {
+              "name": "拉哈罗",
+              "kind": "npc",
+              "zone": "雷霆崖",
+              "place": "长者高地",
+              "x": 70,
+              "y": 29.2
+            }
+          ]
         },
         {
           "id": 5722,
@@ -79,7 +105,33 @@
           "nameEn": "Searching for the Lost Satchel",
           "instructionsEn": "Search Ragefire Chasm for Maur Grimtotem's corpse and search it for any items of interest.",
           "fromEn": "Rahauro · Thunder Bluff · 70.1, 29.5",
-          "prerequisitesEn": ""
+          "prerequisitesEn": "",
+          "turnIn": "玛尔·恐怖图腾 · 怒焰裂谷",
+          "turnInEn": "Maur Grimtotem · Ragefire Chasm",
+          "turnInLocations": [
+            {
+              "name": "玛尔·恐怖图腾",
+              "kind": "npc",
+              "zone": "怒焰裂谷"
+            }
+          ],
+          "pickupDetails": "拉哈罗 · 雷霆崖 · 长者高地 · 70, 29.2",
+          "pickupDetailsEn": "Rahauro · Thunder Bluff · Elder Rise · 70, 29.2",
+          "pickupLocations": [
+            {
+              "name": "拉哈罗",
+              "kind": "npc",
+              "zone": "雷霆崖",
+              "place": "长者高地",
+              "x": 70,
+              "y": 29.2
+            }
+          ],
+          "sources": [
+            "https://wowf.io/zh/dungeons/ragefire-chasm/quests",
+            "https://wowf.io/en/dungeons/ragefire-chasm/quests"
+          ],
+          "sourceDate": "2026-10-03"
         },
         {
           "id": 5725,
@@ -194,10 +246,34 @@
           "rewardNote": "可选奖励 3 选 1",
           "rewardNoteEn": "Choose 1 of 3 rewards",
           "sources": [
-            "https://foreverchanges.pro/dungeons/ragefire-chasm"
+            "https://foreverchanges.pro/dungeons/ragefire-chasm",
+            "https://wowf.io/zh/dungeons/ragefire-chasm/quests",
+            "https://wowf.io/en/dungeons/ragefire-chasm/quests"
           ],
-          "sourceDate": "2026-10-01",
-          "conditionsSource": "EverythingQuests Forever"
+          "sourceDate": "2026-10-03",
+          "conditionsSource": "EverythingQuests Forever",
+          "turnIn": "瓦里玛萨斯 · 幽暗城 · 56.2, 92.4",
+          "turnInEn": "Varimathras · Undercity · 56.2, 92.4",
+          "turnInLocations": [
+            {
+              "name": "瓦里玛萨斯",
+              "kind": "npc",
+              "zone": "幽暗城",
+              "x": 56.2,
+              "y": 92.4
+            }
+          ],
+          "pickupDetails": "瓦里玛萨斯 · 幽暗城 · 56.2, 92.4",
+          "pickupDetailsEn": "Varimathras · Undercity · 56.2, 92.4",
+          "pickupLocations": [
+            {
+              "name": "瓦里玛萨斯",
+              "kind": "npc",
+              "zone": "幽暗城",
+              "x": 56.2,
+              "y": 92.4
+            }
+          ]
         },
         {
           "id": 5728,
@@ -269,10 +345,34 @@
           "prerequisitesEn": "Hidden Enemies → Hidden Enemies",
           "nameTw": "隱藏的敵人",
           "sources": [
-            "https://foreverchanges.pro/dungeons/ragefire-chasm"
+            "https://foreverchanges.pro/dungeons/ragefire-chasm",
+            "https://wowf.io/zh/dungeons/ragefire-chasm/quests",
+            "https://wowf.io/en/dungeons/ragefire-chasm/quests"
           ],
-          "sourceDate": "2026-10-01",
-          "conditionsSource": "EverythingQuests Forever"
+          "sourceDate": "2026-10-03",
+          "conditionsSource": "EverythingQuests Forever",
+          "turnIn": "萨尔 · 奥格瑞玛 · 32, 37.8",
+          "turnInEn": "Thrall · Orgrimmar · 32, 37.8",
+          "turnInLocations": [
+            {
+              "name": "萨尔",
+              "kind": "npc",
+              "zone": "奥格瑞玛",
+              "x": 32,
+              "y": 37.8
+            }
+          ],
+          "pickupDetails": "萨尔 · 奥格瑞玛 · 32, 37.8",
+          "pickupDetailsEn": "Thrall · Orgrimmar · 32, 37.8",
+          "pickupLocations": [
+            {
+              "name": "萨尔",
+              "kind": "npc",
+              "zone": "奥格瑞玛",
+              "x": 32,
+              "y": 37.8
+            }
+          ]
         },
         {
           "id": 5761,
@@ -300,10 +400,34 @@
           "prerequisitesEn": "",
           "nameTw": "饑餓者塔拉加曼",
           "sources": [
-            "https://foreverchanges.pro/dungeons/ragefire-chasm"
+            "https://foreverchanges.pro/dungeons/ragefire-chasm",
+            "https://wowf.io/zh/dungeons/ragefire-chasm/quests",
+            "https://wowf.io/en/dungeons/ragefire-chasm/quests"
           ],
-          "sourceDate": "2026-10-01",
-          "conditionsSource": "EverythingQuests Forever"
+          "sourceDate": "2026-10-03",
+          "conditionsSource": "EverythingQuests Forever",
+          "turnIn": "尼尔鲁·火刃 · 奥格瑞玛 · 49.4, 50.6",
+          "turnInEn": "Neeru Fireblade · Orgrimmar · 49.4, 50.6",
+          "turnInLocations": [
+            {
+              "name": "尼尔鲁·火刃",
+              "kind": "npc",
+              "zone": "奥格瑞玛",
+              "x": 49.4,
+              "y": 50.6
+            }
+          ],
+          "pickupDetails": "尼尔鲁·火刃 · 奥格瑞玛 · 49.4, 50.6",
+          "pickupDetailsEn": "Neeru Fireblade · Orgrimmar · 49.4, 50.6",
+          "pickupLocations": [
+            {
+              "name": "尼尔鲁·火刃",
+              "kind": "npc",
+              "zone": "奥格瑞玛",
+              "x": 49.4,
+              "y": 50.6
+            }
+          ]
         },
         {
           "id": 5724,
@@ -975,9 +1099,11 @@
       "mapID": 389,
       "nameEn": "Ragefire Chasm",
       "sources": [
-        "https://foreverchanges.pro/dungeons/ragefire-chasm"
+        "https://foreverchanges.pro/dungeons/ragefire-chasm",
+        "https://wowf.io/zh/dungeons/ragefire-chasm/quests",
+        "https://wowf.io/en/dungeons/ragefire-chasm/quests"
       ],
-      "sourceDate": "2026-10-01",
+      "sourceDate": "2026-10-03",
       "counts": {
         "quests": 6,
         "classicQuests": 0,
@@ -999,7 +1125,7 @@
         "The Hall of Thanes"
       ],
       "coverage": "partial",
-      "source": "Local knowledge base · 2026-10-01",
+      "source": "Local knowledge base · 2026-10-03",
       "quests": [
         {
           "id": 96394,
@@ -1074,10 +1200,23 @@
           "rewardNote": "可选奖励 2 选 1",
           "rewardNoteEn": "Choose 1 of 2 rewards",
           "sources": [
-            "https://foreverchanges.pro/dungeons/hall-of-thanes"
+            "https://foreverchanges.pro/dungeons/hall-of-thanes",
+            "https://wowf.io/zh/dungeons/hall-of-thanes/quests",
+            "https://wowf.io/en/dungeons/hall-of-thanes/quests"
           ],
-          "sourceDate": "2026-10-01",
-          "conditionsSource": "Community minimum only; other conditions unverified"
+          "sourceDate": "2026-10-03",
+          "conditionsSource": "Community minimum only; other conditions unverified",
+          "pickupDetails": "Afadra Dunwall · 铁炉堡 · 34, 48.8",
+          "pickupDetailsEn": "Afadra Dunwall · Ironforge · 34, 48.8",
+          "pickupLocations": [
+            {
+              "name": "Afadra Dunwall",
+              "kind": "npc",
+              "zone": "铁炉堡",
+              "x": 34,
+              "y": 48.8
+            }
+          ]
         },
         {
           "id": 96395,
@@ -1159,10 +1298,21 @@
           "rewardNote": "可选奖励 2 选 1",
           "rewardNoteEn": "Choose 1 of 2 rewards",
           "sources": [
-            "https://foreverchanges.pro/dungeons/hall-of-thanes"
+            "https://foreverchanges.pro/dungeons/hall-of-thanes",
+            "https://wowf.io/zh/dungeons/hall-of-thanes/quests",
+            "https://wowf.io/en/dungeons/hall-of-thanes/quests"
           ],
-          "sourceDate": "2026-10-01",
-          "conditionsSource": "Community minimum only; other conditions unverified"
+          "sourceDate": "2026-10-03",
+          "conditionsSource": "Community minimum only; other conditions unverified",
+          "pickupDetails": "Ghostly Attendant · 领主大厅",
+          "pickupDetailsEn": "Ghostly Attendant · The Hall of Thanes",
+          "pickupLocations": [
+            {
+              "name": "Ghostly Attendant",
+              "kind": "npc",
+              "zone": "领主大厅"
+            }
+          ]
         },
         {
           "id": 96403,
@@ -1238,10 +1388,23 @@
           "rewardNote": "可选奖励 2 选 1",
           "rewardNoteEn": "Choose 1 of 2 rewards",
           "sources": [
-            "https://foreverchanges.pro/dungeons/hall-of-thanes"
+            "https://foreverchanges.pro/dungeons/hall-of-thanes",
+            "https://wowf.io/zh/dungeons/hall-of-thanes/quests",
+            "https://wowf.io/en/dungeons/hall-of-thanes/quests"
           ],
-          "sourceDate": "2026-10-01",
-          "conditionsSource": "Community minimum only; other conditions unverified"
+          "sourceDate": "2026-10-03",
+          "conditionsSource": "Community minimum only; other conditions unverified",
+          "pickupDetails": "Thom Filch · 铁炉堡 · 32.6, 44.6",
+          "pickupDetailsEn": "Thom Filch · Ironforge · 32.6, 44.6",
+          "pickupLocations": [
+            {
+              "name": "Thom Filch",
+              "kind": "npc",
+              "zone": "铁炉堡",
+              "x": 32.6,
+              "y": 44.6
+            }
+          ]
         },
         {
           "id": 96393,
@@ -1341,10 +1504,24 @@
           "rewardNoteEn": "Choose 1 of 3 rewards",
           "sources": [
             "https://foreverchanges.pro/dungeons/hall-of-thanes",
+            "https://wowf.io/zh/dungeons/hall-of-thanes/quests",
+            "https://wowf.io/en/dungeons/hall-of-thanes/quests",
             "https://wowforevertalents.com/quests/old-ironforge-incursion-96393/"
           ],
-          "sourceDate": "2026-10-01",
-          "conditionsSource": "Community minimum only; other conditions unverified"
+          "sourceDate": "2026-10-03",
+          "conditionsSource": "Community minimum only; other conditions unverified",
+          "pickupDetails": "Earthseer Farsen · 丹莫罗 · 冻土岭 · 64.8, 58.4",
+          "pickupDetailsEn": "Earthseer Farsen · Dun Morogh · The Tundrid Hills · 64.8, 58.4",
+          "pickupLocations": [
+            {
+              "name": "Earthseer Farsen",
+              "kind": "npc",
+              "zone": "丹莫罗",
+              "place": "冻土岭",
+              "x": 64.8,
+              "y": 58.4
+            }
+          ]
         },
         {
           "id": 98423,
@@ -1366,10 +1543,30 @@
           "minLevel": 9,
           "sources": [
             "https://foreverchanges.pro/dungeons/hall-of-thanes",
+            "https://wowf.io/zh/dungeons/hall-of-thanes/quests",
+            "https://wowf.io/en/dungeons/hall-of-thanes/quests",
             "https://www.wowhead.com/forever/quest=98423/the-treaty-of-understanding"
           ],
-          "sourceDate": "2026-10-01",
+          "sourceDate": "2026-10-03",
           "conditionsSource": "Community minimum only; other conditions unverified",
+          "turnIn": "麦格尼·铜须 · 铁炉堡",
+          "turnInEn": "Magni Bronzebeard · Ironforge",
+          "turnInLocations": [
+            {
+              "name": "麦格尼·铜须",
+              "kind": "npc",
+              "zone": "铁炉堡"
+            }
+          ],
+          "pickupDetails": "Treaty of Understanding · 领主大厅",
+          "pickupDetailsEn": "Treaty of Understanding · The Hall of Thanes",
+          "pickupLocations": [
+            {
+              "name": "Treaty of Understanding",
+              "kind": "item",
+              "zone": "领主大厅"
+            }
+          ],
           "inside": true
         }
       ],
@@ -1874,9 +2071,11 @@
       ],
       "nameEn": "Hall of Thanes",
       "sources": [
-        "https://foreverchanges.pro/dungeons/hall-of-thanes"
+        "https://foreverchanges.pro/dungeons/hall-of-thanes",
+        "https://wowf.io/zh/dungeons/hall-of-thanes/quests",
+        "https://wowf.io/en/dungeons/hall-of-thanes/quests"
       ],
-      "sourceDate": "2026-10-01",
+      "sourceDate": "2026-10-03",
       "counts": {
         "quests": 5,
         "classicQuests": 0,
@@ -1897,7 +2096,7 @@
         "Ruins of Lordaeron"
       ],
       "coverage": "partial",
-      "source": "Local knowledge base · 2026-10-01",
+      "source": "Local knowledge base · 2026-10-03",
       "quests": [
         {
           "id": 95250,
@@ -2001,10 +2200,21 @@
           "rewardNote": "可选奖励 3 选 1",
           "rewardNoteEn": "Choose 1 of 3 rewards",
           "sources": [
-            "https://foreverchanges.pro/dungeons/ruins-of-lordaeron"
+            "https://foreverchanges.pro/dungeons/ruins-of-lordaeron",
+            "https://wowf.io/zh/dungeons/ruins-of-lordaeron/quests",
+            "https://wowf.io/en/dungeons/ruins-of-lordaeron/quests"
           ],
-          "sourceDate": "2026-10-01",
-          "conditionsSource": "Community minimum only; other conditions unverified"
+          "sourceDate": "2026-10-03",
+          "conditionsSource": "Community minimum only; other conditions unverified",
+          "pickupDetails": "Captain Truman · 洛丹伦废墟",
+          "pickupDetailsEn": "Captain Truman · Ruins of Lordaeron",
+          "pickupLocations": [
+            {
+              "name": "Captain Truman",
+              "kind": "npc",
+              "zone": "洛丹伦废墟"
+            }
+          ]
         },
         {
           "id": 92415,
@@ -2018,7 +2228,18 @@
           "factionSource": "archive-explicit",
           "prerequisites": "",
           "steps": [],
-          "followups": [],
+          "followups": [
+            {
+              "name": "Remember That I Love You",
+              "nameEn": "Remember That I Love You",
+              "optional": false,
+              "faction": "alliance",
+              "from": "孤儿监护员奈丁加尔 · 暴风城",
+              "fromEn": "Orphan Matron Nightingale · Stormwind City",
+              "instructions": "把染血的信交给暮色森林的艾瓦特·菲尔伍德。",
+              "instructionsEn": "Deliver the Blood-Stained Letter to Avette Fellwood in Duskwood."
+            }
+          ],
           "rewards": [
             {
               "id": 279870,
@@ -2065,10 +2286,21 @@
           "rewardNote": "可选奖励 1 选 1",
           "rewardNoteEn": "Choose 1 of 1 rewards",
           "sources": [
-            "https://foreverchanges.pro/dungeons/ruins-of-lordaeron"
+            "https://foreverchanges.pro/dungeons/ruins-of-lordaeron",
+            "https://wowf.io/zh/dungeons/ruins-of-lordaeron/quests",
+            "https://wowf.io/en/dungeons/ruins-of-lordaeron/quests"
           ],
-          "sourceDate": "2026-10-01",
-          "conditionsSource": "Community minimum only; other conditions unverified"
+          "sourceDate": "2026-10-03",
+          "conditionsSource": "Community minimum only; other conditions unverified",
+          "pickupDetails": "染血的信 · 洛丹伦废墟",
+          "pickupDetailsEn": "Blood-Stained Letter · Ruins of Lordaeron",
+          "pickupLocations": [
+            {
+              "name": "染血的信",
+              "kind": "item",
+              "zone": "洛丹伦废墟"
+            }
+          ]
         },
         {
           "id": 95189,
@@ -2121,10 +2353,21 @@
           "prerequisitesEn": "",
           "minLevel": 16,
           "sources": [
-            "https://foreverchanges.pro/dungeons/ruins-of-lordaeron"
+            "https://foreverchanges.pro/dungeons/ruins-of-lordaeron",
+            "https://wowf.io/zh/dungeons/ruins-of-lordaeron/quests",
+            "https://wowf.io/en/dungeons/ruins-of-lordaeron/quests"
           ],
-          "sourceDate": "2026-10-01",
-          "conditionsSource": "Community minimum only; other conditions unverified"
+          "sourceDate": "2026-10-03",
+          "conditionsSource": "Community minimum only; other conditions unverified",
+          "pickupDetails": "洛丹伦纹章 · 洛丹伦废墟",
+          "pickupDetailsEn": "Crest of Lordaeron · Ruins of Lordaeron",
+          "pickupLocations": [
+            {
+              "name": "洛丹伦纹章",
+              "kind": "object",
+              "zone": "洛丹伦废墟"
+            }
+          ]
         },
         {
           "id": 95195,
@@ -2204,10 +2447,21 @@
           "rewardNote": "可选奖励 2 选 1",
           "rewardNoteEn": "Choose 1 of 2 rewards",
           "sources": [
-            "https://foreverchanges.pro/dungeons/ruins-of-lordaeron"
+            "https://foreverchanges.pro/dungeons/ruins-of-lordaeron",
+            "https://wowf.io/zh/dungeons/ruins-of-lordaeron/quests",
+            "https://wowf.io/en/dungeons/ruins-of-lordaeron/quests"
           ],
-          "sourceDate": "2026-10-01",
-          "conditionsSource": "Community minimum only; other conditions unverified"
+          "sourceDate": "2026-10-03",
+          "conditionsSource": "Community minimum only; other conditions unverified",
+          "pickupDetails": "血污徽章 · 洛丹伦废墟",
+          "pickupDetailsEn": "Bloodied Insignia · Ruins of Lordaeron",
+          "pickupLocations": [
+            {
+              "name": "血污徽章",
+              "kind": "item",
+              "zone": "洛丹伦废墟"
+            }
+          ]
         },
         {
           "id": 97288,
@@ -2222,7 +2476,48 @@
           "factionSource": "archive-explicit",
           "prerequisites": "",
           "steps": [],
-          "followups": [],
+          "followups": [
+            {
+              "name": "无尽的折磨",
+              "nameEn": "Unending Torment",
+              "optional": false,
+              "faction": "horde",
+              "from": "大药剂师法拉尼尔 · 幽暗城 · 48.6, 69.4",
+              "fromEn": "Master Apothecary Faranell · Undercity · 48.6, 69.4",
+              "instructions": "将男爵的头颅带到幽暗城中奥斯玛尔的躯体旁。",
+              "instructionsEn": "Bring the Head of the Baron to the body of Othmar in the Undercity."
+            },
+            {
+              "name": "无尽的折磨",
+              "nameEn": "Unending Torment",
+              "optional": false,
+              "faction": "horde",
+              "from": "未完成的憎恶 · 幽暗城",
+              "fromEn": "Unfinished Abomination · Undercity",
+              "instructions": "向幽暗城的大药剂师法拉尼尔报告你的发现。",
+              "instructionsEn": "Report your findings to Master Apothecary Faranell in Undercity."
+            },
+            {
+              "name": "无尽的折磨",
+              "nameEn": "Unending Torment",
+              "optional": false,
+              "faction": "horde",
+              "from": "大药剂师法拉尼尔 · 幽暗城 · 48.6, 69.4",
+              "fromEn": "Master Apothecary Faranell · Undercity · 48.6, 69.4",
+              "instructions": "前往贸易区寻找塔文·格瑞斯特获取剧毒骨帽，在草药学训练师附近寻找水疱草，并前往潜行者区向毒药商购买苦楚精华，全部交还给幽暗城的大药剂师法拉尼尔。",
+              "instructionsEn": "Collect a Toxic Skullcap from Tawny Grisette in the Trade Quarter, Blisterweed near the Herbalism Trainer, and Essence of Agony from the poison vendor in the Rogues' Quarter for Master Apothecary Faranell in Undercity."
+            },
+            {
+              "name": "无尽的折磨",
+              "nameEn": "Unending Torment",
+              "optional": false,
+              "faction": "horde",
+              "from": "大药剂师法拉尼尔 · 幽暗城 · 48.6, 69.4",
+              "fromEn": "Master Apothecary Faranell · Undercity · 48.6, 69.4",
+              "instructions": "替大药剂师法拉尼尔将嘶嘶血清注入奥斯玛尔躯体上方的仪器中。",
+              "instructionsEn": "Inject the Hissing Serum into the system above Othmar's body for Master Apothecary Faranell."
+            }
+          ],
           "rewards": [],
           "xp": 1650,
           "nameEn": "Unending Torment",
@@ -2232,10 +2527,21 @@
           "minLevel": 16,
           "sources": [
             "https://foreverchanges.pro/dungeons/ruins-of-lordaeron",
+            "https://wowf.io/zh/dungeons/ruins-of-lordaeron/quests",
+            "https://wowf.io/en/dungeons/ruins-of-lordaeron/quests",
             "https://www.wowhead.com/forever/quest=97288/unending-torment"
           ],
-          "sourceDate": "2026-10-01",
-          "conditionsSource": "Community minimum only; other conditions unverified"
+          "sourceDate": "2026-10-03",
+          "conditionsSource": "Community minimum only; other conditions unverified",
+          "pickupDetails": "憎恶头颅 · 洛丹伦废墟",
+          "pickupDetailsEn": "Abominable Head · Ruins of Lordaeron",
+          "pickupLocations": [
+            {
+              "name": "憎恶头颅",
+              "kind": "item",
+              "zone": "洛丹伦废墟"
+            }
+          ]
         },
         {
           "id": 92401,
@@ -2310,10 +2616,24 @@
           "rewardNote": "可选奖励 2 选 1",
           "rewardNoteEn": "Choose 1 of 2 rewards",
           "sources": [
-            "https://foreverchanges.pro/dungeons/ruins-of-lordaeron"
+            "https://foreverchanges.pro/dungeons/ruins-of-lordaeron",
+            "https://wowf.io/zh/dungeons/ruins-of-lordaeron/quests",
+            "https://wowf.io/en/dungeons/ruins-of-lordaeron/quests"
           ],
-          "sourceDate": "2026-10-01",
-          "conditionsSource": "Community minimum only; other conditions unverified"
+          "sourceDate": "2026-10-03",
+          "conditionsSource": "Community minimum only; other conditions unverified",
+          "pickupDetails": "塔比莎·织心 · 银松森林 · 瑟伯切尔 · 44.4, 42.8",
+          "pickupDetailsEn": "Tabitha Heartweaver · Silverpine Forest · The Sepulcher · 44.4, 42.8",
+          "pickupLocations": [
+            {
+              "name": "塔比莎·织心",
+              "kind": "npc",
+              "zone": "银松森林",
+              "place": "瑟伯切尔",
+              "x": 44.4,
+              "y": 42.8
+            }
+          ]
         },
         {
           "id": 92421,
@@ -2393,10 +2713,23 @@
           "rewardNote": "可选奖励 2 选 1",
           "rewardNoteEn": "Choose 1 of 2 rewards",
           "sources": [
-            "https://foreverchanges.pro/dungeons/ruins-of-lordaeron"
+            "https://foreverchanges.pro/dungeons/ruins-of-lordaeron",
+            "https://wowf.io/zh/dungeons/ruins-of-lordaeron/quests",
+            "https://wowf.io/en/dungeons/ruins-of-lordaeron/quests"
           ],
-          "sourceDate": "2026-10-01",
-          "conditionsSource": "Community minimum only; other conditions unverified"
+          "sourceDate": "2026-10-03",
+          "conditionsSource": "Community minimum only; other conditions unverified",
+          "pickupDetails": "莫宾·圣光之灾 · 幽暗城 · 57.6, 89.8",
+          "pickupDetailsEn": "Morbin Lightbane · Undercity · 57.6, 89.8",
+          "pickupLocations": [
+            {
+              "name": "莫宾·圣光之灾",
+              "kind": "npc",
+              "zone": "幽暗城",
+              "x": 57.6,
+              "y": 89.8
+            }
+          ]
         },
         {
           "id": 95204,
@@ -2449,10 +2782,21 @@
           "prerequisitesEn": "",
           "minLevel": 16,
           "sources": [
-            "https://foreverchanges.pro/dungeons/ruins-of-lordaeron"
+            "https://foreverchanges.pro/dungeons/ruins-of-lordaeron",
+            "https://wowf.io/zh/dungeons/ruins-of-lordaeron/quests",
+            "https://wowf.io/en/dungeons/ruins-of-lordaeron/quests"
           ],
-          "sourceDate": "2026-10-01",
-          "conditionsSource": "Community minimum only; other conditions unverified"
+          "sourceDate": "2026-10-03",
+          "conditionsSource": "Community minimum only; other conditions unverified",
+          "pickupDetails": "洛丹伦纹章 · 洛丹伦废墟",
+          "pickupDetailsEn": "Crest of Lordaeron · Ruins of Lordaeron",
+          "pickupLocations": [
+            {
+              "name": "洛丹伦纹章",
+              "kind": "object",
+              "zone": "洛丹伦废墟"
+            }
+          ]
         },
         {
           "id": 95216,
@@ -2526,10 +2870,23 @@
           "rewardNote": "可选奖励 2 选 1",
           "rewardNoteEn": "Choose 1 of 2 rewards",
           "sources": [
-            "https://foreverchanges.pro/dungeons/ruins-of-lordaeron"
+            "https://foreverchanges.pro/dungeons/ruins-of-lordaeron",
+            "https://wowf.io/zh/dungeons/ruins-of-lordaeron/quests",
+            "https://wowf.io/en/dungeons/ruins-of-lordaeron/quests"
           ],
-          "sourceDate": "2026-10-01",
-          "conditionsSource": "Community minimum only; other conditions unverified"
+          "sourceDate": "2026-10-03",
+          "conditionsSource": "Community minimum only; other conditions unverified",
+          "pickupDetails": "萨多雷·格雷夫 · 幽暗城 · 46.4, 71.4",
+          "pickupDetailsEn": "Theodore Griffs · Undercity · 46.4, 71.4",
+          "pickupLocations": [
+            {
+              "name": "萨多雷·格雷夫",
+              "kind": "npc",
+              "zone": "幽暗城",
+              "x": 46.4,
+              "y": 71.4
+            }
+          ]
         },
         {
           "id": 92422,
@@ -2613,10 +2970,23 @@
           "rewardNote": "可选奖励 2 选 1",
           "rewardNoteEn": "Choose 1 of 2 rewards",
           "sources": [
-            "https://foreverchanges.pro/dungeons/ruins-of-lordaeron"
+            "https://foreverchanges.pro/dungeons/ruins-of-lordaeron",
+            "https://wowf.io/zh/dungeons/ruins-of-lordaeron/quests",
+            "https://wowf.io/en/dungeons/ruins-of-lordaeron/quests"
           ],
-          "sourceDate": "2026-10-01",
-          "conditionsSource": "Community minimum only; other conditions unverified"
+          "sourceDate": "2026-10-03",
+          "conditionsSource": "Community minimum only; other conditions unverified",
+          "pickupDetails": "亡灵卫兵克里斯托弗 · 提瑞斯法林地 · 65.2, 60.2",
+          "pickupDetailsEn": "Deathguard Kristof · Tirisfal Glades · 65.2, 60.2",
+          "pickupLocations": [
+            {
+              "name": "亡灵卫兵克里斯托弗",
+              "kind": "npc",
+              "zone": "提瑞斯法林地",
+              "x": 65.2,
+              "y": 60.2
+            }
+          ]
         }
       ],
       "bosses": [
@@ -3581,9 +3951,11 @@
       ],
       "nameEn": "Ruins of Lordaeron",
       "sources": [
-        "https://foreverchanges.pro/dungeons/ruins-of-lordaeron"
+        "https://foreverchanges.pro/dungeons/ruins-of-lordaeron",
+        "https://wowf.io/zh/dungeons/ruins-of-lordaeron/quests",
+        "https://wowf.io/en/dungeons/ruins-of-lordaeron/quests"
       ],
-      "sourceDate": "2026-10-01",
+      "sourceDate": "2026-10-03",
       "counts": {
         "quests": 10,
         "classicQuests": 0,
@@ -3605,7 +3977,7 @@
         "Deadmines"
       ],
       "coverage": "partial",
-      "source": "Local knowledge base · 2026-10-01",
+      "source": "Local knowledge base · 2026-10-03",
       "quests": [
         {
           "id": 214,
@@ -3781,10 +4153,36 @@
           "rewardNote": "可选奖励 4 选 1",
           "rewardNoteEn": "Choose 1 of 4 rewards",
           "sources": [
-            "https://foreverchanges.pro/dungeons/the-deadmines"
+            "https://foreverchanges.pro/dungeons/the-deadmines",
+            "https://wowf.io/zh/dungeons/deadmines/quests",
+            "https://wowf.io/en/dungeons/deadmines/quests"
           ],
-          "sourceDate": "2026-10-01",
-          "conditionsSource": "EverythingQuests Forever"
+          "sourceDate": "2026-10-03",
+          "conditionsSource": "EverythingQuests Forever",
+          "turnIn": "哨兵瑞尔 · 西部荒野 · 哨兵岭 · 56.7, 47.4",
+          "turnInEn": "Scout Riell · Westfall · Sentinel Hill · 56.7, 47.4",
+          "turnInLocations": [
+            {
+              "name": "哨兵瑞尔",
+              "kind": "npc",
+              "zone": "西部荒野",
+              "place": "哨兵岭",
+              "x": 56.7,
+              "y": 47.4
+            }
+          ],
+          "pickupDetails": "哨兵瑞尔 · 西部荒野 · 哨兵岭 · 56.7, 47.4",
+          "pickupDetailsEn": "Scout Riell · Westfall · Sentinel Hill · 56.7, 47.4",
+          "pickupLocations": [
+            {
+              "name": "哨兵瑞尔",
+              "kind": "npc",
+              "zone": "西部荒野",
+              "place": "哨兵岭",
+              "x": 56.7,
+              "y": 47.4
+            }
+          ]
         },
         {
           "id": 168,
@@ -3886,10 +4284,34 @@
           "rewardNote": "可选奖励 3 选 1",
           "rewardNoteEn": "Choose 1 of 3 rewards",
           "sources": [
-            "https://foreverchanges.pro/dungeons/the-deadmines"
+            "https://foreverchanges.pro/dungeons/the-deadmines",
+            "https://wowf.io/zh/dungeons/deadmines/quests",
+            "https://wowf.io/en/dungeons/deadmines/quests"
           ],
-          "sourceDate": "2026-10-01",
-          "conditionsSource": "EverythingQuests Forever"
+          "sourceDate": "2026-10-03",
+          "conditionsSource": "EverythingQuests Forever",
+          "turnIn": "维尔德·蓟草 · 暴风城 · 70.2, 40.8",
+          "turnInEn": "Wilder Thistlenettle · Stormwind City · 70.2, 40.8",
+          "turnInLocations": [
+            {
+              "name": "维尔德·蓟草",
+              "kind": "npc",
+              "zone": "暴风城",
+              "x": 70.2,
+              "y": 40.8
+            }
+          ],
+          "pickupDetails": "维尔德·蓟草 · 暴风城 · 70.2, 40.8",
+          "pickupDetailsEn": "Wilder Thistlenettle · Stormwind City · 70.2, 40.8",
+          "pickupLocations": [
+            {
+              "name": "维尔德·蓟草",
+              "kind": "npc",
+              "zone": "暴风城",
+              "x": 70.2,
+              "y": 40.8
+            }
+          ]
         },
         {
           "id": 92753,
@@ -4003,7 +4425,21 @@
           "nameEn": "Destruction in Deadmines",
           "instructionsEn": "Find the forge hidden in the Deadmines, and plant the Extra-Destructive Explosives nearby. Then, meet up with Alba Fairmoon at the Deadmines exit.",
           "fromEn": "Alba Fairmoon · Westfall",
-          "prerequisitesEn": "Murloc Gills → The State of the Mines → Moonbrook Espionage → Explosive Consultation → A Dynamite Plan → Detonation at a Distance → Detonation at a Distance → Explosive Consultation"
+          "prerequisitesEn": "Murloc Gills → The State of the Mines → Moonbrook Espionage → Explosive Consultation → A Dynamite Plan → Detonation at a Distance → Detonation at a Distance → Explosive Consultation",
+          "pickupDetails": "阿尔巴·晴月 · 西部荒野",
+          "pickupDetailsEn": "Alba Fairmoon · Westfall",
+          "pickupLocations": [
+            {
+              "name": "阿尔巴·晴月",
+              "kind": "npc",
+              "zone": "西部荒野"
+            }
+          ],
+          "sources": [
+            "https://wowf.io/zh/dungeons/deadmines/quests",
+            "https://wowf.io/en/dungeons/deadmines/quests"
+          ],
+          "sourceDate": "2026-10-03"
         },
         {
           "id": 167,
@@ -4093,10 +4529,34 @@
           "rewardNote": "可选奖励 3 选 1",
           "rewardNoteEn": "Choose 1 of 3 rewards",
           "sources": [
-            "https://foreverchanges.pro/dungeons/the-deadmines"
+            "https://foreverchanges.pro/dungeons/the-deadmines",
+            "https://wowf.io/zh/dungeons/deadmines/quests",
+            "https://wowf.io/en/dungeons/deadmines/quests"
           ],
-          "sourceDate": "2026-10-01",
-          "conditionsSource": "EverythingQuests Forever"
+          "sourceDate": "2026-10-03",
+          "conditionsSource": "EverythingQuests Forever",
+          "turnIn": "维尔德·蓟草 · 暴风城 · 70.2, 40.8",
+          "turnInEn": "Wilder Thistlenettle · Stormwind City · 70.2, 40.8",
+          "turnInLocations": [
+            {
+              "name": "维尔德·蓟草",
+              "kind": "npc",
+              "zone": "暴风城",
+              "x": 70.2,
+              "y": 40.8
+            }
+          ],
+          "pickupDetails": "维尔德·蓟草 · 暴风城 · 70.2, 40.8",
+          "pickupDetailsEn": "Wilder Thistlenettle · Stormwind City · 70.2, 40.8",
+          "pickupLocations": [
+            {
+              "name": "维尔德·蓟草",
+              "kind": "npc",
+              "zone": "暴风城",
+              "x": 70.2,
+              "y": 40.8
+            }
+          ]
         },
         {
           "id": 2040,
@@ -4237,10 +4697,34 @@
           "rewardNote": "可选奖励 4 选 1",
           "rewardNoteEn": "Choose 1 of 4 rewards",
           "sources": [
-            "https://foreverchanges.pro/dungeons/the-deadmines"
+            "https://foreverchanges.pro/dungeons/the-deadmines",
+            "https://wowf.io/zh/dungeons/deadmines/quests",
+            "https://wowf.io/en/dungeons/deadmines/quests"
           ],
-          "sourceDate": "2026-10-01",
-          "conditionsSource": "EverythingQuests Forever"
+          "sourceDate": "2026-10-03",
+          "conditionsSource": "EverythingQuests Forever",
+          "turnIn": "沉默的舒尼 · 暴风城 · 62.6, 34.2",
+          "turnInEn": "Shoni the Shilent · Stormwind City · 62.6, 34.2",
+          "turnInLocations": [
+            {
+              "name": "沉默的舒尼",
+              "kind": "npc",
+              "zone": "暴风城",
+              "x": 62.6,
+              "y": 34.2
+            }
+          ],
+          "pickupDetails": "沉默的舒尼 · 暴风城 · 62.6, 34.2",
+          "pickupDetailsEn": "Shoni the Shilent · Stormwind City · 62.6, 34.2",
+          "pickupLocations": [
+            {
+              "name": "沉默的舒尼",
+              "kind": "npc",
+              "zone": "暴风城",
+              "x": 62.6,
+              "y": 34.2
+            }
+          ]
         },
         {
           "id": 166,
@@ -4409,10 +4893,36 @@
           "rewardNote": "可选奖励 3 选 1",
           "rewardNoteEn": "Choose 1 of 3 rewards",
           "sources": [
-            "https://foreverchanges.pro/dungeons/the-deadmines"
+            "https://foreverchanges.pro/dungeons/the-deadmines",
+            "https://wowf.io/zh/dungeons/deadmines/quests",
+            "https://wowf.io/en/dungeons/deadmines/quests"
           ],
-          "sourceDate": "2026-10-01",
-          "conditionsSource": "EverythingQuests Forever"
+          "sourceDate": "2026-10-03",
+          "conditionsSource": "EverythingQuests Forever",
+          "turnIn": "格里安·斯托曼 · 西部荒野 · 哨兵岭 · 56.3, 47.5",
+          "turnInEn": "Gryan Stoutmantle · Westfall · Sentinel Hill · 56.3, 47.5",
+          "turnInLocations": [
+            {
+              "name": "格里安·斯托曼",
+              "kind": "npc",
+              "zone": "西部荒野",
+              "place": "哨兵岭",
+              "x": 56.3,
+              "y": 47.5
+            }
+          ],
+          "pickupDetails": "格里安·斯托曼 · 西部荒野 · 哨兵岭 · 56.3, 47.5",
+          "pickupDetailsEn": "Gryan Stoutmantle · Westfall · Sentinel Hill · 56.3, 47.5",
+          "pickupLocations": [
+            {
+              "name": "格里安·斯托曼",
+              "kind": "npc",
+              "zone": "西部荒野",
+              "place": "哨兵岭",
+              "x": 56.3,
+              "y": 47.5
+            }
+          ]
         },
         {
           "id": 373,
@@ -4454,7 +4964,32 @@
           "nameEn": "The Unsent Letter",
           "instructionsEn": "Deliver the Letter to the City Architect to Baros Alexston in Stormwind.",
           "fromEn": "An Unsent Letter · The Deadmines · Item-started",
-          "prerequisitesEn": ""
+          "prerequisitesEn": "",
+          "turnIn": "巴隆斯·阿历克斯顿 · 暴风城 · 57.6, 47.8",
+          "turnInEn": "Baros Alexston · Stormwind City · 57.6, 47.8",
+          "turnInLocations": [
+            {
+              "name": "巴隆斯·阿历克斯顿",
+              "kind": "npc",
+              "zone": "暴风城",
+              "x": 57.6,
+              "y": 47.8
+            }
+          ],
+          "pickupDetails": "未寄出的信 · 死亡矿井",
+          "pickupDetailsEn": "An Unsent Letter · The Deadmines",
+          "pickupLocations": [
+            {
+              "name": "未寄出的信",
+              "kind": "item",
+              "zone": "死亡矿井"
+            }
+          ],
+          "sources": [
+            "https://wowf.io/zh/dungeons/deadmines/quests",
+            "https://wowf.io/en/dungeons/deadmines/quests"
+          ],
+          "sourceDate": "2026-10-03"
         },
         {
           "id": 1654,
@@ -6746,9 +7281,11 @@
       ],
       "nameEn": "The Deadmines",
       "sources": [
-        "https://foreverchanges.pro/dungeons/the-deadmines"
+        "https://foreverchanges.pro/dungeons/the-deadmines",
+        "https://wowf.io/zh/dungeons/deadmines/quests",
+        "https://wowf.io/en/dungeons/deadmines/quests"
       ],
-      "sourceDate": "2026-10-01",
+      "sourceDate": "2026-10-03",
       "counts": {
         "quests": 8,
         "classicQuests": 0,
@@ -6769,7 +7306,7 @@
         "Wailing Caverns"
       ],
       "coverage": "partial",
-      "source": "Local knowledge base · 2026-10-01",
+      "source": "Local knowledge base · 2026-10-03",
       "quests": [
         {
           "id": 1486,
@@ -6837,10 +7374,34 @@
           "prerequisitesEn": "",
           "nameTw": "變異皮革",
           "sources": [
-            "https://foreverchanges.pro/dungeons/wailing-caverns"
+            "https://foreverchanges.pro/dungeons/wailing-caverns",
+            "https://wowf.io/zh/dungeons/wailing-caverns/quests",
+            "https://wowf.io/en/dungeons/wailing-caverns/quests"
           ],
-          "sourceDate": "2026-10-01",
-          "conditionsSource": "EverythingQuests Forever"
+          "sourceDate": "2026-10-03",
+          "conditionsSource": "EverythingQuests Forever",
+          "turnIn": "纳尔帕克 · 贫瘠之地 · 46, 35.7",
+          "turnInEn": "Nalpak · The Barrens · 46, 35.7",
+          "turnInLocations": [
+            {
+              "name": "纳尔帕克",
+              "kind": "npc",
+              "zone": "贫瘠之地",
+              "x": 46,
+              "y": 35.7
+            }
+          ],
+          "pickupDetails": "纳尔帕克 · 贫瘠之地 · 46, 35.7",
+          "pickupDetailsEn": "Nalpak · The Barrens · 46, 35.7",
+          "pickupLocations": [
+            {
+              "name": "纳尔帕克",
+              "kind": "npc",
+              "zone": "贫瘠之地",
+              "x": 46,
+              "y": 35.7
+            }
+          ]
         },
         {
           "id": 959,
@@ -6870,10 +7431,36 @@
           "prerequisitesEn": "",
           "nameTw": "港口的麻煩",
           "sources": [
-            "https://foreverchanges.pro/dungeons/wailing-caverns"
+            "https://foreverchanges.pro/dungeons/wailing-caverns",
+            "https://wowf.io/zh/dungeons/wailing-caverns/quests",
+            "https://wowf.io/en/dungeons/wailing-caverns/quests"
           ],
-          "sourceDate": "2026-10-01",
-          "conditionsSource": "EverythingQuests Forever"
+          "sourceDate": "2026-10-03",
+          "conditionsSource": "EverythingQuests Forever",
+          "turnIn": "起重机操作员比戈弗兹 · 贫瘠之地 · 棘齿城 · 63.1, 37.6",
+          "turnInEn": "Crane Operator Bigglefuzz · The Barrens · Ratchet · 63.1, 37.6",
+          "turnInLocations": [
+            {
+              "name": "起重机操作员比戈弗兹",
+              "kind": "npc",
+              "zone": "贫瘠之地",
+              "place": "棘齿城",
+              "x": 63.1,
+              "y": 37.6
+            }
+          ],
+          "pickupDetails": "起重机操作员比戈弗兹 · 贫瘠之地 · 棘齿城 · 63.1, 37.6",
+          "pickupDetailsEn": "Crane Operator Bigglefuzz · The Barrens · Ratchet · 63.1, 37.6",
+          "pickupLocations": [
+            {
+              "name": "起重机操作员比戈弗兹",
+              "kind": "npc",
+              "zone": "贫瘠之地",
+              "place": "棘齿城",
+              "x": 63.1,
+              "y": 37.6
+            }
+          ]
         },
         {
           "id": 962,
@@ -6975,10 +7562,36 @@
           "rewardNote": "可选奖励 3 选 1",
           "rewardNoteEn": "Choose 1 of 3 rewards",
           "sources": [
-            "https://foreverchanges.pro/dungeons/wailing-caverns"
+            "https://foreverchanges.pro/dungeons/wailing-caverns",
+            "https://wowf.io/zh/dungeons/wailing-caverns/quests",
+            "https://wowf.io/en/dungeons/wailing-caverns/quests"
           ],
-          "sourceDate": "2026-10-01",
-          "conditionsSource": "EverythingQuests Forever"
+          "sourceDate": "2026-10-03",
+          "conditionsSource": "EverythingQuests Forever",
+          "turnIn": "药剂师扎玛 · 雷霆崖 · 灵魂高地 · 23, 21",
+          "turnInEn": "Apothecary Zamah · Thunder Bluff · Spirit Rise · 23, 21",
+          "turnInLocations": [
+            {
+              "name": "药剂师扎玛",
+              "kind": "npc",
+              "zone": "雷霆崖",
+              "place": "灵魂高地",
+              "x": 23,
+              "y": 21
+            }
+          ],
+          "pickupDetails": "药剂师扎玛 · 雷霆崖 · 灵魂高地 · 23, 21",
+          "pickupDetailsEn": "Apothecary Zamah · Thunder Bluff · Spirit Rise · 23, 21",
+          "pickupLocations": [
+            {
+              "name": "药剂师扎玛",
+              "kind": "npc",
+              "zone": "雷霆崖",
+              "place": "灵魂高地",
+              "x": 23,
+              "y": 21
+            }
+          ]
         },
         {
           "id": 1491,
@@ -7021,10 +7634,36 @@
           "prerequisitesEn": "Raptor Horns",
           "nameTw": "智慧飲料",
           "sources": [
-            "https://foreverchanges.pro/dungeons/wailing-caverns"
+            "https://foreverchanges.pro/dungeons/wailing-caverns",
+            "https://wowf.io/zh/dungeons/wailing-caverns/quests",
+            "https://wowf.io/en/dungeons/wailing-caverns/quests"
           ],
-          "sourceDate": "2026-10-01",
-          "conditionsSource": "EverythingQuests Forever"
+          "sourceDate": "2026-10-03",
+          "conditionsSource": "EverythingQuests Forever",
+          "turnIn": "麦伯克·米希瑞克斯 · 贫瘠之地 · 棘齿城 · 62.4, 37.6",
+          "turnInEn": "Mebok Mizzyrix · The Barrens · Ratchet · 62.4, 37.6",
+          "turnInLocations": [
+            {
+              "name": "麦伯克·米希瑞克斯",
+              "kind": "npc",
+              "zone": "贫瘠之地",
+              "place": "棘齿城",
+              "x": 62.4,
+              "y": 37.6
+            }
+          ],
+          "pickupDetails": "麦伯克·米希瑞克斯 · 贫瘠之地 · 棘齿城 · 62.4, 37.6",
+          "pickupDetailsEn": "Mebok Mizzyrix · The Barrens · Ratchet · 62.4, 37.6",
+          "pickupLocations": [
+            {
+              "name": "麦伯克·米希瑞克斯",
+              "kind": "npc",
+              "zone": "贫瘠之地",
+              "place": "棘齿城",
+              "x": 62.4,
+              "y": 37.6
+            }
+          ]
         },
         {
           "id": 1487,
@@ -7113,10 +7752,34 @@
           "rewardNote": "可选奖励 3 选 1",
           "rewardNoteEn": "Choose 1 of 3 rewards",
           "sources": [
-            "https://foreverchanges.pro/dungeons/wailing-caverns"
+            "https://foreverchanges.pro/dungeons/wailing-caverns",
+            "https://wowf.io/zh/dungeons/wailing-caverns/quests",
+            "https://wowf.io/en/dungeons/wailing-caverns/quests"
           ],
-          "sourceDate": "2026-10-01",
-          "conditionsSource": "EverythingQuests Forever"
+          "sourceDate": "2026-10-03",
+          "conditionsSource": "EverythingQuests Forever",
+          "turnIn": "厄布鲁 · 贫瘠之地 · 46, 35.7",
+          "turnInEn": "Ebru · The Barrens · 46, 35.7",
+          "turnInLocations": [
+            {
+              "name": "厄布鲁",
+              "kind": "npc",
+              "zone": "贫瘠之地",
+              "x": 46,
+              "y": 35.7
+            }
+          ],
+          "pickupDetails": "厄布鲁 · 贫瘠之地 · 46, 35.7",
+          "pickupDetailsEn": "Ebru · The Barrens · 46, 35.7",
+          "pickupLocations": [
+            {
+              "name": "厄布鲁",
+              "kind": "npc",
+              "zone": "贫瘠之地",
+              "x": 46,
+              "y": 35.7
+            }
+          ]
         },
         {
           "id": 914,
@@ -7285,10 +7948,36 @@
           "rewardNote": "可选奖励 3 选 1",
           "rewardNoteEn": "Choose 1 of 3 rewards",
           "sources": [
-            "https://foreverchanges.pro/dungeons/wailing-caverns"
+            "https://foreverchanges.pro/dungeons/wailing-caverns",
+            "https://wowf.io/zh/dungeons/wailing-caverns/quests",
+            "https://wowf.io/en/dungeons/wailing-caverns/quests"
           ],
-          "sourceDate": "2026-10-01",
-          "conditionsSource": "EverythingQuests Forever"
+          "sourceDate": "2026-10-03",
+          "conditionsSource": "EverythingQuests Forever",
+          "turnIn": "纳拉·蛮鬃 · 雷霆崖 · 长者高地 · 75.6, 31.6",
+          "turnInEn": "Nara Wildmane · Thunder Bluff · Elder Rise · 75.6, 31.6",
+          "turnInLocations": [
+            {
+              "name": "纳拉·蛮鬃",
+              "kind": "npc",
+              "zone": "雷霆崖",
+              "place": "长者高地",
+              "x": 75.6,
+              "y": 31.6
+            }
+          ],
+          "pickupDetails": "纳拉·蛮鬃 · 雷霆崖 · 长者高地 · 75.6, 31.6",
+          "pickupDetailsEn": "Nara Wildmane · Thunder Bluff · Elder Rise · 75.6, 31.6",
+          "pickupLocations": [
+            {
+              "name": "纳拉·蛮鬃",
+              "kind": "npc",
+              "zone": "雷霆崖",
+              "place": "长者高地",
+              "x": 75.6,
+              "y": 31.6
+            }
+          ]
         },
         {
           "id": 6981,
@@ -7334,10 +8023,32 @@
           "minLevel": 15,
           "nameTw": "發光的碎片",
           "sources": [
-            "https://foreverchanges.pro/dungeons/wailing-caverns"
+            "https://foreverchanges.pro/dungeons/wailing-caverns",
+            "https://wowf.io/zh/dungeons/wailing-caverns/quests",
+            "https://wowf.io/en/dungeons/wailing-caverns/quests"
           ],
-          "sourceDate": "2026-10-01",
-          "conditionsSource": "Community minimum only; other conditions unverified"
+          "sourceDate": "2026-10-03",
+          "conditionsSource": "Community minimum only; other conditions unverified",
+          "turnIn": "菲拉·古风 · 贫瘠之地 · 48.2, 32.8",
+          "turnInEn": "Falla Sagewind · The Barrens · 48.2, 32.8",
+          "turnInLocations": [
+            {
+              "name": "菲拉·古风",
+              "kind": "npc",
+              "zone": "贫瘠之地",
+              "x": 48.2,
+              "y": 32.8
+            }
+          ],
+          "pickupDetails": "发光的碎片 · 哀嚎洞穴",
+          "pickupDetailsEn": "Glowing Shard · Wailing Caverns",
+          "pickupLocations": [
+            {
+              "name": "发光的碎片",
+              "kind": "item",
+              "zone": "哀嚎洞穴"
+            }
+          ]
         }
       ],
       "bosses": [
@@ -8852,9 +9563,11 @@
       ],
       "nameEn": "Wailing Caverns",
       "sources": [
-        "https://foreverchanges.pro/dungeons/wailing-caverns"
+        "https://foreverchanges.pro/dungeons/wailing-caverns",
+        "https://wowf.io/zh/dungeons/wailing-caverns/quests",
+        "https://wowf.io/en/dungeons/wailing-caverns/quests"
       ],
-      "sourceDate": "2026-10-01",
+      "sourceDate": "2026-10-03",
       "counts": {
         "quests": 7,
         "classicQuests": 0,
@@ -8875,7 +9588,7 @@
         "Shadowfang Keep"
       ],
       "coverage": "partial",
-      "source": "Local knowledge base · 2026-10-01",
+      "source": "Local knowledge base · 2026-10-03",
       "quests": [
         {
           "id": 1654,
@@ -8970,7 +9683,36 @@
           "nameEn": "The Test of Righteousness",
           "instructionsEn": "Using Jordan's Weapon Notes, find some Whitestone Oak Lumber, Bailor's Refined Ore Shipment, Jordan's Smithing Hammer, and a Kor Gem, and return them to Jordan Stilwell in Ironforge.",
           "fromEn": "Jordan Stilwell · Dun Morogh · 52.5, 36.9",
-          "prerequisitesEn": "The Tome of Valor → The Tome of Valor → The Tome of Valor → The Tome of Valor → The Tome of Valor → The Test of Righteousness"
+          "prerequisitesEn": "The Tome of Valor → The Tome of Valor → The Tome of Valor → The Tome of Valor → The Tome of Valor → The Test of Righteousness",
+          "turnIn": "乔丹·斯迪威尔 · 丹莫罗 · 铁炉堡大门 · 52.5, 36.9",
+          "turnInEn": "Jordan Stilwell · Dun Morogh · Gates of Ironforge · 52.5, 36.9",
+          "turnInLocations": [
+            {
+              "name": "乔丹·斯迪威尔",
+              "kind": "npc",
+              "zone": "丹莫罗",
+              "place": "铁炉堡大门",
+              "x": 52.5,
+              "y": 36.9
+            }
+          ],
+          "pickupDetails": "乔丹·斯迪威尔 · 丹莫罗 · 铁炉堡大门 · 52.5, 36.9",
+          "pickupDetailsEn": "Jordan Stilwell · Dun Morogh · Gates of Ironforge · 52.5, 36.9",
+          "pickupLocations": [
+            {
+              "name": "乔丹·斯迪威尔",
+              "kind": "npc",
+              "zone": "丹莫罗",
+              "place": "铁炉堡大门",
+              "x": 52.5,
+              "y": 36.9
+            }
+          ],
+          "sources": [
+            "https://wowf.io/zh/dungeons/shadowfang-keep/quests",
+            "https://wowf.io/en/dungeons/shadowfang-keep/quests"
+          ],
+          "sourceDate": "2026-10-03"
         },
         {
           "id": 1098,
@@ -9083,10 +9825,33 @@
           "rewardNoteEn": "Choose 1 of 3 rewards",
           "sources": [
             "https://foreverchanges.pro/dungeons/shadowfang-keep",
+            "https://wowf.io/zh/dungeons/shadowfang-keep/quests",
+            "https://wowf.io/en/dungeons/shadowfang-keep/quests",
             "https://wowforevertalents.com/quests/deathstalkers-in-shadowfang-1098/"
           ],
-          "sourceDate": "2026-10-01",
-          "conditionsSource": "EverythingQuests Forever"
+          "sourceDate": "2026-10-03",
+          "conditionsSource": "EverythingQuests Forever",
+          "turnIn": "亡灵哨兵文森特 · 影牙城堡",
+          "turnInEn": "Deathstalker Vincent · Shadowfang Keep",
+          "turnInLocations": [
+            {
+              "name": "亡灵哨兵文森特",
+              "kind": "npc",
+              "zone": "影牙城堡"
+            }
+          ],
+          "pickupDetails": "高级执行官哈德瑞克 · 银松森林 · 瑟伯切尔 · 43.4, 40.9",
+          "pickupDetailsEn": "High Executor Hadrec · Silverpine Forest · The Sepulcher · 43.4, 40.9",
+          "pickupLocations": [
+            {
+              "name": "高级执行官哈德瑞克",
+              "kind": "npc",
+              "zone": "银松森林",
+              "place": "瑟伯切尔",
+              "x": 43.4,
+              "y": 40.9
+            }
+          ]
         },
         {
           "id": 1740,
@@ -9176,7 +9941,36 @@
           "nameEn": "The Orb of Soran'ruk",
           "instructionsEn": "Find 3 Soran'ruk Fragments and 1 Large Soran'ruk Fragment and return them to Doan Karhan in the Barrens.",
           "fromEn": "Doan Karhan · The Barrens · 49.3, 57.2",
-          "prerequisitesEn": ""
+          "prerequisitesEn": "",
+          "turnIn": "杜安·卡汉 · 贫瘠之地 · 南贫瘠之地 · 49.3, 57.2",
+          "turnInEn": "Doan Karhan · The Barrens · Southern Barrens · 49.3, 57.2",
+          "turnInLocations": [
+            {
+              "name": "杜安·卡汉",
+              "kind": "npc",
+              "zone": "贫瘠之地",
+              "place": "南贫瘠之地",
+              "x": 49.3,
+              "y": 57.2
+            }
+          ],
+          "pickupDetails": "杜安·卡汉 · 贫瘠之地 · 南贫瘠之地 · 49.3, 57.2",
+          "pickupDetailsEn": "Doan Karhan · The Barrens · Southern Barrens · 49.3, 57.2",
+          "pickupLocations": [
+            {
+              "name": "杜安·卡汉",
+              "kind": "npc",
+              "zone": "贫瘠之地",
+              "place": "南贫瘠之地",
+              "x": 49.3,
+              "y": 57.2
+            }
+          ],
+          "sources": [
+            "https://wowf.io/zh/dungeons/shadowfang-keep/quests",
+            "https://wowf.io/en/dungeons/shadowfang-keep/quests"
+          ],
+          "sourceDate": "2026-10-03"
         },
         {
           "id": 1013,
@@ -9287,10 +10081,34 @@
           "rewardNote": "可选奖励 3 选 1",
           "rewardNoteEn": "Choose 1 of 3 rewards",
           "sources": [
-            "https://foreverchanges.pro/dungeons/shadowfang-keep"
+            "https://foreverchanges.pro/dungeons/shadowfang-keep",
+            "https://wowf.io/zh/dungeons/shadowfang-keep/quests",
+            "https://wowf.io/en/dungeons/shadowfang-keep/quests"
           ],
-          "sourceDate": "2026-10-01",
-          "conditionsSource": "EverythingQuests Forever"
+          "sourceDate": "2026-10-03",
+          "conditionsSource": "EverythingQuests Forever",
+          "turnIn": "看守者贝尔杜加 · 幽暗城 · 54, 54.6",
+          "turnInEn": "Keeper Bel'dugur · Undercity · 54, 54.6",
+          "turnInLocations": [
+            {
+              "name": "看守者贝尔杜加",
+              "kind": "npc",
+              "zone": "幽暗城",
+              "x": 54,
+              "y": 54.6
+            }
+          ],
+          "pickupDetails": "看守者贝尔杜加 · 幽暗城 · 54, 54.6",
+          "pickupDetailsEn": "Keeper Bel'dugur · Undercity · 54, 54.6",
+          "pickupLocations": [
+            {
+              "name": "看守者贝尔杜加",
+              "kind": "npc",
+              "zone": "幽暗城",
+              "x": 54,
+              "y": 54.6
+            }
+          ]
         },
         {
           "id": 1014,
@@ -9344,10 +10162,36 @@
           "prerequisitesEn": "",
           "nameTw": "除掉阿魯高",
           "sources": [
-            "https://foreverchanges.pro/dungeons/shadowfang-keep"
+            "https://foreverchanges.pro/dungeons/shadowfang-keep",
+            "https://wowf.io/zh/dungeons/shadowfang-keep/quests",
+            "https://wowf.io/en/dungeons/shadowfang-keep/quests"
           ],
-          "sourceDate": "2026-10-01",
-          "conditionsSource": "EverythingQuests Forever"
+          "sourceDate": "2026-10-03",
+          "conditionsSource": "EverythingQuests Forever",
+          "turnIn": "达拉尔·道恩维沃尔 · 银松森林 · 瑟伯切尔 · 44.2, 39.8",
+          "turnInEn": "Dalar Dawnweaver · Silverpine Forest · The Sepulcher · 44.2, 39.8",
+          "turnInLocations": [
+            {
+              "name": "达拉尔·道恩维沃尔",
+              "kind": "npc",
+              "zone": "银松森林",
+              "place": "瑟伯切尔",
+              "x": 44.2,
+              "y": 39.8
+            }
+          ],
+          "pickupDetails": "达拉尔·道恩维沃尔 · 银松森林 · 瑟伯切尔 · 44.2, 39.8",
+          "pickupDetailsEn": "Dalar Dawnweaver · Silverpine Forest · The Sepulcher · 44.2, 39.8",
+          "pickupLocations": [
+            {
+              "name": "达拉尔·道恩维沃尔",
+              "kind": "npc",
+              "zone": "银松森林",
+              "place": "瑟伯切尔",
+              "x": 44.2,
+              "y": 39.8
+            }
+          ]
         }
       ],
       "bosses": [
@@ -11281,9 +12125,11 @@
       ],
       "nameEn": "Shadowfang Keep",
       "sources": [
-        "https://foreverchanges.pro/dungeons/shadowfang-keep"
+        "https://foreverchanges.pro/dungeons/shadowfang-keep",
+        "https://wowf.io/zh/dungeons/shadowfang-keep/quests",
+        "https://wowf.io/en/dungeons/shadowfang-keep/quests"
       ],
-      "sourceDate": "2026-10-01",
+      "sourceDate": "2026-10-03",
       "counts": {
         "quests": 5,
         "classicQuests": 0,
@@ -11304,7 +12150,7 @@
         "Blackfathom Deeps"
       ],
       "coverage": "partial",
-      "source": "Local knowledge base · 2026-10-01",
+      "source": "Local knowledge base · 2026-10-03",
       "quests": [
         {
           "id": 6563,
@@ -11347,10 +12193,36 @@
           "prerequisitesEn": "Trouble in the Deeps",
           "nameTw": "阿庫麥爾水晶",
           "sources": [
-            "https://foreverchanges.pro/dungeons/blackfathom-deeps"
+            "https://foreverchanges.pro/dungeons/blackfathom-deeps",
+            "https://wowf.io/zh/dungeons/blackfathom-deeps/quests",
+            "https://wowf.io/en/dungeons/blackfathom-deeps/quests"
           ],
-          "sourceDate": "2026-10-01",
-          "conditionsSource": "EverythingQuests Forever"
+          "sourceDate": "2026-10-03",
+          "conditionsSource": "EverythingQuests Forever",
+          "turnIn": "耶努萨克雷 · 灰谷 · 佐拉姆加前哨站 · 11.6, 34.3",
+          "turnInEn": "Je'neu Sancrea · Ashenvale · Zoram'gar Outpost · 11.6, 34.3",
+          "turnInLocations": [
+            {
+              "name": "耶努萨克雷",
+              "kind": "npc",
+              "zone": "灰谷",
+              "place": "佐拉姆加前哨站",
+              "x": 11.6,
+              "y": 34.3
+            }
+          ],
+          "pickupDetails": "耶努萨克雷 · 灰谷 · 佐拉姆加前哨站 · 11.6, 34.3",
+          "pickupDetailsEn": "Je'neu Sancrea · Ashenvale · Zoram'gar Outpost · 11.6, 34.3",
+          "pickupLocations": [
+            {
+              "name": "耶努萨克雷",
+              "kind": "npc",
+              "zone": "灰谷",
+              "place": "佐拉姆加前哨站",
+              "x": 11.6,
+              "y": 34.3
+            }
+          ]
         },
         {
           "id": 6564,
@@ -11390,10 +12262,36 @@
           "prerequisitesEn": "Trouble in the Deeps",
           "nameTw": "上古之神的仆從",
           "sources": [
-            "https://foreverchanges.pro/dungeons/blackfathom-deeps"
+            "https://foreverchanges.pro/dungeons/blackfathom-deeps",
+            "https://wowf.io/zh/dungeons/blackfathom-deeps/quests",
+            "https://wowf.io/en/dungeons/blackfathom-deeps/quests"
           ],
-          "sourceDate": "2026-10-01",
-          "conditionsSource": "EverythingQuests Forever"
+          "sourceDate": "2026-10-03",
+          "conditionsSource": "EverythingQuests Forever",
+          "turnIn": "耶努萨克雷 · 灰谷 · 佐拉姆加前哨站 · 11.6, 34.3",
+          "turnInEn": "Je'neu Sancrea · Ashenvale · Zoram'gar Outpost · 11.6, 34.3",
+          "turnInLocations": [
+            {
+              "name": "耶努萨克雷",
+              "kind": "npc",
+              "zone": "灰谷",
+              "place": "佐拉姆加前哨站",
+              "x": 11.6,
+              "y": 34.3
+            }
+          ],
+          "pickupDetails": "潮湿的便笺 · 灰谷 · 佐拉姆海岸 · 13.8, 10.7",
+          "pickupDetailsEn": "Damp Note · Ashenvale · The Zoram Strand · 13.8, 10.7",
+          "pickupLocations": [
+            {
+              "name": "潮湿的便笺",
+              "kind": "item",
+              "zone": "灰谷",
+              "place": "佐拉姆海岸",
+              "x": 13.8,
+              "y": 10.7
+            }
+          ]
         },
         {
           "id": 971,
@@ -11447,10 +12345,34 @@
           "prerequisitesEn": "",
           "nameTw": "深淵中的知識",
           "sources": [
-            "https://foreverchanges.pro/dungeons/blackfathom-deeps"
+            "https://foreverchanges.pro/dungeons/blackfathom-deeps",
+            "https://wowf.io/zh/dungeons/blackfathom-deeps/quests",
+            "https://wowf.io/en/dungeons/blackfathom-deeps/quests"
           ],
-          "sourceDate": "2026-10-01",
-          "conditionsSource": "EverythingQuests Forever"
+          "sourceDate": "2026-10-03",
+          "conditionsSource": "EverythingQuests Forever",
+          "turnIn": "葛利·硬骨 · 铁炉堡 · 50.6, 5.4",
+          "turnInEn": "Gerrig Bonegrip · Ironforge · 50.6, 5.4",
+          "turnInLocations": [
+            {
+              "name": "葛利·硬骨",
+              "kind": "npc",
+              "zone": "铁炉堡",
+              "x": 50.6,
+              "y": 5.4
+            }
+          ],
+          "pickupDetails": "葛利·硬骨 · 铁炉堡 · 50.6, 5.4",
+          "pickupDetailsEn": "Gerrig Bonegrip · Ironforge · 50.6, 5.4",
+          "pickupLocations": [
+            {
+              "name": "葛利·硬骨",
+              "kind": "npc",
+              "zone": "铁炉堡",
+              "x": 50.6,
+              "y": 5.4
+            }
+          ]
         },
         {
           "id": 1198,
@@ -11478,7 +12400,33 @@
           "nameEn": "In Search of Thaelrid",
           "instructionsEn": "Seek out Argent Guard Thaelrid in Blackfathom Deeps.",
           "fromEn": "Dawnwatcher Shaedlass · Darnassus · 55.4, 25",
-          "prerequisitesEn": ""
+          "prerequisitesEn": "",
+          "turnIn": "银月守卫塞尔瑞德 · 黑暗深渊",
+          "turnInEn": "Argent Guard Thaelrid · Blackfathom Deeps",
+          "turnInLocations": [
+            {
+              "name": "银月守卫塞尔瑞德",
+              "kind": "npc",
+              "zone": "黑暗深渊"
+            }
+          ],
+          "pickupDetails": "哨兵山德拉斯 · 达纳苏斯 · 工匠区 · 55.4, 24.6",
+          "pickupDetailsEn": "Dawnwatcher Shaedlass · Darnassus · Craftsmen's Terrace · 55.4, 24.6",
+          "pickupLocations": [
+            {
+              "name": "哨兵山德拉斯",
+              "kind": "npc",
+              "zone": "达纳苏斯",
+              "place": "工匠区",
+              "x": 55.4,
+              "y": 24.6
+            }
+          ],
+          "sources": [
+            "https://wowf.io/zh/dungeons/blackfathom-deeps/quests",
+            "https://wowf.io/en/dungeons/blackfathom-deeps/quests"
+          ],
+          "sourceDate": "2026-10-03"
         },
         {
           "id": 1275,
@@ -11599,10 +12547,36 @@
           "rewardNote": "可选奖励 3 选 1",
           "rewardNoteEn": "Choose 1 of 3 rewards",
           "sources": [
-            "https://foreverchanges.pro/dungeons/blackfathom-deeps"
+            "https://foreverchanges.pro/dungeons/blackfathom-deeps",
+            "https://wowf.io/zh/dungeons/blackfathom-deeps/quests",
+            "https://wowf.io/en/dungeons/blackfathom-deeps/quests"
           ],
-          "sourceDate": "2026-10-01",
-          "conditionsSource": "EverythingQuests Forever"
+          "sourceDate": "2026-10-03",
+          "conditionsSource": "EverythingQuests Forever",
+          "turnIn": "戈沙拉·夜语 · 黑海岸 · 奥伯丁 · 38.3, 43",
+          "turnInEn": "Gershala Nightwhisper · Darkshore · Auberdine · 38.3, 43",
+          "turnInLocations": [
+            {
+              "name": "戈沙拉·夜语",
+              "kind": "npc",
+              "zone": "黑海岸",
+              "place": "奥伯丁",
+              "x": 38.3,
+              "y": 43
+            }
+          ],
+          "pickupDetails": "戈沙拉·夜语 · 黑海岸 · 奥伯丁 · 38.3, 43",
+          "pickupDetailsEn": "Gershala Nightwhisper · Darkshore · Auberdine · 38.3, 43",
+          "pickupLocations": [
+            {
+              "name": "戈沙拉·夜语",
+              "kind": "npc",
+              "zone": "黑海岸",
+              "place": "奥伯丁",
+              "x": 38.3,
+              "y": 43
+            }
+          ]
         },
         {
           "id": 1199,
@@ -11713,10 +12687,36 @@
           "prerequisitesEn": "",
           "nameTw": "暮光之錘的末日",
           "sources": [
-            "https://foreverchanges.pro/dungeons/blackfathom-deeps"
+            "https://foreverchanges.pro/dungeons/blackfathom-deeps",
+            "https://wowf.io/zh/dungeons/blackfathom-deeps/quests",
+            "https://wowf.io/en/dungeons/blackfathom-deeps/quests"
           ],
-          "sourceDate": "2026-10-01",
-          "conditionsSource": "EverythingQuests Forever"
+          "sourceDate": "2026-10-03",
+          "conditionsSource": "EverythingQuests Forever",
+          "turnIn": "银月守卫玛纳杜斯 · 达纳苏斯 · 工匠区 · 55.2, 23.6",
+          "turnInEn": "Argent Guard Manados · Darnassus · Craftsmen's Terrace · 55.2, 23.6",
+          "turnInLocations": [
+            {
+              "name": "银月守卫玛纳杜斯",
+              "kind": "npc",
+              "zone": "达纳苏斯",
+              "place": "工匠区",
+              "x": 55.2,
+              "y": 23.6
+            }
+          ],
+          "pickupDetails": "银月守卫玛纳杜斯 · 达纳苏斯 · 工匠区 · 55.2, 23.6",
+          "pickupDetailsEn": "Argent Guard Manados · Darnassus · Craftsmen's Terrace · 55.2, 23.6",
+          "pickupLocations": [
+            {
+              "name": "银月守卫玛纳杜斯",
+              "kind": "npc",
+              "zone": "达纳苏斯",
+              "place": "工匠区",
+              "x": 55.2,
+              "y": 23.6
+            }
+          ]
         },
         {
           "id": 6565,
@@ -11820,10 +12820,36 @@
           "rewardNote": "可选奖励 2 选 1",
           "rewardNoteEn": "Choose 1 of 2 rewards",
           "sources": [
-            "https://foreverchanges.pro/dungeons/blackfathom-deeps"
+            "https://foreverchanges.pro/dungeons/blackfathom-deeps",
+            "https://wowf.io/zh/dungeons/blackfathom-deeps/quests",
+            "https://wowf.io/en/dungeons/blackfathom-deeps/quests"
           ],
-          "sourceDate": "2026-10-01",
-          "conditionsSource": "EverythingQuests Forever"
+          "sourceDate": "2026-10-03",
+          "conditionsSource": "EverythingQuests Forever",
+          "turnIn": "耶努萨克雷 · 灰谷 · 佐拉姆加前哨站 · 11.6, 34.3",
+          "turnInEn": "Je'neu Sancrea · Ashenvale · Zoram'gar Outpost · 11.6, 34.3",
+          "turnInLocations": [
+            {
+              "name": "耶努萨克雷",
+              "kind": "npc",
+              "zone": "灰谷",
+              "place": "佐拉姆加前哨站",
+              "x": 11.6,
+              "y": 34.3
+            }
+          ],
+          "pickupDetails": "耶努萨克雷 · 灰谷 · 佐拉姆加前哨站 · 11.6, 34.3",
+          "pickupDetailsEn": "Je'neu Sancrea · Ashenvale · Zoram'gar Outpost · 11.6, 34.3",
+          "pickupLocations": [
+            {
+              "name": "耶努萨克雷",
+              "kind": "npc",
+              "zone": "灰谷",
+              "place": "佐拉姆加前哨站",
+              "x": 11.6,
+              "y": 34.3
+            }
+          ]
         },
         {
           "id": 1200,
@@ -11963,10 +12989,33 @@
           "rewardNote": "可选奖励 4 选 1",
           "rewardNoteEn": "Choose 1 of 4 rewards",
           "sources": [
-            "https://foreverchanges.pro/dungeons/blackfathom-deeps"
+            "https://foreverchanges.pro/dungeons/blackfathom-deeps",
+            "https://wowf.io/zh/dungeons/blackfathom-deeps/quests",
+            "https://wowf.io/en/dungeons/blackfathom-deeps/quests"
           ],
-          "sourceDate": "2026-10-01",
-          "conditionsSource": "Community minimum only; other conditions unverified"
+          "sourceDate": "2026-10-03",
+          "conditionsSource": "Community minimum only; other conditions unverified",
+          "turnIn": "哨兵塞尔高姆 · 达纳苏斯 · 工匠区 · 56, 24.6",
+          "turnInEn": "Dawnwatcher Selgorm · Darnassus · Craftsmen's Terrace · 56, 24.6",
+          "turnInLocations": [
+            {
+              "name": "哨兵塞尔高姆",
+              "kind": "npc",
+              "zone": "达纳苏斯",
+              "place": "工匠区",
+              "x": 56,
+              "y": 24.6
+            }
+          ],
+          "pickupDetails": "银月守卫塞尔瑞德 · 黑暗深渊",
+          "pickupDetailsEn": "Argent Guard Thaelrid · Blackfathom Deeps",
+          "pickupLocations": [
+            {
+              "name": "银月守卫塞尔瑞德",
+              "kind": "npc",
+              "zone": "黑暗深渊"
+            }
+          ]
         },
         {
           "id": 6561,
@@ -12096,10 +13145,33 @@
           "rewardNote": "可选奖励 4 选 1",
           "rewardNoteEn": "Choose 1 of 4 rewards",
           "sources": [
-            "https://foreverchanges.pro/dungeons/blackfathom-deeps"
+            "https://foreverchanges.pro/dungeons/blackfathom-deeps",
+            "https://wowf.io/zh/dungeons/blackfathom-deeps/quests",
+            "https://wowf.io/en/dungeons/blackfathom-deeps/quests"
           ],
-          "sourceDate": "2026-10-01",
-          "conditionsSource": "Community minimum only; other conditions unverified"
+          "sourceDate": "2026-10-03",
+          "conditionsSource": "Community minimum only; other conditions unverified",
+          "turnIn": "巴珊娜·符文图腾 · 雷霆崖 · 长者高地 · 70.8, 33.8",
+          "turnInEn": "Bashana Runetotem · Thunder Bluff · Elder Rise · 70.8, 33.8",
+          "turnInLocations": [
+            {
+              "name": "巴珊娜·符文图腾",
+              "kind": "npc",
+              "zone": "雷霆崖",
+              "place": "长者高地",
+              "x": 70.8,
+              "y": 33.8
+            }
+          ],
+          "pickupDetails": "银月守卫塞尔瑞德 · 黑暗深渊",
+          "pickupDetailsEn": "Argent Guard Thaelrid · Blackfathom Deeps",
+          "pickupLocations": [
+            {
+              "name": "银月守卫塞尔瑞德",
+              "kind": "npc",
+              "zone": "黑暗深渊"
+            }
+          ]
         },
         {
           "id": 6921,
@@ -12128,10 +13200,36 @@
           "prerequisitesEn": "",
           "nameTw": "廢墟之間",
           "sources": [
-            "https://foreverchanges.pro/dungeons/blackfathom-deeps"
+            "https://foreverchanges.pro/dungeons/blackfathom-deeps",
+            "https://wowf.io/zh/dungeons/blackfathom-deeps/quests",
+            "https://wowf.io/en/dungeons/blackfathom-deeps/quests"
           ],
-          "sourceDate": "2026-10-01",
-          "conditionsSource": "EverythingQuests Forever"
+          "sourceDate": "2026-10-03",
+          "conditionsSource": "EverythingQuests Forever",
+          "turnIn": "耶努萨克雷 · 灰谷 · 佐拉姆加前哨站 · 11.6, 34.3",
+          "turnInEn": "Je'neu Sancrea · Ashenvale · Zoram'gar Outpost · 11.6, 34.3",
+          "turnInLocations": [
+            {
+              "name": "耶努萨克雷",
+              "kind": "npc",
+              "zone": "灰谷",
+              "place": "佐拉姆加前哨站",
+              "x": 11.6,
+              "y": 34.3
+            }
+          ],
+          "pickupDetails": "耶努萨克雷 · 灰谷 · 佐拉姆加前哨站 · 11.6, 34.3",
+          "pickupDetailsEn": "Je'neu Sancrea · Ashenvale · Zoram'gar Outpost · 11.6, 34.3",
+          "pickupLocations": [
+            {
+              "name": "耶努萨克雷",
+              "kind": "npc",
+              "zone": "灰谷",
+              "place": "佐拉姆加前哨站",
+              "x": 11.6,
+              "y": 34.3
+            }
+          ]
         },
         {
           "id": 6922,
@@ -12155,7 +13253,33 @@
           "nameEn": "Baron Aquanis",
           "instructionsEn": "Bring the Strange Water Globe to Je'neu Sancrea at Zoram'gar Outpost, Ashenvale.",
           "fromEn": "Strange Water Globe · Blackfathom Deeps · Item-started",
-          "prerequisitesEn": ""
+          "prerequisitesEn": "",
+          "turnIn": "耶努萨克雷 · 灰谷 · 佐拉姆加前哨站 · 11.6, 34.3",
+          "turnInEn": "Je'neu Sancrea · Ashenvale · Zoram'gar Outpost · 11.6, 34.3",
+          "turnInLocations": [
+            {
+              "name": "耶努萨克雷",
+              "kind": "npc",
+              "zone": "灰谷",
+              "place": "佐拉姆加前哨站",
+              "x": 11.6,
+              "y": 34.3
+            }
+          ],
+          "pickupDetails": "奇怪的水球 · 黑暗深渊",
+          "pickupDetailsEn": "Strange Water Globe · Blackfathom Deeps",
+          "pickupLocations": [
+            {
+              "name": "奇怪的水球",
+              "kind": "item",
+              "zone": "黑暗深渊"
+            }
+          ],
+          "sources": [
+            "https://wowf.io/zh/dungeons/blackfathom-deeps/quests",
+            "https://wowf.io/en/dungeons/blackfathom-deeps/quests"
+          ],
+          "sourceDate": "2026-10-03"
         },
         {
           "id": 1740,
@@ -13914,9 +15038,11 @@
       ],
       "nameEn": "Blackfathom Deeps",
       "sources": [
-        "https://foreverchanges.pro/dungeons/blackfathom-deeps"
+        "https://foreverchanges.pro/dungeons/blackfathom-deeps",
+        "https://wowf.io/zh/dungeons/blackfathom-deeps/quests",
+        "https://wowf.io/en/dungeons/blackfathom-deeps/quests"
       ],
-      "sourceDate": "2026-10-01",
+      "sourceDate": "2026-10-03",
       "counts": {
         "quests": 13,
         "classicQuests": 0,
@@ -13940,7 +15066,7 @@
         "监狱"
       ],
       "coverage": "partial",
-      "source": "Local knowledge base · 2026-10-01",
+      "source": "Local knowledge base · 2026-10-03",
       "quests": [
         {
           "id": 386,
@@ -14044,10 +15170,36 @@
           "prerequisitesEn": "",
           "nameTw": "伸張正義",
           "sources": [
-            "https://foreverchanges.pro/dungeons/the-stockade"
+            "https://foreverchanges.pro/dungeons/the-stockade",
+            "https://wowf.io/zh/dungeons/stockade/quests",
+            "https://wowf.io/en/dungeons/stockade/quests"
           ],
-          "sourceDate": "2026-10-01",
-          "conditionsSource": "EverythingQuests Forever"
+          "sourceDate": "2026-10-03",
+          "conditionsSource": "EverythingQuests Forever",
+          "turnIn": "卫兵伯尔顿 · 赤脊山 · 湖畔镇 · 21.2, 46.6",
+          "turnInEn": "Guard Berton · Redridge Mountains · Lakeshire · 21.2, 46.6",
+          "turnInLocations": [
+            {
+              "name": "卫兵伯尔顿",
+              "kind": "npc",
+              "zone": "赤脊山",
+              "place": "湖畔镇",
+              "x": 21.2,
+              "y": 46.6
+            }
+          ],
+          "pickupDetails": "卫兵伯尔顿 · 赤脊山 · 湖畔镇 · 21.2, 46.6",
+          "pickupDetailsEn": "Guard Berton · Redridge Mountains · Lakeshire · 21.2, 46.6",
+          "pickupLocations": [
+            {
+              "name": "卫兵伯尔顿",
+              "kind": "npc",
+              "zone": "赤脊山",
+              "place": "湖畔镇",
+              "x": 21.2,
+              "y": 46.6
+            }
+          ]
         },
         {
           "id": 377,
@@ -14149,10 +15301,36 @@
           "prerequisitesEn": "",
           "nameTw": "罪與罰",
           "sources": [
-            "https://foreverchanges.pro/dungeons/the-stockade"
+            "https://foreverchanges.pro/dungeons/the-stockade",
+            "https://wowf.io/zh/dungeons/stockade/quests",
+            "https://wowf.io/en/dungeons/stockade/quests"
           ],
-          "sourceDate": "2026-10-01",
-          "conditionsSource": "EverythingQuests Forever"
+          "sourceDate": "2026-10-03",
+          "conditionsSource": "EverythingQuests Forever",
+          "turnIn": "议员米尔斯迪普 · 暮色森林 · 夜色镇 · 71.9, 47.8",
+          "turnInEn": "Councilman Millstipe · Duskwood · Darkshire · 71.9, 47.8",
+          "turnInLocations": [
+            {
+              "name": "议员米尔斯迪普",
+              "kind": "npc",
+              "zone": "暮色森林",
+              "place": "夜色镇",
+              "x": 71.9,
+              "y": 47.8
+            }
+          ],
+          "pickupDetails": "议员米尔斯迪普 · 暮色森林 · 夜色镇 · 71.9, 47.8",
+          "pickupDetailsEn": "Councilman Millstipe · Duskwood · Darkshire · 71.9, 47.8",
+          "pickupLocations": [
+            {
+              "name": "议员米尔斯迪普",
+              "kind": "npc",
+              "zone": "暮色森林",
+              "place": "夜色镇",
+              "x": 71.9,
+              "y": 47.8
+            }
+          ]
         },
         {
           "id": 387,
@@ -14181,10 +15359,34 @@
           "prerequisitesEn": "",
           "nameTw": "鎮壓暴動",
           "sources": [
-            "https://foreverchanges.pro/dungeons/the-stockade"
+            "https://foreverchanges.pro/dungeons/the-stockade",
+            "https://wowf.io/zh/dungeons/stockade/quests",
+            "https://wowf.io/en/dungeons/stockade/quests"
           ],
-          "sourceDate": "2026-10-01",
-          "conditionsSource": "EverythingQuests Forever"
+          "sourceDate": "2026-10-03",
+          "conditionsSource": "EverythingQuests Forever",
+          "turnIn": "典狱官塞尔沃特 · 暴风城 · 51.6, 69.4",
+          "turnInEn": "Warden Thelwater · Stormwind City · 51.6, 69.4",
+          "turnInLocations": [
+            {
+              "name": "典狱官塞尔沃特",
+              "kind": "npc",
+              "zone": "暴风城",
+              "x": 51.6,
+              "y": 69.4
+            }
+          ],
+          "pickupDetails": "典狱官塞尔沃特 · 暴风城 · 51.6, 69.4",
+          "pickupDetailsEn": "Warden Thelwater · Stormwind City · 51.6, 69.4",
+          "pickupLocations": [
+            {
+              "name": "典狱官塞尔沃特",
+              "kind": "npc",
+              "zone": "暴风城",
+              "x": 51.6,
+              "y": 69.4
+            }
+          ]
         },
         {
           "id": 388,
@@ -14213,10 +15415,34 @@
           "prerequisitesEn": "",
           "nameTw": "鮮血的顏色",
           "sources": [
-            "https://foreverchanges.pro/dungeons/the-stockade"
+            "https://foreverchanges.pro/dungeons/the-stockade",
+            "https://wowf.io/zh/dungeons/stockade/quests",
+            "https://wowf.io/en/dungeons/stockade/quests"
           ],
-          "sourceDate": "2026-10-01",
-          "conditionsSource": "EverythingQuests Forever"
+          "sourceDate": "2026-10-03",
+          "conditionsSource": "EverythingQuests Forever",
+          "turnIn": "尼科瓦·拉斯克 · 暴风城 · 73.8, 54.6",
+          "turnInEn": "Nikova Raskol · Stormwind City · 73.8, 54.6",
+          "turnInLocations": [
+            {
+              "name": "尼科瓦·拉斯克",
+              "kind": "npc",
+              "zone": "暴风城",
+              "x": 73.8,
+              "y": 54.6
+            }
+          ],
+          "pickupDetails": "尼科瓦·拉斯克 · 暴风城 · 73.8, 54.6",
+          "pickupDetailsEn": "Nikova Raskol · Stormwind City · 73.8, 54.6",
+          "pickupLocations": [
+            {
+              "name": "尼科瓦·拉斯克",
+              "kind": "npc",
+              "zone": "暴风城",
+              "x": 73.8,
+              "y": 54.6
+            }
+          ]
         },
         {
           "id": 378,
@@ -14333,10 +15559,36 @@
           "prerequisitesEn": "The Dark Iron War",
           "nameTw": "卡姆·深怒",
           "sources": [
-            "https://foreverchanges.pro/dungeons/the-stockade"
+            "https://foreverchanges.pro/dungeons/the-stockade",
+            "https://wowf.io/zh/dungeons/stockade/quests",
+            "https://wowf.io/en/dungeons/stockade/quests"
           ],
-          "sourceDate": "2026-10-01",
-          "conditionsSource": "EverythingQuests Forever"
+          "sourceDate": "2026-10-03",
+          "conditionsSource": "EverythingQuests Forever",
+          "turnIn": "莫特雷·加玛森 · 湿地 · 丹莫德 · 49.7, 18.2",
+          "turnInEn": "Motley Garmason · Wetlands · Dun Modr · 49.7, 18.2",
+          "turnInLocations": [
+            {
+              "name": "莫特雷·加玛森",
+              "kind": "npc",
+              "zone": "湿地",
+              "place": "丹莫德",
+              "x": 49.7,
+              "y": 18.2
+            }
+          ],
+          "pickupDetails": "莫特雷·加玛森 · 湿地 · 丹莫德 · 49.7, 18.2",
+          "pickupDetailsEn": "Motley Garmason · Wetlands · Dun Modr · 49.7, 18.2",
+          "pickupLocations": [
+            {
+              "name": "莫特雷·加玛森",
+              "kind": "npc",
+              "zone": "湿地",
+              "place": "丹莫德",
+              "x": 49.7,
+              "y": 18.2
+            }
+          ]
         },
         {
           "id": 391,
@@ -14471,10 +15723,34 @@
           "prerequisitesEn": "The Unsent Letter → Bazil Thredd",
           "nameTw": "監獄暴動",
           "sources": [
-            "https://foreverchanges.pro/dungeons/the-stockade"
+            "https://foreverchanges.pro/dungeons/the-stockade",
+            "https://wowf.io/zh/dungeons/stockade/quests",
+            "https://wowf.io/en/dungeons/stockade/quests"
           ],
-          "sourceDate": "2026-10-01",
-          "conditionsSource": "EverythingQuests Forever"
+          "sourceDate": "2026-10-03",
+          "conditionsSource": "EverythingQuests Forever",
+          "turnIn": "典狱官塞尔沃特 · 暴风城 · 51.6, 69.4",
+          "turnInEn": "Warden Thelwater · Stormwind City · 51.6, 69.4",
+          "turnInLocations": [
+            {
+              "name": "典狱官塞尔沃特",
+              "kind": "npc",
+              "zone": "暴风城",
+              "x": 51.6,
+              "y": 69.4
+            }
+          ],
+          "pickupDetails": "典狱官塞尔沃特 · 暴风城 · 51.6, 69.4",
+          "pickupDetailsEn": "Warden Thelwater · Stormwind City · 51.6, 69.4",
+          "pickupLocations": [
+            {
+              "name": "典狱官塞尔沃特",
+              "kind": "npc",
+              "zone": "暴风城",
+              "x": 51.6,
+              "y": 69.4
+            }
+          ]
         }
       ],
       "bosses": [
@@ -15408,9 +16684,11 @@
       ],
       "nameEn": "The Stockade",
       "sources": [
-        "https://foreverchanges.pro/dungeons/the-stockade"
+        "https://foreverchanges.pro/dungeons/the-stockade",
+        "https://wowf.io/zh/dungeons/stockade/quests",
+        "https://wowf.io/en/dungeons/stockade/quests"
       ],
-      "sourceDate": "2026-10-01",
+      "sourceDate": "2026-10-03",
       "counts": {
         "quests": 6,
         "classicQuests": 0,
@@ -15431,7 +16709,7 @@
         "Razorfen Kraul"
       ],
       "coverage": "partial",
-      "source": "Local knowledge base · 2026-10-01",
+      "source": "Local knowledge base · 2026-10-03",
       "quests": [
         {
           "id": 1221,
@@ -15473,10 +16751,36 @@
           "prerequisitesEn": "",
           "nameTw": "藍葉薯",
           "sources": [
-            "https://foreverchanges.pro/dungeons/razorfen-kraul"
+            "https://foreverchanges.pro/dungeons/razorfen-kraul",
+            "https://wowf.io/zh/dungeons/razorfen-kraul/quests",
+            "https://wowf.io/en/dungeons/razorfen-kraul/quests"
           ],
-          "sourceDate": "2026-10-01",
-          "conditionsSource": "EverythingQuests Forever"
+          "sourceDate": "2026-10-03",
+          "conditionsSource": "EverythingQuests Forever",
+          "turnIn": "麦伯克·米希瑞克斯 · 贫瘠之地 · 棘齿城 · 62.4, 37.6",
+          "turnInEn": "Mebok Mizzyrix · The Barrens · Ratchet · 62.4, 37.6",
+          "turnInLocations": [
+            {
+              "name": "麦伯克·米希瑞克斯",
+              "kind": "npc",
+              "zone": "贫瘠之地",
+              "place": "棘齿城",
+              "x": 62.4,
+              "y": 37.6
+            }
+          ],
+          "pickupDetails": "麦伯克·米希瑞克斯 · 贫瘠之地 · 棘齿城 · 62.4, 37.6",
+          "pickupDetailsEn": "Mebok Mizzyrix · The Barrens · Ratchet · 62.4, 37.6",
+          "pickupLocations": [
+            {
+              "name": "麦伯克·米希瑞克斯",
+              "kind": "npc",
+              "zone": "贫瘠之地",
+              "place": "棘齿城",
+              "x": 62.4,
+              "y": 37.6
+            }
+          ]
         },
         {
           "id": 1144,
@@ -15580,10 +16884,30 @@
           "minLevel": 23,
           "nameTw": "進口商威利克斯",
           "sources": [
-            "https://foreverchanges.pro/dungeons/razorfen-kraul"
+            "https://foreverchanges.pro/dungeons/razorfen-kraul",
+            "https://wowf.io/zh/dungeons/razorfen-kraul/quests",
+            "https://wowf.io/en/dungeons/razorfen-kraul/quests"
           ],
-          "sourceDate": "2026-10-01",
-          "conditionsSource": "Community minimum only; other conditions unverified"
+          "sourceDate": "2026-10-03",
+          "conditionsSource": "Community minimum only; other conditions unverified",
+          "turnIn": "进口商威利克斯 · 剃刀沼泽",
+          "turnInEn": "Willix the Importer · Razorfen Kraul",
+          "turnInLocations": [
+            {
+              "name": "进口商威利克斯",
+              "kind": "npc",
+              "zone": "剃刀沼泽"
+            }
+          ],
+          "pickupDetails": "进口商威利克斯 · 剃刀沼泽",
+          "pickupDetailsEn": "Willix the Importer · Razorfen Kraul",
+          "pickupLocations": [
+            {
+              "name": "进口商威利克斯",
+              "kind": "npc",
+              "zone": "剃刀沼泽"
+            }
+          ]
         },
         {
           "id": 1142,
@@ -15674,10 +16998,33 @@
           "minLevel": 25,
           "nameTw": "臨終遺言",
           "sources": [
-            "https://foreverchanges.pro/dungeons/razorfen-kraul"
+            "https://foreverchanges.pro/dungeons/razorfen-kraul",
+            "https://wowf.io/zh/dungeons/razorfen-kraul/quests",
+            "https://wowf.io/en/dungeons/razorfen-kraul/quests"
           ],
-          "sourceDate": "2026-10-01",
-          "conditionsSource": "Community minimum only; other conditions unverified"
+          "sourceDate": "2026-10-03",
+          "conditionsSource": "Community minimum only; other conditions unverified",
+          "turnIn": "塔莎拉·静水 · 达纳苏斯 · 贸易区 · 69.4, 67.6",
+          "turnInEn": "Treshala Fallowbrook · Darnassus · Tradesmen's Terrace · 69.4, 67.6",
+          "turnInLocations": [
+            {
+              "name": "塔莎拉·静水",
+              "kind": "npc",
+              "zone": "达纳苏斯",
+              "place": "贸易区",
+              "x": 69.4,
+              "y": 67.6
+            }
+          ],
+          "pickupDetails": "赫尔拉斯·静水 · 剃刀沼泽",
+          "pickupDetailsEn": "Heralath Fallowbrook · Razorfen Kraul",
+          "pickupLocations": [
+            {
+              "name": "赫尔拉斯·静水",
+              "kind": "npc",
+              "zone": "剃刀沼泽"
+            }
+          ]
         },
         {
           "id": 1109,
@@ -15717,10 +17064,34 @@
           "prerequisitesEn": "",
           "nameTw": "蝙蝠的糞便",
           "sources": [
-            "https://foreverchanges.pro/dungeons/razorfen-kraul"
+            "https://foreverchanges.pro/dungeons/razorfen-kraul",
+            "https://wowf.io/zh/dungeons/razorfen-kraul/quests",
+            "https://wowf.io/en/dungeons/razorfen-kraul/quests"
           ],
-          "sourceDate": "2026-10-01",
-          "conditionsSource": "EverythingQuests Forever"
+          "sourceDate": "2026-10-03",
+          "conditionsSource": "EverythingQuests Forever",
+          "turnIn": "大药剂师法拉尼尔 · 幽暗城 · 48.6, 69.4",
+          "turnInEn": "Master Apothecary Faranell · Undercity · 48.6, 69.4",
+          "turnInLocations": [
+            {
+              "name": "大药剂师法拉尼尔",
+              "kind": "npc",
+              "zone": "幽暗城",
+              "x": 48.6,
+              "y": 69.4
+            }
+          ],
+          "pickupDetails": "大药剂师法拉尼尔 · 幽暗城 · 48.6, 69.4",
+          "pickupDetailsEn": "Master Apothecary Faranell · Undercity · 48.6, 69.4",
+          "pickupLocations": [
+            {
+              "name": "大药剂师法拉尼尔",
+              "kind": "npc",
+              "zone": "幽暗城",
+              "x": 48.6,
+              "y": 69.4
+            }
+          ]
         },
         {
           "id": 1101,
@@ -15845,10 +17216,36 @@
           "rewardNote": "可选奖励 3 选 1",
           "rewardNoteEn": "Choose 1 of 3 rewards",
           "sources": [
-            "https://foreverchanges.pro/dungeons/razorfen-kraul"
+            "https://foreverchanges.pro/dungeons/razorfen-kraul",
+            "https://wowf.io/zh/dungeons/razorfen-kraul/quests",
+            "https://wowf.io/en/dungeons/razorfen-kraul/quests"
           ],
-          "sourceDate": "2026-10-01",
-          "conditionsSource": "EverythingQuests Forever"
+          "sourceDate": "2026-10-03",
+          "conditionsSource": "EverythingQuests Forever",
+          "turnIn": "法芬德尔 · 菲拉斯 · 萨兰纳尔 · 89.6, 46.6",
+          "turnInEn": "Falfindel Waywarder · Feralas · Thalanaar · 89.6, 46.6",
+          "turnInLocations": [
+            {
+              "name": "法芬德尔",
+              "kind": "npc",
+              "zone": "菲拉斯",
+              "place": "萨兰纳尔",
+              "x": 89.6,
+              "y": 46.6
+            }
+          ],
+          "pickupDetails": "法芬德尔 · 菲拉斯 · 萨兰纳尔 · 89.6, 46.6",
+          "pickupDetailsEn": "Falfindel Waywarder · Feralas · Thalanaar · 89.6, 46.6",
+          "pickupLocations": [
+            {
+              "name": "法芬德尔",
+              "kind": "npc",
+              "zone": "菲拉斯",
+              "place": "萨兰纳尔",
+              "x": 89.6,
+              "y": 46.6
+            }
+          ]
         },
         {
           "id": 1102,
@@ -15962,10 +17359,34 @@
           "rewardNote": "可选奖励 3 选 1",
           "rewardNoteEn": "Choose 1 of 3 rewards",
           "sources": [
-            "https://foreverchanges.pro/dungeons/razorfen-kraul"
+            "https://foreverchanges.pro/dungeons/razorfen-kraul",
+            "https://wowf.io/zh/dungeons/razorfen-kraul/quests",
+            "https://wowf.io/en/dungeons/razorfen-kraul/quests"
           ],
-          "sourceDate": "2026-10-01",
-          "conditionsSource": "EverythingQuests Forever"
+          "sourceDate": "2026-10-03",
+          "conditionsSource": "EverythingQuests Forever",
+          "turnIn": "奥尔德·石塔 · 雷霆崖 · 36.2, 59.8",
+          "turnInEn": "Auld Stonespire · Thunder Bluff · 36.2, 59.8",
+          "turnInLocations": [
+            {
+              "name": "奥尔德·石塔",
+              "kind": "npc",
+              "zone": "雷霆崖",
+              "x": 36.2,
+              "y": 59.8
+            }
+          ],
+          "pickupDetails": "奥尔德·石塔 · 雷霆崖 · 36.2, 59.8",
+          "pickupDetailsEn": "Auld Stonespire · Thunder Bluff · 36.2, 59.8",
+          "pickupLocations": [
+            {
+              "name": "奥尔德·石塔",
+              "kind": "npc",
+              "zone": "雷霆崖",
+              "x": 36.2,
+              "y": 59.8
+            }
+          ]
         },
         {
           "id": 1701,
@@ -16048,7 +17469,34 @@
           "nameEn": "Fire Hardened Mail",
           "instructionsEn": "Gather the materials Furen Longbeard requires, and bring them to him in Stormwind.",
           "fromEn": "Furen Longbeard · Stormwind City · 58.1, 16.5",
-          "prerequisitesEn": "Yorus Barleybrew → The Rethban Gauntlet → The Shieldsmith"
+          "prerequisitesEn": "Yorus Barleybrew → The Rethban Gauntlet → The Shieldsmith",
+          "turnIn": "弗伦·长须 · 暴风城 · 64.4, 37.2",
+          "turnInEn": "Furen Longbeard · Stormwind City · 64.4, 37.2",
+          "turnInLocations": [
+            {
+              "name": "弗伦·长须",
+              "kind": "npc",
+              "zone": "暴风城",
+              "x": 64.4,
+              "y": 37.2
+            }
+          ],
+          "pickupDetails": "弗伦·长须 · 暴风城 · 64.4, 37.2",
+          "pickupDetailsEn": "Furen Longbeard · Stormwind City · 64.4, 37.2",
+          "pickupLocations": [
+            {
+              "name": "弗伦·长须",
+              "kind": "npc",
+              "zone": "暴风城",
+              "x": 64.4,
+              "y": 37.2
+            }
+          ],
+          "sources": [
+            "https://wowf.io/zh/dungeons/razorfen-kraul/quests",
+            "https://wowf.io/en/dungeons/razorfen-kraul/quests"
+          ],
+          "sourceDate": "2026-10-03"
         },
         {
           "id": 1838,
@@ -16131,7 +17579,34 @@
           "nameEn": "Brutal Armor",
           "instructionsEn": "Bring to Thun'grim Firegaze 15 Smoky Iron Ingots, 10 Powdered Azurite, 10 Iron Bars and a Vial of Phlogiston.",
           "fromEn": "Thun'grim Firegaze · The Barrens · 57.2, 30.3",
-          "prerequisitesEn": "Speak with Ruga → Trial at the Field of Giants → Speak with Thun'grim"
+          "prerequisitesEn": "Speak with Ruga → Trial at the Field of Giants → Speak with Thun'grim",
+          "turnIn": "索恩格瑞姆·火眼 · 贫瘠之地 · 57.2, 30.3",
+          "turnInEn": "Thun'grim Firegaze · The Barrens · 57.2, 30.3",
+          "turnInLocations": [
+            {
+              "name": "索恩格瑞姆·火眼",
+              "kind": "npc",
+              "zone": "贫瘠之地",
+              "x": 57.2,
+              "y": 30.3
+            }
+          ],
+          "pickupDetails": "索恩格瑞姆·火眼 · 贫瘠之地 · 57.2, 30.3",
+          "pickupDetailsEn": "Thun'grim Firegaze · The Barrens · 57.2, 30.3",
+          "pickupLocations": [
+            {
+              "name": "索恩格瑞姆·火眼",
+              "kind": "npc",
+              "zone": "贫瘠之地",
+              "x": 57.2,
+              "y": 30.3
+            }
+          ],
+          "sources": [
+            "https://wowf.io/zh/dungeons/razorfen-kraul/quests",
+            "https://wowf.io/en/dungeons/razorfen-kraul/quests"
+          ],
+          "sourceDate": "2026-10-03"
         }
       ],
       "bosses": [
@@ -17594,9 +19069,11 @@
       ],
       "nameEn": "Razorfen Kraul",
       "sources": [
-        "https://foreverchanges.pro/dungeons/razorfen-kraul"
+        "https://foreverchanges.pro/dungeons/razorfen-kraul",
+        "https://wowf.io/zh/dungeons/razorfen-kraul/quests",
+        "https://wowf.io/en/dungeons/razorfen-kraul/quests"
       ],
-      "sourceDate": "2026-10-01",
+      "sourceDate": "2026-10-03",
       "counts": {
         "quests": 8,
         "classicQuests": 0,
@@ -17617,9 +19094,833 @@
         "Excavation Site: Wetlands",
         "挖掘场: 湿地"
       ],
-      "coverage": "unavailable",
-      "source": "Local knowledge base · 2026-10-01",
-      "quests": [],
+      "coverage": "partial",
+      "source": "Local knowledge base · 2026-10-03",
+      "quests": [
+        {
+          "id": 98815,
+          "name": "高地兽皮",
+          "nameEn": "Highland Hides",
+          "faction": "alliance",
+          "minLevel": 24,
+          "gatesKnown": false,
+          "basis": "site",
+          "conditionsSource": "https://wowforevertalents.com/quests/highland-hides-98815/",
+          "nameTranslation": "editorial",
+          "instructions": "收集 4 张灌木丛迅猛龙皮，交给米奈希尔港的制皮匠詹姆斯·哈洛兰。",
+          "instructionsEn": "Gather four Thicket Raptor Hides for James Halloran in Menethil Harbor.",
+          "from": "接取地点待核实",
+          "fromEn": "Pickup location unverified",
+          "steps": [],
+          "followups": [],
+          "rewards": [],
+          "prerequisites": "",
+          "researchNote": "无限测试版资料；中文任务名为暂译，部分接取条件仍待核实。",
+          "researchNoteEn": "Forever beta reference; Chinese quest titles are provisional translations. Some eligibility conditions remain unverified.",
+          "turnIn": "詹姆斯·哈洛兰 · 湿地 · 米奈希尔港 · 8.5, 55.7",
+          "turnInEn": "James Halloran · Wetlands · Menethil Harbor · 8.5, 55.7",
+          "turnInLocations": [
+            {
+              "name": "詹姆斯·哈洛兰",
+              "kind": "npc",
+              "zone": "湿地",
+              "place": "米奈希尔港",
+              "x": 8.5,
+              "y": 55.7
+            }
+          ],
+          "sources": [
+            "https://wowf.io/zh/dungeons/excavation-site/quests",
+            "https://wowf.io/en/dungeons/excavation-site/quests",
+            "https://wowforevertalents.com/quests/highland-hides-98815/"
+          ],
+          "sourceDate": "2026-10-03"
+        },
+        {
+          "id": 95646,
+          "name": "高地恐魔",
+          "nameEn": "Horrors in the Highland",
+          "faction": "alliance",
+          "minLevel": 24,
+          "gatesKnown": false,
+          "basis": "site",
+          "conditionsSource": "https://wowforevertalents.com/quests/horrors-in-the-highland-95646/",
+          "nameTranslation": "editorial",
+          "instructions": "击败挖掘场内的高地恐魔，拾取根核，交给湿地绿带草地的绿色守卫者雷希耶尔。",
+          "instructionsEn": "Defeat Highland Horror, collect its root core, and return to Rethiel the Greenwarden in Wetlands.",
+          "from": "绿色守卫者雷希耶尔 · 湿地 · 绿带草地 · 56.2, 40.5",
+          "fromEn": "Rethiel the Greenwarden · Wetlands · The Green Belt · 56.2, 40.5",
+          "steps": [],
+          "followups": [],
+          "rewards": [
+            {
+              "id": 271667,
+              "name": "铁木毁灭者",
+              "nameEn": "Ironwood Destroyer",
+              "icon": "Interface\\Icons\\inv_hammer_16",
+              "quality": 3,
+              "ilvl": 33,
+              "level": 0,
+              "slot": "双手",
+              "type": "锤",
+              "stats": [
+                {
+                  "label": "耐力",
+                  "value": 9
+                },
+                {
+                  "label": "精神",
+                  "value": 7
+                }
+              ],
+              "effects": [
+                {
+                  "trigger": 1,
+                  "text": "+24攻击强度"
+                }
+              ],
+              "effectsEn": [
+                {
+                  "trigger": 1,
+                  "text": "+24 Attack Power"
+                }
+              ],
+              "basis": "site",
+              "uncertain": false
+            },
+            {
+              "id": 271670,
+              "name": "生命卷须",
+              "nameEn": "Curl of Life",
+              "icon": "Interface\\Icons\\inv_jewelry_ring_12",
+              "quality": 3,
+              "ilvl": 33,
+              "level": 0,
+              "slot": "手指",
+              "stats": [
+                {
+                  "label": "耐力",
+                  "value": 7
+                }
+              ],
+              "effects": [
+                {
+                  "trigger": 1,
+                  "text": "+5法术强度"
+                },
+                {
+                  "trigger": 1,
+                  "text": "+5每5秒的生命值恢复"
+                }
+              ],
+              "effectsEn": [
+                {
+                  "trigger": 1,
+                  "text": "+5 Spell Power"
+                },
+                {
+                  "trigger": 1,
+                  "text": "+5 Health per 5 sec."
+                }
+              ],
+              "basis": "site",
+              "uncertain": false
+            },
+            {
+              "id": 271664,
+              "name": "角树柄",
+              "nameEn": "Hornbeam Heft",
+              "icon": "Interface\\Icons\\inv_axe_01",
+              "quality": 3,
+              "ilvl": 33,
+              "level": 0,
+              "slot": "单手",
+              "type": "斧",
+              "stats": [
+                {
+                  "label": "耐力",
+                  "value": 6
+                },
+                {
+                  "label": "力量",
+                  "value": 3
+                },
+                {
+                  "label": "精神",
+                  "value": 3
+                }
+              ],
+              "effects": [],
+              "effectsEn": [],
+              "basis": "site",
+              "uncertain": false
+            }
+          ],
+          "prerequisites": "",
+          "researchNote": "无限测试版资料；中文任务名为暂译，部分接取条件仍待核实。",
+          "researchNoteEn": "Forever beta reference; Chinese quest titles are provisional translations. Some eligibility conditions remain unverified.",
+          "turnIn": "绿色守卫者雷希耶尔 · 湿地 · 绿带草地 · 56.2, 40.5",
+          "turnInEn": "Rethiel the Greenwarden · Wetlands · The Green Belt · 56.2, 40.5",
+          "turnInLocations": [
+            {
+              "name": "绿色守卫者雷希耶尔",
+              "kind": "npc",
+              "zone": "湿地",
+              "place": "绿带草地",
+              "x": 56.2,
+              "y": 40.5
+            }
+          ],
+          "pickupDetails": "绿色守卫者雷希耶尔 · 湿地 · 绿带草地 · 56.2, 40.5",
+          "pickupDetailsEn": "Rethiel the Greenwarden · Wetlands · The Green Belt · 56.2, 40.5",
+          "pickupLocations": [
+            {
+              "name": "绿色守卫者雷希耶尔",
+              "kind": "npc",
+              "zone": "湿地",
+              "place": "绿带草地",
+              "x": 56.2,
+              "y": 40.5
+            }
+          ],
+          "sources": [
+            "https://wowf.io/zh/dungeons/excavation-site/quests",
+            "https://wowf.io/en/dungeons/excavation-site/quests",
+            "https://wowforevertalents.com/quests/horrors-in-the-highland-95646/",
+            "https://foreverchanges.pro/dungeons/excavation-site"
+          ],
+          "sourceDate": "2026-10-03"
+        },
+        {
+          "id": 95647,
+          "name": "灌木丛中的失踪者",
+          "nameEn": "Lost in the Thicket Things",
+          "faction": "alliance",
+          "minLevel": 24,
+          "gatesKnown": false,
+          "basis": "site",
+          "conditionsSource": "https://wowforevertalents.com/quests/lost-in-the-thicket-things-95647/",
+          "nameTranslation": "editorial",
+          "instructions": "在挖掘场寻找 Ardin Grassman，查明他的遭遇。后续需把芦苇编织的心带回米奈希尔港。",
+          "instructionsEn": "Find Ardin Grassman and learn his fate. The follow-up returns the Reed-woven Heart to Menethil Harbor.",
+          "from": "凯特林·格拉斯曼 · 湿地 · 米奈希尔港 · 11.8, 58.6",
+          "fromEn": "Caitlin Grassman · Wetlands · Menethil Harbor · 11.8, 58.6",
+          "steps": [
+            {
+              "name": "Seeking Caitlin",
+              "nameEn": "Seeking Caitlin",
+              "optional": true,
+              "faction": "alliance",
+              "from": "",
+              "fromEn": "",
+              "instructions": "与米奈希尔港的凯特林·格拉斯曼谈一谈。",
+              "instructionsEn": "Speak with Caitlin Grassman in Menethil Harbor."
+            }
+          ],
+          "followups": [
+            {
+              "name": "Heartwoven",
+              "nameEn": "Heartwoven",
+              "optional": false,
+              "faction": "alliance",
+              "from": "",
+              "fromEn": "",
+              "instructions": "回到米奈希尔港的凯特林·格拉斯曼那里。",
+              "instructionsEn": "Return to Caitlin Grassman in Menethil Harbor."
+            }
+          ],
+          "rewards": [],
+          "prerequisites": "",
+          "researchNote": "无限测试版资料；中文任务名为暂译，部分接取条件仍待核实。",
+          "researchNoteEn": "Forever beta reference; Chinese quest titles are provisional translations. Some eligibility conditions remain unverified.",
+          "pickupDetails": "凯特林·格拉斯曼 · 湿地 · 米奈希尔港 · 11.8, 58.6",
+          "pickupDetailsEn": "Caitlin Grassman · Wetlands · Menethil Harbor · 11.8, 58.6",
+          "pickupLocations": [
+            {
+              "name": "凯特林·格拉斯曼",
+              "kind": "npc",
+              "zone": "湿地",
+              "place": "米奈希尔港",
+              "x": 11.8,
+              "y": 58.6
+            }
+          ],
+          "sources": [
+            "https://wowf.io/zh/dungeons/excavation-site/quests",
+            "https://wowf.io/en/dungeons/excavation-site/quests",
+            "https://wowforevertalents.com/quests/lost-in-the-thicket-things-95647/"
+          ],
+          "sourceDate": "2026-10-03"
+        },
+        {
+          "id": 95810,
+          "name": "失落的圣物",
+          "nameEn": "Lost Relic Carry",
+          "faction": "alliance",
+          "minLevel": 24,
+          "gatesKnown": false,
+          "basis": "site",
+          "conditionsSource": "https://wowforevertalents.com/quests/lost-relic-carry-95810/",
+          "nameTranslation": "editorial",
+          "instructions": "拾取末王遗迹守卫者掉落的泰坦圣物以触发任务，交给湿地维尔加挖掘场的勘察员维尔加。",
+          "instructionsEn": "Start the quest from the Relic Guardian’s Titan Relic and deliver it to Prospector Whelgar in Wetlands.",
+          "from": "泰坦圣物 · 挖掘场：湿地",
+          "fromEn": "Titan Relic · Excavation Site: Wetlands",
+          "steps": [],
+          "followups": [
+            {
+              "name": "Prehistoric Prism",
+              "nameEn": "Prehistoric Prism",
+              "optional": false,
+              "faction": "alliance",
+              "from": "",
+              "fromEn": "",
+              "instructions": "把泰坦圣物交给铁炉堡的高级探险家麦哲拉斯。",
+              "instructionsEn": "Take the Titan Relic to High Explorer Magellas in Ironforge."
+            }
+          ],
+          "rewards": [],
+          "prerequisites": "",
+          "researchNote": "无限测试版资料；中文任务名为暂译，部分接取条件仍待核实。 2026-10-02 社区报告圣物交付后可能无法继续后续；当前是否修复待实测。",
+          "researchNoteEn": "Forever beta reference; Chinese quest titles are provisional translations. Some eligibility conditions remain unverified. A community report dated 2026-10-02 describes a relic hand-in issue blocking the follow-up; current fix status is unverified.",
+          "inside": true,
+          "itemStart": true,
+          "turnIn": "勘察员维尔加 · 湿地 · 维尔加挖掘场 · 38.8, 52.2",
+          "turnInEn": "Prospector Whelgar · Wetlands · Whelgar's Excavation Site · 38.8, 52.2",
+          "turnInLocations": [
+            {
+              "name": "勘察员维尔加",
+              "kind": "npc",
+              "zone": "湿地",
+              "place": "维尔加挖掘场",
+              "x": 38.8,
+              "y": 52.2
+            }
+          ],
+          "pickupDetails": "泰坦圣物 · 挖掘场：湿地",
+          "pickupDetailsEn": "Titan Relic · Excavation Site: Wetlands",
+          "pickupLocations": [
+            {
+              "name": "泰坦圣物",
+              "kind": "item",
+              "zone": "挖掘场：湿地"
+            }
+          ],
+          "sources": [
+            "https://wowf.io/zh/dungeons/excavation-site/quests",
+            "https://wowf.io/en/dungeons/excavation-site/quests",
+            "https://wowforevertalents.com/quests/lost-relic-carry-95810/",
+            "https://foreverchanges.pro/dungeons/excavation-site"
+          ],
+          "sourceDate": "2026-10-03"
+        },
+        {
+          "id": 95697,
+          "name": "口味变化",
+          "nameEn": "Changing Tastes",
+          "faction": "horde",
+          "minLevel": 24,
+          "gatesKnown": false,
+          "basis": "site",
+          "conditionsSource": "https://wowforevertalents.com/quests/changing-tastes-95697/",
+          "nameTranslation": "editorial",
+          "instructions": "进入湿地挖掘场，收集 4 块灌木丛迅猛龙肉，再向奥格瑞玛的博斯坦交付。",
+          "instructionsEn": "Gather four Thicket Raptor Meat in the Excavation Site for Borstan in Orgrimmar.",
+          "from": "博斯坦 · 奥格瑞玛",
+          "fromEn": "Borstan · Orgrimmar",
+          "steps": [],
+          "followups": [],
+          "rewards": [
+            {
+              "id": 280766,
+              "name": "一包药水",
+              "nameEn": "Satchel of Potions",
+              "icon": "Interface\\Icons\\inv_misc_bag_08",
+              "quality": 3,
+              "ilvl": 33,
+              "level": 1,
+              "slot": "饰品",
+              "stats": [],
+              "effects": [
+                {
+                  "trigger": 0,
+                  "text": "把手伸进袋子里，自求多福吧。"
+                }
+              ],
+              "effectsEn": [
+                {
+                  "trigger": 0,
+                  "text": "Reach into the bag and hope for the best."
+                }
+              ],
+              "basis": "site",
+              "uncertain": false
+            },
+            {
+              "id": 280805,
+              "name": "Serrated Raptor Claw",
+              "nameEn": "Serrated Raptor Claw",
+              "icon": "Interface\\Icons\\inv_weapon_shortblade_16",
+              "quality": 3,
+              "ilvl": 33,
+              "level": 1,
+              "slot": "单手",
+              "type": "匕首",
+              "stats": [
+                {
+                  "label": "敏捷",
+                  "value": 5
+                }
+              ],
+              "effects": [
+                {
+                  "trigger": 1,
+                  "text": "+10攻击强度"
+                }
+              ],
+              "effectsEn": [
+                {
+                  "trigger": 1,
+                  "text": "+10 Attack Power"
+                }
+              ],
+              "basis": "site",
+              "uncertain": false
+            },
+            {
+              "id": 250185,
+              "name": "食谱：双重香辣迅猛龙肉片",
+              "nameEn": "Recipe: Twice-Spiced Raptor Slice",
+              "icon": "Interface\\Icons\\inv_scroll_03",
+              "quality": 1,
+              "ilvl": 1,
+              "level": 1,
+              "stats": [],
+              "effects": [],
+              "effectsEn": [],
+              "basis": "site",
+              "uncertain": false
+            },
+            {
+              "id": 250077,
+              "name": "双重香辣迅猛龙肉片",
+              "nameEn": "Twice-Spiced Raptor Slice",
+              "icon": "Interface\\Icons\\inv_misc_food_legion_saltpeppershank",
+              "quality": 1,
+              "ilvl": 15,
+              "level": 5,
+              "stats": [],
+              "effects": [
+                {
+                  "trigger": 0,
+                  "text": "在21秒内恢复总计一定量点生命值，进食时必须保持坐姿。 If you spend at least 10 sec eating, you will become well fed and gain 3 Intellect for 15 min. 此外，击杀获得的经验值提高5%。"
+                }
+              ],
+              "effectsEn": [
+                {
+                  "trigger": 0,
+                  "text": "Restores some health over 21 sec.  Must remain seated while eating. If you spend at least 10 sec eating, you will become well fed and gain 3 Intellect for 15 min. Additionally, experience gained from kills is increased by 5%."
+                }
+              ],
+              "basis": "site",
+              "uncertain": false
+            }
+          ],
+          "prerequisites": "",
+          "researchNote": "无限测试版资料；中文任务名为暂译，部分接取条件仍待核实。",
+          "researchNoteEn": "Forever beta reference; Chinese quest titles are provisional translations. Some eligibility conditions remain unverified.",
+          "sources": [
+            "https://wowf.io/zh/dungeons/excavation-site/quests",
+            "https://wowf.io/en/dungeons/excavation-site/quests",
+            "https://wowforevertalents.com/quests/changing-tastes-95697/",
+            "https://foreverchanges.pro/dungeons/excavation-site"
+          ],
+          "sourceDate": "2026-10-03"
+        },
+        {
+          "id": 95664,
+          "name": "长者的知识",
+          "nameEn": "Elder Knowledge",
+          "faction": "horde",
+          "minLevel": 24,
+          "gatesKnown": false,
+          "basis": "site",
+          "conditionsSource": "https://wowforevertalents.com/quests/elder-knowledge-95664/",
+          "nameTranslation": "editorial",
+          "instructions": "从末王遗迹守卫者取得泰坦圣物触发任务，带去雷霆崖长者高地询问用途。",
+          "instructionsEn": "Start the quest from the Relic Guardian’s Titan Relic, then take it to Elder Rise in Thunder Bluff.",
+          "from": "泰坦圣物 · 挖掘场：湿地",
+          "fromEn": "Titan Relic · Excavation Site: Wetlands",
+          "steps": [],
+          "followups": [
+            {
+              "id": 98823,
+              "name": "大地回响",
+              "nameEn": "Earthen Echo",
+              "faction": "horde",
+              "from": "莫高雷西北部 · 观星台",
+              "fromEn": "Skywatcher Plateau · northwest Mulgore",
+              "instructions": "完成“长者的知识”后，把泰坦圣物送到莫高雷西北部观星台的穆恩·大地之怒处。",
+              "instructionsEn": "After Elder Knowledge, bring the Titan Relic to Muln Earthfury at Skywatcher Plateau in northwest Mulgore."
+            }
+          ],
+          "rewards": [],
+          "prerequisites": "",
+          "researchNote": "无限测试版资料；中文任务名为暂译，部分接取条件仍待核实。 2026-10-02 社区报告圣物交付后可能无法继续后续；当前是否修复待实测。",
+          "researchNoteEn": "Forever beta reference; Chinese quest titles are provisional translations. Some eligibility conditions remain unverified. A community report dated 2026-10-02 describes a relic hand-in issue blocking the follow-up; current fix status is unverified.",
+          "inside": true,
+          "itemStart": true,
+          "pickupDetails": "泰坦圣物 · 挖掘场：湿地",
+          "pickupDetailsEn": "Titan Relic · Excavation Site: Wetlands",
+          "pickupLocations": [
+            {
+              "name": "泰坦圣物",
+              "kind": "item",
+              "zone": "挖掘场：湿地"
+            }
+          ],
+          "sources": [
+            "https://wowf.io/zh/dungeons/excavation-site/quests",
+            "https://wowf.io/en/dungeons/excavation-site/quests",
+            "https://wowforevertalents.com/quests/elder-knowledge-95664/",
+            "https://foreverchanges.pro/dungeons/excavation-site"
+          ],
+          "sourceDate": "2026-10-03"
+        },
+        {
+          "id": 95682,
+          "name": "深入龙喉",
+          "nameEn": "Open the Maw",
+          "faction": "horde",
+          "minLevel": 24,
+          "gatesKnown": false,
+          "basis": "site",
+          "conditionsSource": "https://wowforevertalents.com/quests/open-the-maw-95682/",
+          "nameTranslation": "editorial",
+          "instructions": "在挖掘场击败 2 名 Dragonmaw Saboteur、4 名 Dragonmaw Warder，取得 Dragonmaw Dispatch，交给副本外的亡灵哨兵密探。",
+          "instructionsEn": "Defeat two Dragonmaw Saboteurs and four Dragonmaw Warders, recover the dispatch, and return to the Deathstalker Agent outside.",
+          "from": "亡灵哨兵密探 · 湿地龙喉营地上方山坡（副本外）",
+          "fromEn": "Deathstalker Agent · hills above the Dragonmaw camp, outside the dungeon",
+          "steps": [],
+          "followups": [],
+          "rewards": [
+            {
+              "id": 271740,
+              "name": "磨刀抹布",
+              "nameEn": "Knife-Polishing Rag",
+              "icon": "Interface\\Icons\\inv_bracer_10",
+              "quality": 3,
+              "ilvl": 33,
+              "level": 0,
+              "slot": "手腕",
+              "type": "布甲",
+              "stats": [
+                {
+                  "label": "智力",
+                  "value": 4
+                },
+                {
+                  "label": "精神",
+                  "value": 7
+                }
+              ],
+              "effects": [
+                {
+                  "trigger": 1,
+                  "text": "+5法术强度"
+                }
+              ],
+              "effectsEn": [
+                {
+                  "trigger": 1,
+                  "text": "+5 Spell Power"
+                }
+              ],
+              "armor": 22,
+              "basis": "site",
+              "uncertain": false
+            },
+            {
+              "id": 271732,
+              "name": "沾满泥土的护腕",
+              "nameEn": "Dirt-Heavy Bracers",
+              "icon": "Interface\\Icons\\inv_bracer_04",
+              "quality": 3,
+              "ilvl": 33,
+              "level": 0,
+              "slot": "手腕",
+              "type": "皮甲",
+              "stats": [
+                {
+                  "label": "精神",
+                  "value": 7
+                },
+                {
+                  "label": "耐力",
+                  "value": 4
+                }
+              ],
+              "effects": [
+                {
+                  "trigger": 1,
+                  "text": "+8攻击强度"
+                }
+              ],
+              "effectsEn": [
+                {
+                  "trigger": 1,
+                  "text": "+8 Attack Power"
+                }
+              ],
+              "armor": 47,
+              "basis": "site",
+              "uncertain": false
+            }
+          ],
+          "prerequisites": "龙喉传闻 → 深入龙喉",
+          "researchNote": "无限测试版资料；中文任务名为暂译，部分接取条件仍待核实。",
+          "researchNoteEn": "Forever beta reference; Chinese quest titles are provisional translations. Some eligibility conditions remain unverified.",
+          "pre": [
+            95663
+          ],
+          "prerequisitesEn": "Dragonmaw Rumors → Open the Maw",
+          "pickupDetails": "Deathstalker Agent · 湿地",
+          "pickupDetailsEn": "Deathstalker Agent · Wetlands",
+          "pickupLocations": [
+            {
+              "name": "Deathstalker Agent",
+              "kind": "npc",
+              "zone": "湿地"
+            }
+          ],
+          "sources": [
+            "https://wowf.io/zh/dungeons/excavation-site/quests",
+            "https://wowf.io/en/dungeons/excavation-site/quests",
+            "https://wowforevertalents.com/quests/open-the-maw-95682/",
+            "https://foreverchanges.pro/dungeons/excavation-site"
+          ],
+          "sourceDate": "2026-10-03"
+        },
+        {
+          "id": 95772,
+          "name": "寻找桑布雷德",
+          "nameEn": "Songblade Search",
+          "faction": "unknown",
+          "minLevel": 24,
+          "gatesKnown": false,
+          "basis": "site",
+          "conditionsSource": "https://wowforevertalents.com/quests/songblade-search-95772/",
+          "nameTranslation": "editorial",
+          "instructions": "从湖畔镇的多林·桑布雷德处出发，到维尔加挖掘场寻找他的兄弟戴温。",
+          "instructionsEn": "Travel from Dorin Songblade in Lakeshire to Whelgar’s Excavation Site and look for his brother Daewyn.",
+          "from": "多林·桑布雷德 · 赤脊山 · 湖畔镇 · 25.7, 46.5",
+          "fromEn": "Dorin Songblade · Redridge Mountains · Lakeshire · 25.7, 46.5",
+          "steps": [],
+          "followups": [
+            {
+              "name": "Fallen in the Fen",
+              "nameEn": "Fallen in the Fen",
+              "optional": false,
+              "faction": "unknown",
+              "from": "",
+              "fromEn": "",
+              "instructions": "把在副本里找到 Daewyn 遗体的消息带回湖畔镇的多林·桑布雷德。",
+              "instructionsEn": "Bring word of Daewyn's body, found inside the dungeon, back to Dorin Songblade in Lakeshire."
+            }
+          ],
+          "rewards": [],
+          "prerequisites": "",
+          "researchNote": "无限测试版资料；中文任务名为暂译，部分接取条件仍待核实。",
+          "researchNoteEn": "Forever beta reference; Chinese quest titles are provisional translations. Some eligibility conditions remain unverified.",
+          "pickupDetails": "多林·桑布雷德 · 赤脊山 · 湖畔镇 · 25.7, 46.5",
+          "pickupDetailsEn": "Dorin Songblade · Redridge Mountains · Lakeshire · 25.7, 46.5",
+          "pickupLocations": [
+            {
+              "name": "多林·桑布雷德",
+              "kind": "npc",
+              "zone": "赤脊山",
+              "place": "湖畔镇",
+              "x": 25.7,
+              "y": 46.5
+            }
+          ],
+          "sources": [
+            "https://wowf.io/zh/dungeons/excavation-site/quests",
+            "https://wowf.io/en/dungeons/excavation-site/quests",
+            "https://wowforevertalents.com/quests/songblade-search-95772/"
+          ],
+          "sourceDate": "2026-10-03"
+        },
+        {
+          "id": 95663,
+          "name": "龙喉传闻",
+          "nameEn": "Dragonmaw Rumors",
+          "faction": "unknown",
+          "minLevel": 24,
+          "gatesKnown": false,
+          "basis": "site",
+          "conditionsSource": "https://wowforevertalents.com/quests/dragonmaw-rumors-95663/",
+          "nameTranslation": "editorial",
+          "instructions": "前往湿地龙喉营地上方的山坡，与亡灵哨兵密探会合。",
+          "instructionsEn": "Meet the Deathstalker Agent in the hills above the Dragonmaw camp in Wetlands.",
+          "from": "接取地点待核实",
+          "fromEn": "Pickup location unverified",
+          "steps": [],
+          "followups": [],
+          "rewards": [],
+          "prerequisites": "",
+          "researchNote": "无限测试版资料；中文任务名为暂译，部分接取条件仍待核实。",
+          "researchNoteEn": "Forever beta reference; Chinese quest titles are provisional translations. Some eligibility conditions remain unverified.",
+          "outside": true,
+          "sources": [
+            "https://wowforevertalents.com/quests/dragonmaw-rumors-95663/"
+          ],
+          "sourceDate": "2026-10-03"
+        },
+        {
+          "id": 98823,
+          "name": "大地回响",
+          "nameEn": "Earthen Echo",
+          "faction": "horde",
+          "minLevel": 24,
+          "gatesKnown": false,
+          "basis": "site",
+          "conditionsSource": "https://wowforevertalents.com/quests/earthen-echo-98823/",
+          "nameTranslation": "editorial",
+          "instructions": "完成“长者的知识”后，把泰坦圣物送到莫高雷西北部观星台的穆恩·大地之怒处。",
+          "instructionsEn": "After Elder Knowledge, bring the Titan Relic to Muln Earthfury at Skywatcher Plateau in northwest Mulgore.",
+          "from": "接取地点待核实",
+          "fromEn": "Pickup location unverified",
+          "steps": [],
+          "followups": [],
+          "rewards": [],
+          "prerequisites": "",
+          "researchNote": "无限测试版资料；中文任务名为暂译，部分接取条件仍待核实。 2026-10-02 社区报告圣物交付后可能无法继续后续；当前是否修复待实测。",
+          "researchNoteEn": "Forever beta reference; Chinese quest titles are provisional translations. Some eligibility conditions remain unverified. A community report dated 2026-10-02 describes a relic hand-in issue blocking the follow-up; current fix status is unverified.",
+          "outside": true,
+          "pre": [
+            95664
+          ],
+          "sources": [
+            "https://wowforevertalents.com/quests/earthen-echo-98823/",
+            "https://foreverchanges.pro/dungeons/excavation-site"
+          ],
+          "sourceDate": "2026-10-03"
+        },
+        {
+          "id": 95795,
+          "name": "沼泽中的逝者",
+          "nameEn": "Fallen in the Fen",
+          "faction": "alliance",
+          "minLevel": 24,
+          "gatesKnown": false,
+          "basis": "site",
+          "conditionsSource": "https://wowforevertalents.com/quests/fallen-in-the-fen-95795/",
+          "nameTranslation": "editorial",
+          "instructions": "在挖掘场找到戴温的遗体并接取后续，回赤脊山湖畔镇告知多林·桑布雷德。",
+          "instructionsEn": "Take the quest at Daewyn’s body in the dungeon and report to Dorin Songblade in Lakeshire.",
+          "from": "挖掘场内 · 戴温的遗体",
+          "fromEn": "Daewyn’s body · inside the Excavation Site",
+          "steps": [],
+          "followups": [],
+          "rewards": [],
+          "prerequisites": "",
+          "researchNote": "无限测试版资料；中文任务名为暂译，部分接取条件仍待核实。",
+          "researchNoteEn": "Forever beta reference; Chinese quest titles are provisional translations. Some eligibility conditions remain unverified.",
+          "inside": true,
+          "sources": [
+            "https://wowforevertalents.com/quests/fallen-in-the-fen-95795/",
+            "https://foreverchanges.pro/dungeons/excavation-site"
+          ],
+          "sourceDate": "2026-10-03"
+        },
+        {
+          "id": 95809,
+          "name": "编织的心",
+          "nameEn": "Heartwoven",
+          "faction": "alliance",
+          "minLevel": 24,
+          "gatesKnown": false,
+          "basis": "site",
+          "conditionsSource": "https://wowforevertalents.com/quests/heartwoven-95809/",
+          "nameTranslation": "editorial",
+          "instructions": "使用芦苇编织的心触发后续，返回米奈希尔港交给凯特林·格拉斯曼。",
+          "instructionsEn": "Start the follow-up from the Reed-woven Heart and return it to Caitlin Grassman in Menethil Harbor.",
+          "from": "接取地点待核实",
+          "fromEn": "Pickup location unverified",
+          "steps": [],
+          "followups": [],
+          "rewards": [],
+          "prerequisites": "",
+          "researchNote": "无限测试版资料；中文任务名为暂译，部分接取条件仍待核实。",
+          "researchNoteEn": "Forever beta reference; Chinese quest titles are provisional translations. Some eligibility conditions remain unverified.",
+          "inside": true,
+          "itemStart": true,
+          "pre": [
+            95647
+          ],
+          "sources": [
+            "https://wowforevertalents.com/quests/heartwoven-95809/"
+          ],
+          "sourceDate": "2026-10-03"
+        },
+        {
+          "id": 98824,
+          "name": "史前棱镜",
+          "nameEn": "Prehistoric Prism",
+          "faction": "alliance",
+          "minLevel": 24,
+          "gatesKnown": false,
+          "basis": "site",
+          "conditionsSource": "https://wowforevertalents.com/quests/prehistoric-prism-98824/",
+          "nameTranslation": "editorial",
+          "instructions": "完成“失落的圣物”后，把泰坦圣物交给铁炉堡探险者大厅的高级探险家麦哲拉斯。",
+          "instructionsEn": "After Lost Relic Carry, take the Titan Relic to High Explorer Magellas in Ironforge’s Hall of Explorers.",
+          "from": "接取地点待核实",
+          "fromEn": "Pickup location unverified",
+          "steps": [],
+          "followups": [],
+          "rewards": [],
+          "prerequisites": "",
+          "researchNote": "无限测试版资料；中文任务名为暂译，部分接取条件仍待核实。 2026-10-02 社区报告圣物交付后可能无法继续后续；当前是否修复待实测。",
+          "researchNoteEn": "Forever beta reference; Chinese quest titles are provisional translations. Some eligibility conditions remain unverified. A community report dated 2026-10-02 describes a relic hand-in issue blocking the follow-up; current fix status is unverified.",
+          "outside": true,
+          "pre": [
+            95810
+          ],
+          "sources": [
+            "https://wowforevertalents.com/quests/prehistoric-prism-98824/",
+            "https://foreverchanges.pro/dungeons/excavation-site"
+          ],
+          "sourceDate": "2026-10-03"
+        },
+        {
+          "id": 95737,
+          "name": "寻找凯特林",
+          "nameEn": "Seeking Caitlin",
+          "faction": "unknown",
+          "minLevel": 24,
+          "gatesKnown": false,
+          "basis": "site",
+          "conditionsSource": "https://wowforevertalents.com/quests/seeking-caitlin-95737/",
+          "nameTranslation": "editorial",
+          "instructions": "前往米奈希尔港，与凯特林·格拉斯曼交谈。这是资料页列出的可选引导任务。",
+          "instructionsEn": "Speak with Caitlin Grassman in Menethil Harbor. The reference lists this as an optional lead-in.",
+          "from": "接取地点待核实",
+          "fromEn": "Pickup location unverified",
+          "steps": [],
+          "followups": [],
+          "rewards": [],
+          "prerequisites": "",
+          "researchNote": "无限测试版资料；中文任务名为暂译，部分接取条件仍待核实。",
+          "researchNoteEn": "Forever beta reference; Chinese quest titles are provisional translations. Some eligibility conditions remain unverified.",
+          "outside": true,
+          "sources": [
+            "https://wowforevertalents.com/quests/seeking-caitlin-95737/"
+          ],
+          "sourceDate": "2026-10-03"
+        }
+      ],
       "bosses": [
         {
           "key": "Saltspine",
@@ -17660,15 +19961,31 @@
       "loot": [],
       "nameEn": "Excavation Site: Wetlands",
       "sources": [
-        "https://foreverchanges.pro/dungeons/excavation-site"
+        "https://foreverchanges.pro/dungeons/excavation-site",
+        "https://wowf.io/zh/dungeons/excavation-site/quests",
+        "https://wowf.io/en/dungeons/excavation-site/quests",
+        "https://wowforevertalents.com/quests/highland-hides-98815/",
+        "https://wowforevertalents.com/quests/horrors-in-the-highland-95646/",
+        "https://wowforevertalents.com/quests/lost-in-the-thicket-things-95647/",
+        "https://wowforevertalents.com/quests/lost-relic-carry-95810/",
+        "https://wowforevertalents.com/quests/changing-tastes-95697/",
+        "https://wowforevertalents.com/quests/elder-knowledge-95664/",
+        "https://wowforevertalents.com/quests/open-the-maw-95682/",
+        "https://wowforevertalents.com/quests/songblade-search-95772/",
+        "https://wowforevertalents.com/quests/dragonmaw-rumors-95663/",
+        "https://wowforevertalents.com/quests/earthen-echo-98823/",
+        "https://wowforevertalents.com/quests/fallen-in-the-fen-95795/",
+        "https://wowforevertalents.com/quests/heartwoven-95809/",
+        "https://wowforevertalents.com/quests/prehistoric-prism-98824/",
+        "https://wowforevertalents.com/quests/seeking-caitlin-95737/"
       ],
-      "sourceDate": "2026-10-01",
+      "sourceDate": "2026-10-03",
       "counts": {
-        "quests": 0,
+        "quests": 14,
         "classicQuests": 0,
         "bosses": 4,
         "items": 0,
-        "knownLevels": 0,
+        "knownLevels": 14,
         "knownGates": 0,
         "observedItems": 0,
         "classicItems": 0,
@@ -17683,7 +20000,7 @@
         "Gnomeregan"
       ],
       "coverage": "partial",
-      "source": "Local knowledge base · 2026-10-01",
+      "source": "Local knowledge base · 2026-10-03",
       "quests": [
         {
           "id": 2904,
@@ -17792,10 +20109,33 @@
           "rewardNote": "可选奖励 3 选 1",
           "rewardNoteEn": "Choose 1 of 3 rewards",
           "sources": [
-            "https://foreverchanges.pro/dungeons/gnomeregan"
+            "https://foreverchanges.pro/dungeons/gnomeregan",
+            "https://wowf.io/zh/dungeons/gnomeregan/quests",
+            "https://wowf.io/en/dungeons/gnomeregan/quests"
           ],
-          "sourceDate": "2026-10-01",
-          "conditionsSource": "Community minimum only; other conditions unverified"
+          "sourceDate": "2026-10-03",
+          "conditionsSource": "Community minimum only; other conditions unverified",
+          "turnIn": "斯库提 · 荆棘谷 · 藏宝海湾 · 27.6, 77.5",
+          "turnInEn": "Scooty · Stranglethorn Vale · Booty Bay · 27.6, 77.5",
+          "turnInLocations": [
+            {
+              "name": "斯库提",
+              "kind": "npc",
+              "zone": "荆棘谷",
+              "place": "藏宝海湾",
+              "x": 27.6,
+              "y": 77.5
+            }
+          ],
+          "pickupDetails": "克努比 · 诺莫瑞根",
+          "pickupDetailsEn": "Kernobee · Gnomeregan",
+          "pickupLocations": [
+            {
+              "name": "克努比",
+              "kind": "npc",
+              "zone": "诺莫瑞根"
+            }
+          ]
         },
         {
           "id": 2945,
@@ -17838,10 +20178,30 @@
           "minLevel": 28,
           "nameTw": "臟兮兮的戒指",
           "sources": [
-            "https://foreverchanges.pro/dungeons/gnomeregan"
+            "https://foreverchanges.pro/dungeons/gnomeregan",
+            "https://wowf.io/zh/dungeons/gnomeregan/quests",
+            "https://wowf.io/en/dungeons/gnomeregan/quests"
           ],
-          "sourceDate": "2026-10-01",
-          "conditionsSource": "Community minimum only; other conditions unverified"
+          "sourceDate": "2026-10-03",
+          "conditionsSource": "Community minimum only; other conditions unverified",
+          "turnIn": "超级清洁器5200型 · 诺莫瑞根",
+          "turnInEn": "The Sparklematic 5200 · Gnomeregan",
+          "turnInLocations": [
+            {
+              "name": "超级清洁器5200型",
+              "kind": "object",
+              "zone": "诺莫瑞根"
+            }
+          ],
+          "pickupDetails": "脏兮兮的戒指 · 诺莫瑞根",
+          "pickupDetailsEn": "Grime-Encrusted Ring · Gnomeregan",
+          "pickupLocations": [
+            {
+              "name": "脏兮兮的戒指",
+              "kind": "item",
+              "zone": "诺莫瑞根"
+            }
+          ]
         },
         {
           "id": 2924,
@@ -17859,7 +20219,18 @@
           "repeatable": false,
           "factionSource": "archive-explicit",
           "prerequisites": "",
-          "steps": [],
+          "steps": [
+            {
+              "name": "帮助科劳莫特",
+              "nameEn": "Klockmort's Essentials",
+              "optional": true,
+              "faction": "alliance",
+              "from": "",
+              "fromEn": "",
+              "instructions": "与铁炉堡的科劳莫特·钢尺谈一谈。",
+              "instructionsEn": "Speak with Klockmort Spannerspan in Ironforge."
+            }
+          ],
           "followups": [],
           "rewards": [],
           "rep": "诺莫瑞根流亡者 +350",
@@ -17870,10 +20241,34 @@
           "prerequisitesEn": "",
           "nameTw": "基礎模組",
           "sources": [
-            "https://foreverchanges.pro/dungeons/gnomeregan"
+            "https://foreverchanges.pro/dungeons/gnomeregan",
+            "https://wowf.io/zh/dungeons/gnomeregan/quests",
+            "https://wowf.io/en/dungeons/gnomeregan/quests"
           ],
-          "sourceDate": "2026-10-01",
-          "conditionsSource": "EverythingQuests Forever"
+          "sourceDate": "2026-10-03",
+          "conditionsSource": "EverythingQuests Forever",
+          "turnIn": "科罗莫特·钢尺 · 铁炉堡 · 68.2, 46.2",
+          "turnInEn": "Klockmort Spannerspan · Ironforge · 68.2, 46.2",
+          "turnInLocations": [
+            {
+              "name": "科罗莫特·钢尺",
+              "kind": "npc",
+              "zone": "铁炉堡",
+              "x": 68.2,
+              "y": 46.2
+            }
+          ],
+          "pickupDetails": "科罗莫特·钢尺 · 铁炉堡 · 68.2, 46.2",
+          "pickupDetailsEn": "Klockmort Spannerspan · Ironforge · 68.2, 46.2",
+          "pickupLocations": [
+            {
+              "name": "科罗莫特·钢尺",
+              "kind": "npc",
+              "zone": "铁炉堡",
+              "x": 68.2,
+              "y": 46.2
+            }
+          ]
         },
         {
           "id": 2928,
@@ -17984,10 +20379,34 @@
           "rewardNote": "可选奖励 3 选 1",
           "rewardNoteEn": "Choose 1 of 3 rewards",
           "sources": [
-            "https://foreverchanges.pro/dungeons/gnomeregan"
+            "https://foreverchanges.pro/dungeons/gnomeregan",
+            "https://wowf.io/zh/dungeons/gnomeregan/quests",
+            "https://wowf.io/en/dungeons/gnomeregan/quests"
           ],
-          "sourceDate": "2026-10-01",
-          "conditionsSource": "EverythingQuests Forever"
+          "sourceDate": "2026-10-03",
+          "conditionsSource": "EverythingQuests Forever",
+          "turnIn": "沉默的舒尼 · 暴风城 · 62.6, 34.2",
+          "turnInEn": "Shoni the Shilent · Stormwind City · 62.6, 34.2",
+          "turnInLocations": [
+            {
+              "name": "沉默的舒尼",
+              "kind": "npc",
+              "zone": "暴风城",
+              "x": 62.6,
+              "y": 34.2
+            }
+          ],
+          "pickupDetails": "沉默的舒尼 · 暴风城 · 62.6, 34.2",
+          "pickupDetailsEn": "Shoni the Shilent · Stormwind City · 62.6, 34.2",
+          "pickupLocations": [
+            {
+              "name": "沉默的舒尼",
+              "kind": "npc",
+              "zone": "暴风城",
+              "x": 62.6,
+              "y": 34.2
+            }
+          ]
         },
         {
           "id": 2930,
@@ -18005,7 +20424,18 @@
           "repeatable": false,
           "factionSource": "archive-explicit",
           "prerequisites": "",
-          "steps": [],
+          "steps": [
+            {
+              "name": "卡斯派普的任务",
+              "nameEn": "Castpipe's Task",
+              "optional": true,
+              "faction": "alliance",
+              "from": "",
+              "fromEn": "",
+              "instructions": "与铁炉堡的大机械师卡斯派普谈一谈。",
+              "instructionsEn": "Speak with Master Mechanic Castpipe in Ironforge."
+            }
+          ],
           "followups": [],
           "rewards": [
             {
@@ -18068,10 +20498,34 @@
           "prerequisitesEn": "",
           "nameTw": "搶救數據",
           "sources": [
-            "https://foreverchanges.pro/dungeons/gnomeregan"
+            "https://foreverchanges.pro/dungeons/gnomeregan",
+            "https://wowf.io/zh/dungeons/gnomeregan/quests",
+            "https://wowf.io/en/dungeons/gnomeregan/quests"
           ],
-          "sourceDate": "2026-10-01",
-          "conditionsSource": "EverythingQuests Forever"
+          "sourceDate": "2026-10-03",
+          "conditionsSource": "EverythingQuests Forever",
+          "turnIn": "大机械师卡斯派普 · 铁炉堡 · 69.8, 48.4",
+          "turnInEn": "Master Mechanic Castpipe · Ironforge · 69.8, 48.4",
+          "turnInLocations": [
+            {
+              "name": "大机械师卡斯派普",
+              "kind": "npc",
+              "zone": "铁炉堡",
+              "x": 69.8,
+              "y": 48.4
+            }
+          ],
+          "pickupDetails": "大机械师卡斯派普 · 铁炉堡 · 69.8, 48.4",
+          "pickupDetailsEn": "Master Mechanic Castpipe · Ironforge · 69.8, 48.4",
+          "pickupLocations": [
+            {
+              "name": "大机械师卡斯派普",
+              "kind": "npc",
+              "zone": "铁炉堡",
+              "x": 69.8,
+              "y": 48.4
+            }
+          ]
         },
         {
           "id": 2962,
@@ -18120,10 +20574,36 @@
           "prerequisitesEn": "The Day After → Gnogaine",
           "nameTw": "更多的輻射塵！",
           "sources": [
-            "https://foreverchanges.pro/dungeons/gnomeregan"
+            "https://foreverchanges.pro/dungeons/gnomeregan",
+            "https://wowf.io/zh/dungeons/gnomeregan/quests",
+            "https://wowf.io/en/dungeons/gnomeregan/quests"
           ],
-          "sourceDate": "2026-10-01",
-          "conditionsSource": "EverythingQuests Forever"
+          "sourceDate": "2026-10-03",
+          "conditionsSource": "EverythingQuests Forever",
+          "turnIn": "奥齐·电环 · 丹莫罗 · 卡拉诺斯 · 45.9, 49.4",
+          "turnInEn": "Ozzie Togglevolt · Dun Morogh · Kharanos · 45.9, 49.4",
+          "turnInLocations": [
+            {
+              "name": "奥齐·电环",
+              "kind": "npc",
+              "zone": "丹莫罗",
+              "place": "卡拉诺斯",
+              "x": 45.9,
+              "y": 49.4
+            }
+          ],
+          "pickupDetails": "奥齐·电环 · 丹莫罗 · 卡拉诺斯 · 45.9, 49.4",
+          "pickupDetailsEn": "Ozzie Togglevolt · Dun Morogh · Kharanos · 45.9, 49.4",
+          "pickupLocations": [
+            {
+              "name": "奥齐·电环",
+              "kind": "npc",
+              "zone": "丹莫罗",
+              "place": "卡拉诺斯",
+              "x": 45.9,
+              "y": 49.4
+            }
+          ]
         },
         {
           "id": 2929,
@@ -18234,10 +20714,34 @@
           "rewardNote": "可选奖励 3 选 1",
           "rewardNoteEn": "Choose 1 of 3 rewards",
           "sources": [
-            "https://foreverchanges.pro/dungeons/gnomeregan"
+            "https://foreverchanges.pro/dungeons/gnomeregan",
+            "https://wowf.io/zh/dungeons/gnomeregan/quests",
+            "https://wowf.io/en/dungeons/gnomeregan/quests"
           ],
-          "sourceDate": "2026-10-01",
-          "conditionsSource": "EverythingQuests Forever"
+          "sourceDate": "2026-10-03",
+          "conditionsSource": "EverythingQuests Forever",
+          "turnIn": "大工匠梅卡托克 · 铁炉堡 · 69, 49",
+          "turnInEn": "High Tinker Mekkatorque · Ironforge · 69, 49",
+          "turnInLocations": [
+            {
+              "name": "大工匠梅卡托克",
+              "kind": "npc",
+              "zone": "铁炉堡",
+              "x": 69,
+              "y": 49
+            }
+          ],
+          "pickupDetails": "大工匠梅卡托克 · 铁炉堡 · 69, 49",
+          "pickupDetailsEn": "High Tinker Mekkatorque · Ironforge · 69, 49",
+          "pickupLocations": [
+            {
+              "name": "大工匠梅卡托克",
+              "kind": "npc",
+              "zone": "铁炉堡",
+              "x": 69,
+              "y": 49
+            }
+          ]
         },
         {
           "id": 2841,
@@ -18348,10 +20852,34 @@
           "rewardNote": "可选奖励 3 选 1",
           "rewardNoteEn": "Choose 1 of 3 rewards",
           "sources": [
-            "https://foreverchanges.pro/dungeons/gnomeregan"
+            "https://foreverchanges.pro/dungeons/gnomeregan",
+            "https://wowf.io/zh/dungeons/gnomeregan/quests",
+            "https://wowf.io/en/dungeons/gnomeregan/quests"
           ],
-          "sourceDate": "2026-10-01",
-          "conditionsSource": "EverythingQuests Forever"
+          "sourceDate": "2026-10-03",
+          "conditionsSource": "EverythingQuests Forever",
+          "turnIn": "诺格 · 奥格瑞玛 · 75.8, 25.2",
+          "turnInEn": "Nogg · Orgrimmar · 75.8, 25.2",
+          "turnInLocations": [
+            {
+              "name": "诺格",
+              "kind": "npc",
+              "zone": "奥格瑞玛",
+              "x": 75.8,
+              "y": 25.2
+            }
+          ],
+          "pickupDetails": "诺格 · 奥格瑞玛 · 75.8, 25.2",
+          "pickupDetailsEn": "Nogg · Orgrimmar · 75.8, 25.2",
+          "pickupLocations": [
+            {
+              "name": "诺格",
+              "kind": "npc",
+              "zone": "奥格瑞玛",
+              "x": 75.8,
+              "y": 25.2
+            }
+          ]
         },
         {
           "id": 95041,
@@ -18372,7 +20900,23 @@
           "instructionsEn": "Collect 7 Gnomeregan Archival Data cards outside Gnomeregan and return them to Jemma Quikswitch in Ironforge. This is an outside-dungeon task.",
           "fromEn": "Jemma Quikswitch · Ironforge",
           "prerequisitesEn": "",
-          "outside": true
+          "outside": true,
+          "pickupDetails": "耶玛 · 铁炉堡 · 67.8, 43.8",
+          "pickupDetailsEn": "Jemma Quikswitch · Ironforge · 67.8, 43.8",
+          "pickupLocations": [
+            {
+              "name": "耶玛",
+              "kind": "npc",
+              "zone": "铁炉堡",
+              "x": 67.8,
+              "y": 43.8
+            }
+          ],
+          "sources": [
+            "https://wowf.io/zh/dungeons/gnomeregan/quests",
+            "https://wowf.io/en/dungeons/gnomeregan/quests"
+          ],
+          "sourceDate": "2026-10-03"
         },
         {
           "id": 2922,
@@ -20354,9 +22898,11 @@
       ],
       "nameEn": "Gnomeregan",
       "sources": [
-        "https://foreverchanges.pro/dungeons/gnomeregan"
+        "https://foreverchanges.pro/dungeons/gnomeregan",
+        "https://wowf.io/zh/dungeons/gnomeregan/quests",
+        "https://wowf.io/en/dungeons/gnomeregan/quests"
       ],
-      "sourceDate": "2026-10-01",
+      "sourceDate": "2026-10-03",
       "counts": {
         "quests": 16,
         "classicQuests": 7,
@@ -20376,9 +22922,371 @@
         "达拉然城",
         "City of Dalaran"
       ],
-      "coverage": "unavailable",
-      "source": "Local knowledge base · 2026-10-01",
-      "quests": [],
+      "coverage": "partial",
+      "source": "Local knowledge base · 2026-10-03",
+      "quests": [
+        {
+          "id": 92456,
+          "name": "绿色样本",
+          "nameEn": "A Green Sample",
+          "faction": "alliance",
+          "minLevel": 24,
+          "gatesKnown": false,
+          "basis": "site",
+          "conditionsSource": "https://wowforevertalents.com/quests/a-green-sample-92456/",
+          "nameTranslation": "editorial",
+          "instructions": "进入达拉然城，在中央花园寻找邪能花朵，带回暴风城交给莎拉米尔。",
+          "instructionsEn": "Find the fel blossom in Dalaran’s central garden and take it to Shylamiir in Stormwind.",
+          "from": "莎拉米尔 · 暴风城 · 31.4, 62.8",
+          "fromEn": "Shylamiir · Stormwind City · 31.4, 62.8",
+          "steps": [],
+          "followups": [],
+          "rewards": [],
+          "prerequisites": "",
+          "researchNote": "无限测试版资料；中文任务名为暂译，部分接取条件仍待核实。",
+          "researchNoteEn": "Forever beta reference; Chinese quest titles are provisional translations. Some eligibility conditions remain unverified.",
+          "pickupDetails": "莎拉米尔 · 暴风城 · 31.4, 62.8",
+          "pickupDetailsEn": "Shylamiir · Stormwind City · 31.4, 62.8",
+          "pickupLocations": [
+            {
+              "name": "莎拉米尔",
+              "kind": "npc",
+              "zone": "暴风城",
+              "x": 31.4,
+              "y": 62.8
+            }
+          ],
+          "sources": [
+            "https://wowf.io/zh/dungeons/dalaran/quests",
+            "https://wowf.io/en/dungeons/dalaran/quests",
+            "https://wowforevertalents.com/quests/a-green-sample-92456/"
+          ],
+          "sourceDate": "2026-10-03"
+        },
+        {
+          "id": 92489,
+          "name": "强大力量",
+          "nameEn": "Power Overwhelming",
+          "faction": "alliance",
+          "minLevel": 24,
+          "gatesKnown": false,
+          "basis": "site",
+          "conditionsSource": "https://wowforevertalents.com/quests/power-overwhelming-92489/",
+          "nameTranslation": "editorial",
+          "instructions": "在达拉然城击败法力元素，向暴风城的高阶巫师安多玛斯复命。",
+          "instructionsEn": "Defeat the Mana Elemental in Dalaran, then report to High Sorcerer Andromath in Stormwind.",
+          "from": "高阶巫师安多玛斯 · 暴风城 · 48.8, 87.6",
+          "fromEn": "High Sorcerer Andromath · Stormwind City · 48.8, 87.6",
+          "steps": [],
+          "followups": [],
+          "rewards": [
+            {
+              "id": 251962,
+              "name": "Violet Sash",
+              "nameEn": "Violet Sash",
+              "icon": "Interface\\Icons\\inv_belt_04",
+              "quality": 3,
+              "ilvl": 36,
+              "level": 0,
+              "slot": "腰部",
+              "type": "布甲",
+              "stats": [
+                {
+                  "label": "精神",
+                  "value": 7
+                },
+                {
+                  "label": "智力",
+                  "value": 12
+                }
+              ],
+              "effects": [],
+              "effectsEn": [],
+              "armor": 29,
+              "basis": "site",
+              "uncertain": false
+            },
+            {
+              "id": 279849,
+              "name": "Runebound Gloves",
+              "nameEn": "Runebound Gloves",
+              "icon": "Interface\\Icons\\inv_gauntlets_15",
+              "quality": 3,
+              "ilvl": 36,
+              "level": 1,
+              "slot": "手部",
+              "type": "皮甲",
+              "stats": [
+                {
+                  "label": "耐力",
+                  "value": 10
+                },
+                {
+                  "label": "精神",
+                  "value": 5
+                }
+              ],
+              "effects": [
+                {
+                  "trigger": 1,
+                  "text": "+16攻击强度"
+                }
+              ],
+              "effectsEn": [
+                {
+                  "trigger": 1,
+                  "text": "+16 Attack Power"
+                }
+              ],
+              "armor": 71,
+              "basis": "site",
+              "uncertain": false
+            }
+          ],
+          "prerequisites": "",
+          "researchNote": "无限测试版资料；中文任务名为暂译，部分接取条件仍待核实。",
+          "researchNoteEn": "Forever beta reference; Chinese quest titles are provisional translations. Some eligibility conditions remain unverified.",
+          "pickupDetails": "高阶巫师安多玛斯 · 暴风城 · 48.8, 87.6",
+          "pickupDetailsEn": "High Sorcerer Andromath · Stormwind City · 48.8, 87.6",
+          "pickupLocations": [
+            {
+              "name": "高阶巫师安多玛斯",
+              "kind": "npc",
+              "zone": "暴风城",
+              "x": 48.8,
+              "y": 87.6
+            }
+          ],
+          "sources": [
+            "https://wowf.io/zh/dungeons/dalaran/quests",
+            "https://wowf.io/en/dungeons/dalaran/quests",
+            "https://wowforevertalents.com/quests/power-overwhelming-92489/"
+          ],
+          "sourceDate": "2026-10-03"
+        },
+        {
+          "id": 96987,
+          "name": "求学良机",
+          "nameEn": "Opportunistic Education",
+          "faction": "horde",
+          "minLevel": 24,
+          "gatesKnown": false,
+          "basis": "site",
+          "conditionsSource": "https://wowforevertalents.com/quests/opportunistic-education-96987/",
+          "nameTranslation": "editorial",
+          "instructions": "在达拉然城寻找《达拉然的建立》，交给下水道入口附近的 Rexxie Copperclutch。",
+          "instructionsEn": "Find The Founding of Dalaran and deliver it to Rexxie Copperclutch near the sewer entrance.",
+          "from": "Rexxie Copperclutch · 奥特兰克山脉",
+          "fromEn": "Rexxie Copperclutch · Alterac Mountains",
+          "steps": [],
+          "followups": [],
+          "rewards": [],
+          "prerequisites": "",
+          "researchNote": "无限测试版资料；中文任务名为暂译，部分接取条件仍待核实。",
+          "researchNoteEn": "Forever beta reference; Chinese quest titles are provisional translations. Some eligibility conditions remain unverified.",
+          "pickupDetails": "Rexxie Copperclutch · 奥特兰克山脉",
+          "pickupDetailsEn": "Rexxie Copperclutch · Alterac Mountains",
+          "pickupLocations": [
+            {
+              "name": "Rexxie Copperclutch",
+              "kind": "npc",
+              "zone": "奥特兰克山脉"
+            }
+          ],
+          "sources": [
+            "https://wowf.io/zh/dungeons/dalaran/quests",
+            "https://wowf.io/en/dungeons/dalaran/quests",
+            "https://wowforevertalents.com/quests/opportunistic-education-96987/"
+          ],
+          "sourceDate": "2026-10-03"
+        },
+        {
+          "id": 96988,
+          "name": "力量之源",
+          "nameEn": "Source of Power",
+          "faction": "horde",
+          "minLevel": 24,
+          "gatesKnown": false,
+          "basis": "site",
+          "conditionsSource": "https://wowforevertalents.com/quests/source-of-power-96988/",
+          "nameTranslation": "editorial",
+          "instructions": "在达拉然城收集 6 个开裂的哨兵核心，回幽暗城交给马丁·费尔本。",
+          "instructionsEn": "Collect six Cracked Sentry Cores in Dalaran and deliver them to Doctor Martin Felben in Undercity.",
+          "from": "马丁·费尔本 · 幽暗城 · 46.4, 74.6",
+          "fromEn": "Doctor Martin Felben · Undercity · 46.4, 74.6",
+          "steps": [],
+          "followups": [],
+          "rewards": [
+            {
+              "id": 279847,
+              "name": "Unstable Power Core",
+              "nameEn": "Unstable Power Core",
+              "icon": "Interface\\Icons\\inv_staff_06",
+              "quality": 3,
+              "ilvl": 36,
+              "level": 1,
+              "slot": "远程",
+              "type": "魔杖",
+              "stats": [
+                {
+                  "label": "耐力",
+                  "value": 6
+                }
+              ],
+              "effects": [],
+              "effectsEn": [],
+              "basis": "site",
+              "uncertain": false
+            },
+            {
+              "id": 279848,
+              "name": "Construct Cloak",
+              "nameEn": "Construct Cloak",
+              "icon": "Interface\\Icons\\inv_misc_cape_02",
+              "quality": 3,
+              "ilvl": 36,
+              "level": 1,
+              "slot": "背部",
+              "type": "布甲",
+              "stats": [
+                {
+                  "label": "力量",
+                  "value": 7
+                },
+                {
+                  "label": "精神",
+                  "value": 7
+                }
+              ],
+              "effects": [],
+              "effectsEn": [],
+              "armor": 26,
+              "basis": "site",
+              "uncertain": false
+            }
+          ],
+          "prerequisites": "",
+          "researchNote": "无限测试版资料；中文任务名为暂译，部分接取条件仍待核实。",
+          "researchNoteEn": "Forever beta reference; Chinese quest titles are provisional translations. Some eligibility conditions remain unverified.",
+          "pickupDetails": "马丁·费尔本 · 幽暗城 · 46.4, 74.6",
+          "pickupDetailsEn": "Doctor Martin Felben · Undercity · 46.4, 74.6",
+          "pickupLocations": [
+            {
+              "name": "马丁·费尔本",
+              "kind": "npc",
+              "zone": "幽暗城",
+              "x": 46.4,
+              "y": 74.6
+            }
+          ],
+          "sources": [
+            "https://wowf.io/zh/dungeons/dalaran/quests",
+            "https://wowf.io/en/dungeons/dalaran/quests",
+            "https://wowforevertalents.com/quests/source-of-power-96988/"
+          ],
+          "sourceDate": "2026-10-03"
+        },
+        {
+          "id": 96986,
+          "name": "墓穴骑士",
+          "nameEn": "The Grave Knight",
+          "faction": "horde",
+          "minLevel": 24,
+          "gatesKnown": false,
+          "basis": "site",
+          "conditionsSource": "https://wowforevertalents.com/quests/the-grave-knight-96986/",
+          "nameTranslation": "editorial",
+          "instructions": "击败达拉然城内的墓穴骑士阿特雷克斯，返回塔伦米尔向梅里萨拉复命。",
+          "instructionsEn": "Defeat Atrexis in Dalaran and report to Melisara in Tarren Mill.",
+          "from": "梅里萨拉 · 希尔斯布莱德丘陵 · 塔伦米尔 · 62.5, 20.5",
+          "fromEn": "Melisara · Hillsbrad Foothills · Tarren Mill · 62.5, 20.5",
+          "steps": [],
+          "followups": [],
+          "rewards": [
+            {
+              "id": 251963,
+              "name": "Gravewalker Boots",
+              "nameEn": "Gravewalker Boots",
+              "icon": "Interface\\Icons\\inv_boots_08",
+              "quality": 3,
+              "ilvl": 36,
+              "level": 0,
+              "slot": "脚",
+              "type": "皮甲",
+              "stats": [
+                {
+                  "label": "耐力",
+                  "value": 10
+                },
+                {
+                  "label": "敏捷",
+                  "value": 7
+                },
+                {
+                  "label": "精神",
+                  "value": 7
+                }
+              ],
+              "effects": [],
+              "effectsEn": [],
+              "armor": 78,
+              "basis": "site",
+              "uncertain": false
+            },
+            {
+              "id": 251965,
+              "name": "Undead Knight's Bracers",
+              "nameEn": "Undead Knight's Bracers",
+              "icon": "Interface\\Icons\\inv_bracer_16",
+              "quality": 3,
+              "ilvl": 36,
+              "level": 0,
+              "slot": "手腕",
+              "type": "锁甲",
+              "stats": [
+                {
+                  "label": "耐力",
+                  "value": 8
+                },
+                {
+                  "label": "力量",
+                  "value": 4
+                },
+                {
+                  "label": "敏捷",
+                  "value": 4
+                }
+              ],
+              "effects": [],
+              "effectsEn": [],
+              "armor": 104,
+              "basis": "site",
+              "uncertain": false
+            }
+          ],
+          "prerequisites": "",
+          "researchNote": "无限测试版资料；中文任务名为暂译，部分接取条件仍待核实。",
+          "researchNoteEn": "Forever beta reference; Chinese quest titles are provisional translations. Some eligibility conditions remain unverified.",
+          "pickupDetails": "梅里萨拉 · 希尔斯布莱德丘陵 · 塔伦米尔 · 62.5, 20.5",
+          "pickupDetailsEn": "Melisara · Hillsbrad Foothills · Tarren Mill · 62.5, 20.5",
+          "pickupLocations": [
+            {
+              "name": "梅里萨拉",
+              "kind": "npc",
+              "zone": "希尔斯布莱德丘陵",
+              "place": "塔伦米尔",
+              "x": 62.5,
+              "y": 20.5
+            }
+          ],
+          "sources": [
+            "https://wowf.io/zh/dungeons/dalaran/quests",
+            "https://wowf.io/en/dungeons/dalaran/quests",
+            "https://wowforevertalents.com/quests/the-grave-knight-96986/"
+          ],
+          "sourceDate": "2026-10-03"
+        }
+      ],
       "bosses": [
         {
           "key": "Shade of the Archmage",
@@ -20393,15 +23301,22 @@
       "loot": [],
       "nameEn": "City of Dalaran",
       "sources": [
-        "https://foreverchanges.pro/dungeons/city-of-dalaran"
+        "https://foreverchanges.pro/dungeons/city-of-dalaran",
+        "https://wowf.io/zh/dungeons/dalaran/quests",
+        "https://wowf.io/en/dungeons/dalaran/quests",
+        "https://wowforevertalents.com/quests/a-green-sample-92456/",
+        "https://wowforevertalents.com/quests/power-overwhelming-92489/",
+        "https://wowforevertalents.com/quests/opportunistic-education-96987/",
+        "https://wowforevertalents.com/quests/source-of-power-96988/",
+        "https://wowforevertalents.com/quests/the-grave-knight-96986/"
       ],
-      "sourceDate": "2026-10-01",
+      "sourceDate": "2026-10-03",
       "counts": {
-        "quests": 0,
+        "quests": 5,
         "classicQuests": 0,
         "bosses": 1,
         "items": 0,
-        "knownLevels": 0,
+        "knownLevels": 5,
         "knownGates": 0,
         "observedItems": 0,
         "classicItems": 0,
